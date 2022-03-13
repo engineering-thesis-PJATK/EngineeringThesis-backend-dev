@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OneBan_TMS.Models;
 
 namespace OneBan_TMS.Controllers
 {
@@ -11,11 +14,11 @@ namespace OneBan_TMS.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
+        private OneManDbContext dbContext;
 
-        [HttpGet]
-        public int GetRandomId(int parameter)
+        public HomeController(OneManDbContext dbContext)
         {
-            return parameter + 5;
+            this.dbContext = dbContext;
         }
     }
 }

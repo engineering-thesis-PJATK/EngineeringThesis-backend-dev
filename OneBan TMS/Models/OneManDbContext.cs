@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace OneBan_TMS.Models
 {
-    public partial class inzynierkaContext : DbContext
+    public partial class OneManDbContext : DbContext
     {
-        public inzynierkaContext()
+        public OneManDbContext()
         {
         }
 
-        public inzynierkaContext(DbContextOptions<inzynierkaContext> options)
+        public OneManDbContext(DbContextOptions<OneManDbContext> options)
             : base(options)
         {
         }
@@ -40,9 +40,10 @@ namespace OneBan_TMS.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("UZUPELNIC");
+              //  optionsBuilder.UseSqlServer("");
             }
         }
 

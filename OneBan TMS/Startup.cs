@@ -6,11 +6,16 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using OneBan_TMS.Controllers;
+using OneBan_TMS.Interfaces;
+using OneBan_TMS.Models;
+using OneBan_TMS.Repository;
 
 namespace OneBan_TMS
 {
@@ -26,6 +31,11 @@ namespace OneBan_TMS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("SQLConnection");
+            
+            services.AddScoped<ITicket, TicketRepository>();
+            services.AddScoped<IAddress, AddressRepository>();
+            services.AddDbContext<OneManDbContext>(options => options.UseSqlServer(connectionString));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

@@ -18,6 +18,8 @@
 
     <ItemGroup>
       <Compile Remove="Controllers\HomeScreenController.cs" />
+      <Compile Remove="WeatherForecast.cs" />
+      <Compile Remove="Controllers\WeatherForecastController.cs" />
     </ItemGroup>
 
 </Project>
