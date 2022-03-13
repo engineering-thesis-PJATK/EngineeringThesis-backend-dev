@@ -18,6 +18,4 @@ namespace OneBan_TMS.Controllers
             return parameter + 5;
         }
     }
-    
-    
 }

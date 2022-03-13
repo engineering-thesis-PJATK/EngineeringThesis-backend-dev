@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/OneBan TMS.csproj": {}
+    "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj": {}
   },
   "projects": {
-    "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/OneBan TMS.csproj": {
+    "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/OneBan TMS.csproj",
+        "projectUniqueName": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj",
         "projectName": "OneBan TMS",
-        "projectPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/OneBan TMS.csproj",
+        "projectPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj",
         "packagesPath": "/Users/pioter/.nuget/packages/",
-        "outputPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/",
+        "outputPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/pioter/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -65,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }
