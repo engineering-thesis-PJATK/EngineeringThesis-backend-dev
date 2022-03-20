@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace OneBan_TMS.Models.DTOs
 {
-    public class TestDto
+    public class CredentialsDto
     {
-        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

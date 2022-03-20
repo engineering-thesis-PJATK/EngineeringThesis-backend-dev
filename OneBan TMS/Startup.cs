@@ -20,6 +20,7 @@ using OneBan_TMS.Handlers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Repository;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace OneBan_TMS
 {
@@ -39,30 +40,32 @@ namespace OneBan_TMS
             
             services.AddScoped<ITicket, TicketRepository>();
             services.AddScoped<IAddress, AddressRepository>();
-            services.AddScoped<JwtHandler>();
+            services.AddSingleton<IUserRepository, UserTestRepository>();
+            services.AddSingleton<IPasswordHandler, PasswordHandler>();
+            services.AddSingleton<ITokenHandler, CustomTokenHandler>();
             services.AddDbContext<OneManDbContext>(options => options.UseSqlServer(connectionString));
-            var jwtSettings = Configuration.GetSection("JwtSettings");
-            services.AddAuthentication(opt =>
-           {
-               opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-               opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-           }).AddJwtBearer(options =>
-           {
-               options.TokenValidationParameters = new TokenValidationParameters
-               {
-                   ValidateIssuer = true,
-                   ValidateAudience = true,
-                   ValidateLifetime = true,
-                   ValidateIssuerSigningKey = true,
-                   ValidIssuer = jwtSettings.GetSection("validIssuer").Value,
-                   ValidAudience = jwtSettings.GetSection("validAudience").Value,
-                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.GetSection("securityKey").Value))
-               };
-           });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetSection("AppSettings").GetSection("Token").Value)),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "OneBan_TMS", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "OneBan_TMS", Version = "v1" });
+                c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Description = "Standard authorization header using the Bearer scheme",
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey
+                });
+                c.OperationFilter<SecurityRequirementsOperationFilter>();
             });
         }
 
@@ -79,7 +82,6 @@ namespace OneBan_TMS
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
 

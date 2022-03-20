@@ -23,10 +23,5 @@ namespace OneBan_TMS.Controllers
         {
             this.dbContext = dbContext;
         }
-        [HttpGet("Test")]
-        public IActionResult GetTest()
-        {
-            return Ok(new TestDto() { Name = "Name" });
-        }
     }
 }

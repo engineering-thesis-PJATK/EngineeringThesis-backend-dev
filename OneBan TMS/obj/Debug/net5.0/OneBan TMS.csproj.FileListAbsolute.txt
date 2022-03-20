@@ -494,7 +494,6 @@ C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net
 C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.csproj.AssemblyReference.cache
 C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.AssemblyInfoInputs.cache
 C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.AssemblyInfo.cs
@@ -520,3 +519,8 @@ C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net
 C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Text.Encodings.Web.dll
 C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Text.Json.dll
+C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Scrutor.dll
+C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\Tomasz\Documents\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.csproj.AssemblyReference.cache
