@@ -9,19 +9,19 @@ namespace OneBan_TMS.Models
     {
         public Correspondence()
         {
-            Attachments = new HashSet<Attachment>();
+            CorrespondenceAttachments = new HashSet<CorrespondenceAttachment>();
         }
 
         public int CorId { get; set; }
-        public int CorSubject { get; set; }
-        public int CorBody { get; set; }
-        public DateTime? CorReceived { get; set; }
-        public DateTime? CorSent { get; set; }
         public string CorSender { get; set; }
         public string CorReceiver { get; set; }
+        public string CorSubject { get; set; }
+        public string CorBody { get; set; }
+        public DateTime? CorSentAt { get; set; }
+        public DateTime? CorReceivedAt { get; set; }
         public int CorIdTicket { get; set; }
 
         public virtual Ticket CorIdTicketNavigation { get; set; }
-        public virtual ICollection<Attachment> Attachments { get; set; }
+        public virtual ICollection<CorrespondenceAttachment> CorrespondenceAttachments { get; set; }
     }
 }

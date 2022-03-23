@@ -17,6 +17,7 @@ namespace OneBan_TMS.Models
         public string AdrStreet { get; set; }
         public string AdrStreetNumber { get; set; }
         public string AdrPostCode { get; set; }
+        public string AdrCountry { get; set; }
 
         public virtual ICollection<Company> Companies { get; set; }
     }

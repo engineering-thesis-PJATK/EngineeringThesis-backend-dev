@@ -13,11 +13,11 @@ namespace OneBan_TMS.Models
         }
 
         public int PtkId { get; set; }
-        public decimal PtkEstCost { get; set; }
         public string PtkContent { get; set; }
-        public int PtkProjectId { get; set; }
+        public decimal PtkEstimatedCost { get; set; }
+        public int PtkIdProject { get; set; }
 
-        public virtual Project PtkProject { get; set; }
+        public virtual Project PtkIdProjectNavigation { get; set; }
         public virtual ICollection<TimeEntry> TimeEntries { get; set; }
     }
 }

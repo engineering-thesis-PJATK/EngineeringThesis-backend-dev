@@ -14,10 +14,10 @@ namespace OneBan_TMS.Models
 
         public int ProId { get; set; }
         public string ProName { get; set; }
-        public int ProIdCompany { get; set; }
         public string ProDescription { get; set; }
-        public DateTime ProCreationDate { get; set; }
-        public DateTime? ProCompletionDate { get; set; }
+        public DateTime ProCreatedAt { get; set; }
+        public DateTime? ProCompletedAt { get; set; }
+        public int ProIdCompany { get; set; }
         public int ProIdTeam { get; set; }
 
         public virtual Company ProIdCompanyNavigation { get; set; }

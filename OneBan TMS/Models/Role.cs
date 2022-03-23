@@ -13,8 +13,8 @@ namespace OneBan_TMS.Models
         }
 
         public int RolId { get; set; }
-        public string RolDescription { get; set; }
         public string RolName { get; set; }
+        public string RolDescription { get; set; }
 
         public virtual ICollection<EmployeeTeam> EmployeeTeams { get; set; }
     }

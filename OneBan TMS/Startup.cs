@@ -38,12 +38,10 @@ namespace OneBan_TMS
         {
             var connectionString = Configuration.GetConnectionString("SQLConnection");
             
-            services.AddScoped<ITicket, TicketRepository>();
-            services.AddScoped<IAddress, AddressRepository>();
             services.AddSingleton<IUserRepository, UserTestRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
-            services.AddDbContext<OneManDbContext>(options => options.UseSqlServer(connectionString));
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
