@@ -5,16 +5,16 @@ using System.Collections.Generic;
 
 namespace OneBan_TMS.Models
 {
-    public partial class Role
+    public partial class EmployeeTeamRole
     {
-        public Role()
+        public EmployeeTeamRole()
         {
             EmployeeTeams = new HashSet<EmployeeTeam>();
         }
 
-        public int RolId { get; set; }
-        public string RolName { get; set; }
-        public string RolDescription { get; set; }
+        public int EtrId { get; set; }
+        public string EtrName { get; set; }
+        public string EtrDescription { get; set; }
 
         public virtual ICollection<EmployeeTeam> EmployeeTeams { get; set; }
     }

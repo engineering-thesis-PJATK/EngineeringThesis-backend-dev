@@ -23,14 +23,14 @@ namespace OneBan_TMS.Models
         public DateTime TicCreatedAt { get; set; }
         public DateTime TicDueDate { get; set; }
         public DateTime? TicCompletedAt { get; set; }
-        public int TicIdStatus { get; set; }
-        public int TicIdClient { get; set; }
+        public int TicIdTicketStatus { get; set; }
+        public int TicIdCustomer { get; set; }
         public int TicIdTicketType { get; set; }
         public int TicIdTicketPriority { get; set; }
 
-        public virtual Customer TicIdClientNavigation { get; set; }
-        public virtual Status TicIdStatusNavigation { get; set; }
+        public virtual Customer TicIdCustomerNavigation { get; set; }
         public virtual TicketPriority TicIdTicketPriorityNavigation { get; set; }
+        public virtual TicketStatus TicIdTicketStatusNavigation { get; set; }
         public virtual TicketType TicIdTicketTypeNavigation { get; set; }
         public virtual ICollection<Correspondence> Correspondences { get; set; }
         public virtual ICollection<EmployeeTicket> EmployeeTickets { get; set; }

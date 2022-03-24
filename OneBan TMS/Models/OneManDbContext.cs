@@ -28,17 +28,18 @@ namespace OneBan_TMS.Models
         public virtual DbSet<EmployeePrivilege> EmployeePrivileges { get; set; }
         public virtual DbSet<EmployeePrivilegeEmployee> EmployeePrivilegeEmployees { get; set; }
         public virtual DbSet<EmployeeTeam> EmployeeTeams { get; set; }
+        public virtual DbSet<EmployeeTeamRole> EmployeeTeamRoles { get; set; }
         public virtual DbSet<EmployeeTicket> EmployeeTickets { get; set; }
         public virtual DbSet<OrganizationalTask> OrganizationalTasks { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<ProjectTask> ProjectTasks { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<Status> Statuses { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<TicketNote> TicketNotes { get; set; }
+        public virtual DbSet<TicketPriority> TicketPriorities { get; set; }
+        public virtual DbSet<TicketStatus> TicketStatuses { get; set; }
+        public virtual DbSet<TicketType> TicketTypes { get; set; }
         public virtual DbSet<TimeEntry> TimeEntries { get; set; }
-        public virtual DbSet<Type> Types { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -366,7 +367,7 @@ namespace OneBan_TMS.Models
 
                 entity.Property(e => e.EmpLogin)
                     .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("emp_login");
 
@@ -480,6 +481,30 @@ namespace OneBan_TMS.Models
                     .HasForeignKey(d => d.EtmIdTeam)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("PrcZspElem_Zespol");
+            });
+
+            modelBuilder.Entity<EmployeeTeamRole>(entity =>
+            {
+                entity.HasKey(e => e.EtrId)
+                    .HasName("EmployeeTeamRole_pk");
+
+                entity.ToTable("EmployeeTeamRole");
+
+                entity.Property(e => e.EtrId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("etr_id");
+
+                entity.Property(e => e.EtrDescription)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("etr_description");
+
+                entity.Property(e => e.EtrName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("etr_name");
             });
 
             modelBuilder.Entity<EmployeeTicket>(entity =>
@@ -613,54 +638,6 @@ namespace OneBan_TMS.Models
                     .HasConstraintName("ZadanieProjektu_Projekt");
             });
 
-            modelBuilder.Entity<Role>(entity =>
-            {
-                entity.HasKey(e => e.RolId)
-                    .HasName("Role_pk");
-
-                entity.ToTable("Role");
-
-                entity.Property(e => e.RolId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("rol_id");
-
-                entity.Property(e => e.RolDescription)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .IsUnicode(false)
-                    .HasColumnName("rol_description");
-
-                entity.Property(e => e.RolName)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("rol_name");
-            });
-
-            modelBuilder.Entity<Status>(entity =>
-            {
-                entity.HasKey(e => e.StsId)
-                    .HasName("Status_pk");
-
-                entity.ToTable("Status");
-
-                entity.Property(e => e.StsId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("sts_id");
-
-                entity.Property(e => e.StsDescription)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .IsUnicode(false)
-                    .HasColumnName("sts_description");
-
-                entity.Property(e => e.StsName)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("sts_name");
-            });
-
             modelBuilder.Entity<Team>(entity =>
             {
                 entity.HasKey(e => e.TemId)
@@ -711,11 +688,11 @@ namespace OneBan_TMS.Models
                     .HasColumnType("decimal(15, 2)")
                     .HasColumnName("tic_estimatedCost");
 
-                entity.Property(e => e.TicIdClient).HasColumnName("tic_idClient");
-
-                entity.Property(e => e.TicIdStatus).HasColumnName("tic_idStatus");
+                entity.Property(e => e.TicIdCustomer).HasColumnName("tic_idCustomer");
 
                 entity.Property(e => e.TicIdTicketPriority).HasColumnName("tic_idTicketPriority");
+
+                entity.Property(e => e.TicIdTicketStatus).HasColumnName("tic_idTicketStatus");
 
                 entity.Property(e => e.TicIdTicketType).HasColumnName("tic_idTicketType");
 
@@ -731,23 +708,23 @@ namespace OneBan_TMS.Models
                     .IsUnicode(false)
                     .HasColumnName("tic_topic");
 
-                entity.HasOne(d => d.TicIdClientNavigation)
+                entity.HasOne(d => d.TicIdCustomerNavigation)
                     .WithMany(p => p.Tickets)
-                    .HasForeignKey(d => d.TicIdClient)
+                    .HasForeignKey(d => d.TicIdCustomer)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Ticket_Customer");
-
-                entity.HasOne(d => d.TicIdStatusNavigation)
-                    .WithMany(p => p.Tickets)
-                    .HasForeignKey(d => d.TicIdStatus)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("Ticket_Status");
 
                 entity.HasOne(d => d.TicIdTicketPriorityNavigation)
                     .WithMany(p => p.Tickets)
                     .HasForeignKey(d => d.TicIdTicketPriority)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Ticket_TicketPriority");
+
+                entity.HasOne(d => d.TicIdTicketStatusNavigation)
+                    .WithMany(p => p.Tickets)
+                    .HasForeignKey(d => d.TicIdTicketStatus)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("Ticket_Status");
 
                 entity.HasOne(d => d.TicIdTicketTypeNavigation)
                     .WithMany(p => p.Tickets)
@@ -799,6 +776,30 @@ namespace OneBan_TMS.Models
                     .HasColumnName("tpi_description");
 
                 entity.Property(e => e.TpiWeight).HasColumnName("tpi_weight");
+            });
+
+            modelBuilder.Entity<TicketStatus>(entity =>
+            {
+                entity.HasKey(e => e.TstId)
+                    .HasName("TicketStatus_pk");
+
+                entity.ToTable("TicketStatus");
+
+                entity.Property(e => e.TstId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("tst_id");
+
+                entity.Property(e => e.TstDescription)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("tst_description");
+
+                entity.Property(e => e.TstName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("tst_name");
             });
 
             modelBuilder.Entity<TicketType>(entity =>

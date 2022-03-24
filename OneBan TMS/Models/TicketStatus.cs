@@ -5,16 +5,16 @@ using System.Collections.Generic;
 
 namespace OneBan_TMS.Models
 {
-    public partial class Status
+    public partial class TicketStatus
     {
-        public Status()
+        public TicketStatus()
         {
             Tickets = new HashSet<Ticket>();
         }
 
-        public int StsId { get; set; }
-        public string StsName { get; set; }
-        public string StsDescription { get; set; }
+        public int TstId { get; set; }
+        public string TstName { get; set; }
+        public string TstDescription { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; }
     }

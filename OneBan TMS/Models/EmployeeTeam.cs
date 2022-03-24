@@ -13,7 +13,7 @@ namespace OneBan_TMS.Models
         public int EtmIdRole { get; set; }
 
         public virtual Employee EtmIdEmployeeNavigation { get; set; }
-        public virtual Role EtmIdRoleNavigation { get; set; }
+        public virtual EmployeeTeamRole EtmIdRoleNavigation { get; set; }
         public virtual Team EtmIdTeamNavigation { get; set; }
     }
 }
