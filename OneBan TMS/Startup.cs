@@ -37,7 +37,11 @@ namespace OneBan_TMS
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("SQLConnection");
+            services.AddDbContextPool<OneManDbContext>(options =>
+                options.UseSqlServer(connectionString));
             
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<ICompanyRepository, CompanyRespository>();
             services.AddSingleton<IUserRepository, UserTestRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();

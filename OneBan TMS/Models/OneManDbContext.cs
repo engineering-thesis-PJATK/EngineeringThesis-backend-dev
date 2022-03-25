@@ -8,10 +8,6 @@ namespace OneBan_TMS.Models
 {
     public partial class OneManDbContext : DbContext
     {
-        public OneManDbContext()
-        {
-        }
-
         public OneManDbContext(DbContextOptions<OneManDbContext> options)
             : base(options)
         {
