@@ -12,9 +12,11 @@ namespace OneBan_TMS.Repository
     public class CompanyRespository : ICompanyRepository
     {
         private readonly OneManDbContext _context;
-        public CompanyRespository(OneManDbContext context)
+        private readonly IAddressRepository _addressRepository;
+        public CompanyRespository(OneManDbContext context, IAddressRepository addressRepository)
         {
             _context = context;
+            _addressRepository = addressRepository;
         }
 
         public async Task<IEnumerable<Company>> GetCompanies()
@@ -24,11 +26,20 @@ namespace OneBan_TMS.Repository
 
         public async Task<Company> GetCompanyById(int idCompany)
         {
-            return await _context.Companies.Where(x => x.CmpId == idCompany).FirstOrDefaultAsync();
+            return await _context
+                .Companies
+                .Where(x => x.CmpId == idCompany).FirstOrDefaultAsync();
         }
 
         public async Task AddNewCompany(CompanyDto newCompany)
         {
+            Address address = GetAddress(newCompany);
+            int? addressId = _addressRepository.GetAddressId(address);
+            if (addressId is null)
+            {
+                addressId = _addressRepository.AddNewAddress(address);
+            }
+            
             _context.Companies.Add(new Company()
             {
                 CmpName = newCompany.Name,
@@ -36,9 +47,24 @@ namespace OneBan_TMS.Repository
                 CmpNipPrefix = newCompany.NipPrefix,
                 CmpRegon = newCompany.Regon,
                 CmpKrsNumber = newCompany.KrsNumber,
-                CmpLandline = newCompany.Landline
+                CmpLandline = newCompany.Landline,
+                CmpIdAdress = (int)addressId
             });
             await _context.SaveChangesAsync();
         }
+
+        private Address GetAddress(CompanyDto companyDto)
+        {
+            return new Address()
+            {
+                AdrTown = companyDto.Town,
+                AdrStreet = companyDto.Street,
+                AdrStreetNumber = companyDto.StreetNumber,
+                AdrPostCode = companyDto.PostCode,
+                AdrCountry = companyDto.Country
+            };
+        }
+
+
     }
 }

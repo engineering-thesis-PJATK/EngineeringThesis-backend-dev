@@ -29,7 +29,7 @@ namespace OneBan_TMS.Controllers
             return Ok(companies);
         }
 
-        [HttpGet("/{idCompany}")]
+        [HttpGet("{idCompany}")]
         public async Task<IActionResult> GetCompanyById(int? idCompany)
         {
             if (idCompany == null)
@@ -41,9 +41,10 @@ namespace OneBan_TMS.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCompany([FromBody] CompanyDto newCompany)
+        public async Task<IActionResult> AddCompanyWithAddress([FromBody] CompanyDto newCompany)
         {
-            _companyRepository.AddNewCompany(newCompany);
+            await _companyRepository.AddNewCompany(newCompany);
+            return Ok("Added new company");
         }
     }
 }

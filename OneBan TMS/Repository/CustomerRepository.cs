@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
@@ -12,9 +13,19 @@ namespace OneBan_TMS.Repository
         {
             _context = context;
         }
-        public IEnumerable<CustomerDto> GetAllCustomersDto()
+        public IEnumerable<Customer> GetAllCustomers()
         {
-            return null;
+            return _context.Customers.ToList();
+        }
+
+        public Customer GetCustomerById(int customerId)
+        {
+            return _context.Customers.Where(x => x.CurId == customerId).SingleOrDefault();
+        }
+
+        public void AddNewCustomer()
+        {
+            throw new System.NotImplementedException();
         }
     }
     
