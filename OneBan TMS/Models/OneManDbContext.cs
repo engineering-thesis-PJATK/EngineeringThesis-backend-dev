@@ -111,11 +111,6 @@ namespace OneBan_TMS.Models
                     .ValueGeneratedNever()
                     .HasColumnName("cmp_id");
 
-<<<<<<< HEAD
-=======
-                entity.Property(e => e.CmpIdAddress).HasColumnName("cmp_idAdress");
-
->>>>>>> main
                 entity.Property(e => e.CmpKrsNumber)
                     .HasMaxLength(25)
                     .IsUnicode(false)
@@ -148,15 +143,6 @@ namespace OneBan_TMS.Models
                     .HasMaxLength(20)
                     .IsUnicode(false)
                     .HasColumnName("cmp_regon");
-<<<<<<< HEAD
-=======
-
-                entity.HasOne(d => d.CmpIdAddressNavigation)
-                    .WithMany(p => p.Companies)
-                    .HasForeignKey(d => d.CmpIdAddress)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("company_Address");
->>>>>>> main
             });
 
             modelBuilder.Entity<CompanyNote>(entity =>
