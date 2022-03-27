@@ -107,7 +107,7 @@ namespace OneBan_TMS.Models
                     .ValueGeneratedNever()
                     .HasColumnName("cmp_id");
 
-                entity.Property(e => e.CmpIdAdress).HasColumnName("cmp_idAdress");
+                entity.Property(e => e.CmpIdAddress).HasColumnName("cmp_idAdress");
 
                 entity.Property(e => e.CmpKrsNumber)
                     .HasMaxLength(25)
@@ -144,7 +144,7 @@ namespace OneBan_TMS.Models
 
                 entity.HasOne(d => d.CmpIdAdressNavigation)
                     .WithMany(p => p.Companies)
-                    .HasForeignKey(d => d.CmpIdAdress)
+                    .HasForeignKey(d => d.CmpIdAddress)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("company_Address");
             });
