@@ -6105,33 +6105,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jakub\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/mac/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\pjatk\\INŻYNIERKA\\kod\\EngineeringThesis-backend-dev\\OneBan TMS\\OneBan TMS.csproj",
+      "projectUniqueName": "/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/OneBan TMS.csproj",
       "projectName": "OneBan TMS",
-      "projectPath": "D:\\pjatk\\INŻYNIERKA\\kod\\EngineeringThesis-backend-dev\\OneBan TMS\\OneBan TMS.csproj",
-      "packagesPath": "C:\\Users\\Jakub\\.nuget\\packages\\",
-      "outputPath": "D:\\pjatk\\INŻYNIERKA\\kod\\EngineeringThesis-backend-dev\\OneBan TMS\\obj\\",
+      "projectPath": "/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/OneBan TMS.csproj",
+      "packagesPath": "/Users/mac/.nuget/packages/",
+      "outputPath": "/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/mac/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\devExpress\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6211,7 +6206,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
       }
     }
   }

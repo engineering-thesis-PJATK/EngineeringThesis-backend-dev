@@ -48,7 +48,7 @@ namespace OneBan_TMS.Repository
                 CmpRegon = newCompany.Regon,
                 CmpKrsNumber = newCompany.KrsNumber,
                 CmpLandline = newCompany.Landline,
-                CmpIdAdress = (int)addressId
+                CmpIdAddress = (int)addressId
             });
             await _context.SaveChangesAsync();
         }
