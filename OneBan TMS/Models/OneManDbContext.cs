@@ -71,6 +71,8 @@ namespace OneBan_TMS.Models
                     .IsUnicode(false)
                     .HasColumnName("adr_country");
 
+                entity.Property(e => e.AdrIdCompany).HasColumnName("adr_idCompany");
+
                 entity.Property(e => e.AdrPostCode)
                     .IsRequired()
                     .HasMaxLength(10)
@@ -94,6 +96,12 @@ namespace OneBan_TMS.Models
                     .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("adr_town");
+
+                entity.HasOne(d => d.AdrIdCompanyNavigation)
+                    .WithMany(p => p.Addresses)
+                    .HasForeignKey(d => d.AdrIdCompany)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("Address_Company");
             });
 
             modelBuilder.Entity<Company>(entity =>
@@ -106,8 +114,6 @@ namespace OneBan_TMS.Models
                 entity.Property(e => e.CmpId)
                     .ValueGeneratedNever()
                     .HasColumnName("cmp_id");
-
-                entity.Property(e => e.CmpIdAddress).HasColumnName("cmp_idAdress");
 
                 entity.Property(e => e.CmpKrsNumber)
                     .HasMaxLength(25)
@@ -141,12 +147,6 @@ namespace OneBan_TMS.Models
                     .HasMaxLength(20)
                     .IsUnicode(false)
                     .HasColumnName("cmp_regon");
-
-                entity.HasOne(d => d.CmpIdAdressNavigation)
-                    .WithMany(p => p.Companies)
-                    .HasForeignKey(d => d.CmpIdAddress)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("company_Address");
             });
 
             modelBuilder.Entity<CompanyNote>(entity =>

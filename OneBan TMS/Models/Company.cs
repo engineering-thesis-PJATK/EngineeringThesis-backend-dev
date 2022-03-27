@@ -9,6 +9,7 @@ namespace OneBan_TMS.Models
     {
         public Company()
         {
+            Addresses = new HashSet<Address>();
             CompanyNotes = new HashSet<CompanyNote>();
             Customers = new HashSet<Customer>();
             Projects = new HashSet<Project>();
@@ -21,9 +22,8 @@ namespace OneBan_TMS.Models
         public string CmpRegon { get; set; }
         public string CmpKrsNumber { get; set; }
         public string CmpLandline { get; set; }
-        public int CmpIdAddress { get; set; }
 
-        public virtual Address CmpIdAdressNavigation { get; set; }
+        public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<CompanyNote> CompanyNotes { get; set; }
         public virtual ICollection<Customer> Customers { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
