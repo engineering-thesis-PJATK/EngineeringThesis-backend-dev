@@ -24,6 +24,7 @@ namespace OneBan_TMS.Models
         public string CmpKrsNumber { get; set; }
         public string CmpLandline { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Address> Addresses { get; set; }
         [JsonIgnore]
         public virtual ICollection<CompanyNote> CompanyNotes { get; set; }

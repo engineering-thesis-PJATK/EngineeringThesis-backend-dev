@@ -15,11 +15,13 @@ namespace OneBan_TMS.Controllers
     {
         private readonly OneManDbContext _context;
         private readonly ICompanyRepository _companyRepository;
+
         public CompanyController(OneManDbContext context, ICompanyRepository companyRepository)
         {
             _context = context;
             _companyRepository = companyRepository;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetCompanies()
         {
@@ -34,17 +36,24 @@ namespace OneBan_TMS.Controllers
         {
             if (idCompany == null)
                 return BadRequest();
-            Company company = await _companyRepository.GetCompanyById((int)idCompany);
+            Company company = await _companyRepository.GetCompanyById((int) idCompany);
             if (company is null)
                 return NotFound();
             return Ok(company);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCompanyWithAddress([FromBody] CompanyDto newCompany)
+        public async Task<IActionResult> AddCompany([FromBody] CompanyDto newCompany)
         {
             await _companyRepository.AddNewCompany(newCompany);
             return Ok("Added new company");
+        }
+
+        [HttpPut("{idCompany}")]
+        public async Task<IActionResult> UpdateCompany([FromBody] CompanyDto updatedCompany, int idCompany)
+        {
+            await _companyRepository.UpdateCompany(updatedCompany, idCompany);
+            return Ok("Company updated");
         }
     }
 }

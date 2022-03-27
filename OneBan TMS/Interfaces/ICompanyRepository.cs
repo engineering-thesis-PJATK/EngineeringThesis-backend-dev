@@ -11,5 +11,6 @@ namespace OneBan_TMS.Interfaces
         Task<IEnumerable<Company>> GetCompanies();
         Task<Company> GetCompanyById(int idCompany);
         Task AddNewCompany(CompanyDto newCompany);
+        Task UpdateCompany(CompanyDto updatedCompany, int idCompany);
     }
 }

@@ -12,13 +12,9 @@ namespace OneBan_TMS.Repository
     public class CompanyRespository : ICompanyRepository
     {
         private readonly OneManDbContext _context;
-        //private readonly IAddressRepository _addressRepository;
-        public CompanyRespository(OneManDbContext context
-            //, IAddressRepository addressRepository
-            )
+        public CompanyRespository(OneManDbContext context)
         {
             _context = context;
-            //_addressRepository = addressRepository;
         }
 
         public async Task<IEnumerable<Company>> GetCompanies()
@@ -35,13 +31,6 @@ namespace OneBan_TMS.Repository
 
         public async Task AddNewCompany(CompanyDto newCompany)
         {
-            //Address address = GetAddress(newCompany);
-            //int? addressId = _addressRepository.GetAddressId(address);
-            //if (addressId is null)
-            //{
-            //    addressId = _addressRepository.AddNewAddress(address);
-            //}
-            
             _context.Companies.Add(new Company()
             {
                 CmpName = newCompany.Name,
@@ -49,24 +38,25 @@ namespace OneBan_TMS.Repository
                 CmpNipPrefix = newCompany.NipPrefix,
                 CmpRegon = newCompany.Regon,
                 CmpKrsNumber = newCompany.KrsNumber,
-                CmpLandline = newCompany.Landline,
-                //CmpIdAddress = (int)addressId
+                CmpLandline = newCompany.Landline
             });
             await _context.SaveChangesAsync();
         }
 
-        //private Address GetAddress(CompanyDto companyDto)
-        //{
-        //    return new Address()
-        //    {
-        //        AdrTown = companyDto.Town,
-        //        AdrStreet = companyDto.Street,
-        //        AdrStreetNumber = companyDto.StreetNumber,
-        //        AdrPostCode = companyDto.PostCode,
-        //        AdrCountry = companyDto.Country
-        //    };
-        //}
-
-
+        public async Task UpdateCompany(CompanyDto updatedCompanyDto, int idCompany)
+        {
+            var companyToUpdate = await _context
+                .Companies
+                .Where(x => x.CmpId == idCompany)
+                .SingleOrDefaultAsync();
+            companyToUpdate.CmpName = updatedCompanyDto.Name;
+            companyToUpdate.CmpNip = updatedCompanyDto.Nip;
+            companyToUpdate.CmpNipPrefix = updatedCompanyDto.NipPrefix;
+            companyToUpdate.CmpRegon = updatedCompanyDto.Regon;
+            companyToUpdate.CmpKrsNumber = updatedCompanyDto.KrsNumber;
+            companyToUpdate.CmpLandline = updatedCompanyDto.Landline;
+            await _context.SaveChangesAsync();
+        }
+        
     }
 }

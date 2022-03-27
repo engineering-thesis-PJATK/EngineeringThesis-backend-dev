@@ -19,16 +19,24 @@ namespace OneBan_TMS.Controllers
             _context = context;
             _employeeRepository = employeeRepository;
         }
-        [HttpGet("employees")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetEmployeesList()
         {
             return Ok(_employeeRepository.GetAllEmployeeDto());
         }
 
-        [HttpGet("employees/{employeeId}")]
+        [HttpGet("{employeeId}")]
         public async Task<ActionResult<EmployeeDto>> GetEmployeeById(int employeeId)
         {
             return Ok(_employeeRepository.GetEmployeeByIdDto(employeeId));
+        }
+        [HttpGet("privilages")]
+        public async Task<ActionResult<EmployeePrivilege>> GetAllEmployeePrivilages()
+        {
+            var privilages = await _employeeRepository.GetAllEmployeePrivilages();
+            if (privilages is null)
+                return BadRequest("List of employee privilages is empty");
+            return Ok(privilages);
         }
     }
 }

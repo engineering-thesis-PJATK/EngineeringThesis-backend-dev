@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
@@ -80,6 +81,14 @@ namespace OneBan_TMS.Repository
                 Roles = employee.Roles,
                 EmployeeTeams = employee.Teams
             };
+        }
+
+        public async Task<List<EmployeePrivilege>> GetAllEmployeePrivilages()
+        {
+            var privilages = await _context
+                .EmployeePrivileges
+                .ToListAsync();
+            return privilages;
         }
     }
 }
