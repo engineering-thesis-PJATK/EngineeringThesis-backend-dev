@@ -103,7 +103,7 @@ namespace OneBan_TMS.Models
                     .ValueGeneratedNever()
                     .HasColumnName("cmp_id");
 
-                entity.Property(e => e.CmpIdAddress).HasColumnName("cmp_idAdress");
+                entity.Property(e => e.CmpIdAddress).HasColumnName("cmp_idAddress");
 
                 entity.Property(e => e.CmpKrsNumber)
                     .HasMaxLength(25)
