@@ -37,7 +37,12 @@ namespace OneBan_TMS
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("SQLConnection");
+            services.AddDbContextPool<OneManDbContext>(options =>
+                options.UseSqlServer(connectionString));
             
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<ICompanyRepository, CompanyRespository>();
+            services.AddTransient<IAddressRepository, AddressRepository>();
             services.AddSingleton<IUserRepository, UserTestRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
@@ -65,6 +70,28 @@ namespace OneBan_TMS
                 });
                 c.OperationFilter<SecurityRequirementsOperationFilter>();
             });
+
+            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("https://localhost:44351", "http://localhost:4200")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                    });
+            });
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "AllowOrigin",
+                    builder =>
+                    {
+                        builder.WithOrigins("https://localhost:44351", "http://localhost:4200")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,8 +103,15 @@ namespace OneBan_TMS
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "OneBan_TMS v1"));
             }
-
-            app.UseHttpsRedirection();
+            app.UseCors();
+            app.UseCors(builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
             app.UseAuthentication();

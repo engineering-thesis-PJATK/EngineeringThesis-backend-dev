@@ -5,7 +5,24 @@
     <projectFile profileName="OneBan_TMS">OneBan TMS.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="" />
+    <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Interfaces/IEmployeeRepository 2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Company.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Company.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/EmployeeDto 2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/OneManDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/OneManDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CompanyRespository 2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CompanyRespository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRespository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository 2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,10 +35,31 @@
       </map>
     </option>
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8c54972f91e9f1369a47cbb0a8a950e5e423d1e344b06b2fe0849c2f6189f0/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e1484285a74a99576bcaa6beeabaa860772b371667c5916490f5db546ebeaaa/Check.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42f1ce9bd637bd455c8a40c894ef3fc639e43be997c28f437a86cf7a30c61a/ControllerFactoryProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/281c9e9ab635e2816b18f73989bfeda2795b47901b83661d332a436143fa/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a5a6b6c80ee559cba15cee99e683c4aeaf11c1d7291fe28c478f57ed8eecf/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/744e2af10aa289fa4c08decbc66703416743c9aaa23438abce9aaf54cf92b7/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/68fc5ad0886fd312312e30db4190515feb571d24935b49c048b9e2e41c0c2e7/Nullable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4afdf1deed9ff75b13d6e21cddb8f3fddfcdc89691e2627d9ea0cfb865b58/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d8a60c2706cc23f846894d1617d9e537c21f1f2de48b898444a131bfdcd79e8/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3cc961dce4a43b15883598f16c613e026d911f592c5eefba8ba6551afc4032/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f40db1c9df947a85fe7869240d245473af55e37bd2ed3d1b7d753d4213268ce/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d0aa7ce3e9dd6b8740baace22ea39f9a57cd66ccdcefef2eebb1846fb82ae/TypeUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/33918e307316ea048242c24290cba34e538ec8e4f0d3d621c85ee92c6162f8/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aad1ee7b1494bbac3a5b4e162de865199149c36d8545259f5af35fb1c087a0/RuntimeType.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1ea15c934d291d6084bac3be431584511bf43433861f7bc4a287980635fbda/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3debe82a6826973afda298e63c9c1d079c533915b49f1530c93827392675f7/Type.Helpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9824eb6c75687487743ea8f99e3265c764aa45d0a4564dd276d8f85cc6abc9a/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d0bb137a37d883ce362cc9496f51c16245ec6911262816e815ca2842b1bf/Type.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85cbcb5577973ef64f45839929ed9968ffaa1a844adc7cb4fc2c4c267a2b9/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,6 +128,13 @@
       <workItem from="1647192285312" duration="3616000" />
       <workItem from="1647205678587" duration="194000" />
       <workItem from="1647205907996" duration="7397000" />
+      <workItem from="1648230799977" duration="16992000" />
+      <workItem from="1648295984002" duration="2843000" />
+      <workItem from="1648304027072" duration="4851000" />
+      <workItem from="1648310873540" duration="12000" />
+      <workItem from="1648362772859" duration="1851000" />
+      <workItem from="1648381270727" duration="1501000" />
+      <workItem from="1648387885074" duration="443000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
