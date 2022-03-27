@@ -6,18 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Interfaces/IAddressRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interfaces/IUserRepostiory2.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Repository/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AddressController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompanyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IAddress.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ICustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/ICustomerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/CompanyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/CompanyDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/CustomerDto.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/AddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AddressRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/CompanyRespository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRespository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CustomerRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
@@ -60,12 +52,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/33918e307316ea048242c24290cba34e538ec8e4f0d3d621c85ee92c6162f8/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aad1ee7b1494bbac3a5b4e162de865199149c36d8545259f5af35fb1c087a0/RuntimeType.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1ea15c934d291d6084bac3be431584511bf43433861f7bc4a287980635fbda/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3debe82a6826973afda298e63c9c1d079c533915b49f1530c93827392675f7/Type.Helpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9824eb6c75687487743ea8f99e3265c764aa45d0a4564dd276d8f85cc6abc9a/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d0bb137a37d883ce362cc9496f51c16245ec6911262816e815ca2842b1bf/Type.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85cbcb5577973ef64f45839929ed9968ffaa1a844adc7cb4fc2c4c267a2b9/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -138,6 +128,8 @@
       <workItem from="1648295984002" duration="2843000" />
       <workItem from="1648304027072" duration="4851000" />
       <workItem from="1648310873540" duration="12000" />
+      <workItem from="1648362772859" duration="1851000" />
+      <workItem from="1648381270727" duration="1027000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -189,49 +181,5 @@
     <MESSAGE value="added method to homecontroler" />
     <MESSAGE value="Branch test" />
     <option name="LAST_COMMIT_MESSAGE" value="Branch test" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Controllers/CompanyController.cs</url>
-          <line>44</line>
-          <properties documentPath="$PROJECT_DIR$/Controllers/CompanyController.cs" initialLine="44" containingFunctionPresentation="method 'AddCompanyWithAddress'">
-            <startOffsets>
-              <option value="1487" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1488" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Controllers/CompanyController.cs</url>
-          <line>45</line>
-          <properties documentPath="$PROJECT_DIR$/Controllers/CompanyController.cs" initialLine="45" containingFunctionPresentation="method 'AddCompanyWithAddress'">
-            <startOffsets>
-              <option value="1501" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1552" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/AddressRepository.cs</url>
-          <line>19</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/AddresRepository.cs" initialLine="19" containingFunctionPresentation="method 'AddNewAddress'" />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/AddressRepository.cs</url>
-          <line>17</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/AddresRepository.cs" initialLine="17" containingFunctionPresentation="method 'AddNewAddress'" />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -24,7 +24,7 @@ namespace OneBan_TMS.Repository
         {
             if (!(AddressExists(address)))
             {
-                int addressId = _context
+               var addressId = _context
                     .Addresses
                     .Where(x => x.AdrTown.ToUpper() == address.AdrTown.ToUpper()
                                 && x.AdrStreet.ToUpper() == address.AdrStreet.ToUpper()
@@ -39,7 +39,7 @@ namespace OneBan_TMS.Repository
 
         private bool AddressExists(Address address)
         {
-            bool result = _context
+            var result = _context
                 .Addresses
                 .Where(x => x.AdrTown.ToUpper() == address.AdrTown.ToUpper()
                             && x.AdrStreet.ToUpper() == address.AdrStreet.ToUpper()
