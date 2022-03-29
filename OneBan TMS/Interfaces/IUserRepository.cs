@@ -4,13 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using OneBan_TMS.Models;
 
 namespace OneBan_TMS.Interfaces
 {
     public interface IUserRepository
     {
-        User GetUserByEmail(string emailAddress);
-        void AddNewUser(UserDto user, byte[] PasswordHash, byte[] PasswordSalt);
-        Roles? GetUserRole(string role);
+        Task<Employee> GetUserByEmail(string emailAddress);
+        Task AddNewUser(UserDto user, byte[] PasswordHash, byte[] PasswordSalt);
+
+        //Task<EmployeePrivilege> GetUserRole();
+        //Roles? GetUserRole(string role);
     }
 }

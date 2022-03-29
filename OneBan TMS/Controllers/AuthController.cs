@@ -31,13 +31,13 @@ namespace OneBan_TMS.Controllers
         public async Task<ActionResult<User>> Register([FromBody]UserDto userDto)
         {
             _passwordHandler.CreatePasswordHash(userDto.Password, out byte[] passwordHash, out byte[] passwordSalt);
-            _userRepository.AddNewUser(userDto, passwordHash, passwordSalt);
+            await _userRepository.AddNewUser(userDto, passwordHash, passwordSalt);
             return Ok(userDto);
         }
         [HttpPost("login")]
         public async Task<ActionResult<string>> Login([FromBody]CredentialsDto request)
         {
-            var user = _userRepository.GetUserByEmail(request.Email);
+            /*var user = _userRepository.GetUserByEmail(request.Email);
             if (user is null)
             {
                 return BadRequest("User not found");
@@ -48,6 +48,8 @@ namespace OneBan_TMS.Controllers
             }
             string token = _tokenHandler.CreateToken(user.Email, (Roles)_userRepository.GetUserRole(user.Role));
             return Ok(token);
+            */
+            return Ok();
         }
     }
 }

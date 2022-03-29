@@ -6,37 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/DTOs/AddressDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompanyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IAddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IAddressRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ICompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/ICompanyRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Address.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Company.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Company.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/CompanyNote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CompanyNote.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/CompanyNoteAttachment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CompanyNoteAttachment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Correspondence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Correspondence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/CorrespondenceAttachment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CorrespondenceAttachment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Customer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Employee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/EmployeePrivilege.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeePrivilege.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/EmployeePrivilegeEmployee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeePrivilegeEmployee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/EmployeeTeam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeTeam.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/EmployeeTeamRole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeTeamRole.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/EmployeeTicket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeTicket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/OneManDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/OneManDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/OrganizationalTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/OrganizationalTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Project.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ProjectTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ProjectTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Team.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Team.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Ticket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Ticket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/TicketNote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TicketNote.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/TicketPriority.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TicketPriority.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/TicketStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TicketStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/TicketType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TicketType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/TimeEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TimeEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/AddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AddressRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/CompanyRespository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRespository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/IUserRepostiory2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/UserTestRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/UserTestRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
@@ -44,6 +20,7 @@
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,24 +44,27 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/281c9e9ab635e2816b18f73989bfeda2795b47901b83661d332a436143fa/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1f954fdea3f9be2ed39f879a74e4e3e1dd7b0562bfd4ff55e24e6478da11c33/Convert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a5a6b6c80ee559cba15cee99e683c4aeaf11c1d7291fe28c478f57ed8eecf/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/744e2af10aa289fa4c08decbc66703416743c9aaa23438abce9aaf54cf92b7/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/68fc5ad0886fd312312e30db4190515feb571d24935b49c048b9e2e41c0c2e7/Nullable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d55039925d16994d25bd1e6839b4a1d48fd160cbc63d53e219d2bc43f97451f8/StringBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4afdf1deed9ff75b13d6e21cddb8f3fddfcdc89691e2627d9ea0cfb865b58/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d8a60c2706cc23f846894d1617d9e537c21f1f2de48b898444a131bfdcd79e8/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3cc961dce4a43b15883598f16c613e026d911f592c5eefba8ba6551afc4032/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f40db1c9df947a85fe7869240d245473af55e37bd2ed3d1b7d753d4213268ce/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d0aa7ce3e9dd6b8740baace22ea39f9a57cd66ccdcefef2eebb1846fb82ae/TypeUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/33918e307316ea048242c24290cba34e538ec8e4f0d3d621c85ee92c6162f8/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b6d9aef891d740fada4474a66a67cc9d76348d742c9818aa2f7592a2e55aa7/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aad1ee7b1494bbac3a5b4e162de865199149c36d8545259f5af35fb1c087a0/RuntimeType.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1ea15c934d291d6084bac3be431584511bf43433861f7bc4a287980635fbda/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3debe82a6826973afda298e63c9c1d079c533915b49f1530c93827392675f7/Type.Helpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9824eb6c75687487743ea8f99e3265c764aa45d0a4564dd276d8f85cc6abc9a/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d4ed1477b5cc138cf1611bbda55a61eee8d29fb9d6146bb88a539b31df21d8/Helpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d0bb137a37d883ce362cc9496f51c16245ec6911262816e815ca2842b1bf/Type.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85cbcb5577973ef64f45839929ed9968ffaa1a844adc7cb4fc2c4c267a2b9/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d43421188d9f41dba1d2aa180ce09c34a2200/e8/9771e2d5/HMACSHA512.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -162,6 +142,8 @@
       <workItem from="1648387885074" duration="1160000" />
       <workItem from="1648394868769" duration="1674000" />
       <workItem from="1648492740119" duration="6285000" />
+      <workItem from="1648537920512" duration="235000" />
+      <workItem from="1648582075334" duration="2405000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -213,5 +195,24 @@
     <MESSAGE value="added method to homecontroler" />
     <MESSAGE value="Branch test" />
     <option name="LAST_COMMIT_MESSAGE" value="Branch test" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/AuthController.cs</url>
+          <line>32</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/AuthController.cs" initialLine="32" containingFunctionPresentation="method 'Register'">
+            <startOffsets>
+              <option value="1200" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1304" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

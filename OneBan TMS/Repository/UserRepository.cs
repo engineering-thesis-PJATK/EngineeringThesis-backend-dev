@@ -1,5 +1,8 @@
 using System;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Enum;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
@@ -7,26 +10,27 @@ using OneBan_TMS.Models.DTOs;
 
 namespace OneBan_TMS.Repository
 {
-    public class UserRepository : IUserRepostiory2
+    public class UserRepository : IUserRepository
     {
         private readonly OneManDbContext _context;
         public UserRepository(OneManDbContext context)
         {
             _context = context;
         }
-
-        public Employee GetUserByEmail(string emailAddress)
+        public async Task<Employee> GetUserByEmail(string emailAddress)
         {
-            Employee employee = _context
+            Employee employee = await _context
                 .Employees
                 .Where(
                     x => x.EmpEmail.Equals(emailAddress))
-                .SingleOrDefault();
+                .SingleOrDefaultAsync();
             return employee;
         }
-
-        public void AddNewUser(UserDto user, byte[] passwordHash, byte[] passwordSalt)
+        public async Task AddNewUser(UserDto user, byte[] passwordHash, byte[] passwordSalt)
         {
+            StringBuilder passwordConnector = new StringBuilder();
+            passwordConnector.Append(ConvertByteArrayToString(passwordHash));
+            passwordConnector.Append(ConvertByteArrayToString(passwordSalt));
             _context.Add(new Employee()
             {
                 EmpLogin = user.Email,
@@ -34,13 +38,20 @@ namespace OneBan_TMS.Repository
                 EmpSurname = user.LastName,
                 EmpEmail = user.Email,
                 EmpPhoneNumber = user.PhoneNumber,
-                EmpCreatedAt = DateTime.Now
+                EmpCreatedAt = DateTime.Now,
+                EmpPassword = passwordConnector.ToString()
             });
+            await _context.SaveChangesAsync();
         }
 
-        public Roles? GetUserRole(string role)
+        private string ConvertByteArrayToString(byte[] array)
         {
-            throw new System.NotImplementedException();
+            return Convert.ToBase64String(array);
+        }
+
+        private byte[] ConvertStringToByteArray(string text)
+        {
+            return Convert.FromBase64String(text);
         }
     }
 }

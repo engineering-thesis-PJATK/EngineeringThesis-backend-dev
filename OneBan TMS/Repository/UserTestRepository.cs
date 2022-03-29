@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace OneBan_TMS.Repository
 {
-    public class UserTestRepository : IUserRepository
+    public class UserTestRepository
     {
-        List<User> _users = new List<User>();
+        /*List<User> _users = new List<User>();
         public void AddNewUser(UserDto user, byte[] PasswordHash, byte[] PasswordSalt)
         {
             _users.Add(new User() 
@@ -37,5 +37,7 @@ namespace OneBan_TMS.Repository
                 return Roles.User;
             return null;
         }
+    }
+    */
     }
 }
