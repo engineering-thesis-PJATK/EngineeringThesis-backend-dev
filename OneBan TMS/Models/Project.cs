@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -11,7 +12,7 @@ namespace OneBan_TMS.Models
         {
             ProjectTasks = new HashSet<ProjectTask>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProId { get; set; }
         public string ProName { get; set; }
         public string ProDescription { get; set; }

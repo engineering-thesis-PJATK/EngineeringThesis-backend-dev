@@ -58,7 +58,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("Address");
 
                 entity.Property(e => e.AdrId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("adr_id");
 
                 entity.Property(e => e.AdrCountry)
@@ -108,7 +108,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("Company");
 
                 entity.Property(e => e.CmpId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("cmp_id");
 
                 entity.Property(e => e.CmpKrsNumber)
@@ -153,7 +153,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("CompanyNote");
 
                 entity.Property(e => e.CntId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("cnt_id");
 
                 entity.Property(e => e.CntContent)
@@ -178,7 +178,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("CompanyNoteAttachment");
 
                 entity.Property(e => e.CnaId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("cna_id");
 
                 entity.Property(e => e.CnaBinaryData)
@@ -208,7 +208,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("Correspondence");
 
                 entity.Property(e => e.CorId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("cor_id");
 
                 entity.Property(e => e.CorBody)
@@ -259,7 +259,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("CorrespondenceAttachment");
 
                 entity.Property(e => e.CatId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("cat_id");
 
                 entity.Property(e => e.CatBinaryData)
@@ -289,7 +289,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("Customer");
 
                 entity.Property(e => e.CurId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("cur_id");
 
                 entity.Property(e => e.CurComments)
@@ -348,7 +348,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("Employee");
 
                 entity.Property(e => e.EmpId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("emp_id");
 
                 entity.Property(e => e.EmpCreatedAt)
@@ -399,7 +399,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("EmployeePrivilege");
 
                 entity.Property(e => e.EpvId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("epv_id");
 
                 entity.Property(e => e.EpvDescription)
@@ -423,7 +423,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("EmployeePrivilegeEmployee");
 
                 entity.Property(e => e.EpeId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("epe_id");
 
                 entity.Property(e => e.EpeIdEmployee).HasColumnName("epe_idEmployee");
@@ -451,7 +451,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("EmployeeTeam");
 
                 entity.Property(e => e.EtmId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("etm_id");
 
                 entity.Property(e => e.EtmIdEmployee).HasColumnName("etm_idEmployee");
@@ -487,7 +487,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("EmployeeTeamRole");
 
                 entity.Property(e => e.EtrId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("etr_id");
 
                 entity.Property(e => e.EtrDescription)
@@ -511,7 +511,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("EmployeeTicket");
 
                 entity.Property(e => e.EtsId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("ets_id");
 
                 entity.Property(e => e.EtsIdEmployee).HasColumnName("ets_idEmployee");
@@ -539,7 +539,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("OrganizationalTask");
 
                 entity.Property(e => e.OtkId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("otk_id");
 
                 entity.Property(e => e.OtkDescription)
@@ -565,7 +565,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("Project");
 
                 entity.Property(e => e.ProId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("pro_id");
 
                 entity.Property(e => e.ProCompletedAt)
@@ -613,7 +613,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("ProjectTask");
 
                 entity.Property(e => e.PtkId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("ptk_id");
 
                 entity.Property(e => e.PtkContent)
@@ -642,7 +642,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("Team");
 
                 entity.Property(e => e.TemId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("tem_id");
 
                 entity.Property(e => e.TemName)
@@ -659,7 +659,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("Ticket");
 
                 entity.Property(e => e.TicId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("tic_id");
 
                 entity.Property(e => e.TicCompletedAt)
@@ -737,7 +737,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("TicketNote");
 
                 entity.Property(e => e.TntId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("tnt_id");
 
                 entity.Property(e => e.TntContent)
@@ -762,7 +762,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("TicketPriority");
 
                 entity.Property(e => e.TpiId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("tpi_id");
 
                 entity.Property(e => e.TpiDescription)
@@ -782,7 +782,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("TicketStatus");
 
                 entity.Property(e => e.TstId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("tst_id");
 
                 entity.Property(e => e.TstDescription)
@@ -830,7 +830,7 @@ namespace OneBan_TMS.Models
                 entity.ToTable("TimeEntry");
 
                 entity.Property(e => e.TesId)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("tes_id");
 
                 entity.Property(e => e.TesCreatedAt)

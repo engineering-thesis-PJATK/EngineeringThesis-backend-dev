@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 #nullable disable
@@ -15,7 +16,8 @@ namespace OneBan_TMS.Models
             Customers = new HashSet<Customer>();
             Projects = new HashSet<Project>();
         }
-
+        
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CmpId { get; set; }
         public string CmpName { get; set; }
         public string CmpNip { get; set; }

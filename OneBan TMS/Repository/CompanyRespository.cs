@@ -57,6 +57,12 @@ namespace OneBan_TMS.Repository
             companyToUpdate.CmpLandline = updatedCompanyDto.Landline;
             await _context.SaveChangesAsync();
         }
-        
+
+        public bool ExistsCompany(int idCompany)
+        {
+            if(_context.Companies.Where(x => x.CmpId == idCompany).Any()) 
+                return true;
+            return false;
+        }
     }
 }

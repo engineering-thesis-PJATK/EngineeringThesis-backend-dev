@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -11,7 +12,7 @@ namespace OneBan_TMS.Models
         {
             TimeEntries = new HashSet<TimeEntry>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PtkId { get; set; }
         public string PtkContent { get; set; }
         public decimal PtkEstimatedCost { get; set; }

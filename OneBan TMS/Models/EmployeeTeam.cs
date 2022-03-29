@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -7,6 +8,7 @@ namespace OneBan_TMS.Models
 {
     public partial class EmployeeTeam
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EtmId { get; set; }
         public int EtmIdEmployee { get; set; }
         public int EtmIdTeam { get; set; }

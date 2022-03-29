@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 #nullable disable
@@ -15,7 +16,7 @@ namespace OneBan_TMS.Models
             EmployeeTickets = new HashSet<EmployeeTicket>();
             OrganizationalTasks = new HashSet<OrganizationalTask>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmpId { get; set; }
         public string EmpLogin { get; set; }
         [JsonIgnore]

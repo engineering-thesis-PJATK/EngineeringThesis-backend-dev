@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -11,7 +12,7 @@ namespace OneBan_TMS.Models
         {
             EmployeePrivilegeEmployees = new HashSet<EmployeePrivilegeEmployee>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EpvId { get; set; }
         public string EpvName { get; set; }
         public string EpvDescription { get; set; }

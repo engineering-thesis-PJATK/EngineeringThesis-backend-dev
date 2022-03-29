@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -11,7 +12,7 @@ namespace OneBan_TMS.Models
         {
             Tickets = new HashSet<Ticket>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TtpId { get; set; }
         public string TtpName { get; set; }
         public string TtpDescription { get; set; }

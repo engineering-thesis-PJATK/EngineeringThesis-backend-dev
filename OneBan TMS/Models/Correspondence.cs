@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -11,7 +12,7 @@ namespace OneBan_TMS.Models
         {
             CorrespondenceAttachments = new HashSet<CorrespondenceAttachment>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CorId { get; set; }
         public string CorSender { get; set; }
         public string CorReceiver { get; set; }

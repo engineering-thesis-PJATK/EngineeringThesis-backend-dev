@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -7,6 +8,7 @@ namespace OneBan_TMS.Models
 {
     public partial class TimeEntry
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TesId { get; set; }
         public DateTime TesCreatedAt { get; set; }
         public DateTime TesUpdatedAt { get; set; }

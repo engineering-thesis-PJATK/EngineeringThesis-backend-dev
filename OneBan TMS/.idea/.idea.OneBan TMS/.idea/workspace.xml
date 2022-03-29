@@ -6,29 +6,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/AddressDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/CompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompanyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/IAddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IAddressRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interfaces/ICompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/ICompanyRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IEmployeeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/CompanyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/CompanyDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Address.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Company.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Company.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/CompanyNote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CompanyNote.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/CompanyNoteAttachment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CompanyNoteAttachment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Correspondence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Correspondence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/CorrespondenceAttachment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CorrespondenceAttachment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Customer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Employee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/EmployeePrivilege.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeePrivilege.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/EmployeePrivilegeEmployee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeePrivilegeEmployee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/EmployeeTeam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeTeam.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/EmployeeTeamRole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeTeamRole.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/EmployeeTicket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeTicket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/OneManDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/OneManDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/OrganizationalTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/OrganizationalTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Project.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/ProjectTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ProjectTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Team.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Team.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Ticket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Ticket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/TicketNote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TicketNote.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/TicketPriority.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TicketPriority.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/TicketStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TicketStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/TicketType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TicketType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/TimeEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TimeEntry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/AddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AddressRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/CompanyRespository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRespository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +67,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/281c9e9ab635e2816b18f73989bfeda2795b47901b83661d332a436143fa/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a5a6b6c80ee559cba15cee99e683c4aeaf11c1d7291fe28c478f57ed8eecf/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/744e2af10aa289fa4c08decbc66703416743c9aaa23438abce9aaf54cf92b7/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/68fc5ad0886fd312312e30db4190515feb571d24935b49c048b9e2e41c0c2e7/Nullable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -60,6 +77,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3cc961dce4a43b15883598f16c613e026d911f592c5eefba8ba6551afc4032/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f40db1c9df947a85fe7869240d245473af55e37bd2ed3d1b7d753d4213268ce/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d0aa7ce3e9dd6b8740baace22ea39f9a57cd66ccdcefef2eebb1846fb82ae/TypeUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/33918e307316ea048242c24290cba34e538ec8e4f0d3d621c85ee92c6162f8/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aad1ee7b1494bbac3a5b4e162de865199149c36d8545259f5af35fb1c087a0/RuntimeType.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1ea15c934d291d6084bac3be431584511bf43433861f7bc4a287980635fbda/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -142,7 +160,8 @@
       <workItem from="1648362772859" duration="1851000" />
       <workItem from="1648381270727" duration="1501000" />
       <workItem from="1648387885074" duration="1160000" />
-      <workItem from="1648394868769" duration="1358000" />
+      <workItem from="1648394868769" duration="1674000" />
+      <workItem from="1648492740119" duration="6285000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
