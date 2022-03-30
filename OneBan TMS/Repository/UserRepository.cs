@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,12 +44,33 @@ namespace OneBan_TMS.Repository
             });
             await _context.SaveChangesAsync();
         }
+        public void GetPasswordParts(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        {
+            if (password.Length != 260)
+                throw new ArgumentException("Password is to short");
+            string passwordBase64Hash = password.Substring(0, 88);
+            string passwordBase64Salt = password.Substring(88, 172).Trim();
+            passwordHash = ConvertStringToByteArray(passwordBase64Hash);
+            passwordSalt = ConvertStringToByteArray(passwordBase64Salt);
+            
+        }
+        public async Task<string> GetUserRole(string userEmail)
+        {
+            List<string> userRoles = await _context
+                .EmployeePrivilegeEmployees
+                .Where(x => x.EpeIdEmployeeNavigation.EmpEmail == userEmail)
+                .Select(x => x.EpeIdEmployeePrivilageNavigation.EpvName)
+                .ToListAsync();
+            if (userRoles.Contains("Admin"))
+                return "Admin";
+            else
+                return "User";
+        }
 
         private string ConvertByteArrayToString(byte[] array)
         {
             return Convert.ToBase64String(array);
         }
-
         private byte[] ConvertStringToByteArray(string text)
         {
             return Convert.FromBase64String(text);

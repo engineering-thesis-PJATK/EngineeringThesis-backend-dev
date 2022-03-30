@@ -18,12 +18,12 @@ namespace OneBan_TMS.Handlers
         {
             _configuration = configuration;
         }
-        public string CreateToken(string Email, Roles Role)
+        public string CreateToken(string email, string role)
         {
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, Email),
-                new Claim(ClaimTypes.Role, Role.ToString())
+                new Claim(ClaimTypes.Email, email),
+                new Claim(ClaimTypes.Role, role.ToString())
             };
             string tmp = _configuration.GetSection("AppSettings").GetSection("Token").Value;
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(tmp));

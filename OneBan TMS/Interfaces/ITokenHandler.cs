@@ -8,6 +8,6 @@ namespace OneBan_TMS.Interfaces
 {
     public interface ITokenHandler
     {
-        string CreateToken(string Email, Roles Role);
+        string CreateToken(string email, string role);
     }
 }
