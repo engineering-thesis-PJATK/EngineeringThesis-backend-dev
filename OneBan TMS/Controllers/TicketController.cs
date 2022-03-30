@@ -1,6 +1,9 @@
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Graph;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 
@@ -8,37 +11,38 @@ namespace OneBan_TMS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class TicketController : ControllerBase
     {
-        private ITicket Ticket { get; init; }
-
-        public TicketController(ITicket ticket)
+        private readonly ITicketRepository _ticketRepository;
+        public TicketController(ITicketRepository ticketRepository)
         {
-            this.Ticket = ticket;
+            _ticketRepository = ticketRepository;
         }
         
-        [HttpGet("GetTicketById"), Authorize (Roles = "Admin")]
-        public IActionResult GetTicketById(int ticketId)
+        //[HttpGet("{idTicket}"), Authorize (Roles = "Admin")]
+        [HttpGet("{idTicket}")]
+        public async Task<ActionResult> GetTicketById(int idTicket)
         {
-            if (ticketId < 1)
-                return BadRequest();
+            if (idTicket < 1)
+                return BadRequest("Ticket Id must be greater than 0");
 
-            Ticket singleTicket = Ticket.GetTicketById(ticketId);
+            Ticket singleTicket = await _ticketRepository.GetTicketById(idTicket);
             if (singleTicket is null)
-                return NotFound();
+                return NotFound($"There is no ticket with id {idTicket}");
             
             return Ok(singleTicket);
         }
         
-        [HttpGet("GetAllTickets")]
-        public IActionResult GetAllTickets()
+        [HttpGet]
+        public async Task<ActionResult<List<Ticket>>> GetTickets()
         {
-            var ticketList = Ticket.GetAllTickets();
-            if (ticketList.Any())
-                return Ok(ticketList);
-            else
+            var ticketList = await _ticketRepository.GetTickets();
+            if (ticketList is null)
+                return BadRequest();
+            if(!(ticketList.Any()))
                 return NoContent();
+            return Ok(ticketList);
         }
     }
 }

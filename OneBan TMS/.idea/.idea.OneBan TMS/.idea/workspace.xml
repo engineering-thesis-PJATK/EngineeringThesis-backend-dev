@@ -6,13 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Interfaces/ITicketRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handlers/CustomTokenHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/CustomTokenHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ITokenHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/ITokenHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/User.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TicketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/ITicket.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/EmployeePrivilege.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeePrivilege.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/TicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
@@ -143,7 +143,7 @@
       <workItem from="1648492740119" duration="6285000" />
       <workItem from="1648537920512" duration="235000" />
       <workItem from="1648582075334" duration="2405000" />
-      <workItem from="1648660306200" duration="4383000" />
+      <workItem from="1648660306200" duration="6900000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -200,32 +200,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Controllers/AuthController.cs</url>
-          <line>42</line>
-          <properties documentPath="$PROJECT_DIR$/Controllers/AuthController.cs" initialLine="40" containingFunctionPresentation="method 'Login'">
-            <startOffsets>
-              <option value="1806" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1924" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Controllers/AuthController.cs</url>
-          <line>37</line>
-          <properties documentPath="$PROJECT_DIR$/Controllers/AuthController.cs" initialLine="35" containingFunctionPresentation="method 'Login'">
-            <startOffsets>
-              <option value="1520" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1613" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Repository/UserRepository.cs</url>
           <line>53</line>
           <properties documentPath="$PROJECT_DIR$/Repository/UserRepository.cs" initialLine="53" containingFunctionPresentation="method 'GetPasswordParts'">
@@ -239,30 +213,30 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Controllers/AuthController.cs</url>
-          <line>29</line>
-          <properties documentPath="$PROJECT_DIR$/Controllers/AuthController.cs" initialLine="29" containingFunctionPresentation="method 'Login'">
+          <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
+          <line>39</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="38" containingFunctionPresentation="method 'GetTickets'">
             <startOffsets>
-              <option value="1241" />
+              <option value="1213" />
             </startOffsets>
             <endOffsets>
-              <option value="1311" />
+              <option value="1267" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Controllers/AuthController.cs</url>
-          <line>22</line>
-          <properties documentPath="$PROJECT_DIR$/Controllers/AuthController.cs" initialLine="22" containingFunctionPresentation="method 'Register'">
+          <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
+          <line>29</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="28" containingFunctionPresentation="method 'GetTicketById'">
             <startOffsets>
-              <option value="906" />
+              <option value="893" />
             </startOffsets>
             <endOffsets>
-              <option value="976" />
+              <option value="963" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

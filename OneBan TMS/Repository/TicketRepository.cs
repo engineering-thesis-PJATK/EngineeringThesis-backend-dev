@@ -7,23 +7,25 @@ using OneBan_TMS.Models;
 
 namespace OneBan_TMS.Repository
 {
-    public class TicketRepository : ITicket
+    public class TicketRepository : ITicketRepository
     {
-        private OneManDbContext dbContext;
-        public TicketRepository(OneManDbContext dbContext)
+        private readonly OneManDbContext _context;
+        public TicketRepository(OneManDbContext context)
         {
-            this.dbContext = dbContext;
+            _context = context;
         }
-        public IList<Ticket> GetAllTickets()
+        public async Task<List<Ticket>> GetTickets()
         {
-            List<Ticket> tickets = dbContext.Tickets.ToList();
-            return tickets;
+            return await _context
+                .Tickets
+                .ToListAsync();
         }
-
-        public Ticket GetTicketById(int ticketId)
+        public async Task<Ticket> GetTicketById(int ticketId)
         {
-            Ticket ticket = dbContext.Tickets.Where(ticket => ticket.TicId == ticketId).Select(ticket => ticket)
-                .SingleOrDefault();
+            Ticket ticket = await _context
+                .Tickets
+                .Where(x => x.TicId == ticketId)
+                .SingleOrDefaultAsync();
             return ticket;
         }
     }

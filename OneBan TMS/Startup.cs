@@ -44,6 +44,7 @@ namespace OneBan_TMS
             services.AddTransient<ICompanyRepository, CompanyRespository>();
             services.AddTransient<IAddressRepository, AddressRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ITicketRepository, TicketRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
 
