@@ -1,42 +1,59 @@
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 
 namespace OneBan_TMS.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ProjectController : ControllerBase
     {
-        private IProject Project{ get; init; }
+        private readonly OneManDbContext _Context;
+        private IProjectRepository _ProjectRepository;
 
-        public ProjectController(IProject pProject)
+        public ProjectController(OneManDbContext pContext, IProjectRepository pProjectRepository)
         {
-            Project = pProject;
+            _Context = pContext;
+            _ProjectRepository = pProjectRepository;
         }
-        
-        [HttpGet("GetProjectById")]
-        public IActionResult GetProjectById(int pProjectId)
-        {
-            if (pProjectId < 1)
-                return BadRequest();
 
-            Project singleProject = Project.GetProjectById(pProjectId);
-            if (singleProject is null)
-                return NotFound();
-            
-            return Ok(singleProject);
-        }
-        
-        [HttpGet("GetAllProjectes")]
-        public IActionResult GetAllProjectes()
+        [HttpGet]
+        public async Task<IActionResult> GetProjectes()
         {
-            var projectList = Project.GetAllProjects();
+            IEnumerable<Project> projectList = await _ProjectRepository.GetProjects();
+
             if (projectList.Any())
+            {
                 return Ok(projectList);
+            }
             else
-                return NoContent();
+            {
+                return NotFound();
+            }
+        }
+
+
+        
+        [HttpGet("{idProject}")]
+        public async Task<IActionResult> GetProjectById(int pIdProject)
+        {
+            if (pIdProject < 1)
+            {
+                return BadRequest();
+            }
+
+            Project project = await _ProjectRepository.GetProjectById(pIdProject);
+
+            if (project == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(project);
         }
     }
 }
