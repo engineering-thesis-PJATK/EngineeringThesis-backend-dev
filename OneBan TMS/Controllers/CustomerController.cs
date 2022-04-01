@@ -22,15 +22,14 @@ namespace OneBan_TMS.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomersList()
         {
-            var customers = _customerRepository.GetAllCustomers();
+            var customers = await _customerRepository.GetAllCustomers();
             return Ok(customers);
         }
 
         [HttpGet("{customerId}")]
-
         public async Task<ActionResult<Customer>> GetCustomerById(int customerId)
         {
-            var customer = _customerRepository.GetCustomerById(customerId);
+            var customer = await _customerRepository.GetCustomerById(customerId);
             if (customer is null)
                 return NotFound();
             return Ok(customer);

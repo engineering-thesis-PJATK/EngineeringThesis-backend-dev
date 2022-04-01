@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
+using OneBan_TMS.Models.DTOs;
 
 namespace OneBan_TMS.Controllers
 {
@@ -15,9 +16,11 @@ namespace OneBan_TMS.Controllers
     public class TicketController : ControllerBase
     {
         private readonly ITicketRepository _ticketRepository;
-        public TicketController(ITicketRepository ticketRepository)
+        private readonly ICustomerRepository _customerRepository;
+        public TicketController(ITicketRepository ticketRepository, ICustomerRepository customerRepository)
         {
             _ticketRepository = ticketRepository;
+            _customerRepository = customerRepository;
         }
         
         //[HttpGet("{idTicket}"), Authorize (Roles = "Admin")]
@@ -43,6 +46,17 @@ namespace OneBan_TMS.Controllers
             if(!(ticketList.Any()))
                 return NoContent();
             return Ok(ticketList);
+        }
+
+        [HttpGet("/customer")]
+        public async Task<ActionResult<List<CustomerShortDto>>> GetCustomersToSearch()
+        {
+            var customers = await  _customerRepository.GetCustomersToSearch();
+            if (customers is null)
+                return BadRequest();
+            if (!(customers.Any()))
+                return NoContent();
+            return Ok(customers);
         }
     }
 }

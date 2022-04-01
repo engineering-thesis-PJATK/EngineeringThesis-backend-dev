@@ -1,12 +1,15 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using OneBan_TMS.Models;
+using OneBan_TMS.Models.DTOs;
 
 namespace OneBan_TMS.Interfaces
 {
     public interface ICustomerRepository
     {
-        IEnumerable<Customer> GetAllCustomers();
-        Customer GetCustomerById(int customerId);
-        void AddNewCustomer();
+        Task<IEnumerable<Customer>> GetAllCustomers();
+        Task<Customer> GetCustomerById(int customerId);
+        Task AddNewCustomer();
+        Task<List<CustomerShortDto>> GetCustomersToSearch();
     }
 }
