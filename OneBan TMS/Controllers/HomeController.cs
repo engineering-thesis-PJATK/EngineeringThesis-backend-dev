@@ -17,11 +17,11 @@ namespace OneBan_TMS.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private OneManDbContext dbContext;
+        private OneManDbContext _dbContext;
 
         public HomeController(OneManDbContext dbContext)
         {
-            this.dbContext = dbContext;
+            _dbContext = dbContext;
         }
     }
 }

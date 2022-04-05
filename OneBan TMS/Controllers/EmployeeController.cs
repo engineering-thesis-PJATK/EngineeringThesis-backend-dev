@@ -30,12 +30,12 @@ namespace OneBan_TMS.Controllers
         {
             return Ok(_employeeRepository.GetEmployeeByIdDto(employeeId));
         }
-        [HttpGet("privilages")]
+        [HttpGet("Privelage")]
         public async Task<ActionResult<EmployeePrivilege>> GetAllEmployeePrivilages()
         {
             var privilages = await _employeeRepository.GetAllEmployeePrivilages();
             if (privilages is null)
-                return BadRequest("List of employee privilages is empty");
+                return BadRequest("No privelages assigned to employees");
             return Ok(privilages);
         }
     }

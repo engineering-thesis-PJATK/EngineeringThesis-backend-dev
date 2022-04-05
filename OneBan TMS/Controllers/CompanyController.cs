@@ -58,7 +58,7 @@ namespace OneBan_TMS.Controllers
             return Ok("Company updated");
         }
 
-        [HttpGet( "{idCompany}/addresses")]
+        [HttpGet( "{idCompany}/Address")]
         public async Task<IActionResult> GetAddressesForCompany(int idCompany)
         {
             IEnumerable<Address> addresses = await _addressRepository.GetAddressesForCompany(idCompany);
@@ -67,7 +67,7 @@ namespace OneBan_TMS.Controllers
             return Ok(addresses);
         }
 
-        [HttpPost("{idCompany}/addresses")]
+        [HttpPost("{idCompany}/Address")]
         public IActionResult AddNewAddressForCompany(int idCompany)
         {
             return Ok($"Added new address for company {idCompany}");

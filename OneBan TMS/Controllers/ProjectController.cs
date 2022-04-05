@@ -16,20 +16,20 @@ namespace OneBan_TMS.Controllers
             Project = pProject;
         }
         
-        [HttpGet("GetProjectById")]
-        public IActionResult GetProjectById(int pProjectId)
+        [HttpGet("{projectId}")]
+        public IActionResult GetProjectById(int projectId)
         {
-            if (pProjectId < 1)
+            if (projectId < 1)
                 return BadRequest();
 
-            Project singleProject = Project.GetProjectById(pProjectId);
+            Project singleProject = Project.GetProjectById(projectId);
             if (singleProject is null)
                 return NotFound();
             
             return Ok(singleProject);
         }
         
-        [HttpGet("GetAllProjectes")]
+        [HttpGet()]
         public IActionResult GetAllProjectes()
         {
             var projectList = Project.GetAllProjects();
