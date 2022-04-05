@@ -40,11 +40,12 @@ namespace OneBan_TMS
             services.AddDbContextPool<OneManDbContext>(options =>
                 options.UseSqlServer(connectionString));
             
-            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
-            services.AddTransient<ICompanyRepository, CompanyRespository>();
-            services.AddTransient<IAddressRepository, AddressRepository>();
-            services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<ITicketRepository, TicketRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<ICompanyRepository, CompanyRespository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITicketRepository, TicketRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
 

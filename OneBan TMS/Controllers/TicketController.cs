@@ -25,14 +25,14 @@ namespace OneBan_TMS.Controllers
         
         //[HttpGet("{idTicket}"), Authorize (Roles = "Admin")]
         [HttpGet("{idTicket}")]
-        public async Task<ActionResult> GetTicketById(int idTicket)
+        public async Task<ActionResult<Ticket>> GetTicketById(int idTicket)
         {
             if (idTicket < 1)
                 return BadRequest("Ticket Id must be greater than 0");
 
             Ticket singleTicket = await _ticketRepository.GetTicketById(idTicket);
             if (singleTicket is null)
-                return NotFound($"There is no ticket with id {idTicket}");
+                return NotFound($"No ticket found with id: {idTicket}");
             
             return Ok(singleTicket);
         }
@@ -48,7 +48,7 @@ namespace OneBan_TMS.Controllers
             return Ok(ticketList);
         }
 
-        [HttpGet("/customer")]
+        [HttpGet("Customer")]
         public async Task<ActionResult<List<CustomerShortDto>>> GetCustomersToSearch()
         {
             var customers = await  _customerRepository.GetCustomersToSearch();
@@ -57,6 +57,20 @@ namespace OneBan_TMS.Controllers
             if (!(customers.Any()))
                 return NoContent();
             return Ok(customers);
+        }
+
+        [HttpGet("Types")]
+        public async Task<ActionResult<List<TicketTypeDto>>> GetTicketTypes()
+        {
+            var ticketTypes = await _ticketRepository
+                                                    .GetTicketTypes();
+
+            if (ticketTypes.Any())
+            {
+                return Ok(ticketTypes);
+            }
+
+            return NotFound("No ticket types found");
         }
     }
 }
