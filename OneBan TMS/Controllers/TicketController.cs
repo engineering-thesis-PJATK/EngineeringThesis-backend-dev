@@ -23,16 +23,19 @@ namespace OneBan_TMS.Controllers
             _customerRepository = customerRepository;
         }
         
-        //[HttpGet("{idTicket}"), Authorize (Roles = "Admin")]
         [HttpGet("{idTicket}")]
         public async Task<ActionResult<Ticket>> GetTicketById(int idTicket)
         {
             if (idTicket < 1)
-                return BadRequest("Ticket Id must be greater than 0");
-
-            Ticket singleTicket = await _ticketRepository.GetTicketById(idTicket);
+            {
+                return BadRequest("Ticket id must be greater than 0");
+            }
+            Ticket singleTicket = await _ticketRepository
+                                        .GetTicketById(idTicket);
             if (singleTicket is null)
-                return NotFound($"No ticket found with id: {idTicket}");
+            {
+                return NotFound($"No ticket with id: {idTicket} found");
+            }
             
             return Ok(singleTicket);
         }
@@ -40,22 +43,34 @@ namespace OneBan_TMS.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Ticket>>> GetTickets()
         {
-            var ticketList = await _ticketRepository.GetTickets();
+            var ticketList = await _ticketRepository
+                                   .GetTickets();
             if (ticketList is null)
+            {
                 return BadRequest();
-            if(!(ticketList.Any()))
+            }
+            if (!(ticketList.Any()))
+            {
                 return NoContent();
+            }
+            
             return Ok(ticketList);
         }
 
         [HttpGet("Customer")]
         public async Task<ActionResult<List<CustomerShortDto>>> GetCustomersToSearch()
         {
-            var customers = await  _customerRepository.GetCustomersToSearch();
+            var customers = await  _customerRepository
+                                                      .GetCustomersToSearch();
             if (customers is null)
+            {
                 return BadRequest();
+            }
             if (!(customers.Any()))
+            {
                 return NoContent();
+            }
+            
             return Ok(customers);
         }
 
@@ -64,7 +79,6 @@ namespace OneBan_TMS.Controllers
         {
             var ticketTypes = await _ticketRepository
                                                      .GetTicketTypes();
-
             if (ticketTypes.Any())
             {
                 return Ok(ticketTypes);
@@ -84,6 +98,22 @@ namespace OneBan_TMS.Controllers
             }
 
             return NotFound("No ticket priorities found");
+        }
+
+        [HttpPut("{ticketId}")]
+        public async Task<ActionResult<Ticket>> UpdateTicketById(int ticketId, Ticket ticket)
+        {
+            if (ticket is null)
+            {
+                return BadRequest("Ticket cannot be empty");
+            }
+
+            if (ticketId < 1)
+            {
+                return BadRequest("Ticket id must be greater than 0");
+            }
+
+            return Ok();
         }
     }
 }
