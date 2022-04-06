@@ -63,7 +63,7 @@ namespace OneBan_TMS.Controllers
         public async Task<ActionResult<List<TicketTypeDto>>> GetTicketTypes()
         {
             var ticketTypes = await _ticketRepository
-                                                    .GetTicketTypes();
+                                                     .GetTicketTypes();
 
             if (ticketTypes.Any())
             {
@@ -71,6 +71,19 @@ namespace OneBan_TMS.Controllers
             }
 
             return NotFound("No ticket types found");
+        }
+
+        [HttpGet("Priorities")]
+        public async Task<ActionResult<List<TicketPriorityDto>>> GetTicketPriorities()
+        {
+            var ticketPriorities = await _ticketRepository
+                                                          .GetTicketTypes();
+            if (ticketPriorities.Any())
+            {
+                return Ok(ticketPriorities);
+            }
+
+            return NotFound("No ticket priorities found");
         }
     }
 }

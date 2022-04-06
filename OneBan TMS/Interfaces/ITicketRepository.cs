@@ -10,5 +10,6 @@ namespace OneBan_TMS.Interfaces
         Task<Ticket> GetTicketById(int ticketId);
         Task<List<Ticket>> GetTickets();
         Task<List<TicketTypeDto>> GetTicketTypes();
+        Task<List<TicketPriorityDto>> GetTicketPriorities();
     }
 }

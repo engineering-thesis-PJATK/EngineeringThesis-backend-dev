@@ -34,24 +34,27 @@ namespace OneBan_TMS.Repository
         public async Task<List<TicketTypeDto>> GetTicketTypes()
         {
             var ticketTypes = await _context
-                                                .TicketTypes
-                                                .ToListAsync();
-            var ticketTypesDto = new List<TicketTypeDto>();
-
-            if (ticketTypes.Any())
+                                                  .TicketTypes
+                                                  .ToListAsync();
+            return ticketTypes.Select(ticketType => new TicketTypeDto()
             {
-                foreach (var ticketType in ticketTypes)
-                {
-                    ticketTypesDto.Add(new TicketTypeDto()
-                    {
-                        Description = ticketType.TtpDescription,
-                        Id = ticketType.TtpId,
-                        Name = ticketType.TtpName
-                    });
-                }
-            }
+                Description = ticketType.TtpDescription, 
+                Id = ticketType.TtpId, 
+                Name = ticketType.TtpName
+            }).ToList();
+        }
 
-            return ticketTypesDto;
+        public async Task<List<TicketPriorityDto>> GetTicketPriorities()
+        {
+            var ticketPriorities = await _context
+                                                         .TicketPriorities
+                                                         .ToListAsync();
+            return ticketPriorities.Select(ticketPriority => new TicketPriorityDto()
+            {
+                Description = ticketPriority.TpiDescription, 
+                Id = ticketPriority.TpiId,
+                Weight = ticketPriority.TpiWeight
+            }).ToList();
         }
     }
 }
