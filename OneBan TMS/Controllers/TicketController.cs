@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,13 +25,13 @@ namespace OneBan_TMS.Controllers
         }
         
         [HttpGet("{idTicket}")]
-        public async Task<ActionResult<Ticket>> GetTicketById(int idTicket)
+        public async Task<ActionResult<TicketDto>> GetTicketById(int idTicket)
         {
             if (idTicket < 1)
             {
                 return BadRequest("Ticket id must be greater than 0");
             }
-            Ticket singleTicket = await _ticketRepository
+            TicketDto singleTicket = await _ticketRepository
                                         .GetTicketById(idTicket);
             if (singleTicket is null)
             {
@@ -41,7 +42,7 @@ namespace OneBan_TMS.Controllers
         }
         
         [HttpGet]
-        public async Task<ActionResult<List<Ticket>>> GetTickets()
+        public async Task<ActionResult<List<TicketDto>>> GetTickets()
         {
             var ticketList = await _ticketRepository
                                    .GetTickets();
@@ -91,7 +92,7 @@ namespace OneBan_TMS.Controllers
         public async Task<ActionResult<List<TicketPriorityDto>>> GetTicketPriorities()
         {
             var ticketPriorities = await _ticketRepository
-                                                          .GetTicketTypes();
+                                                          .GetTicketPriorities();
             if (ticketPriorities.Any())
             {
                 return Ok(ticketPriorities);
@@ -101,19 +102,25 @@ namespace OneBan_TMS.Controllers
         }
 
         [HttpPut("{ticketId}")]
-        public async Task<ActionResult<Ticket>> UpdateTicketById(int ticketId, Ticket ticket)
+        public async Task<ActionResult<TicketDto>> UpdateTicketById(int ticketId, TicketUpdateDto ticketUpdate)
         {
-            if (ticket is null)
+            if (ModelState.IsValid)
             {
-                return BadRequest("Ticket cannot be empty");
+                if (ticketUpdate is null)
+                {
+                    return BadRequest("Ticket cannot be empty");
+                }
+                if (ticketId < 1)
+                {
+                    return BadRequest("Ticket id must be greater than 0");
+                }
+
+                var ticket = await _ticketRepository.UpdateTicket(ticketId, ticketUpdate);
+                if (!(ticket is null))
+                    return Ok(ticket);
             }
 
-            if (ticketId < 1)
-            {
-                return BadRequest("Ticket id must be greater than 0");
-            }
-
-            return Ok();
+            return BadRequest("Operation was not executed");
         }
     }
 }

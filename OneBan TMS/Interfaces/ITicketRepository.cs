@@ -7,9 +7,11 @@ namespace OneBan_TMS.Interfaces
 {
     public interface ITicketRepository
     {
-        Task<Ticket> GetTicketById(int ticketId);
-        Task<List<Ticket>> GetTickets();
+        Task<TicketDto> GetTicketById(int ticketId);
+        Task<List<TicketDto>> GetTickets();
         Task<List<TicketTypeDto>> GetTicketTypes();
         Task<List<TicketPriorityDto>> GetTicketPriorities();
+        Task<TicketDto> UpdateTicket(int ticketId, TicketUpdateDto ticketUpdate);
+        Task<TicketDto> UpdateTicketStatus(int ticketId, int ticketStatusId);
     }
 }

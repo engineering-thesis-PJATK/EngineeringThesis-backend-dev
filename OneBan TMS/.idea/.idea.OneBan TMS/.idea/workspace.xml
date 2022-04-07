@@ -6,9 +6,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Repository/ValidateModelState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/TicketDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/TicketUpdateDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TicketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/ITicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/ITicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/TicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +39,10 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6abd66eeeb0e3838fe52f6892f3cb4c2036d9aed71715241a71280118ac/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42f1ce9bd637bd455c8a40c894ef3fc639e43be997c28f437a86cf7a30c61a/ControllerFactoryProvider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -115,7 +129,8 @@
       <workItem from="1648746785303" duration="2148000" />
       <workItem from="1649108724782" duration="2437000" />
       <workItem from="1649198882750" duration="2208000" />
-      <workItem from="1649280907872" duration="2609000" />
+      <workItem from="1649280907872" duration="2843000" />
+      <workItem from="1649361348182" duration="7147000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -186,42 +201,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
-          <line>44</line>
-          <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="41" containingFunctionPresentation="method 'GetTickets'">
-            <startOffsets>
-              <option value="1468" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1469" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
-          <line>20</line>
+          <line>21</line>
           <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="20" containingFunctionPresentation="constructor 'TicketController'">
             <startOffsets>
-              <option value="671" />
+              <option value="685" />
             </startOffsets>
             <endOffsets>
-              <option value="672" />
+              <option value="686" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Startup.cs</url>
-          <line>38</line>
-          <properties documentPath="$PROJECT_DIR$/Startup.cs" initialLine="38" containingFunctionPresentation="method 'ConfigureServices'">
+          <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
+          <line>107</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="107" containingFunctionPresentation="method 'UpdateTicketById'">
             <startOffsets>
-              <option value="1176" />
+              <option value="3442" />
             </startOffsets>
             <endOffsets>
-              <option value="1250" />
+              <option value="3443" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
+          <line>106</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="106" containingFunctionPresentation="method 'UpdateTicketById'">
+            <startOffsets>
+              <option value="3406" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3429" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
