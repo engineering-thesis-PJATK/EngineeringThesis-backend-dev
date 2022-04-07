@@ -6,8 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/DTOs/TicketDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/DTOs/TicketUpdateDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/TicketStatusIdPatchDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TicketController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interfaces/ITicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/ITicketRepository.cs" afterDir="false" />
@@ -15,7 +14,6 @@
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
@@ -130,7 +128,7 @@
       <workItem from="1649108724782" duration="2437000" />
       <workItem from="1649198882750" duration="2208000" />
       <workItem from="1649280907872" duration="2843000" />
-      <workItem from="1649361348182" duration="7147000" />
+      <workItem from="1649361348182" duration="9944000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -214,26 +212,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
-          <line>107</line>
+          <line>114</line>
           <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="107" containingFunctionPresentation="method 'UpdateTicketById'">
             <startOffsets>
-              <option value="3442" />
+              <option value="3577" />
             </startOffsets>
             <endOffsets>
-              <option value="3443" />
+              <option value="3578" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
-          <line>106</line>
+          <line>113</line>
           <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="106" containingFunctionPresentation="method 'UpdateTicketById'">
             <startOffsets>
-              <option value="3406" />
+              <option value="3541" />
             </startOffsets>
             <endOffsets>
-              <option value="3429" />
+              <option value="3564" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="10" />

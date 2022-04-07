@@ -65,14 +65,17 @@ namespace OneBan_TMS.Controllers
                                                       .GetCustomersToSearch();
             if (customers is null)
             {
-                return BadRequest();
+                return 
+                    BadRequest();
             }
             if (!(customers.Any()))
             {
-                return NoContent();
+                return 
+                    NoContent();
             }
             
-            return Ok(customers);
+            return 
+                Ok(customers);
         }
 
         [HttpGet("Types")]
@@ -82,10 +85,12 @@ namespace OneBan_TMS.Controllers
                                                      .GetTicketTypes();
             if (ticketTypes.Any())
             {
-                return Ok(ticketTypes);
+                return 
+                    Ok(ticketTypes);
             }
 
-            return NotFound("No ticket types found");
+            return 
+                NotFound("No ticket types found");
         }
 
         [HttpGet("Priorities")]
@@ -95,10 +100,12 @@ namespace OneBan_TMS.Controllers
                                                           .GetTicketPriorities();
             if (ticketPriorities.Any())
             {
-                return Ok(ticketPriorities);
+                return 
+                    Ok(ticketPriorities);
             }
 
-            return NotFound("No ticket priorities found");
+            return 
+                NotFound("No ticket priorities found");
         }
 
         [HttpPut("{ticketId}")]
@@ -108,19 +115,54 @@ namespace OneBan_TMS.Controllers
             {
                 if (ticketUpdate is null)
                 {
-                    return BadRequest("Ticket cannot be empty");
+                    return 
+                        BadRequest("Ticket cannot be empty");
                 }
                 if (ticketId < 1)
                 {
-                    return BadRequest("Ticket id must be greater than 0");
+                    return 
+                        BadRequest("Ticket id must be greater than 0");
                 }
 
-                var ticket = await _ticketRepository.UpdateTicket(ticketId, ticketUpdate);
-                if (!(ticket is null))
-                    return Ok(ticket);
+                var singleTicket = await _ticketRepository.UpdateTicket(ticketId, ticketUpdate);
+                if (!(singleTicket is null))
+                {
+                    return
+                        Ok(singleTicket);
+                }
             }
 
-            return BadRequest("Operation was not executed");
+            return 
+                BadRequest("Operation was not executed");
+        }
+
+        [HttpPatch("{ticketId}")]
+        public async Task<ActionResult<TicketDto>> UpdateTicketStatusId(int ticketId, TicketStatusIdPatchDto newStatusId)
+        {
+            if (ticketId < 1)
+            {
+                return 
+                    BadRequest("Ticket id must be greater than 0");
+            }
+
+            switch (newStatusId.StatusId)    
+            {
+                case < 0:
+                    return 
+                        BadRequest("Ticket status must be greater than 0");
+                case > 5:
+                    return 
+                        BadRequest("Ticket status must not be greater than 5");
+            }
+
+            var singleTicket = await _ticketRepository.UpdateTicketStatusId(ticketId, newStatusId.StatusId);
+            if (!(singleTicket is null))
+            {
+                return
+                    Ok(singleTicket);
+            }
+            return 
+                BadRequest("Operation was not executed");
         }
     }
 }

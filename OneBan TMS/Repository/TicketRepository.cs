@@ -20,21 +20,10 @@ namespace OneBan_TMS.Repository
             var tickets = await _context
                                            .Tickets
                                            .ToListAsync();
-            return tickets.Select(ticket => new TicketDto()
-            {
-                Description = ticket.TicDescription, 
-                Id = ticket.TicId,
-                Name = ticket.TicName,
-                Topic = ticket.TicTopic,
-                CompletedAt = ticket.TicCompletedAt.GetValueOrDefault(),
-                CreatedAt = ticket.TicCreatedAt,
-                CustomerId = ticket.TicIdCustomer,
-                DueDate = ticket.TicDueDate,
-                EstimatedCost = ticket.TicEstimatedCost,
-                TicketPriorityId = ticket.TicIdTicketPriority,
-                TicketStatusId = ticket.TicIdTicketStatus,
-                TicketTypeId = ticket.TicIdTicketType
-            }).ToList();
+            return
+                 tickets
+                 .Select(ChangeBaseToDto)
+                 .ToList();
         }
         
         public async Task<TicketDto> GetTicketById(int ticketId)
@@ -43,22 +32,29 @@ namespace OneBan_TMS.Repository
                                     .Tickets
                                     .Where(x => x.TicId == ticketId)
                                     .SingleOrDefaultAsync();
-         
+
+            return 
+                ChangeBaseToDto(ticket);
+        }
+
+        private TicketDto ChangeBaseToDto(Ticket ticket)
+        {
             return new TicketDto()
-                {   
-                    Description = ticket.TicDescription, 
-                    Id = ticket.TicId,
-                    Name = ticket.TicName,
-                    Topic = ticket.TicTopic,
-                    CompletedAt = ticket.TicCompletedAt.GetValueOrDefault(),
-                    CreatedAt = ticket.TicCreatedAt,
-                    CustomerId = ticket.TicIdCustomer,
-                    DueDate = ticket.TicDueDate,
-                    EstimatedCost = ticket.TicEstimatedCost,
-                    TicketPriorityId = ticket.TicIdTicketPriority,
-                    TicketStatusId = ticket.TicIdTicketStatus,
-                    TicketTypeId = ticket.TicIdTicketType
-                };
+            {   
+                Description = ticket.TicDescription, 
+                Id = ticket.TicId,
+                Name = ticket.TicName,
+                Topic = ticket.TicTopic,
+                CompletedAt = ticket.TicCompletedAt
+                                    .GetValueOrDefault(),
+                CreatedAt = ticket.TicCreatedAt,
+                CustomerId = ticket.TicIdCustomer,
+                DueDate = ticket.TicDueDate,
+                EstimatedCost = ticket.TicEstimatedCost,
+                TicketPriorityId = ticket.TicIdTicketPriority,
+                TicketStatusId = ticket.TicIdTicketStatus,
+                TicketTypeId = ticket.TicIdTicketType
+            };
         }
         
         public async Task<List<TicketTypeDto>> GetTicketTypes()
@@ -106,7 +102,29 @@ namespace OneBan_TMS.Repository
                 singleTicket.TicIdTicketType = ticketUpdate.TicketTypeId;
                 singleTicket.TicIdTicketPriority = ticketUpdate.TicketPriorityId;
                 await _context.SaveChangesAsync();
-                return GetTicketById(ticketId).Result;
+                
+                return GetTicketById(ticketId)
+                       .Result;
+            }
+
+            return null;
+        }
+
+        public async Task<TicketDto> UpdateTicketStatusId(int ticketId, int ticketStatusId)
+        {
+            var singleTicket = await _context
+                                     .Tickets
+                                     .Where(ticket => ticket.TicId.Equals(ticketId))
+                                     .SingleOrDefaultAsync();
+            if (!(singleTicket is null))
+            {
+                singleTicket.TicIdTicketStatus = ticketStatusId;
+                await _context
+                      .SaveChangesAsync();
+                
+                return 
+                    GetTicketById(ticketId)
+                    .Result;
             }
 
             return null;

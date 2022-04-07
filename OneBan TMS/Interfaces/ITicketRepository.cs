@@ -12,6 +12,6 @@ namespace OneBan_TMS.Interfaces
         Task<List<TicketTypeDto>> GetTicketTypes();
         Task<List<TicketPriorityDto>> GetTicketPriorities();
         Task<TicketDto> UpdateTicket(int ticketId, TicketUpdateDto ticketUpdate);
-        Task<TicketDto> UpdateTicketStatus(int ticketId, int ticketStatusId);
+        Task<TicketDto> UpdateTicketStatusId(int ticketId, int ticketStatusId);
     }
 }
