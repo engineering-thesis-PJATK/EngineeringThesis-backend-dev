@@ -12,6 +12,6 @@ namespace OneBan_TMS.Interfaces
         Task<Company> GetCompanyById(int idCompany);
         Task AddNewCompany(CompanyDto newCompany);
         Task UpdateCompany(CompanyDto updatedCompany, int idCompany);
-        bool ExistsCompany(int idCompany);
+        Task<bool> ExistsCompany(int idCompany);
     }
 }

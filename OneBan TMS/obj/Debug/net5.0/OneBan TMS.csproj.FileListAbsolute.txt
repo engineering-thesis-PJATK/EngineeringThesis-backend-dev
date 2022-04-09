@@ -986,3 +986,6 @@ D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/FluentValidation.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/FluentValidation.AspNetCore.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/FluentValidation.DependencyInjectionExtensions.dll

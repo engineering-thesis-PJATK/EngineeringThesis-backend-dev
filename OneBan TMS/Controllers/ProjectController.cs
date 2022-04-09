@@ -8,7 +8,7 @@ using OneBan_TMS.Models.DTOs;
 
 namespace OneBan_TMS.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Api/[controller]")]
     [ApiController]
     public class ProjectController : ControllerBase
     {

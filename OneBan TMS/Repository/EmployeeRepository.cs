@@ -15,10 +15,10 @@ namespace OneBan_TMS.Repository
         {
             _context = context;
         }
-        public IEnumerable<EmployeeDto> GetAllEmployeeDto()
+        public async Task<IEnumerable<EmployeeDto>> GetAllEmployeeDto()
         {
             List<EmployeeDto> employeeDtoList = new List<EmployeeDto>();
-            var employees = _context
+            var employees = await _context
                 .Employees
                 .Include(x => x.EmployeePrivilegeEmployees)
                 .ThenInclude(y => y.EpeIdEmployeePrivilageNavigation)
@@ -31,7 +31,7 @@ namespace OneBan_TMS.Repository
                     x.EmpEmail,
                     x.EmpPhoneNumber,
                     Roles = x.EmployeePrivilegeEmployees.Select(y => y.EpeIdEmployeePrivilageNavigation.EpvName),
-                }).ToList();
+                }).ToListAsync();
             foreach (var emp in employees )
             {
                 employeeDtoList.Add(new EmployeeDto()
@@ -49,9 +49,9 @@ namespace OneBan_TMS.Repository
             return employeeDtoList;
         }
 
-        public EmployeeDto GetEmployeeByIdDto(int idEmployee)
+        public async Task<EmployeeDto> GetEmployeeByIdDto(int idEmployee)
         {
-            var employee = _context
+            var employee = await _context
                 .Employees
                 .Include(x => x.EmployeePrivilegeEmployees)
                 .ThenInclude(y => y.EpeIdEmployeePrivilageNavigation)
@@ -69,7 +69,7 @@ namespace OneBan_TMS.Repository
                     Teams = x.EmployeeTeams.Select(y => y.EtmIdTeamNavigation)
                 })
                 .Where(x => x.EmpId == idEmployee)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
             return new EmployeeDto()
             {
                 EmpId = employee.EmpId,

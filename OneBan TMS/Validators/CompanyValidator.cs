@@ -1,0 +1,26 @@
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using OneBan_TMS.Handlers;
+using OneBan_TMS.Interfaces;
+using OneBan_TMS.Models;
+
+namespace OneBan_TMS.Validators
+{
+    public class CompanyValidator : AbstractValidator<Company>
+    {
+        private readonly ICompanyHandler _companyHandler;
+        public CompanyValidator(ICompanyHandler companyHandler)
+        {
+            _companyHandler = companyHandler;
+            RuleFor(x => x.CmpName)
+                .MustAsync(async (x, y) => !(await _companyHandler.UniqueCompanyName(x)))
+                .WithMessage("Company name must be unique");
+            RuleFor(x => x.CmpNipPrefix)
+                .Length(2)
+                .WithMessage("Nip prefix must contains 2 signs");
+        }
+    }
+}

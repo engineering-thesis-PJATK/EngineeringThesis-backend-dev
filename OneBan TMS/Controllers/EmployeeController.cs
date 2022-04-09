@@ -22,13 +22,13 @@ namespace OneBan_TMS.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetEmployeesList()
         {
-            return Ok(_employeeRepository.GetAllEmployeeDto());
+            return Ok(await _employeeRepository.GetAllEmployeeDto());
         }
 
         [HttpGet("{employeeId}")]
         public async Task<ActionResult<EmployeeDto>> GetEmployeeById(int employeeId)
         {
-            return Ok(_employeeRepository.GetEmployeeByIdDto(employeeId));
+            return Ok(await _employeeRepository.GetEmployeeByIdDto(employeeId));
         }
         [HttpGet("privilages")]
         public async Task<ActionResult<EmployeePrivilege>> GetAllEmployeePrivilages()

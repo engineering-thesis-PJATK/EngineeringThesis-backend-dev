@@ -30,7 +30,7 @@ namespace OneBan_TMS.Repository
 
         public async Task AddNewAddress(AddressDto newAddress, int idCompany)
         {
-            if (!_companyRepository.ExistsCompany(idCompany))
+            if (!await _companyRepository.ExistsCompany(idCompany))
                 throw new ArgumentException("Company is not exists");
             _context.Addresses.Add(new Address()
             {

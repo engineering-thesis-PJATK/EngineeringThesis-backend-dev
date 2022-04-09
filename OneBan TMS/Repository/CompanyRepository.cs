@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
@@ -9,12 +11,14 @@ using OneBan_TMS.Models.DTOs;
 
 namespace OneBan_TMS.Repository
 {
-    public class CompanyRespository : ICompanyRepository
+    public class CompanyRepository : ICompanyRepository
     {
         private readonly OneManDbContext _context;
-        public CompanyRespository(OneManDbContext context)
+        private readonly IValidator<Company> _validator;
+        public CompanyRepository(OneManDbContext context, IValidator<Company> validator)
         {
             _context = context;
+            _validator = validator;
         }
 
         public async Task<IEnumerable<Company>> GetCompanies()
@@ -31,7 +35,7 @@ namespace OneBan_TMS.Repository
 
         public async Task AddNewCompany(CompanyDto newCompany)
         {
-            _context.Companies.Add(new Company()
+            Company company = new Company()
             {
                 CmpName = newCompany.Name,
                 CmpNip = newCompany.Nip,
@@ -39,8 +43,18 @@ namespace OneBan_TMS.Repository
                 CmpRegon = newCompany.Regon,
                 CmpKrsNumber = newCompany.KrsNumber,
                 CmpLandline = newCompany.Landline
-            });
-            await _context.SaveChangesAsync();
+            };
+            var validationResults = _validator.Validate(company);
+            if (validationResults.IsValid)
+            {
+                _context.Companies.Add(company);
+                await _context.SaveChangesAsync();   
+            }
+            else
+            {
+                throw new ArgumentException(validationResults.Errors[0].ErrorMessage);
+            }
+            
         }
 
         public async Task UpdateCompany(CompanyDto updatedCompanyDto, int idCompany)
@@ -58,11 +72,14 @@ namespace OneBan_TMS.Repository
             await _context.SaveChangesAsync();
         }
 
-        public bool ExistsCompany(int idCompany)
+        public async Task<bool> ExistsCompany(int idCompany)
         {
-            if(_context.Companies.Where(x => x.CmpId == idCompany).Any()) 
-                return true;
-            return false;
+            var result = await _context
+                .Companies
+                .Where(x =>
+                    x.CmpId == idCompany)
+                .AnyAsync();
+            return result;
         }
     }
 }

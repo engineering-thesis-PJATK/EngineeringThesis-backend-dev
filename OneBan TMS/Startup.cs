@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,6 +22,7 @@ using OneBan_TMS.Handlers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Repository;
+using OneBan_TMS.Validators;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace OneBan_TMS
@@ -40,8 +43,12 @@ namespace OneBan_TMS
             services.AddDbContextPool<OneManDbContext>(options =>
                 options.UseSqlServer(connectionString));
             
+            
+            
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
-            services.AddTransient<ICompanyRepository, CompanyRespository>();
+            services.AddScoped<ICompanyHandler, CompanyHandler>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IValidator<Company>, CompanyValidator>();
             services.AddTransient<IAddressRepository, AddressRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<ITicketRepository, TicketRepository>();
@@ -61,6 +68,8 @@ namespace OneBan_TMS
                 };
             });
             services.AddControllers();
+            //services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CompanyValidator>());
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "OneBan_TMS", Version = "v1" });
