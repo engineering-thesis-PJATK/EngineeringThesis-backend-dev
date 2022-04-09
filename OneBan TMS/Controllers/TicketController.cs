@@ -25,17 +25,17 @@ namespace OneBan_TMS.Controllers
         }
         
         [HttpGet("{idTicket}")]
-        public async Task<ActionResult<TicketDto>> GetTicketById(int idTicket)
+        public async Task<ActionResult<TicketDto>> GetTicketById(int ticketId)
         {
-            if (idTicket < 1)
+            if (ticketId < 1)
             {
                 return BadRequest("Ticket id must be greater than 0");
             }
             TicketDto singleTicket = await _ticketRepository
-                                        .GetTicketById(idTicket);
+                                        .GetTicketById(ticketId);
             if (singleTicket is null)
             {
-                return NotFound($"No ticket with id: {idTicket} found");
+                return NotFound($"No ticket with id: {ticketId} found");
             }
             
             return Ok(singleTicket);

@@ -12,31 +12,77 @@ namespace OneBan_TMS.Controllers
     [Route("api/[controller]")]
     public class EmployeeController : Controller
     {
-        private readonly OneManDbContext _context;
         private readonly IEmployeeRepository _employeeRepository;
-        public EmployeeController(OneManDbContext context, IEmployeeRepository employeeRepository)
+        private readonly ITeamRepository _teamRepository;
+        public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository)
         {
-            _context = context;
             _employeeRepository = employeeRepository;
+            _teamRepository = teamRepository;
         }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetEmployeesList()
         {
-            return Ok(_employeeRepository.GetAllEmployeeDto());
+            IEnumerable<EmployeeDto> employeeList = _employeeRepository
+                                                    .GetAllEmployeeDto();
+            return 
+                Ok(employeeList);
         }
 
         [HttpGet("{employeeId}")]
         public async Task<ActionResult<EmployeeDto>> GetEmployeeById(int employeeId)
         {
-            return Ok(_employeeRepository.GetEmployeeByIdDto(employeeId));
+            EmployeeDto employeeDto = _employeeRepository
+                                      .GetEmployeeByIdDto(employeeId);
+            return 
+                Ok(employeeDto);
         }
         [HttpGet("Privelage")]
         public async Task<ActionResult<EmployeePrivilege>> GetAllEmployeePrivilages()
         {
             var privilages = await _employeeRepository.GetAllEmployeePrivilages();
             if (privilages is null)
-                return BadRequest("No privelages assigned to employees");
-            return Ok(privilages);
+                return 
+                    BadRequest("No privelages assigned to employees");
+            return 
+                Ok(privilages);
+        }
+
+        [HttpGet("Team")]
+        public async Task<ActionResult<List<Team>>> GetTeams()
+        {
+            var teamList = await _teamRepository
+                .GetTeams();
+            if (teamList is null)
+            {
+                return BadRequest();
+            }
+            if (!(teamList.Any()))
+            {
+                return 
+                    NoContent();
+            }
+            
+            return 
+                Ok(teamList);
+        }
+
+        [HttpGet("Team/{teamId}")]
+        public async Task<ActionResult<Team>> GetTeamById(int teamId)
+        {
+            if (teamId < 1)
+            {
+                return BadRequest("Team id must be greater than 0");
+            }
+            Team singleTeam = await _teamRepository
+                                    .GetTeamById(teamId);
+            if (singleTeam is null)
+            {
+                return 
+                    NotFound($"No ticket with id: {teamId} found");
+            }
+            
+            return 
+                Ok(singleTeam);
         }
     }
 }
