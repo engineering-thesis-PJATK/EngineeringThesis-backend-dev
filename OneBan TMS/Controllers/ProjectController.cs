@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -37,13 +38,20 @@ namespace OneBan_TMS.Controllers
         }
         
         [HttpGet()]
-        public IActionResult GetProjects()
+        public async Task<ActionResult<List<ProjectDto>>> GetProjects()
         {
-            var projectList = _projectRepository.GetProjects();
-            if (projectList.Any())
-                return Ok(projectList);
-            else
+            var projectList = await _projectRepository
+                                    .GetProjects();
+            if (projectList is null)
+            {
+                return BadRequest();
+            }
+            if (!(projectList.Any()))
+            {
                 return NoContent();
+            }
+            
+            return Ok(projectList);
         }
     }
 }
