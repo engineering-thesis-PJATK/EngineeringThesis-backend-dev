@@ -40,7 +40,7 @@ namespace OneBan_TMS.Repository
                                   .SingleOrDefaultAsync();
             if (ticket is null)
             {
-                return
+                return 
                     null;
             }
 

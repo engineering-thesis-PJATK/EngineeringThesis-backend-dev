@@ -7,7 +7,7 @@ namespace OneBan_TMS.Interfaces
 {
     public interface IProjectRepository
     {
-        Task<ProjectDto> GetProjectById(int projectId);
-        Task<List<ProjectDto>> GetProjects();
+        Task<Project> GetProjectById(int projectId);
+        Task<List<Project>> GetProjects();
     }
 }

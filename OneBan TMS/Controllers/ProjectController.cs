@@ -27,8 +27,8 @@ namespace OneBan_TMS.Controllers
                 return 
                     BadRequest("Project id must be greater than 0");
             }
-            ProjectDto singleProject = await _projectRepository
-                .GetProjectById(projectId);
+            Project singleProject = await _projectRepository
+                                          .GetProjectById(projectId);
             if (singleProject is null)
             {
                 return NotFound($"No ticket with id: {projectId} found");
