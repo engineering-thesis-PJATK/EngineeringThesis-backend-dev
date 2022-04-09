@@ -47,6 +47,7 @@ namespace OneBan_TMS
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITicketRepository, TicketRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
 

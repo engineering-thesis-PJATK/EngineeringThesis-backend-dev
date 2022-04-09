@@ -1,7 +1,9 @@
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
+using OneBan_TMS.Models.DTOs;
 
 namespace OneBan_TMS.Controllers
 {
@@ -9,30 +11,35 @@ namespace OneBan_TMS.Controllers
     [ApiController]
     public class ProjectController : ControllerBase
     {
-        private IProject Project{ get; init; }
+        private IProjectRepository _projectRepository{ get; init; }
 
-        public ProjectController(IProject pProject)
+        public ProjectController(IProjectRepository projectRepository)
         {
-            Project = pProject;
+            _projectRepository = projectRepository;
         }
         
         [HttpGet("{projectId}")]
-        public IActionResult GetProjectById(int projectId)
+        public async Task<ActionResult<ProjectDto>> GetProjectById(int projectId)
         {
             if (projectId < 1)
-                return BadRequest();
-
-            Project singleProject = Project.GetProjectById(projectId);
+            {
+                return 
+                    BadRequest("Project id must be greater than 0");
+            }
+            ProjectDto singleProject = await _projectRepository
+                .GetProjectById(projectId);
             if (singleProject is null)
-                return NotFound();
+            {
+                return NotFound($"No ticket with id: {projectId} found");
+            }
             
             return Ok(singleProject);
         }
         
         [HttpGet()]
-        public IActionResult GetAllProjectes()
+        public IActionResult GetProjects()
         {
-            var projectList = Project.GetAllProjects();
+            var projectList = _projectRepository.GetProjects();
             if (projectList.Any())
                 return Ok(projectList);
             else
