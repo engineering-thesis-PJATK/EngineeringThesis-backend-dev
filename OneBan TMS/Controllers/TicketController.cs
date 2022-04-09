@@ -78,7 +78,28 @@ namespace OneBan_TMS.Controllers
                 Ok(customers);
         }
 
-        [HttpGet("Types")]
+        [HttpGet("Type/{typeId}")]
+        public async Task<ActionResult<TicketTypeDto>> GetTicketTypeById(int typeId)
+        {
+            if (typeId < 1)
+            {
+                return 
+                    BadRequest("Ticket type id must be greater than 0");
+            }
+            var singleTicketType = await _ticketRepository
+                                         .GetTicketTypeById(typeId);
+            if (singleTicketType is null)
+            {
+                return
+                    NotFound($"No Ticket Priority was found for id {typeId}");
+            }
+
+            return
+                Ok(singleTicketType);
+            
+        }
+
+        [HttpGet("Type")]
         public async Task<ActionResult<List<TicketTypeDto>>> GetTicketTypes()
         {
             var ticketTypes = await _ticketRepository
@@ -93,7 +114,7 @@ namespace OneBan_TMS.Controllers
                 NotFound("No ticket types found");
         }
 
-        [HttpGet("Priorities")]
+        [HttpGet("Priority")]
         public async Task<ActionResult<List<TicketPriorityDto>>> GetTicketPriorities()
         {
             var ticketPriorities = await _ticketRepository
@@ -106,6 +127,60 @@ namespace OneBan_TMS.Controllers
 
             return 
                 NotFound("No ticket priorities found");
+        }
+
+        [HttpGet("Priority/{priorityId}")]
+        public async Task<ActionResult<TicketPriorityDto>> GetTicketPriorityById(int priorityId)
+        {
+            if (priorityId < 1)
+            {
+                return BadRequest("Ticket priority id must be greater than 0");
+            }
+            var singleTicketPriority = await _ticketRepository
+                                                                      .GetTicketPriorityById(priorityId);
+            if (singleTicketPriority is null)
+            {
+                return
+                    NotFound($"No Ticket Priority was found for id {priorityId}");
+            }
+
+            return
+                Ok(singleTicketPriority);
+        }
+        
+        [HttpGet("Status")]
+        public async Task<ActionResult<List<TicketPriorityDto>>> GetTicketStatuses()
+        {
+            var ticketStatuses = await _ticketRepository
+                .GetTicketStatuses();
+            if (ticketStatuses.Any())
+            {
+                return 
+                    Ok(ticketStatuses);
+            }
+
+            return 
+                NotFound("No ticket statuses found");
+        }
+        
+        [HttpGet("Status/{statusId}")]
+        public async Task<ActionResult<TicketPriorityDto>> GetTicketStatusById(int statusId)
+        {
+            if (statusId < 1)
+            {
+                return 
+                    BadRequest("Ticket status id must be greater than 0");
+            }
+            var singleTicketStatus = await _ticketRepository
+                                           .GetTicketStatusById(statusId);
+            if (singleTicketStatus is null)
+            {
+                return
+                    NotFound($"No Ticket Priority was found for id {statusId}");
+            }
+
+            return
+                Ok(singleTicketStatus);
         }
 
         [HttpPut("{ticketId}")]
@@ -137,17 +212,21 @@ namespace OneBan_TMS.Controllers
         }
 
         [HttpPatch("{ticketId}")]
-        public async Task<ActionResult<TicketDto>> UpdateTicketStatusId(int ticketId, TicketStatusIdPatchDto newStatusId)
+        public async Task<ActionResult<TicketDto>> UpdateTicketStatusId(int ticketId, TicketStatusIdPatchDto newStatus)
         {
             if (ticketId < 1)
             {
                 return 
                     BadRequest("Ticket id must be greater than 0");
             }
-
-            switch (newStatusId.StatusId)    
+            if (newStatus is null)
             {
-                case < 0:
+                return
+                    BadRequest("Ticket status was not provided");
+            }
+            switch (newStatus.StatusId)    
+            {
+                case < 1:
                     return 
                         BadRequest("Ticket status must be greater than 0");
                 case > 5:
@@ -155,14 +234,15 @@ namespace OneBan_TMS.Controllers
                         BadRequest("Ticket status must not be greater than 5");
             }
 
-            var singleTicket = await _ticketRepository.UpdateTicketStatusId(ticketId, newStatusId.StatusId);
+            var singleTicket = await _ticketRepository
+                                     .UpdateTicketStatusId(ticketId, newStatus.StatusId);
             if (!(singleTicket is null))
             {
                 return
                     Ok(singleTicket);
             }
             return 
-                BadRequest("Operation was not executed");
+                NotFound("No ticket found to update");
         }
     }
 }
