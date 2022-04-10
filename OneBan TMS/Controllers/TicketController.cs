@@ -209,6 +209,25 @@ namespace OneBan_TMS.Controllers
             return 
                 NotFound("No ticket statuses found");
         }
+        
+        [HttpGet("TimeEntry")]
+        public async Task<ActionResult<List<TimeEntryGetDto>>> GetTimeEntries()
+        {
+            var timeEntries = await _timeEntryRepository
+                                                        .GetTimeEntries();
+            if (timeEntries is null)
+            {
+                return 
+                    BadRequest();
+            }
+            if (!(timeEntries.Any()))
+            {
+                return 
+                    NoContent();
+            }
+            
+            return Ok(timeEntries);
+        }
         #endregion
 
         #region Post
