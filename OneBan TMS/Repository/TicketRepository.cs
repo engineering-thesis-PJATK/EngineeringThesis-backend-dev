@@ -35,7 +35,7 @@ namespace OneBan_TMS.Repository
         {
             Ticket ticket = await _context
                                   .Tickets
-                                  .Where(x => x.TicId == ticketId)
+                                  .Where(ticket => ticket.TicId == ticketId)
                                   .SingleOrDefaultAsync();
             if (ticket is null)
             {
