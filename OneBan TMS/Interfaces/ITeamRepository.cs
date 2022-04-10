@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using OneBan_TMS.Models;
+using OneBan_TMS.Models.DTOs;
 
 namespace OneBan_TMS.Interfaces
 {
@@ -9,6 +10,6 @@ namespace OneBan_TMS.Interfaces
         Task<List<Team>> GetTeams();
         Task<Team> GetTeamById(int teamId);
         Task DeleteTeamById(int teamId);
-        Task<Team> UpdateTeamById(int teamId,Team teamUpdate);
+        Task<Team> UpdateTeamById(int teamId,TeamUpdateDto teamUpdateDto);
     }
 }

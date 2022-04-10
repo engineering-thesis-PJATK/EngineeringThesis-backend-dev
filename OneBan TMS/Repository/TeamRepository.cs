@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
+using OneBan_TMS.Models.DTOs;
 
 namespace OneBan_TMS.Repository
 {
@@ -55,7 +56,7 @@ namespace OneBan_TMS.Repository
             
         }
 
-        public async Task<Team> UpdateTeamById(int teamId, Team teamUpdate)
+        public async Task<Team> UpdateTeamById(int teamId, TeamUpdateDto teamUpdateDto)
         {
             Team team = await _context
                               .Teams
@@ -63,7 +64,7 @@ namespace OneBan_TMS.Repository
                               .SingleOrDefaultAsync();
             if (team is not null)
             {
-                team.TemName = teamUpdate.TemName;
+                team.TemName = teamUpdateDto.TemName;
                 await _context
                       .SaveChangesAsync();
                 return

@@ -100,11 +100,11 @@ namespace OneBan_TMS.Controllers
         }
 
         [HttpPut("Team/{teamId}")]
-        public async Task<ActionResult<Team>> UpdateTeamById(int teamId,Team teamUpdate)
+        public async Task<ActionResult<Team>> UpdateTeamById(int teamId,TeamUpdateDto teamUpdateDto)
         {
             if (ModelState.IsValid)
             {
-                if (teamUpdate is null)
+                if (teamUpdateDto is null)
                 {
                     return 
                         BadRequest("Team cannot be empty");
@@ -116,7 +116,7 @@ namespace OneBan_TMS.Controllers
                 }
 
                 var singleTeam = await _teamRepository
-                                       .UpdateTeamById(teamId, teamUpdate);
+                                       .UpdateTeamById(teamId, teamUpdateDto);
                 if (singleTeam is not null)
                 {
                     return
