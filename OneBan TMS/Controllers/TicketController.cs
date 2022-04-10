@@ -264,6 +264,34 @@ namespace OneBan_TMS.Controllers
             return 
                 BadRequest("Operation was not executed");
         }
+        
+        [HttpPut("{timeEntryId}")]
+        public async Task<ActionResult<TicketDto>> UpdateTimeEntryById(int timeEntryId, TimeEntryUpdateDto timeEntryUpdate)
+        {
+            if (ModelState.IsValid)
+            {
+                if (timeEntryUpdate is null)
+                {
+                    return 
+                        BadRequest("Time entry cannot be empty");
+                }
+                if (timeEntryId < 1)
+                {
+                    return 
+                        BadRequest("Time entry id must be greater than 0");
+                }
+
+                var singleTimeEntry = await _timeEntryRepository.UpdateTimeEntry(timeEntryId, timeEntryUpdate);
+                if (!(singleTimeEntry is null))
+                {
+                    return
+                        Ok(singleTimeEntry);
+                }
+            }
+
+            return 
+                BadRequest("Operation was not executed");
+        }
         #endregion
         
         #region Patch
@@ -316,6 +344,21 @@ namespace OneBan_TMS.Controllers
                 .DeleteTicketById(ticketId);
             return
                 Ok($"Ticket with id {ticketId} has been deleted");
+        }
+        
+        [HttpDelete("TimeEntry/{timeEntryId}")]
+        public async Task<ActionResult> DeleteTimeEntryById(int timeEntryId)
+        {
+            if (timeEntryId < 1)
+            {
+                return 
+                    BadRequest("Time entry id must be greater than 0");
+            }
+
+            await _timeEntryRepository
+                .DeleteTimeEntryById(timeEntryId);
+            return
+                Ok($"Time entry with id {timeEntryId} has been deleted");
         }
         #endregion
     }

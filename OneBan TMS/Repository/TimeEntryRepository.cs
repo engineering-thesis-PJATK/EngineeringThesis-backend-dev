@@ -34,8 +34,8 @@ namespace OneBan_TMS.Repository
         public async Task<List<TimeEntryGetDto>> GetTimeEntries()
         {
             var timeEntries = await _context
-                                                    .TimeEntries
-                                                    .ToListAsync();
+                                                 .TimeEntries
+                                                 .ToListAsync();
             if (!(timeEntries.Any()))
             {
                 return 
@@ -43,8 +43,8 @@ namespace OneBan_TMS.Repository
             }
             return
                 timeEntries
-                    .Select(ChangeTimeEntryBaseToDto)
-                    .ToList();
+                .Select(ChangeTimeEntryBaseToDto)
+                .ToList();
         }
 
         public async Task DeleteTimeEntryById(int timeEntryId)
