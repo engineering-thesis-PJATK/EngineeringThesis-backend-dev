@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
@@ -19,39 +18,62 @@ namespace OneBan_TMS.Controllers
             _employeeRepository = employeeRepository;
             _teamRepository = teamRepository;
         }
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetEmployeesList()
-        {
-            IEnumerable<EmployeeDto> employeeList = _employeeRepository
-                                                    .GetAllEmployeeDto();
-            return 
-                Ok(employeeList);
-        }
-
+        #region GetById
         [HttpGet("{employeeId}")]
         public async Task<ActionResult<EmployeeDto>> GetEmployeeById(int employeeId)
         {
-            EmployeeDto employeeDto = _employeeRepository
+            EmployeeDto employeeDto = await  _employeeRepository
                                       .GetEmployeeByIdDto(employeeId);
             return 
                 Ok(employeeDto);
         }
-        [HttpGet("Privelage")]
-        public async Task<ActionResult<EmployeePrivilege>> GetAllEmployeePrivilages()
+
+        [HttpGet("Team/{teamId}")]
+        public async Task<ActionResult<TeamGetDto>> GetTeamById(int teamId)
         {
-            var privilages = await _employeeRepository.GetAllEmployeePrivilages();
-            if (privilages is null)
+            if (teamId < 1)
+            {
+                return BadRequest("Team id must be greater than 0");
+            }
+            var singleTeam = await _teamRepository
+                .GetTeamById(teamId);
+            if (singleTeam is null)
+            {
                 return 
-                    BadRequest("No privelages assigned to employees");
+                    NotFound($"No team with id: {teamId} found");
+            }
+            
             return 
-                Ok(privilages);
+                Ok(singleTeam);
+        }
+        #endregion     
+        #region getList
+        [HttpGet("Privilege")]
+        public async Task<ActionResult<EmployeePrivilege>> GetEmployeePrivileges()
+        {
+            var privileges = await _employeeRepository
+                                                      .GetAllEmployeePrivileges();
+            if (privileges is null)
+                return 
+                    BadRequest("No privileges assigned to employees");
+            return 
+                Ok(privileges);
+        }
+        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetEmployees()
+        {
+            IEnumerable<EmployeeDto> employeeList = await _employeeRepository
+                .GetAllEmployeeDto();
+            return 
+                Ok(employeeList);
         }
 
         [HttpGet("Team")]
         public async Task<ActionResult<List<Team>>> GetTeams()
         {
             var teamList = await _teamRepository
-                .GetTeams();
+                                 .GetTeams();
             if (teamList is null)
             {
                 return BadRequest();
@@ -65,46 +87,28 @@ namespace OneBan_TMS.Controllers
             return 
                 Ok(teamList);
         }
-
-        [HttpGet("Team/{teamId}")]
-        public async Task<ActionResult<Team>> GetTeamById(int teamId)
-        {
-            if (teamId < 1)
-            {
-                return BadRequest("Team id must be greater than 0");
-            }
-            Team singleTeam = await _teamRepository
-                                    .GetTeamById(teamId);
-            if (singleTeam is null)
-            {
-                return 
-                    NotFound($"No team with id: {teamId} found");
-            }
-            
-            return 
-                Ok(singleTeam);
-        }
-
-        [HttpDelete("Team/{teamId}")]
-        public async Task<ActionResult> DeleteTeamById(int teamId)
-        {
-            if (teamId < 1)
-            {
-                return BadRequest("Team id must be greater than 0");
-            }
-
-            await _teamRepository
-                  .DeleteTeamById(teamId);
-            return
-                Ok($"Team with id {teamId} has been deleted");
-        }
-
-        [HttpPut("Team/{teamId}")]
-        public async Task<ActionResult<Team>> UpdateTeamById(int teamId,TeamUpdateDto teamUpdateDto)
+        #endregion
+        #region Post
+        [HttpPost("Team")]
+        public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)
         {
             if (ModelState.IsValid)
             {
-                if (teamUpdateDto is null)
+                return
+                    await _teamRepository.PostTeam(newTeam);
+            }
+
+            return
+                BadRequest();
+        }
+        #endregion
+        #region Put
+        [HttpPut("Team/{teamId}")]
+        public async Task<ActionResult<Team>> UpdateTeamById(int teamId,TeamUpdateDto teamGetUpdateDto)
+        {
+            if (ModelState.IsValid)
+            {
+                if (teamGetUpdateDto is null)
                 {
                     return 
                         BadRequest("Team cannot be empty");
@@ -116,7 +120,7 @@ namespace OneBan_TMS.Controllers
                 }
 
                 var singleTeam = await _teamRepository
-                                       .UpdateTeamById(teamId, teamUpdateDto);
+                    .UpdateTeamById(teamId, teamGetUpdateDto);
                 if (singleTeam is not null)
                 {
                     return
@@ -127,6 +131,22 @@ namespace OneBan_TMS.Controllers
             return 
                 BadRequest("Operation was not executed");
         }
-        
+
+        #endregion
+        #region Delete
+        [HttpDelete("Team/{teamId}")]
+        public async Task<ActionResult> DeleteTeamById(int teamId)
+        {
+            if (teamId < 1)
+            {
+                return BadRequest("Team id must be greater than 0");
+            }
+
+            await _teamRepository
+                .DeleteTeamById(teamId);
+            return
+                Ok($"Team with id {teamId} has been deleted");
+        }
+        #endregion
     }
 }

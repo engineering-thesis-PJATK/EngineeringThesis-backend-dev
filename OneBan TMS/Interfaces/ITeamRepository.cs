@@ -7,9 +7,10 @@ namespace OneBan_TMS.Interfaces
 {
     public interface ITeamRepository
     {
-        Task<List<Team>> GetTeams();
-        Task<Team> GetTeamById(int teamId);
+        Task<List<TeamGetDto>> GetTeams();
+        Task<TeamGetDto> GetTeamById(int teamId);
+        Task<TeamGetDto> PostTeam(TeamUpdateDto newTeam);
+        Task<TeamGetDto> UpdateTeamById(int teamId,TeamUpdateDto teamUpdateDto);
         Task DeleteTeamById(int teamId);
-        Task<Team> UpdateTeamById(int teamId,TeamUpdateDto teamUpdateDto);
     }
 }

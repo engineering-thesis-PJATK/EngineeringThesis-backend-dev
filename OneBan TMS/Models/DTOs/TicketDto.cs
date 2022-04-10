@@ -5,17 +5,17 @@ namespace OneBan_TMS.Models.DTOs
 {
     public class TicketDto
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Topic { get; set; }
-        public decimal EstimatedCost { get; set; }
-        public DateTime DueDate { get; set; }
-        public DateTime CompletedAt { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public string Description { get; set; }
-        public int TicketStatusId { get; set; }
-        public int CustomerId { get; set; }
-        public int TicketTypeId { get; set; }
-        public int TicketPriorityId { get; set; }
+        public int TicId { get; set; }
+        public string TicName { get; set; }
+        public string TicTopic { get; set; }
+        public decimal TicEstimatedCost { get; set; }
+        public DateTime TicDueDate { get; set; }
+        public DateTime TicCompletedAt { get; set; }
+        public DateTime TicCreatedAt { get; set; }
+        public string TicDescription { get; set; }
+        public int TicTicketStatusId { get; set; }
+        public int TicCustomerId { get; set; }
+        public int TicTicketTypeId { get; set; }
+        public int TicTicketPriorityId { get; set; }
     }
 }

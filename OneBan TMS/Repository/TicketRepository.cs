@@ -52,19 +52,19 @@ namespace OneBan_TMS.Repository
             return 
                 new TicketDto()
                 {   
-                    Description = ticket.TicDescription, 
-                    Id = ticket.TicId,
-                    Name = ticket.TicName,
-                    Topic = ticket.TicTopic,
-                    CompletedAt = ticket.TicCompletedAt
+                    TicDescription = ticket.TicDescription, 
+                    TicId = ticket.TicId,
+                    TicName = ticket.TicName,
+                    TicTopic = ticket.TicTopic,
+                    TicCompletedAt = ticket.TicCompletedAt
                                         .GetValueOrDefault(),
-                    CreatedAt = ticket.TicCreatedAt,
-                    CustomerId = ticket.TicIdCustomer,
-                    DueDate = ticket.TicDueDate,
-                    EstimatedCost = ticket.TicEstimatedCost,
-                    TicketPriorityId = ticket.TicIdTicketPriority,
-                    TicketStatusId = ticket.TicIdTicketStatus,
-                    TicketTypeId = ticket.TicIdTicketType
+                    TicCreatedAt = ticket.TicCreatedAt,
+                    TicCustomerId = ticket.TicIdCustomer,
+                    TicDueDate = ticket.TicDueDate,
+                    TicEstimatedCost = ticket.TicEstimatedCost,
+                    TicTicketPriorityId = ticket.TicIdTicketPriority,
+                    TicTicketStatusId = ticket.TicIdTicketStatus,
+                    TicTicketTypeId = ticket.TicIdTicketType
                 };
         }
 
@@ -73,9 +73,9 @@ namespace OneBan_TMS.Repository
             return
                 new TicketPriorityDto()
                 {
-                    Description = ticketPriority.TpiDescription,
-                    Id = ticketPriority.TpiId,
-                    Weight = ticketPriority.TpiWeight
+                    TpiDescription = ticketPriority.TpiDescription,
+                    TpiId = ticketPriority.TpiId,
+                    TpiWeight = ticketPriority.TpiWeight
                 };
         }
 
@@ -84,9 +84,9 @@ namespace OneBan_TMS.Repository
             return
                 new TicketTypeDto()
                 {
-                    Description = ticketType.TtpDescription,
-                    Id = ticketType.TtpId,
-                    Name = ticketType.TtpName
+                    TtpDescription = ticketType.TtpDescription,
+                    TtpId = ticketType.TtpId,
+                    TtpName = ticketType.TtpName
                 };
         }
 
@@ -95,9 +95,9 @@ namespace OneBan_TMS.Repository
             return
                 new TicketStatusDto()
                 {
-                    Description = ticketStatus.TstDescription,
-                    Id = ticketStatus.TstId,
-                    Name = ticketStatus.TstName
+                    TstDescription = ticketStatus.TstDescription,
+                    TstId = ticketStatus.TstId,
+                    TstName = ticketStatus.TstName
                 };
         }
         
@@ -172,16 +172,16 @@ namespace OneBan_TMS.Repository
                                      .SingleOrDefaultAsync();
             if (singleTicket is not null)
             {
-                singleTicket.TicName = ticketUpdate.Name;
-                singleTicket.TicTopic = ticketUpdate.Topic;
-                singleTicket.TicDescription = ticketUpdate.Description;
-                singleTicket.TicEstimatedCost = ticketUpdate.EstimatedCost;
-                singleTicket.TicDueDate = ticketUpdate.DueDate;
-                singleTicket.TicCompletedAt = ticketUpdate.CompletedAt;
-                singleTicket.TicIdTicketStatus = ticketUpdate.TicketStatusId;
-                singleTicket.TicIdCustomer = ticketUpdate.CustomerId;
-                singleTicket.TicIdTicketType = ticketUpdate.TicketTypeId;
-                singleTicket.TicIdTicketPriority = ticketUpdate.TicketPriorityId;
+                singleTicket.TicName = ticketUpdate.TicName;
+                singleTicket.TicTopic = ticketUpdate.TicTopic;
+                singleTicket.TicDescription = ticketUpdate.TicDescription;
+                singleTicket.TicEstimatedCost = ticketUpdate.TicEstimatedCost;
+                singleTicket.TicDueDate = ticketUpdate.TicDueDate;
+                singleTicket.TicCompletedAt = ticketUpdate.TicCompletedAt;
+                singleTicket.TicIdTicketStatus = ticketUpdate.TicTicketStatusId;
+                singleTicket.TicIdCustomer = ticketUpdate.TicCustomerId;
+                singleTicket.TicIdTicketType = ticketUpdate.TicTicketTypeId;
+                singleTicket.TicIdTicketPriority = ticketUpdate.TicTicketPriorityId;
                 await _context
                       .SaveChangesAsync();
                 

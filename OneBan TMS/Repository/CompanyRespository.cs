@@ -33,12 +33,12 @@ namespace OneBan_TMS.Repository
         {
             _context.Companies.Add(new Company()
             {
-                CmpName = newCompany.Name,
-                CmpNip = newCompany.Nip,
-                CmpNipPrefix = newCompany.NipPrefix,
-                CmpRegon = newCompany.Regon,
-                CmpKrsNumber = newCompany.KrsNumber,
-                CmpLandline = newCompany.Landline
+                CmpName = newCompany.CmpName,
+                CmpNip = newCompany.CmpNip,
+                CmpNipPrefix = newCompany.CmpNipPrefix,
+                CmpRegon = newCompany.CmpRegon,
+                CmpKrsNumber = newCompany.CmpKrsNumber,
+                CmpLandline = newCompany.CmpLandline
             });
             await _context.SaveChangesAsync();
         }
@@ -49,12 +49,12 @@ namespace OneBan_TMS.Repository
                 .Companies
                 .Where(x => x.CmpId == idCompany)
                 .SingleOrDefaultAsync();
-            companyToUpdate.CmpName = updatedCompanyDto.Name;
-            companyToUpdate.CmpNip = updatedCompanyDto.Nip;
-            companyToUpdate.CmpNipPrefix = updatedCompanyDto.NipPrefix;
-            companyToUpdate.CmpRegon = updatedCompanyDto.Regon;
-            companyToUpdate.CmpKrsNumber = updatedCompanyDto.KrsNumber;
-            companyToUpdate.CmpLandline = updatedCompanyDto.Landline;
+            companyToUpdate.CmpName = updatedCompanyDto.CmpName;
+            companyToUpdate.CmpNip = updatedCompanyDto.CmpNip;
+            companyToUpdate.CmpNipPrefix = updatedCompanyDto.CmpNipPrefix;
+            companyToUpdate.CmpRegon = updatedCompanyDto.CmpRegon;
+            companyToUpdate.CmpKrsNumber = updatedCompanyDto.CmpKrsNumber;
+            companyToUpdate.CmpLandline = updatedCompanyDto.CmpLandline;
             await _context.SaveChangesAsync();
         }
 

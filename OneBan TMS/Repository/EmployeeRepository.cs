@@ -15,7 +15,7 @@ namespace OneBan_TMS.Repository
         {
             _context = context;
         }
-        public IEnumerable<EmployeeDto> GetAllEmployeeDto()
+        public async Task<IEnumerable<EmployeeDto>> GetAllEmployeeDto()
         {
             List<EmployeeDto> employeeDtoList = new List<EmployeeDto>();
             var employees = _context
@@ -49,7 +49,7 @@ namespace OneBan_TMS.Repository
             return employeeDtoList;
         }
 
-        public EmployeeDto GetEmployeeByIdDto(int idEmployee)
+        public async Task<EmployeeDto> GetEmployeeByIdDto(int idEmployee)
         {
             var employee = _context
                 .Employees
@@ -83,7 +83,7 @@ namespace OneBan_TMS.Repository
             };
         }
 
-        public async Task<List<EmployeePrivilege>> GetAllEmployeePrivilages()
+        public async Task<List<EmployeePrivilege>> GetAllEmployeePrivileges()
         {
             var privilages = await _context
                 .EmployeePrivileges

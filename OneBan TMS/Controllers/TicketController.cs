@@ -224,7 +224,7 @@ namespace OneBan_TMS.Controllers
                 return
                     BadRequest("Ticket status was not provided");
             }
-            switch (newStatus.StatusId)    
+            switch (newStatus.TstId)    
             {
                 case < 1:
                     return 
@@ -235,7 +235,7 @@ namespace OneBan_TMS.Controllers
             }
 
             var singleTicket = await _ticketRepository
-                                     .UpdateTicketStatusId(ticketId, newStatus.StatusId);
+                                     .UpdateTicketStatusId(ticketId, newStatus.TstId);
             if (!(singleTicket is null))
             {
                 return

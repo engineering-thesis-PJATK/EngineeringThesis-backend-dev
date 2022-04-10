@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace OneBan_TMS.Repository
         {
             _context = context;
         }
-        public async Task<List<Team>> GetTeams()
+        public async Task<List<TeamGetDto>> GetTeams()
         {
             var teams = await _context
                                         .Teams
@@ -28,18 +27,47 @@ namespace OneBan_TMS.Repository
                     null;
             }
             return
-                teams;
+                teams
+                .Select(ChangeTeamBaseToGetDto)
+                .ToList();
         }
 
-        public async Task<Team> GetTeamById(int teamId)
+        public async Task<TeamGetDto> GetTeamById(int teamId)
         {
             Team team = await _context
                               .Teams
                               .Where(team => team.TemId == teamId)
                               .SingleOrDefaultAsync();
             return
-                team;
+                ChangeTeamBaseToGetDto(team);
 
+        }
+
+        public async Task<TeamGetDto> PostTeam(TeamUpdateDto newTeam)
+        {
+            Team team = await _context
+                              .Teams
+                              .Where(team => team.TemName.Equals(newTeam.TemName))
+                              .SingleOrDefaultAsync();
+            if (team is not null)
+            {
+                return
+                    null;
+            }
+
+            Team teamToAdd = new()
+            {
+                TemName = newTeam.TemName
+            };
+            await _context
+                .Teams
+                .AddAsync(teamToAdd);
+            await _context
+                  .SaveChangesAsync();
+
+            return
+                GetTeamById(teamToAdd.TemId)
+                .Result;
         }
 
         public async Task DeleteTeamById(int teamId)
@@ -56,7 +84,7 @@ namespace OneBan_TMS.Repository
             
         }
 
-        public async Task<Team> UpdateTeamById(int teamId, TeamUpdateDto teamUpdateDto)
+        public async Task<TeamGetDto> UpdateTeamById(int teamId, TeamUpdateDto teamUpdateDto)
         {
             Team team = await _context
                               .Teams
@@ -74,6 +102,15 @@ namespace OneBan_TMS.Repository
 
             return
                 null;
+        }
+        private TeamGetDto ChangeTeamBaseToGetDto(Team team)
+        {
+            return 
+                new TeamGetDto()
+                {   
+                  TemName = team.TemName,
+                  TemId = team.TemId
+                };
         }
     }
 }
