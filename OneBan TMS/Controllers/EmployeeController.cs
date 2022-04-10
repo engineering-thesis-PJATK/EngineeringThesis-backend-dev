@@ -84,5 +84,20 @@ namespace OneBan_TMS.Controllers
             return 
                 Ok(singleTeam);
         }
+
+        [HttpDelete("Team/{teamId}")]
+        public async Task<ActionResult> DeleteTeamById(int teamId)
+        {
+            if (teamId < 1)
+            {
+                return BadRequest("Team id must be greater than 0");
+            }
+
+            await _teamRepository
+                  .DeleteTeamById(teamId);
+            return
+                Ok($"Team with id {teamId} has been deleted");
+        }
+        
     }
 }

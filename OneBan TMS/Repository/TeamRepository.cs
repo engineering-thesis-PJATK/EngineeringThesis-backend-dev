@@ -40,5 +40,24 @@ namespace OneBan_TMS.Repository
                 team;
 
         }
+
+        public async Task DeleteTeamById(int teamId)
+        {
+            Team team = await _context
+                              .Teams
+                              .Where(team => team.TemId == teamId)
+                              .SingleOrDefaultAsync();
+            _context
+            .Teams
+            .Remove(team);
+            await _context
+                .SaveChangesAsync();
+            
+        }
+
+        public async Task<Team> UpdateTeamById(int teamId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
