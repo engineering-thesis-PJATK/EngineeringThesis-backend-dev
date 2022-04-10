@@ -246,5 +246,18 @@ namespace OneBan_TMS.Repository
             return 
                 ChangeTicketStatusBaseToDto(singleTicketStatus);
         }
+
+        public async Task DeleteTicketById(int ticketId)
+        {
+            Ticket ticket = await _context
+                                  .Tickets
+                                  .Where(ticket => ticket.TicId == ticketId)
+                                  .SingleOrDefaultAsync();
+            _context
+            .Tickets
+            .Remove(ticket);
+            await _context
+                .SaveChangesAsync();
+        }
     }
 }

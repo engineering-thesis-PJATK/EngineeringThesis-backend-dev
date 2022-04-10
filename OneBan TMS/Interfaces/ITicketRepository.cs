@@ -18,5 +18,6 @@ namespace OneBan_TMS.Interfaces
         Task<TicketDto> UpdateTicketStatusId(int ticketId, int ticketStatusId);
         Task<List<TicketStatusDto>> GetTicketStatuses();
         Task<TicketStatusDto> GetTicketStatusById(int ticketStatusId);
+        Task DeleteTicketById(int ticketId);
     }
 }
