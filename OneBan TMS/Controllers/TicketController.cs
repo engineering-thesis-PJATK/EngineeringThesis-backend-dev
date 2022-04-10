@@ -18,10 +18,12 @@ namespace OneBan_TMS.Controllers
     {
         private readonly ITicketRepository _ticketRepository;
         private readonly ICustomerRepository _customerRepository;
-        public TicketController(ITicketRepository ticketRepository, ICustomerRepository customerRepository)
+        private readonly ITimeEntryRepository _timeEntryRepository;
+        public TicketController(ITicketRepository ticketRepository, ICustomerRepository customerRepository,ITimeEntryRepository timeEntryRepository)
         {
             _ticketRepository = ticketRepository;
             _customerRepository = customerRepository;
+            _timeEntryRepository = timeEntryRepository;
         }
 
         #region GetById
@@ -100,6 +102,27 @@ namespace OneBan_TMS.Controllers
 
             return
                 Ok(singleTicketStatus);
+        }
+
+        [HttpGet("TimeEntry/{timeEntryId}")]
+        public async Task<ActionResult<TimeEntryGetDto>> GetTimeEntryById(int timeEntryId)
+        {
+            if (timeEntryId < 1)
+            {
+                return
+                    BadRequest("Time entry id must be greater than 0");
+            }
+
+            var singleTimeEntry = await _timeEntryRepository
+                .GetTimeEntryById(timeEntryId);
+            if (singleTimeEntry is null)
+            {
+                return
+                    NotFound($"No time entry was found for id {timeEntryId}");
+            }
+
+            return
+                Ok(singleTimeEntry);
         }
 
         #endregion
