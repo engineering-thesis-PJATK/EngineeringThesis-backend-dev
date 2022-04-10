@@ -46,13 +46,34 @@ namespace OneBan_TMS.Controllers
             return 
                 Ok(singleTeam);
         }
+        
+        [HttpGet("Privilege/{privilegeId}")]
+        public async Task<ActionResult<EmployeePrivilege>> GetEmployeePrivilegeById(int privilegeId)
+        {
+            if (privilegeId < 1)
+            {
+                return BadRequest("Privilege id must be greater than 0");
+            }
+
+            var singlePrivilege = await _employeeRepository
+                                                       .GetEmployeePrivilegeById(privilegeId);
+            if (singlePrivilege is null)
+            {
+                return 
+                    NotFound($"No privilege with id: {privilegeId} found");
+            }
+            
+            return 
+                Ok(singlePrivilege);
+        }
+        
         #endregion     
         #region getList
         [HttpGet("Privilege")]
         public async Task<ActionResult<EmployeePrivilege>> GetEmployeePrivileges()
         {
             var privileges = await _employeeRepository
-                                                      .GetAllEmployeePrivileges();
+                                                      .GetEmployeePrivileges();
             if (privileges is null)
                 return 
                     BadRequest("No privileges assigned to employees");

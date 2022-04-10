@@ -9,31 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/DTOs/TeamGetDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/EmployeePrivilegeGetDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/EmployeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TicketController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interfaces/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IEmployeeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ITeamRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/ITeamRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/CompanyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/CompanyDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/ProjectDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/ProjectDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/TicketDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketPriorityDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/TicketPriorityDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketStatusDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/TicketStatusDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketStatusIdPatchDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/TicketStatusIdPatchDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketTypeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/TicketTypeDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketUpdateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/TicketUpdateDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/CompanyRespository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRespository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/TeamRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TeamRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/TicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TicketRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +130,7 @@
       <workItem from="1649490340753" duration="4616000" />
       <workItem from="1649497249304" duration="1866000" />
       <workItem from="1649545366356" duration="3701000" />
-      <workItem from="1649595247020" duration="4666000" />
+      <workItem from="1649595247020" duration="7280000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>

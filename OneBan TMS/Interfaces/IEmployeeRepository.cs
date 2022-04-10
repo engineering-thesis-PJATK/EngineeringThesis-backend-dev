@@ -9,6 +9,8 @@ namespace OneBan_TMS.Interfaces
     {
         Task<IEnumerable<EmployeeDto>> GetAllEmployeeDto();
         Task<EmployeeDto> GetEmployeeByIdDto(int idEmployee);
-        Task<List<EmployeePrivilege>> GetAllEmployeePrivileges();
+        Task<List<EmployeePrivilegeGetDto>> GetEmployeePrivileges();
+        Task<EmployeePrivilegeGetDto> GetEmployeePrivilegeById(int privilegeId);
+
     }
 }

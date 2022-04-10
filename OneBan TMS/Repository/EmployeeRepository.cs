@@ -68,8 +68,7 @@ namespace OneBan_TMS.Repository
                     Roles = x.EmployeePrivilegeEmployees.Select(y => y.EpeIdEmployeePrivilageNavigation.EpvName),
                     Teams = x.EmployeeTeams.Select(y => y.EtmIdTeamNavigation)
                 })
-                .Where(x => x.EmpId == idEmployee)
-                .FirstOrDefault();
+                .FirstOrDefault(x => x.EmpId == idEmployee);
             return new EmployeeDto()
             {
                 EmpId = employee.EmpId,
@@ -83,12 +82,43 @@ namespace OneBan_TMS.Repository
             };
         }
 
-        public async Task<List<EmployeePrivilege>> GetAllEmployeePrivileges()
+        public async Task<List<EmployeePrivilegeGetDto>> GetEmployeePrivileges()
         {
             var privilages = await _context
-                .EmployeePrivileges
-                .ToListAsync();
-            return privilages;
+                                                      .EmployeePrivileges
+                                                      .ToListAsync();
+            return 
+                privilages
+                .Select(ChangeEmployeePrivilegeBaseToDto)
+                .ToList();
+        }
+
+        public async Task<EmployeePrivilegeGetDto> GetEmployeePrivilegeById(int privilegeId)
+        {
+            var privilage = await _context
+                                                     .EmployeePrivileges
+                                                     .Where(privilege => privilege.EpvId == privilegeId)
+                                                     .SingleOrDefaultAsync();
+            if (privilage is not null)
+            {
+                return
+                    ChangeEmployeePrivilegeBaseToDto(privilage);
+            }
+
+            return
+                null;
+        }
+
+
+        private EmployeePrivilegeGetDto ChangeEmployeePrivilegeBaseToDto(EmployeePrivilege employeePrivilege)
+        {
+            return 
+                new EmployeePrivilegeGetDto()
+                {
+                    EpvDescription = employeePrivilege.EpvDescription,
+                    EpvId = employeePrivilege.EpvId,
+                    EpvName = employeePrivilege.EpvName
+                };
         }
     }
 }
