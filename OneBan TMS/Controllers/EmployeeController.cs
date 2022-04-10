@@ -98,6 +98,35 @@ namespace OneBan_TMS.Controllers
             return
                 Ok($"Team with id {teamId} has been deleted");
         }
+
+        [HttpPut("Team/{teamId}")]
+        public async Task<ActionResult<Team>> UpdateTeamById(int teamId,Team teamUpdate)
+        {
+            if (ModelState.IsValid)
+            {
+                if (teamUpdate is null)
+                {
+                    return 
+                        BadRequest("Team cannot be empty");
+                }
+                if (teamId < 1)
+                {
+                    return 
+                        BadRequest("Team id must be greater than 0");
+                }
+
+                var singleTeam = await _teamRepository
+                                       .UpdateTeamById(teamId, teamUpdate);
+                if (singleTeam is not null)
+                {
+                    return
+                        Ok(singleTeam);
+                }
+            }
+
+            return 
+                BadRequest("Operation was not executed");
+        }
         
     }
 }

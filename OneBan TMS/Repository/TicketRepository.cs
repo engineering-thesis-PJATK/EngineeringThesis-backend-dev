@@ -182,13 +182,16 @@ namespace OneBan_TMS.Repository
                 singleTicket.TicIdCustomer = ticketUpdate.CustomerId;
                 singleTicket.TicIdTicketType = ticketUpdate.TicketTypeId;
                 singleTicket.TicIdTicketPriority = ticketUpdate.TicketPriorityId;
-                await _context.SaveChangesAsync();
+                await _context
+                      .SaveChangesAsync();
                 
-                return GetTicketById(ticketId)
-                       .Result;
+                return 
+                    GetTicketById(ticketId)
+                    .Result;
             }
 
-            return null;
+            return 
+                null;
         }
 
         public async Task<TicketDto> UpdateTicketStatusId(int ticketId, int ticketStatusId)
@@ -208,7 +211,8 @@ namespace OneBan_TMS.Repository
                     .Result;
             }
 
-            return null;
+            return 
+                null;
         }
 
         public async Task<List<TicketStatusDto>> GetTicketStatuses()

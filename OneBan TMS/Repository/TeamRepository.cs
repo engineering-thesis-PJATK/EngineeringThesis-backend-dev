@@ -55,9 +55,24 @@ namespace OneBan_TMS.Repository
             
         }
 
-        public async Task<Team> UpdateTeamById(int teamId)
+        public async Task<Team> UpdateTeamById(int teamId, Team teamUpdate)
         {
-            throw new NotImplementedException();
+            Team team = await _context
+                              .Teams
+                              .Where(team => team.TemId == teamId)
+                              .SingleOrDefaultAsync();
+            if (team is not null)
+            {
+                team.TemName = teamUpdate.TemName;
+                await _context
+                      .SaveChangesAsync();
+                return
+                    GetTeamById(teamId)
+                    .Result;
+            }
+
+            return
+                null;
         }
     }
 }

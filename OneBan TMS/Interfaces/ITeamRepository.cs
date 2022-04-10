@@ -9,6 +9,6 @@ namespace OneBan_TMS.Interfaces
         Task<List<Team>> GetTeams();
         Task<Team> GetTeamById(int teamId);
         Task DeleteTeamById(int teamId);
-        Task<Team> UpdateTeamById(int teamId);
+        Task<Team> UpdateTeamById(int teamId,Team teamUpdate);
     }
 }
