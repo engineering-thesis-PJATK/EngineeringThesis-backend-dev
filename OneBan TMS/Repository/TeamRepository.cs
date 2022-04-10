@@ -32,7 +32,13 @@ namespace OneBan_TMS.Repository
 
         public async Task<Team> GetTeamById(int teamId)
         {
-            throw new NotImplementedException();
+            Team team = await _context
+                              .Teams
+                              .Where(team => team.TemId == teamId)
+                              .SingleOrDefaultAsync();
+            return
+                team;
+
         }
     }
 }

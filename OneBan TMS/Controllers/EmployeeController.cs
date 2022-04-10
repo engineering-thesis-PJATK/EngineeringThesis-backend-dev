@@ -78,7 +78,7 @@ namespace OneBan_TMS.Controllers
             if (singleTeam is null)
             {
                 return 
-                    NotFound($"No ticket with id: {teamId} found");
+                    NotFound($"No team with id: {teamId} found");
             }
             
             return 
