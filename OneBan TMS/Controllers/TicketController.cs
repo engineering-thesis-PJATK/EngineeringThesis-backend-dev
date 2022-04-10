@@ -331,7 +331,7 @@ namespace OneBan_TMS.Controllers
         #endregion
         
         #region Delete
-        [HttpDelete("Ticket/{ticketId}")]
+        [HttpDelete("Ticket/{ticketId:int}")]
         public async Task<ActionResult> DeleteTicketById(int ticketId)
         {
             if (ticketId < 1)
@@ -346,7 +346,7 @@ namespace OneBan_TMS.Controllers
                 Ok($"Ticket with id {ticketId} has been deleted");
         }
         
-        [HttpDelete("TimeEntry/{timeEntryId}")]
+        [HttpDelete("TimeEntry/{timeEntryId:int}")]
         public async Task<ActionResult> DeleteTimeEntryById(int timeEntryId)
         {
             if (timeEntryId < 1)
