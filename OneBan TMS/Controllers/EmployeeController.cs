@@ -113,7 +113,14 @@ namespace OneBan_TMS.Controllers
         [HttpPost("Team")]
         public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)
         {
-            return Ok(await _employeeRepository.GetEmployeeByIdDto(employeeId));
+            if (ModelState.IsValid)
+            {
+                return
+                    await _teamRepository.PostTeam(newTeam);
+            }
+
+            return
+                BadRequest();
         }
         #endregion
         #region Put

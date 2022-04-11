@@ -13,10 +13,11 @@ namespace OneBan_TMS.Controllers
     public class ProjectController : ControllerBase
     {
         private IProjectRepository _projectRepository{ get; init; }
-
-        public ProjectController(IProjectRepository projectRepository)
+        private readonly IProjectTaskRepository _projectTaskRepository;
+        public ProjectController(IProjectRepository projectRepository, IProjectTaskRepository projectTaskRepository)
         {
             _projectRepository = projectRepository;
+            _projectTaskRepository = projectTaskRepository;
         }
         
         [HttpGet("{projectId}")]

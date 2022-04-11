@@ -53,12 +53,13 @@ namespace OneBan_TMS
             services.AddScoped<ICompanyHandler, CompanyHandler>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            services.AddScoped<ICompanyRepository, CompanyRespository>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITicketRepository, TicketRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<IProjectTaskRepository, ProjectTaskRepository>();
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
             
