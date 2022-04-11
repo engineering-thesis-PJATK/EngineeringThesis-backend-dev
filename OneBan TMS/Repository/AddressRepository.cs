@@ -34,19 +34,45 @@ namespace OneBan_TMS.Repository
                 throw new ArgumentException("Company is not exists");
             _context.Addresses.Add(new Address()
             {
-                AdrTown = newAddress.Town,
-                AdrStreet = newAddress.Street,
-                AdrStreetNumber = newAddress.StreetNumber,
-                AdrPostCode = newAddress.PostCode,
-                AdrCountry = newAddress.PostCode,
+                AdrTown = newAddress.AdrTown,
+                AdrStreet = newAddress.AdrStreet,
+                AdrStreetNumber = newAddress.AdrStreetNumber,
+                AdrPostCode = newAddress.AdrPostCode,
+                AdrCountry = newAddress.AdrCountry,
                 AdrIdCompany = idCompany
             });
             await _context.SaveChangesAsync();
         }
-
-        public Task UpdateAddress(AddressDto updatedAddress, int idAddress)
+        public async Task UpdateAddress(AddressDto updatedAddress, int addressId)
         {
-            throw new System.NotImplementedException();
+            var address = await _context
+                .Addresses
+                .Where(x => x.AdrId == addressId)
+                .SingleOrDefaultAsync();
+            address.AdrTown = updatedAddress.AdrTown;
+            address.AdrStreet = updatedAddress.AdrStreet;
+            address.AdrStreetNumber = updatedAddress.AdrStreetNumber;
+            address.AdrPostCode = updatedAddress.AdrPostCode;
+            address.AdrCountry = updatedAddress.AdrCountry;
+            await _context.SaveChangesAsync();
         }
+        public async Task DeleteAddress(int addressId)
+        {
+            var address = await _context
+                    .Addresses
+                    .Where(x => x.AdrId == addressId)
+                    .SingleOrDefaultAsync();
+                _context.Addresses.Remove(address);
+                await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> ExistsAddress(int addressId)
+        {
+            return await _context
+                .Addresses
+                .Where(x => x.AdrId == addressId)
+                .AnyAsync();
+        }
+
     }
 }

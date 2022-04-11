@@ -42,10 +42,10 @@ namespace OneBan_TMS.Repository
             {
                     customerShortDtos.Add(new CustomerShortDto()
                     {
-                        Id = customer.CurId, 
-                        Email = customer.CurEmail, 
-                        Name = customer.CurName, 
-                        Surname = customer.CurSurname
+                        CurId = customer.CurId, 
+                        CurEmail = customer.CurEmail, 
+                        CurName = customer.CurName, 
+                        CurSurname = customer.CurSurname
                     });
             }
             return customerShortDtos;

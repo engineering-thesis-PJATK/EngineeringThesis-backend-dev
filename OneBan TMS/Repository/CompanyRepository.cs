@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.IIS.Core;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
@@ -14,8 +14,8 @@ namespace OneBan_TMS.Repository
     public class CompanyRepository : ICompanyRepository
     {
         private readonly OneManDbContext _context;
-        private readonly IValidator<Company> _validator;
-        public CompanyRepository(OneManDbContext context, IValidator<Company> validator)
+        private readonly IValidator<CompanyDto> _validator;
+        public CompanyRepository(OneManDbContext context, IValidator<CompanyDto> validator)
         {
             _context = context;
             _validator = validator;
@@ -26,58 +26,65 @@ namespace OneBan_TMS.Repository
             return await _context.Companies.ToListAsync();
         }
 
-        public async Task<Company> GetCompanyById(int idCompany)
+        public async Task<Company> GetCompanyById(int companyId)
         {
-            return await _context
+            var company = await _context
                 .Companies
-                .Where(x => x.CmpId == idCompany).FirstOrDefaultAsync();
+                .Where(x => x.CmpId == companyId)
+                .FirstOrDefaultAsync();
+            return company;
         }
 
         public async Task AddNewCompany(CompanyDto newCompany)
         {
+            _validator.ValidateAndThrow(newCompany);
             Company company = new Company()
             {
-                CmpName = newCompany.Name,
-                CmpNip = newCompany.Nip,
-                CmpNipPrefix = newCompany.NipPrefix,
-                CmpRegon = newCompany.Regon,
-                CmpKrsNumber = newCompany.KrsNumber,
-                CmpLandline = newCompany.Landline
+                CmpName = newCompany.CmpName,
+                CmpNip = newCompany.CmpNip,
+                CmpNipPrefix = newCompany.CmpNipPrefix,
+                CmpRegon = newCompany.CmpRegon,
+                CmpKrsNumber = newCompany.CmpKrsNumber,
+                CmpLandline = newCompany.CmpLandline
             };
-            var validationResults = _validator.Validate(company);
-            if (validationResults.IsValid)
-            {
-                _context.Companies.Add(company);
-                await _context.SaveChangesAsync();   
-            }
-            else
-            {
-                throw new ArgumentException(validationResults.Errors[0].ErrorMessage);
-            }
-            
+            _context.Companies.Add(company);
+            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateCompany(CompanyDto updatedCompanyDto, int idCompany)
         {
+            _validator.ValidateAndThrow(updatedCompanyDto);
             var companyToUpdate = await _context
-                .Companies
-                .Where(x => x.CmpId == idCompany)
-                .SingleOrDefaultAsync();
-            companyToUpdate.CmpName = updatedCompanyDto.Name;
-            companyToUpdate.CmpNip = updatedCompanyDto.Nip;
-            companyToUpdate.CmpNipPrefix = updatedCompanyDto.NipPrefix;
-            companyToUpdate.CmpRegon = updatedCompanyDto.Regon;
-            companyToUpdate.CmpKrsNumber = updatedCompanyDto.KrsNumber;
-            companyToUpdate.CmpLandline = updatedCompanyDto.Landline;
+                    .Companies
+                    .Where(x => x.CmpId == idCompany)
+                    .SingleOrDefaultAsync();
+            companyToUpdate.CmpName = updatedCompanyDto.CmpName;
+            companyToUpdate.CmpNip = updatedCompanyDto.CmpNip;
+            companyToUpdate.CmpNipPrefix = updatedCompanyDto.CmpNipPrefix;
+            companyToUpdate.CmpRegon = updatedCompanyDto.CmpRegon;
+            companyToUpdate.CmpKrsNumber = updatedCompanyDto.CmpKrsNumber;
+            companyToUpdate.CmpLandline = updatedCompanyDto.CmpLandline;
             await _context.SaveChangesAsync();
         }
 
-        public async Task<bool> ExistsCompany(int idCompany)
+        public async Task DeleteCompany(int companyId)
+        {
+            var company = await _context
+                .Companies
+                .Where(x =>
+                    x.CmpId == companyId)
+                .SingleOrDefaultAsync();
+            _context.Companies.Remove(company);
+            await _context.SaveChangesAsync();
+        }
+
+
+        public async Task<bool> ExistsCompany(int companyId)
         {
             var result = await _context
                 .Companies
                 .Where(x =>
-                    x.CmpId == idCompany)
+                    x.CmpId == companyId)
                 .AnyAsync();
             return result;
         }

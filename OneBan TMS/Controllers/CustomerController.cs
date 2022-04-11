@@ -11,11 +11,9 @@ namespace OneBan_TMS.Controllers
     [ApiController]
     public class CustomerController : Controller
     {
-        private readonly OneManDbContext _context;
         private readonly ICustomerRepository _customerRepository;
-        public CustomerController(OneManDbContext context, ICustomerRepository customerRepository)
+        public CustomerController(ICustomerRepository customerRepository)
         {
-            _context = context;
             _customerRepository = customerRepository;
         }
 

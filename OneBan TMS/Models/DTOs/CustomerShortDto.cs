@@ -4,9 +4,9 @@ namespace OneBan_TMS.Models.DTOs
 {
     public class CustomerShortDto
     {
-        public int Id { get; set; }
-        public string Email { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public int CurId { get; set; }
+        public string CurEmail { get; set; }
+        public string CurName { get; set; }
+        public string CurSurname { get; set; }
     }
 }

@@ -6,10 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Handlers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
+using OneBan_TMS.Models.DTOs;
 
 namespace OneBan_TMS.Validators
 {
-    public class CompanyValidator : AbstractValidator<Company>
+    public class CompanyValidator : AbstractValidator<CompanyDto>
     {
         private readonly ICompanyHandler _companyHandler;
         public CompanyValidator(ICompanyHandler companyHandler)

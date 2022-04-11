@@ -21,6 +21,7 @@ using OneBan_TMS.Controllers;
 using OneBan_TMS.Handlers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
+using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Repository;
 using OneBan_TMS.Validators;
 using Swashbuckle.AspNetCore.Filters;
@@ -45,10 +46,12 @@ namespace OneBan_TMS
             
             
             
-            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IValidator<CompanyDto>, CompanyValidator>();
+            services.AddScoped<IValidator<Employee>, EmployeeValidator>();
+            services.AddScoped<IValidatorHandler, ValidatorHandler>();
             services.AddScoped<ICompanyHandler, CompanyHandler>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
-            services.AddScoped<IValidator<Company>, CompanyValidator>();
             services.AddTransient<IAddressRepository, AddressRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<ITicketRepository, TicketRepository>();

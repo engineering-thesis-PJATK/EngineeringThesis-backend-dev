@@ -29,18 +29,16 @@ namespace OneBan_TMS.Controllers
         {
             IEnumerable<Company> companies = await _companyRepository.GetCompanies();
             if (companies is null)
-                return NotFound();
+                return NoContent();
             return Ok(companies);
         }
 
-        [HttpGet("{idCompany}")]
-        public async Task<IActionResult> GetCompanyById(int? idCompany)
+        [HttpGet("{companyId}")]
+        public async Task<IActionResult> GetCompanyById(int companyId)
         {
-            if (idCompany == null)
-                return BadRequest();
-            Company company = await _companyRepository.GetCompanyById((int) idCompany);
-            if (company is null)
+            if (!(await _companyRepository.ExistsCompany(companyId)))
                 return NotFound();
+            Company company = await _companyRepository.GetCompanyById((int) companyId);
             return Ok(company);
         }
 
@@ -51,26 +49,55 @@ namespace OneBan_TMS.Controllers
             return Ok("Added new company");
         }
 
-        [HttpPut("{idCompany}")]
-        public async Task<IActionResult> UpdateCompany([FromBody] CompanyDto updatedCompany, int idCompany)
+        [HttpPut("{companyId}")]
+        public async Task<IActionResult> UpdateCompany([FromBody] CompanyDto updatedCompany, int companyId)
         {
-            await _companyRepository.UpdateCompany(updatedCompany, idCompany);
+            await _companyRepository.UpdateCompany(updatedCompany, companyId);
             return Ok("Company updated");
         }
 
-        [HttpGet( "{idCompany}/addresses")]
-        public async Task<IActionResult> GetAddressesForCompany(int idCompany)
+        [HttpDelete("{companyId}")]
+        public async Task<IActionResult> DeleteCompany(int companyId)
         {
-            IEnumerable<Address> addresses = await _addressRepository.GetAddressesForCompany(idCompany);
-            if (addresses is null)
-                return NotFound();
+            if (!await _companyRepository.ExistsCompany(companyId))
+                return BadRequest($"There is no company with id {companyId}");
+            await _companyRepository.DeleteCompany(companyId);
+            return Ok("Company deleted");
+        }
+        [HttpGet( "{companyId}/Addresses")]
+        public async Task<IActionResult> GetAddressesForCompany(int companyId)
+        {
+            IEnumerable<Address> addresses = await _addressRepository.GetAddressesForCompany(companyId);
+            if (!(addresses.Any()))
+                return NoContent();
             return Ok(addresses);
         }
 
-        [HttpPost("{idCompany}/addresses")]
-        public IActionResult AddNewAddressForCompany(int idCompany)
+        [HttpPost("{companyId}/Addresses")]
+        public async Task<IActionResult> AddNewAddressForCompany(int companyId, [FromBody]AddressDto addressDto)
         {
-            return Ok($"Added new address for company {idCompany}");
+            if (!(await _companyRepository.ExistsCompany(companyId)))
+                return BadRequest($"There is no company with id {companyId}");
+            await _addressRepository.AddNewAddress(addressDto, companyId);
+            return Ok($"Added new address for company {companyId}");
+        }
+
+        [HttpPut("Addresses/{addressId}")]
+        public async Task<IActionResult> UpdateAddress(int addressId, [FromBody] AddressDto addressDto)
+        {
+            if (!(await _addressRepository.ExistsAddress(addressId)))
+                return BadRequest($"There is no address with id {addressId}");
+            await _addressRepository.UpdateAddress(addressDto, addressId);
+            return Ok("Address updated");
+        }
+
+        [HttpDelete("Addresses/{addressId}")]
+        public async Task<IActionResult> DeleteAddress(int addressId)
+        {
+            if (!(await _addressRepository.ExistsAddress(addressId)))
+                return BadRequest($"There is no address with id {addressId}");
+            await _addressRepository.DeleteAddress(addressId);
+            return Ok("Address deleted");
         }
     }
 }
