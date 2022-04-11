@@ -12,35 +12,46 @@ namespace OneBan_TMS.Controllers
     [ApiController]
     public class ProjectController : ControllerBase
     {
-        private IProject Project{ get; init; }
-        private readonly IProjectTaskRepository _projectTaskRepository;
-        public ProjectController(IProject pProject, IProjectTaskRepository projectTaskRepository)
+        private IProjectRepository _projectRepository{ get; init; }
+
+        public ProjectController(IProjectRepository projectRepository)
         {
-            Project = pProject;
-            _projectTaskRepository = projectTaskRepository;
+            _projectRepository = projectRepository;
         }
         
-        [HttpGet("GetProjectById")]
-        public IActionResult GetProjectById(int pProjectId)
+        [HttpGet("{projectId}")]
+        public async Task<ActionResult<ProjectDto>> GetProjectById(int projectId)
         {
-            if (pProjectId < 1)
-                return BadRequest();
-
-            Project singleProject = Project.GetProjectById(pProjectId);
+            if (projectId < 1)
+            {
+                return 
+                    BadRequest("Project id must be greater than 0");
+            }
+            Project singleProject = await _projectRepository
+                                          .GetProjectById(projectId);
             if (singleProject is null)
-                return NotFound();
+            {
+                return NotFound($"No ticket with id: {projectId} found");
+            }
             
             return Ok(singleProject);
         }
         
-        [HttpGet("GetAllProjectes")]
-        public IActionResult GetAllProjectes()
+        [HttpGet()]
+        public async Task<ActionResult<List<ProjectDto>>> GetProjects()
         {
-            var projectList = Project.GetAllProjects();
-            if (projectList.Any())
-                return Ok(projectList);
-            else
+            var projectList = await _projectRepository
+                                    .GetProjects();
+            if (projectList is null)
+            {
+                return BadRequest();
+            }
+            if (!(projectList.Any()))
+            {
                 return NoContent();
+            }
+            
+            return Ok(projectList);
         }
 
         [HttpGet("{projectId}/ProjectTasks")]

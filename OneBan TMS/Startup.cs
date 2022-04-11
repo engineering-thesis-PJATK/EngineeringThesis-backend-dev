@@ -40,6 +40,7 @@ namespace OneBan_TMS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
             var connectionString = Configuration.GetConnectionString("SQLConnection");
             services.AddDbContextPool<OneManDbContext>(options =>
                 options.UseSqlServer(connectionString));
@@ -50,13 +51,17 @@ namespace OneBan_TMS
             services.AddScoped<IValidator<Employee>, EmployeeValidator>();
             services.AddScoped<IValidatorHandler, ValidatorHandler>();
             services.AddScoped<ICompanyHandler, CompanyHandler>();
-            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
-            services.AddTransient<IAddressRepository, AddressRepository>();
-            services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<ITicketRepository, TicketRepository>();
-            services.AddTransient<IEmployeeTeamRoleRepository, EmployeeTeamRoleRepository>();
-            services.AddTransient<IProjectTaskRepository, ProjectTaskRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<ICompanyRepository, CompanyRespository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITicketRepository, TicketRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<ITeamRepository, TeamRepository>();
+            services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
+            
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
 

@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "PnakKQzw04BtaVoCFizxyG8x9pt3pHx7Nd47VGvJxf5FwPDDKvSsCSPp8uGC+Tp9YIN8QxOcr96XmXgp06slbQ==",
   "success": true,
-  "projectFilePath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj",
+  "projectFilePath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj",
   "expectedPackageFiles": [
     "/Users/mac/.nuget/packages/automapper/11.0.1/automapper.11.0.1.nupkg.sha512",
     "/Users/mac/.nuget/packages/azure.core/1.22.0/azure.core.1.22.0.nupkg.sha512",
