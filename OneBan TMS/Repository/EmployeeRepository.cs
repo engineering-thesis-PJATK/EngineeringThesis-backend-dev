@@ -15,9 +15,9 @@ namespace OneBan_TMS.Repository
         {
             _context = context;
         }
-        public async Task<IEnumerable<EmployeeDto>> GetAllEmployeeDto()
+        public async Task<IEnumerable<EmployeeForListDto>> GetAllEmployeeDto()
         {
-            List<EmployeeDto> employeeDtoList = new List<EmployeeDto>();
+            List<EmployeeForListDto> employeeDtoList = new List<EmployeeForListDto>();
             var employees = await _context
                 .Employees
                 .Include(x => x.EmployeePrivilegeEmployees)
@@ -34,7 +34,7 @@ namespace OneBan_TMS.Repository
                 }).ToListAsync();
             foreach (var emp in employees )
             {
-                employeeDtoList.Add(new EmployeeDto()
+                employeeDtoList.Add(new EmployeeForListDto()
                 {
                     EmpId = emp.EmpId,
                     EmpLogin = emp.EmpLogin,
@@ -48,7 +48,7 @@ namespace OneBan_TMS.Repository
             return employeeDtoList;
         }
 
-        public async Task<EmployeeDto> GetEmployeeByIdDto(int idEmployee)
+        public async Task<EmployeeForListDto> GetEmployeeByIdDto(int idEmployee)
         {
             var employee = await _context
                 .Employees
@@ -69,7 +69,7 @@ namespace OneBan_TMS.Repository
                 })
                 .Where(x => x.EmpId == idEmployee)
                 .FirstOrDefaultAsync();
-            return new EmployeeDto()
+            return new EmployeeForListDto()
             {
                 EmpId = employee.EmpId,
                 EmpLogin = employee.EmpLogin,
@@ -83,6 +83,7 @@ namespace OneBan_TMS.Repository
         }
         public async Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeUpdated)
         {
+            //Todo: Zrobić walidację
             var employeeToUpdate = await _context
                 .Employees
                 .Where(x => x.EmpId == employeeId)

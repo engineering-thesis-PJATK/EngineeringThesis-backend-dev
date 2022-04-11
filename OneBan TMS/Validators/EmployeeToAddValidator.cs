@@ -4,10 +4,10 @@ using OneBan_TMS.Models;
 
 namespace OneBan_TMS.Validators
 {
-    public class EmployeeValidator : AbstractValidator<Employee>
+    public class EmployeeToAddValidator : AbstractValidator<Employee>
     {
         private readonly IValidatorHandler _validatorHandler;
-        public EmployeeValidator(IValidatorHandler validatorHandler)
+        public EmployeeToAddValidator(IValidatorHandler validatorHandler)
         {
             _validatorHandler = validatorHandler;
             

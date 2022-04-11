@@ -20,11 +20,11 @@ namespace OneBan_TMS.Controllers
         }
         #region GetById
         [HttpGet("{employeeId}")]
-        public async Task<ActionResult<EmployeeDto>> GetEmployeeById(int employeeId)
+        public async Task<ActionResult<EmployeeForListDto>> GetEmployeeById(int employeeId)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
                 return NoContent();
-            EmployeeDto employeeDto = await  _employeeRepository
+            EmployeeForListDto employeeDto = await  _employeeRepository
                                                 .GetEmployeeByIdDto(employeeId);
             return Ok(employeeDto);
         }
@@ -80,7 +80,7 @@ namespace OneBan_TMS.Controllers
         }
         
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetEmployees()
+        public async Task<ActionResult<IEnumerable<EmployeeForListDto>>> GetEmployees()
         {
             var employee = await _employeeRepository.GetAllEmployeeDto();
             if (!(employee.Any()))

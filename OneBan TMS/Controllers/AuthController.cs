@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models.DTOs;
 using System.Threading.Tasks;
+using OneBan_TMS.Models.DTOs.Employee;
 
 namespace OneBan_TMS.Controllers
 {
@@ -17,9 +19,9 @@ namespace OneBan_TMS.Controllers
             _tokenHandler = tokenHandler;
         }
         [HttpPost("Register")]
-        public async Task<ActionResult> Register([FromBody]UserDto userDto)
+        public async Task<ActionResult> Register([FromBody]EmployeeDto userDto)
         {
-            _passwordHandler.CreatePasswordHash(userDto.Password, out byte[] passwordHash, out byte[] passwordSalt);
+            _passwordHandler.CreatePasswordHash(userDto.EmpPassword, out byte[] passwordHash, out byte[] passwordSalt);
             await _userRepository.AddNewUser(userDto, passwordHash, passwordSalt);
             return Ok(userDto);
         }
@@ -40,6 +42,13 @@ namespace OneBan_TMS.Controllers
             }
             string token = _tokenHandler.CreateToken(systemUser.EmpEmail, await _userRepository.GetUserRole(systemUser.EmpEmail));
             return Ok(token);
+        }
+
+        [HttpPost("Roles")]
+        public async Task<IActionResult> AddRolesForEmployee([FromBody] List<int> employeeRolesId)
+        {
+            return Ok();
+            //Todo: Dodać implementacje 
         }
     }
 }

@@ -7,8 +7,8 @@ namespace OneBan_TMS.Interfaces
 {
     public interface IEmployeeRepository
     {
-        Task<IEnumerable<EmployeeDto>> GetAllEmployeeDto();
-        Task<EmployeeDto> GetEmployeeByIdDto(int employeeId);
+        Task<IEnumerable<EmployeeForListDto>> GetAllEmployeeDto();
+        Task<EmployeeForListDto> GetEmployeeByIdDto(int employeeId);
         Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeToUpdate);
         Task<bool> ExistsEmployee(int employeeId);
         Task<List<EmployeePrivilegeGetDto>> GetEmployeePrivileges();

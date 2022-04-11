@@ -8,6 +8,7 @@ using OneBan_TMS.Enum;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Employee;
 
 namespace OneBan_TMS.Repository
 {
@@ -27,18 +28,19 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
             return employee;
         }
-        public async Task AddNewUser(UserDto user, byte[] passwordHash, byte[] passwordSalt)
+        public async Task AddNewUser(EmployeeDto user, byte[] passwordHash, byte[] passwordSalt)
         {
+            //Todo: Zrobić walidację
             StringBuilder passwordConnector = new StringBuilder();
             passwordConnector.Append(ConvertByteArrayToString(passwordHash));
             passwordConnector.Append(ConvertByteArrayToString(passwordSalt));
             _context.Add(new Employee()
             {
-                EmpLogin = user.Email,
-                EmpName = user.Name,
-                EmpSurname = user.LastName,
-                EmpEmail = user.Email,
-                EmpPhoneNumber = user.PhoneNumber,
+                EmpLogin = user.EmpEmail,
+                EmpName = user.EmpName,
+                EmpSurname = user.EmpSurname,
+                EmpEmail = user.EmpEmail,
+                EmpPhoneNumber = user.EmpPhoneNumber,
                 EmpCreatedAt = DateTime.Now,
                 EmpPassword = passwordConnector.ToString()
             });
@@ -52,7 +54,6 @@ namespace OneBan_TMS.Repository
             string passwordBase64Salt = password.Substring(88, 172).Trim();
             passwordHash = ConvertStringToByteArray(passwordBase64Hash);
             passwordSalt = ConvertStringToByteArray(passwordBase64Salt);
-            
         }
         public async Task<string> GetUserRole(string userEmail)
         {

@@ -48,7 +48,7 @@ namespace OneBan_TMS
             
             
             services.AddScoped<IValidator<CompanyDto>, CompanyValidator>();
-            services.AddScoped<IValidator<Employee>, EmployeeValidator>();
+            services.AddScoped<IValidator<Employee>, EmployeeToAddValidator>();
             services.AddScoped<IValidatorHandler, ValidatorHandler>();
             services.AddScoped<ICompanyHandler, CompanyHandler>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
