@@ -14,12 +14,10 @@ namespace OneBan_TMS.Controllers
     [ApiController]
     public class CompanyController : Controller
     {
-        private readonly OneManDbContext _context;
         private readonly ICompanyRepository _companyRepository;
         private readonly IAddressRepository _addressRepository;
         public CompanyController(OneManDbContext context, ICompanyRepository companyRepository, IAddressRepository addressRepository)
         {
-            _context = context;
             _companyRepository = companyRepository;
             _addressRepository = addressRepository;
         }
