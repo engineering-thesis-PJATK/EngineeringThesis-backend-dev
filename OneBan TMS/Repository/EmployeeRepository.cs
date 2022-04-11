@@ -45,7 +45,6 @@ namespace OneBan_TMS.Repository
                     Roles = emp.Roles
                 });
             }
-
             return employeeDtoList;
         }
 
@@ -82,7 +81,26 @@ namespace OneBan_TMS.Repository
                 EmployeeTeams = employee.Teams
             };
         }
-
+        public async Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeUpdated)
+        {
+            var employeeToUpdate = await _context
+                .Employees
+                .Where(x => x.EmpId == employeeId)
+                .SingleOrDefaultAsync();
+            employeeToUpdate.EmpLogin = employeeUpdated.EmpLogin;
+            employeeToUpdate.EmpEmail = employeeUpdated.EmpEmail;
+            employeeToUpdate.EmpName = employeeUpdated.EmpName;
+            employeeToUpdate.EmpSurname = employeeUpdated.EmpSurname;
+            employeeToUpdate.EmpPhoneNumber = employeeUpdated.EmpPhoneNumber;
+            await _context.SaveChangesAsync();
+        }
+        public async Task<bool> ExistsEmployee(int employeeId)
+        {
+            return await _context
+                .Employees
+                .Where(x => x.EmpId == employeeId)
+                .AnyAsync();
+        }
         public async Task<List<EmployeePrivilegeGetDto>> GetEmployeePrivileges()
         {
             var privilages = await _context

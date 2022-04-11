@@ -22,8 +22,10 @@ namespace OneBan_TMS.Controllers
         [HttpGet("{employeeId}")]
         public async Task<ActionResult<EmployeeDto>> GetEmployeeById(int employeeId)
         {
+            if (!(await _employeeRepository.ExistsEmployee(employeeId)))
+                return NoContent();
             EmployeeDto employeeDto = await  _employeeRepository
-                                      .GetEmployeeByIdDto(employeeId);
+                                                .GetEmployeeByIdDto(employeeId);
             return Ok(employeeDto);
         }
 
@@ -73,10 +75,8 @@ namespace OneBan_TMS.Controllers
             var privileges = await _employeeRepository
                                                       .GetEmployeePrivileges();
             if (privileges is null)
-                return 
-                    BadRequest("No privileges assigned to employees");
-            return 
-                Ok(privileges);
+                return BadRequest("No privileges assigned to employees");
+            return Ok(privileges);
         }
         
         [HttpGet]
@@ -122,6 +122,16 @@ namespace OneBan_TMS.Controllers
         }
         #endregion
         #region Put
+
+        [HttpPut("{employeeId}")]
+        public async Task<IActionResult> UpdateEmployee(int employeeId, [FromBody] EmployeeToUpdate employeeToUpdate)
+        {
+            if (!(await _employeeRepository.ExistsEmployee(employeeId)))
+                return NoContent();
+            await _employeeRepository.UpdateEmployee(employeeId, employeeToUpdate);
+            return Ok("Employee updated");
+        }
+
         [HttpPut("Team/{teamId}")]
         public async Task<ActionResult<Team>> UpdateTeamById(int teamId,TeamUpdateDto teamGetUpdateDto)
         {
@@ -150,7 +160,6 @@ namespace OneBan_TMS.Controllers
             return 
                 BadRequest("Operation was not executed");
         }
-
         #endregion
         #region Delete
         [HttpDelete("Team/{teamId}")]
