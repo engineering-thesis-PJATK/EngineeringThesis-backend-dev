@@ -24,8 +24,7 @@ namespace OneBan_TMS.Controllers
         {
             EmployeeDto employeeDto = await  _employeeRepository
                                       .GetEmployeeByIdDto(employeeId);
-            return 
-                Ok(employeeDto);
+            return Ok(employeeDto);
         }
 
         [HttpGet("Team/{teamId}")]
@@ -42,7 +41,6 @@ namespace OneBan_TMS.Controllers
                 return 
                     NotFound($"No team with id: {teamId} found");
             }
-            
             return 
                 Ok(singleTeam);
         }
