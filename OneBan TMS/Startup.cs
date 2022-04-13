@@ -24,6 +24,7 @@ using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Repository;
 using OneBan_TMS.Validators;
+using OneBan_TMS.Validators.EmployeeValidators;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace OneBan_TMS
@@ -49,6 +50,7 @@ namespace OneBan_TMS
             
             services.AddScoped<IValidator<CompanyDto>, CompanyValidator>();
             services.AddScoped<IValidator<Employee>, EmployeeToAddValidator>();
+            services.AddScoped<IValidator<EmployeeToUpdate>, EmployeeToUpdateValidator>();
             services.AddScoped<IValidatorHandler, ValidatorHandler>();
             services.AddScoped<ICompanyHandler, CompanyHandler>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();

@@ -2,7 +2,7 @@ using FluentValidation;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 
-namespace OneBan_TMS.Validators
+namespace OneBan_TMS.Validators.EmployeeValidators
 {
     public class EmployeeToAddValidator : AbstractValidator<Employee>
     {

@@ -50,6 +50,8 @@ namespace OneBan_TMS.Controllers
         [HttpPut("{companyId}")]
         public async Task<IActionResult> UpdateCompany([FromBody] CompanyDto updatedCompany, int companyId)
         {
+            if (!(await _companyRepository.ExistsCompany(companyId)))
+                return NoContent(); 
             await _companyRepository.UpdateCompany(updatedCompany, companyId);
             return Ok("Company updated");
         }
@@ -58,7 +60,7 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> DeleteCompany(int companyId)
         {
             if (!await _companyRepository.ExistsCompany(companyId))
-                return BadRequest($"There is no company with id {companyId}");
+                return NoContent();
             await _companyRepository.DeleteCompany(companyId);
             return Ok("Company deleted");
         }

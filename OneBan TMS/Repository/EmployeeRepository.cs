@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
@@ -11,17 +12,17 @@ namespace OneBan_TMS.Repository
     public class EmployeeRepository : IEmployeeRepository
     {
         private OneManDbContext _context;
-        public EmployeeRepository(OneManDbContext context)
+        private readonly IValidator<EmployeeToUpdate> _employeeValidator;
+        public EmployeeRepository(OneManDbContext context, IValidator<EmployeeToUpdate> employeeValidator)
         {
             _context = context;
+            _employeeValidator = employeeValidator;
         }
         public async Task<IEnumerable<EmployeeForListDto>> GetAllEmployeeDto()
         {
             List<EmployeeForListDto> employeeDtoList = new List<EmployeeForListDto>();
             var employees = await _context
                 .Employees
-                .Include(x => x.EmployeePrivilegeEmployees)
-                .ThenInclude(y => y.EpeIdEmployeePrivilageNavigation)
                 .Select(x => new
                 {
                     x.EmpId,
@@ -29,8 +30,7 @@ namespace OneBan_TMS.Repository
                     x.EmpName,
                     x.EmpSurname,
                     x.EmpEmail,
-                    x.EmpPhoneNumber,
-                    Roles = x.EmployeePrivilegeEmployees.Select(y => y.EpeIdEmployeePrivilageNavigation.EpvName),
+                    x.EmpPhoneNumber
                 }).ToListAsync();
             foreach (var emp in employees )
             {
@@ -42,7 +42,7 @@ namespace OneBan_TMS.Repository
                     EmpSurname = emp.EmpSurname,
                     EmpEmail = emp.EmpEmail,
                     EmpPhoneNumber = emp.EmpPhoneNumber,
-                    Roles = emp.Roles
+                    Roles = await GetEmployeePrivileges(emp.EmpId)
                 });
             }
             return employeeDtoList;
@@ -52,8 +52,6 @@ namespace OneBan_TMS.Repository
         {
             var employee = await _context
                 .Employees
-                .Include(x => x.EmployeePrivilegeEmployees)
-                .ThenInclude(y => y.EpeIdEmployeePrivilageNavigation)
                 .Include(x => x.EmployeeTeams)
                 .ThenInclude(y => y.EtmIdTeamNavigation)
                 .Select(x => new
@@ -64,7 +62,6 @@ namespace OneBan_TMS.Repository
                     x.EmpSurname,
                     x.EmpEmail,
                     x.EmpPhoneNumber,
-                    Roles = x.EmployeePrivilegeEmployees.Select(y => y.EpeIdEmployeePrivilageNavigation.EpvName),
                     Teams = x.EmployeeTeams.Select(y => y.EtmIdTeamNavigation)
                 })
                 .Where(x => x.EmpId == idEmployee)
@@ -77,13 +74,13 @@ namespace OneBan_TMS.Repository
                 EmpSurname = employee.EmpSurname,
                 EmpEmail = employee.EmpEmail,
                 EmpPhoneNumber = employee.EmpPhoneNumber,
-                Roles = employee.Roles,
+                Roles = await GetEmployeePrivileges(employee.EmpId),
                 EmployeeTeams = employee.Teams
             };
         }
         public async Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeUpdated)
         {
-            //Todo: Zrobić walidację
+            _employeeValidator.ValidateAndThrow(employeeUpdated); 
             var employeeToUpdate = await _context
                 .Employees
                 .Where(x => x.EmpId == employeeId)
@@ -129,6 +126,16 @@ namespace OneBan_TMS.Repository
                 null;
         }
 
+        public async Task<bool> ExistsEmployeePrivileges(List<int> privileges)
+        {
+            foreach (int privilege in privileges)
+            {
+                if (!await _context.EmployeePrivileges.Where(x => x.EpvId == privilege).AnyAsync())
+                    return false;
+            }
+            return true;
+        }
+
 
         private EmployeePrivilegeGetDto ChangeEmployeePrivilegeBaseToDto(EmployeePrivilege employeePrivilege)
         {
@@ -139,6 +146,30 @@ namespace OneBan_TMS.Repository
                     EpvId = employeePrivilege.EpvId,
                     EpvName = employeePrivilege.EpvName
                 };
+        }
+
+        private async Task<List<EmployeePrivilege>> GetEmployeePrivileges(int employeeId)
+        {
+            var privileges = await _context
+                .EmployeePrivilegeEmployees
+                .Where(x =>
+                    x.EpeIdEmployeeNavigation.EmpId == employeeId)
+                .Select(x => new
+                {
+                    x.EpeIdEmployeePrivilageNavigation.EpvId,
+                    x.EpeIdEmployeePrivilageNavigation.EpvName,
+                    x.EpeIdEmployeePrivilageNavigation.EpvDescription
+                })
+                .ToListAsync();
+            List<EmployeePrivilege> employeePrivileges = new List<EmployeePrivilege>();
+            privileges.ForEach(x => 
+                employeePrivileges.Add(new EmployeePrivilege()
+                {
+                    EpvId = x.EpvId,
+                    EpvName = x.EpvName,
+                    EpvDescription = x.EpvDescription
+                }));
+            return employeePrivileges;
         }
     }
 }

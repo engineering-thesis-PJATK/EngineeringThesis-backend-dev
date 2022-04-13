@@ -15,6 +15,7 @@ namespace OneBan_TMS.Repository
     public class UserRepository : IUserRepository
     {
         private readonly OneManDbContext _context;
+        private readonly IEmployeeRepository _employeeRepository;
         public UserRepository(OneManDbContext context)
         {
             _context = context;
@@ -66,6 +67,19 @@ namespace OneBan_TMS.Repository
                 return "Admin";
             else
                 return "User";
+        }
+        public async Task AddPrivilegesToUser(int employeeId, List<int> privileges)
+        {
+            foreach (int privilege in privileges)
+            {
+                await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
+                {
+                    EpeIdEmployee = employeeId,
+                    EpeIdEmployeePrivilage = privilege
+                });
+            }
+
+            await _context.SaveChangesAsync();
         }
 
         private string ConvertByteArrayToString(byte[] array)

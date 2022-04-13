@@ -15,5 +15,6 @@ namespace OneBan_TMS.Interfaces
         Task AddNewUser(EmployeeDto user, byte[] passwordHash, byte[] passwordSalt);
         void GetPasswordParts(string password, out byte[] passwordHash, out byte[] passwordSalt);
         Task<string> GetUserRole(string userEmail);
+        Task AddPrivilegesToUser(int employeeId, List<int> privileges);
     }
 }

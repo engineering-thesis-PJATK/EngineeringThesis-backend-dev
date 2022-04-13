@@ -12,11 +12,13 @@ namespace OneBan_TMS.Controllers
         private readonly IUserRepository _userRepository;
         private readonly IPasswordHandler _passwordHandler;
         private readonly ITokenHandler _tokenHandler;
-        public AuthController(IUserRepository userRepository, IPasswordHandler passwordHandler, ITokenHandler tokenHandler)
+        private readonly IEmployeeRepository _employeeRepository;
+        public AuthController(IUserRepository userRepository, IPasswordHandler passwordHandler, ITokenHandler tokenHandler, IEmployeeRepository employeeRepository)
         {
             _userRepository = userRepository;
             _passwordHandler = passwordHandler;
             _tokenHandler = tokenHandler;
+            _employeeRepository = employeeRepository;
         }
         [HttpPost("Register")]
         public async Task<ActionResult> Register([FromBody]EmployeeDto userDto)
@@ -44,11 +46,16 @@ namespace OneBan_TMS.Controllers
             return Ok(token);
         }
 
-        [HttpPost("Roles")]
-        public async Task<IActionResult> AddRolesForEmployee([FromBody] List<int> employeeRolesId)
+        [HttpPost("{employeeId}/Roles")]
+        public async Task<IActionResult> AddRolesForEmployee(int employeeId, [FromBody] List<int> employeePriviles)
         {
-            return Ok();
-            //Todo: Dodać implementacje 
+            if (!(await _employeeRepository.ExistsEmployee(employeeId)))
+                return BadRequest($"There is no employee with Id {employeeId}");
+            if (!(await _employeeRepository.ExistsEmployeePrivileges(employeePriviles)))
+                return BadRequest("One of privileges not exisits");
+            await _userRepository.AddPrivilegesToUser(employeeId, employeePriviles);
+            return Ok("Added privileges to employee");
+            //Todo: Walidacja w sytuacji jak użytkownik posiada już role
         }
     }
 }

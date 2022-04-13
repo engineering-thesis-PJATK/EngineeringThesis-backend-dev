@@ -10,7 +10,7 @@ namespace OneBan_TMS.Models.DTOs
         public string EmpSurname { get; set; }
         public string EmpEmail { get; set; }
         public string EmpPhoneNumber { get; set; }
-        public IEnumerable<string> Roles { get; set; }
+        public IEnumerable<EmployeePrivilege> Roles { get; set; }
         public IEnumerable<Team> EmployeeTeams { get; set; }
     }
 }
