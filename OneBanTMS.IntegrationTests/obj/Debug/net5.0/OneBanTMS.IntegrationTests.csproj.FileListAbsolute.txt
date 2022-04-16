@@ -230,3 +230,4 @@
 /Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/obj/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb
 /Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.genruntimeconfig.cache
+/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/bin/Debug/net5.0/FluentAssertions.dll

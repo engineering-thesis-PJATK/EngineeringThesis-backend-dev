@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BPiz7f+bTXY/IIYEgodO/mrOS9v0PwdxKCfCo4I/rtdl/ejfFgDiz0t7vFF4cTMr84eSDD+Uj3EJdmiuMnEnfg==",
+  "dgSpecHash": "Uq7hBIoBwRd9p/CbzmoNaBt3D5DtRP1xvReuRfji/27XREgAdJa3o+0ZHreC5buxBl26dYthTsideE2zVtgfXQ==",
   "success": true,
   "projectFilePath": "/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "/Users/mac/.nuget/packages/automapper/11.0.1/automapper.11.0.1.nupkg.sha512",
     "/Users/mac/.nuget/packages/azure.core/1.22.0/azure.core.1.22.0.nupkg.sha512",
+    "/Users/mac/.nuget/packages/fluentassertions/6.6.0/fluentassertions.6.6.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/fluentvalidation/10.4.0/fluentvalidation.10.4.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/fluentvalidation.aspnetcore/10.4.0/fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/fluentvalidation.dependencyinjectionextensions/10.4.0/fluentvalidation.dependencyinjectionextensions.10.4.0.nupkg.sha512",

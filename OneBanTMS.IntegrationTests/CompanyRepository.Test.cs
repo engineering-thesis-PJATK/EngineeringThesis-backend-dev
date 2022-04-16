@@ -1,5 +1,7 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentAssertions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
@@ -41,7 +43,32 @@ namespace OneBanTMS.IntegrationTests
             var userCountAfter = await _context.Companies.CountAsync(x => x.CmpName == companyDto.CmpName);
             Assert.That(userCountAfter, Is.EqualTo(1));
         }
-
+        [Test, Isolated]
+        public async Task AddCompany_CompanyWithExistedName_ShouldThrowValidationException()
+        {
+            CompanyDto firstCompanyDto = new CompanyDto()
+            {
+                CmpName = "TestCompany",
+                CmpNip = "9999999999",
+                CmpKrsNumber = "",
+                CmpLandline = "",
+                CmpRegon = "",
+                CmpNipPrefix = "PL"
+            };
+            CompanyDto secondCompanyDto = new CompanyDto()
+            {
+                CmpName = "TestCompany",
+                CmpNip = "9999999999",
+                CmpKrsNumber = "",
+                CmpLandline = "",
+                CmpRegon = "",
+                CmpNipPrefix = "PL"
+            };
+            var repository = new CompanyRepository(_context, _validator);
+            await repository.AddNewCompany(firstCompanyDto);
+            Func<Task> act = async () => await repository.AddNewCompany(secondCompanyDto);
+            await act.Should().ThrowExactlyAsync<ValidationException>();
+        }
         [Test, Isolated]
         public async Task UpdateCompany_PassValid_ShouldUpdateCompanyInDatabase()
         {

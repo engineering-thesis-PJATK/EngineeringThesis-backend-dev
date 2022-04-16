@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "OneBanTMS.IntegrationTests/1.0.0": {
         "dependencies": {
+          "FluentAssertions": "6.6.0",
           "Microsoft.EntityFrameworkCore": "5.0.16",
           "Microsoft.NET.Test.Sdk": "17.2.0-preview-20220401-08",
           "NUnit": "3.13.3",
@@ -42,6 +43,17 @@
           "lib/net5.0/Azure.Core.dll": {
             "assemblyVersion": "1.22.0.0",
             "fileVersion": "1.2200.22.6212"
+          }
+        }
+      },
+      "FluentAssertions/6.6.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.7.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/FluentAssertions.dll": {
+            "assemblyVersion": "6.6.0.0",
+            "fileVersion": "6.6.0.0"
           }
         }
       },
@@ -1652,6 +1664,13 @@
       "sha512": "sha512-ze/xRCHSSDe5TIk5vBDbVrauW1EN7UIbnBvIBfMH8KSt/I9+/7yPAjTBDgNBk0IwG6WBV+BBHp4IUtS/PGAQwQ==",
       "path": "azure.core/1.22.0",
       "hashPath": "azure.core.1.22.0.nupkg.sha512"
+    },
+    "FluentAssertions/6.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gBsgPrNRkzUQfnxZSKnU0oVILIc5dr+dmdKXscyYKD5URcwNVQ72a7uuCvTyBzRZW98MZQNolSYC0y/MQTJ03A==",
+      "path": "fluentassertions/6.6.0",
+      "hashPath": "fluentassertions.6.6.0.nupkg.sha512"
     },
     "FluentValidation/10.4.0": {
       "type": "package",
