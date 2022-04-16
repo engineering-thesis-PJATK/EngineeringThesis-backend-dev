@@ -9,8 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/CompanyRepository.Test.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/Isolated.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/CompanyRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/CompanyRepository.Test.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +199,7 @@
       <workItem from="1649698814889" duration="1192000" />
       <workItem from="1649870844697" duration="1874000" />
       <workItem from="1649872883699" duration="5703000" />
-      <workItem from="1650105634424" duration="822000" />
+      <workItem from="1650105634424" duration="2068000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>

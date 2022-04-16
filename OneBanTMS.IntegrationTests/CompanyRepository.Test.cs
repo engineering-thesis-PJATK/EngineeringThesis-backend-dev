@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
@@ -39,6 +40,49 @@ namespace OneBanTMS.IntegrationTests
             await repository.AddNewCompany(companyDto);
             var userCountAfter = await _context.Companies.CountAsync(x => x.CmpName == companyDto.CmpName);
             Assert.That(userCountAfter, Is.EqualTo(1));
+        }
+
+        [Test, Isolated]
+        public async Task Update_PassValid_ShouldUpdateCompanyToDatabase()
+        {
+            CompanyDto companyDto = new CompanyDto()
+            {
+                CmpName = "TestCompany",
+                CmpNip = "9999999999",
+                CmpKrsNumber = "",
+                CmpLandline = "",
+                CmpRegon = "",
+                CmpNipPrefix = "PL"
+            };
+            var repository = new CompanyRepository(_context, _validator);
+            await repository.AddNewCompany(companyDto);
+            var idAddedCompany = await _context
+                .Companies
+                .Where(x =>
+                    x.CmpName == companyDto.CmpName)
+                .Select(x =>
+                    x.CmpId)
+                .SingleOrDefaultAsync();
+            CompanyDto updatedCompanyDto = new CompanyDto()
+            {
+                CmpName = "TestCompany1",
+                CmpNip = "0000000000",
+                CmpKrsNumber = "1",
+                CmpLandline = "1",
+                CmpRegon = "1",
+                CmpNipPrefix = "PL"
+            };
+            await repository.UpdateCompany(updatedCompanyDto, idAddedCompany);
+            var countUpdatedCompany = await _context
+                .Companies
+                .CountAsync(x =>
+                    x.CmpName == updatedCompanyDto.CmpName
+                    && x.CmpNip == updatedCompanyDto.CmpNip
+                    && x.CmpKrsNumber == updatedCompanyDto.CmpKrsNumber
+                    && x.CmpLandline == updatedCompanyDto.CmpLandline
+                    && x.CmpRegon == updatedCompanyDto.CmpRegon
+                    && x.CmpNipPrefix == updatedCompanyDto.CmpNipPrefix);
+            Assert.That(countUpdatedCompany, Is.EqualTo(1));
         }
     }
 }
