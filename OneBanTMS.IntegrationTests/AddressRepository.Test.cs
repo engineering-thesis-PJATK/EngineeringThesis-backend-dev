@@ -95,6 +95,17 @@ namespace OneBanTMS.IntegrationTests
             };
             var addressRepository = new AddressRepository(_context, companyRepository);
             await addressRepository.AddNewAddress(addressDto, companyId);
+            var addressId = await _context
+                .Addresses
+                .Where(x =>
+                    x.AdrTown == addressDto.AdrTown
+                    && x.AdrStreet == addressDto.AdrStreet
+                    && x.AdrStreetNumber == addressDto.AdrStreetNumber
+                    && x.AdrPostCode == addressDto.AdrPostCode
+                    && x.AdrCountry == addressDto.AdrCountry)
+                .Select(x =>
+                    x.AdrId)
+                .SingleOrDefaultAsync();
             AddressDto addressDtoToUpdate = new AddressDto()
             {
                 AdrTown = "TestTest",
@@ -103,6 +114,16 @@ namespace OneBanTMS.IntegrationTests
                 AdrPostCode = "TestTest",
                 AdrCountry = "TestTest"
             };
+            await addressRepository.UpdateAddress(addressDtoToUpdate, addressId);
+            var addressCount = await _context
+                .Addresses
+                .CountAsync(x =>
+                    x.AdrTown == addressDtoToUpdate.AdrTown
+                    && x.AdrStreet == addressDtoToUpdate.AdrStreet
+                    && x.AdrStreetNumber == addressDtoToUpdate.AdrStreetNumber
+                    && x.AdrPostCode == addressDtoToUpdate.AdrPostCode
+                    && x.AdrCountry == addressDtoToUpdate.AdrCountry);
+            Assert.That(addressCount, Is.EqualTo(1));
         }
     }
 }
