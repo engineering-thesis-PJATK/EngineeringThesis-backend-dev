@@ -25,7 +25,7 @@ namespace OneBanTMS.IntegrationTests
         }
 
         [Test, Isolated]
-        public async Task Add_PassValid_ShouldAddCompanyToDatabase()
+        public async Task AddCompany_PassValid_ShouldAddCompanyToDatabase()
         {
             CompanyDto companyDto = new CompanyDto()
             {
@@ -43,7 +43,7 @@ namespace OneBanTMS.IntegrationTests
         }
 
         [Test, Isolated]
-        public async Task Update_PassValid_ShouldUpdateCompanyInDatabase()
+        public async Task UpdateCompany_PassValid_ShouldUpdateCompanyInDatabase()
         {
             CompanyDto companyDto = new CompanyDto()
             {
@@ -85,7 +85,7 @@ namespace OneBanTMS.IntegrationTests
             Assert.That(countUpdatedCompany, Is.EqualTo(1));
         }
         [Test, Isolated]
-        public async Task Delete_PassValid_ShouldDeleteCompanyFromDatabase()
+        public async Task DeleteCompany_PassValid_ShouldDeleteCompanyFromDatabase()
         {
             CompanyDto companyDto = new CompanyDto()
             {
@@ -117,6 +117,31 @@ namespace OneBanTMS.IntegrationTests
                     && x.CmpRegon == companyDto.CmpRegon
                     && x.CmpNipPrefix == companyDto.CmpNipPrefix);
             Assert.That(countUpdatedCompany, Is.EqualTo(0));
+        }
+
+        [Test, Isolated]
+        public async Task ExisitsCompany_PassValid_ShouldReturnTrue()
+        {
+            CompanyDto companyDto = new CompanyDto()
+            {
+                CmpName = "TestCompany",
+                CmpNip = "9999999999",
+                CmpKrsNumber = "",
+                CmpLandline = "",
+                CmpRegon = "",
+                CmpNipPrefix = "PL"
+            };
+            var repository = new CompanyRepository(_context, _validator);
+            await repository.AddNewCompany(companyDto);
+            var companyId = await _context.Companies.CountAsync(x => 
+                x.CmpName == companyDto.CmpName
+                && x.CmpNip == companyDto.CmpNip
+                && x.CmpKrsNumber == companyDto.CmpKrsNumber
+                && x.CmpLandline == companyDto.CmpLandline
+                && x.CmpRegon == companyDto.CmpRegon
+                && x.CmpNipPrefix == companyDto.CmpNipPrefix);
+            var result = await repository.ExistsCompany(companyId);
+            Assert.That(result, Is.True);
         }
     }
 }
