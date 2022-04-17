@@ -127,7 +127,7 @@ namespace OneBanTMS.IntegrationTests
                     && x.AdrCountry == addressDtoToUpdate.AdrCountry);
             Assert.That(addressCount, Is.EqualTo(1));
         }
-
+        [Test, Isolated]
         public async Task UpdateAddress_NotExistsAddressId_ShouldThrowArgumentExceptionWithMessage()
         {
             AddressDto addressDto = new AddressDto()
@@ -199,6 +199,20 @@ namespace OneBanTMS.IntegrationTests
                     && x.AdrPostCode == addressDto.AdrPostCode
                     && x.AdrCountry == addressDto.AdrCountry);
             Assert.That(countAddresses, Is.EqualTo(0));
+        }
+
+        [Test, Isolated]
+        public async Task DeleteAddress_NotExistsAddressId_ShouldThrowArgumentExceptionWithMessage()
+        {
+            var companyRepository = new CompanyRepository(_context, _validator);
+            var addressRepository = new AddressRepository(_context, companyRepository);
+            var notExistedAddressId = await _context
+                .Addresses
+                .MaxAsync(x => x.AdrId);
+            notExistedAddressId += 1;
+            Func<Task> action = async () => await addressRepository.DeleteAddress(notExistedAddressId);
+            await action.Should().ThrowExactlyAsync<ArgumentException>()
+                .WithMessage("Address not exists");
         }
     }
 }

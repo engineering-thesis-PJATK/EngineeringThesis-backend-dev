@@ -64,6 +64,8 @@ namespace OneBan_TMS.Repository
                     .Addresses
                     .Where(x => x.AdrId == addressId)
                     .SingleOrDefaultAsync();
+            if (address is null)
+                throw new ArgumentException("Address not exists");
             _context.Addresses.Remove(address);
             await _context.SaveChangesAsync();
         }
