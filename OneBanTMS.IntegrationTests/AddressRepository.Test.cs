@@ -17,7 +17,6 @@ namespace OneBanTMS.IntegrationTests
     {
         private readonly OneManDbContext _context;
         private readonly IValidator<CompanyDto> _validator;
-        //private readonly IValidator<>
         public AddressRepository_Test()
         {
             var connectionString = "Server=tcp:pjwstkinzynierka.database.windows.net,1433;Initial Catalog=inzynierka;Persist Security Info=False;User ID=Hydra;Password=RUCH200nowe;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
