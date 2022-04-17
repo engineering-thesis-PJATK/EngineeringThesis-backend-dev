@@ -11,6 +11,7 @@ namespace OneBan_TMS.Repository
 {
     public class CustomerRepository : ICustomerRepository
     {
+        //Todo: Do poprawy !!!
         private readonly OneManDbContext _context;
         public CustomerRepository(OneManDbContext context)
         {
