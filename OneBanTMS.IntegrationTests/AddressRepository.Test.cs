@@ -1,5 +1,7 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentAssertions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
@@ -126,6 +128,27 @@ namespace OneBanTMS.IntegrationTests
             Assert.That(addressCount, Is.EqualTo(1));
         }
 
+        public async Task UpdateAddress_NotExistsAddressId_ShouldThrowArgumentExceptionWithMessage()
+        {
+            AddressDto addressDto = new AddressDto()
+            {
+                AdrTown = "Test",
+                AdrStreet = "Test",
+                AdrStreetNumber = "Test",
+                AdrPostCode = "Test",
+                AdrCountry = "Test"
+            };
+            var notExistsAddressId = await _context
+                .Addresses
+                .MaxAsync(x => x.AdrId);
+            notExistsAddressId += 1;
+            var companyRepository = new CompanyRepository(_context, _validator);
+            var addressRepository = new AddressRepository(_context, companyRepository);
+            Func<Task> action = async () => await addressRepository.UpdateAddress(addressDto, notExistsAddressId);
+            await action.Should().ThrowExactlyAsync<ArgumentException>()
+                .WithMessage("Address not exists");
+        }
+        
         [Test, Isolated]
         public async Task DeleteAddress_ExistingId_ShouldDeleteFromDatabase()
         {

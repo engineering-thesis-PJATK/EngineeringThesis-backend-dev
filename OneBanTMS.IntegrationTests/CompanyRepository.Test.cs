@@ -111,6 +111,30 @@ namespace OneBanTMS.IntegrationTests
                     && x.CmpNipPrefix == updatedCompanyDto.CmpNipPrefix);
             Assert.That(countUpdatedCompany, Is.EqualTo(1));
         }
+
+        [Test, Isolated]
+        public async Task UpdateCompany_NotExistedId_ShouldThrowArgumentException()
+        {
+            CompanyDto companyToUpdate = new CompanyDto()
+            {
+                CmpName = "TestCompany",
+                CmpNip = "9999999999",
+                CmpKrsNumber = "1",
+                CmpLandline = "1",
+                CmpRegon = "1",
+                CmpNipPrefix = "PL"
+            };
+            var repository = new CompanyRepository(_context, _validator);
+            var notExistedId = await _context
+                .Companies
+                .MaxAsync(x => x.CmpId);
+            notExistedId += 1;
+            Func<Task> action = async () => await repository
+                .UpdateCompany(companyToUpdate, notExistedId);
+            await action.Should()
+                .ThrowExactlyAsync<ArgumentException>()
+                .WithMessage("Company not exists");
+        }
         [Test, Isolated]
         public async Task DeleteCompany_PassValid_ShouldDeleteCompanyFromDatabase()
         {
@@ -146,6 +170,29 @@ namespace OneBanTMS.IntegrationTests
             Assert.That(countUpdatedCompany, Is.EqualTo(0));
         }
 
+        [Test, Isolated]
+        public async Task DeleteCompany_NotExistedId_ShouldThrowArgumentException()
+        {
+            CompanyDto companyDto = new CompanyDto()
+            {
+                CmpName = "TestCompany",
+                CmpNip = "9999999999",
+                CmpKrsNumber = "",
+                CmpLandline = "",
+                CmpRegon = "",
+                CmpNipPrefix = "PL"
+            };
+            var repository = new CompanyRepository(_context, _validator);
+            await repository.AddNewCompany(companyDto);
+            var idAddedCompany = await _context
+                .Companies
+                .Where(x =>
+                    x.CmpName == companyDto.CmpName)
+                .Select(x =>
+                    x.CmpId)
+                .SingleOrDefaultAsync();
+            
+        }
         [Test, Isolated]
         public async Task ExisitsCompany_PassValid_ShouldReturnTrue()
         {

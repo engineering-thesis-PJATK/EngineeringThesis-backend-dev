@@ -51,13 +51,15 @@ namespace OneBan_TMS.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateCompany(CompanyDto updatedCompanyDto, int idCompany)
+        public async Task UpdateCompany(CompanyDto updatedCompanyDto, int companyId)
         {
             _validator.ValidateAndThrow(updatedCompanyDto);
             var companyToUpdate = await _context
                     .Companies
-                    .Where(x => x.CmpId == idCompany)
+                    .Where(x => x.CmpId == companyId)
                     .SingleOrDefaultAsync();
+            if (companyToUpdate is null)
+                throw new ArgumentException("Company not exists");
             companyToUpdate.CmpName = updatedCompanyDto.CmpName;
             companyToUpdate.CmpNip = updatedCompanyDto.CmpNip;
             companyToUpdate.CmpNipPrefix = updatedCompanyDto.CmpNipPrefix;
@@ -74,6 +76,8 @@ namespace OneBan_TMS.Repository
                 .Where(x =>
                     x.CmpId == companyId)
                 .SingleOrDefaultAsync();
+            if (company is null)
+                throw new ArgumentException("Company not exists");
             _context.Companies.Remove(company);
             await _context.SaveChangesAsync();
         }
