@@ -6202,19 +6202,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/pioter/.nuget/packages/": {}
+    "/Users/mac/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj",
+      "projectUniqueName": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj",
       "projectName": "OneBan TMS",
-      "projectPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj",
-      "packagesPath": "/Users/pioter/.nuget/packages/",
-      "outputPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/",
+      "projectPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj",
+      "packagesPath": "/Users/mac/.nuget/packages/",
+      "outputPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/Users/pioter/.nuget/NuGet/NuGet.Config"
+        "/Users/mac/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

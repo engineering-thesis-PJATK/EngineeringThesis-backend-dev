@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = OneBan_TMS
-build_property.ProjectDir = /Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/
+build_property.ProjectDir = /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/

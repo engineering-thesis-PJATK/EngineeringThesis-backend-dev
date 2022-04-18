@@ -20,7 +20,6 @@ namespace OneBan_TMS.Repository
             _context = context;
             _validator = validator;
         }
-
         public async Task<IEnumerable<Company>> GetCompanies()
         {
             return await _context.Companies.ToListAsync();
