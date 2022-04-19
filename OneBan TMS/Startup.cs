@@ -22,6 +22,7 @@ using OneBan_TMS.Handlers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Employee;
 using OneBan_TMS.Repository;
 using OneBan_TMS.Validators;
 using OneBan_TMS.Validators.EmployeeValidators;
@@ -49,7 +50,7 @@ namespace OneBan_TMS
             
             
             services.AddScoped<IValidator<CompanyDto>, CompanyValidator>();
-            services.AddScoped<IValidator<Employee>, EmployeeToAddValidator>();
+            services.AddScoped<IValidator<EmployeeDto>, EmployeeToAddValidator>();
             services.AddScoped<IValidator<EmployeeToUpdate>, EmployeeToUpdateValidator>();
             services.AddScoped<IValidatorHandler, ValidatorHandler>();
             services.AddScoped<ICompanyHandler, CompanyHandler>();

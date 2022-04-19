@@ -9,11 +9,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/CompanyRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/CompanyRepository.Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handlers/PasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/PasswordHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IEmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/IPasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IPasswordHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToAddValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToAddValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/EmployeeRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/EmployeeRepository.Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +236,7 @@
       <workItem from="1650105634424" duration="2694000" />
       <workItem from="1650108474724" duration="9311000" />
       <workItem from="1650130268379" duration="2670000" />
-      <workItem from="1650390960925" duration="302000" />
+      <workItem from="1650390960925" duration="6274000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -272,26 +294,26 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
-          <line>131</line>
+          <line>161</line>
           <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="131" containingFunctionPresentation="method 'ExistsEmployeePrivileges'">
             <startOffsets>
-              <option value="5071" />
+              <option value="6555" />
             </startOffsets>
             <endOffsets>
-              <option value="5072" />
+              <option value="6556" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
-          <line>135</line>
+          <line>165</line>
           <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="135" containingFunctionPresentation="method 'ExistsEmployeePrivileges'">
             <startOffsets>
-              <option value="5233" />
+              <option value="6717" />
             </startOffsets>
             <endOffsets>
-              <option value="5245" />
+              <option value="6729" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />

@@ -25,5 +25,15 @@ namespace OneBan_TMS.Handlers
                 return computedHash.SequenceEqual(passwordHash);
             }
         }
+
+        public string ConvertByteArrayToString(byte[] array)
+        {
+            return Convert.ToBase64String(array);
+        }
+
+        public byte[] ConvertStringToByteArray(string text)
+        {
+            return Convert.FromBase64String(text);
+        }
     }
 }

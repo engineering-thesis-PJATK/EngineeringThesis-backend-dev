@@ -1,10 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Employee;
 
 namespace OneBan_TMS.Controllers
 {
@@ -17,6 +20,7 @@ namespace OneBan_TMS.Controllers
         {
             _employeeRepository = employeeRepository;
             _teamRepository = teamRepository;
+            
         }
         #region GetById
         [HttpGet("{employeeId}")]
@@ -108,6 +112,15 @@ namespace OneBan_TMS.Controllers
         }
         #endregion
         #region Post
+
+        [HttpPost]
+        public async Task<ActionResult> AddNewEmployee([FromBody]EmployeeDto employee)
+        {
+            if (await _employeeRepository.ExistsEmployeeByEmail(employee.EmpEmail))
+                return BadRequest("There is an employee with the specified email");
+            await _employeeRepository.AddEmployee(employee);
+            return Ok("Employee added successful");
+        }
         [HttpPost("Team")]
         public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)
         {
@@ -176,5 +189,6 @@ namespace OneBan_TMS.Controllers
                 Ok($"Team with id {teamId} has been deleted");
         }
         #endregion
+
     }
 }

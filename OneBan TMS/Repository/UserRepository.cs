@@ -15,10 +15,11 @@ namespace OneBan_TMS.Repository
     public class UserRepository : IUserRepository
     {
         private readonly OneManDbContext _context;
-        private readonly IEmployeeRepository _employeeRepository;
-        public UserRepository(OneManDbContext context)
+        private readonly IPasswordHandler _passwordHandler;
+        public UserRepository(OneManDbContext context, IPasswordHandler passwordHandler)
         {
             _context = context;
+            _passwordHandler = passwordHandler;
         }
         public async Task<Employee> GetUserByEmail(string emailAddress)
         {
@@ -29,6 +30,7 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
             return employee;
         }
+ /*
         public async Task AddNewUser(EmployeeDto user, byte[] passwordHash, byte[] passwordSalt)
         {
             //Todo: Zrobić walidację
@@ -47,14 +49,15 @@ namespace OneBan_TMS.Repository
             });
             await _context.SaveChangesAsync();
         }
+        */
         public void GetPasswordParts(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             if (password.Length != 260)
                 throw new ArgumentException("Password is to short");
             string passwordBase64Hash = password.Substring(0, 88);
             string passwordBase64Salt = password.Substring(88, 172).Trim();
-            passwordHash = ConvertStringToByteArray(passwordBase64Hash);
-            passwordSalt = ConvertStringToByteArray(passwordBase64Salt);
+            passwordHash = _passwordHandler.ConvertStringToByteArray(passwordBase64Hash);
+            passwordSalt = _passwordHandler.ConvertStringToByteArray(passwordBase64Salt);
         }
         public async Task<string> GetUserRole(string userEmail)
         {
@@ -80,15 +83,6 @@ namespace OneBan_TMS.Repository
             }
 
             await _context.SaveChangesAsync();
-        }
-
-        private string ConvertByteArrayToString(byte[] array)
-        {
-            return Convert.ToBase64String(array);
-        }
-        private byte[] ConvertStringToByteArray(string text)
-        {
-            return Convert.FromBase64String(text);
         }
     }
 }

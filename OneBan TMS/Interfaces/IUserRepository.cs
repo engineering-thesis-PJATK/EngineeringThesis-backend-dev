@@ -12,7 +12,6 @@ namespace OneBan_TMS.Interfaces
     public interface IUserRepository
     {
         Task<Employee> GetUserByEmail(string emailAddress);
-        Task AddNewUser(EmployeeDto user, byte[] passwordHash, byte[] passwordSalt);
         void GetPasswordParts(string password, out byte[] passwordHash, out byte[] passwordSalt);
         Task<string> GetUserRole(string userEmail);
         Task AddPrivilegesToUser(int employeeId, List<int> privileges);
