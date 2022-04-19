@@ -191,7 +191,10 @@ namespace OneBanTMS.IntegrationTests
                 .Select(x =>
                     x.CmpId)
                 .SingleOrDefaultAsync();
-            
+            idAddedCompany += 1;
+            Func<Task> action = async () => await repository.DeleteCompany(idAddedCompany);
+            await action.Should().ThrowExactlyAsync<ArgumentException>()
+                .WithMessage("Company not exists");
         }
         [Test, Isolated]
         public async Task ExisitsCompany_PassValid_ShouldReturnTrue()
