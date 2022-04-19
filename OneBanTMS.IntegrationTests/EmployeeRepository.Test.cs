@@ -86,5 +86,38 @@ namespace OneBanTMS.IntegrationTests
                 .AddEmployee(newEmployee);
             await action.Should().ThrowExactlyAsync<ValidationException>();
         }
+
+        [Test, Isolated]
+        public async Task UpdateEmployee_PassValid_ShouldUpdateEmployee()
+        {
+            var employeeRepository = new EmployeeRepository(_context, _passwordHandler, _validatorToUpdate, _validatorToAdd);
+            var newEmployee = new EmployeeDto()
+            {
+                EmpEmail = "test@test.pl",
+                EmpName = "Test",
+                EmpSurname = "TestTest",
+                EmpPassword = "Testtest123!",
+                EmpPhoneNumber = "123123123"
+            };
+            await employeeRepository.AddEmployee(newEmployee);
+            var employeeId = await _context
+                .Employees
+                .Where(x => x.EmpEmail == newEmployee.EmpEmail)
+                .Select(x => x.EmpId)
+                .SingleOrDefaultAsync();
+            var updatedEmployee = new EmployeeToUpdate()
+            {
+                EmpEmail = "test1@test.pl",
+                EmpLogin = "test1@test.pl",
+                EmpName = "Test",
+                EmpSurname = "TestTest",
+                EmpPhoneNumber = "123123123"
+            };
+            await employeeRepository.UpdateEmployee(employeeId, updatedEmployee);
+            var countUpdatedEmployee = await _context
+                .Employees
+                .CountAsync(x => x.EmpEmail == updatedEmployee.EmpEmail);
+            Assert.That(countUpdatedEmployee, Is.EqualTo(1));
+        }
     }
 }
