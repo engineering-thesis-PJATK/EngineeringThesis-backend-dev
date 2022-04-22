@@ -67,7 +67,7 @@ namespace OneBanTMS.IntegrationTests
                 .CountAsync();
             Assert.That(countOfCustomers, Is.EqualTo(1));
         }
-
+        [Test, Isolated]
         public async Task AddNewCustomer_WithNotValidEmail_ShouldThrowValidationError()
         {
             var customerRepository = new CustomerRepository(_context, _validator);
