@@ -11,7 +11,8 @@ namespace OneBan_TMS.Interfaces
         Task<IEnumerable<Customer>> GetAllCustomers();
         Task<Customer> GetCustomerById(int customerId);
         Task<bool> ExistsCustomer(int customerId);
-        Task AddNewCustomer(CustomerDto customerDto);
+        Task AddNewCustomer(CustomerDto customerDto, int companyId);
+        Task UpdateCustomer(CustomerDto customerDto, int customerId);
         Task<List<CustomerShortDto>> GetCustomersToSearch();
     }
 }

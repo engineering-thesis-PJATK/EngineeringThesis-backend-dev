@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Customer;
 
 namespace OneBan_TMS.Controllers
 {
@@ -34,6 +35,13 @@ namespace OneBan_TMS.Controllers
                 return NoContent();
             var customer = await _customerRepository.GetCustomerById(customerId);
             return Ok(customer);
+        }
+
+        [HttpPost("{companyId}")]
+        public async Task<IActionResult> AddNewCustomer([FromBody] CustomerDto newCustomer, int companyId)
+        {
+            await _customerRepository.AddNewCustomer(newCustomer, companyId);
+            return Ok("Customer added");
         }
     }
 }

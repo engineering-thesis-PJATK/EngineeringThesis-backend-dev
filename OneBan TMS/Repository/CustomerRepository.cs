@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Graph;
 using OneBan_TMS.Interfaces;
@@ -14,9 +15,11 @@ namespace OneBan_TMS.Repository
     {
         //Todo: Do poprawy !!!
         private readonly OneManDbContext _context;
-        public CustomerRepository(OneManDbContext context)
+        private readonly IValidator<CustomerDto> _customerDtoValidator;
+        public CustomerRepository(OneManDbContext context, IValidator<CustomerDto> customerDtoValidator)
         {
             _context = context;
+            _customerDtoValidator = customerDtoValidator;
         }
         public async Task<IEnumerable<Customer>> GetAllCustomers()
         {
@@ -27,7 +30,11 @@ namespace OneBan_TMS.Repository
 
         public async Task<Customer> GetCustomerById(int customerId)
         {
-            return await _context.Customers.Where(x => x.CurId == customerId).SingleOrDefaultAsync();
+            return await _context
+                .Customers
+                .Where(x => 
+                    x.CurId == customerId)
+                .SingleOrDefaultAsync();
         }
 
         public async Task<bool> ExistsCustomer(int customerId)
@@ -38,9 +45,37 @@ namespace OneBan_TMS.Repository
             return result;
         }
 
-        public Task AddNewCustomer(CustomerDto customerDto)
+        public async Task AddNewCustomer(CustomerDto newCustomer, int customerId)
         {
-            
+            _customerDtoValidator.ValidateAndThrow(newCustomer);
+            Customer customer = new Customer()
+            {
+                CurName = newCustomer.CurName,
+                CurSurname = newCustomer.CurSurname,
+                CurEmail = newCustomer.CurEmail,
+                CurPhoneNumber = newCustomer.CurPhoneNumber,
+                CurPosition = newCustomer.CurPosition,
+                CurComments = newCustomer.CurComments,
+                CurCreatedAt = System.DateTime.Now,
+                CurIdCompany = customerId
+            };
+            await _context.Customers.AddAsync(customer);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateCustomer(CustomerDto customer, int customerId)
+        {
+            _customerDtoValidator.ValidateAndThrow(customer);
+            var customerToUpdate = await _context
+                .Customers
+                .SingleOrDefaultAsync();
+            customerToUpdate.CurName = customer.CurName;
+            customerToUpdate.CurSurname = customer.CurSurname;
+            customerToUpdate.CurEmail = customer.CurEmail;
+            customerToUpdate.CurPhoneNumber = customer.CurPhoneNumber;
+            customerToUpdate.CurPosition = customer.CurPosition;
+            customerToUpdate.CurComments = customer.CurComments;
+            await _context.SaveChangesAsync();
         }
 
         public async Task<List<CustomerShortDto>> GetCustomersToSearch()
