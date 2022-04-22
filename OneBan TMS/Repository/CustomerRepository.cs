@@ -6,6 +6,7 @@ using Microsoft.Graph;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Customer;
 
 namespace OneBan_TMS.Repository
 {
@@ -19,7 +20,9 @@ namespace OneBan_TMS.Repository
         }
         public async Task<IEnumerable<Customer>> GetAllCustomers()
         {
-            return await _context.Customers.ToListAsync();
+            return await _context
+                .Customers
+                .ToListAsync();
         }
 
         public async Task<Customer> GetCustomerById(int customerId)
@@ -27,9 +30,17 @@ namespace OneBan_TMS.Repository
             return await _context.Customers.Where(x => x.CurId == customerId).SingleOrDefaultAsync();
         }
 
-        public Task AddNewCustomer()
+        public async Task<bool> ExistsCustomer(int customerId)
         {
-            throw new System.NotImplementedException();
+            var result = await _context
+                .Customers
+                .AnyAsync(x => x.CurId == customerId);
+            return result;
+        }
+
+        public Task AddNewCustomer(CustomerDto customerDto)
+        {
+            
         }
 
         public async Task<List<CustomerShortDto>> GetCustomersToSearch()

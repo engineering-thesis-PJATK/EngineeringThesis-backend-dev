@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 #nullable disable
 
@@ -22,8 +23,9 @@ namespace OneBan_TMS.Models
         public string CurComments { get; set; }
         public DateTime CurCreatedAt { get; set; }
         public int CurIdCompany { get; set; }
-
+        [JsonIgnore]
         public virtual Company CurIdCompanyNavigation { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }
