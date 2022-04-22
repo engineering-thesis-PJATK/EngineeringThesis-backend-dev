@@ -119,5 +119,7 @@ namespace OneBanTMS.IntegrationTests
                 .CountAsync(x => x.EmpEmail == updatedEmployee.EmpEmail);
             Assert.That(countUpdatedEmployee, Is.EqualTo(1));
         }
+        //Todo: Dodać metodę ze złymi danymi
+        
     }
 }
