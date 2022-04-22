@@ -30,8 +30,9 @@ namespace OneBanTMS.IntegrationTests
         [Test, Isolated]
         public async Task AddNewCustomer_PassValid_ShouldAddNewCustomerToDatabase()
         {
-            var customerRepository = new CustomerRepository(_context, _validator);
             var companyRepository = new CompanyRepository(_context, new CompanyValidator(new CompanyHandler(_context)));
+            var customerRepository = new CustomerRepository(_context, _validator, companyRepository);
+            
             CustomerDto newCustomerDto = new CustomerDto()
             {
                 CurName = "TestName",
@@ -70,8 +71,8 @@ namespace OneBanTMS.IntegrationTests
         [Test, Isolated]
         public async Task AddNewCustomer_WithNotValidEmail_ShouldThrowValidationError()
         {
-            var customerRepository = new CustomerRepository(_context, _validator);
             var companyRepository = new CompanyRepository(_context, new CompanyValidator(new CompanyHandler(_context)));
+            var customerRepository = new CustomerRepository(_context, _validator, companyRepository);
             CustomerDto newCustomerDto = new CustomerDto()
             {
                 CurName = "TestName",
@@ -96,6 +97,35 @@ namespace OneBanTMS.IntegrationTests
                 .SingleOrDefaultAsync();
             Func<Task> action = async () => await customerRepository.AddNewCustomer(newCustomerDto, companyId);
             await action.Should().ThrowExactlyAsync<ValidationException>();
+        }
+        [Test, Isolated]
+        public async Task AddNewCustomer_WithNotValidCompanyId_ShouldThrowArgumentError()
+        {
+            var companyRepository = new CompanyRepository(_context, new CompanyValidator(new CompanyHandler(_context)));
+            var customerRepository = new CustomerRepository(_context, _validator, companyRepository);
+            CustomerDto newCustomerDto = new CustomerDto()
+            {
+                CurName = "TestName",
+                CurSurname = "TestSurname",
+                CurEmail = "Test@Test.com",
+                CurComments = "TestComments",
+                CurPosition = "TestPosition",
+                CurPhoneNumber = "000000000"
+            };
+            CompanyDto newCompanyDto = new CompanyDto()
+            {
+                CmpName = "TestCompany",
+                CmpNip = "0000000000",
+                CmpNipPrefix = "PL"
+            };
+            await companyRepository.AddNewCompany(newCompanyDto);
+            var companyId = await _context
+                .Companies
+                .MaxAsync(x => x.CmpId);
+            companyId += 1;
+            Func<Task> action = async () => await customerRepository.AddNewCustomer(newCustomerDto, companyId);
+            await action.Should().ThrowExactlyAsync<ArgumentException>()
+                .WithMessage("Company not exists");
         }
     }
 }

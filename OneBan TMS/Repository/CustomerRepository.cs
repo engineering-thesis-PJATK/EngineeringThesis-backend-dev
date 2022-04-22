@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,9 +17,11 @@ namespace OneBan_TMS.Repository
         //Todo: Do poprawy !!!
         private readonly OneManDbContext _context;
         private readonly IValidator<CustomerDto> _customerDtoValidator;
-        public CustomerRepository(OneManDbContext context, IValidator<CustomerDto> customerDtoValidator)
+        private readonly ICompanyRepository _companyRepository;
+        public CustomerRepository(OneManDbContext context, IValidator<CustomerDto> customerDtoValidator, ICompanyRepository companyRepository)
         {
             _context = context;
+            _companyRepository = companyRepository;
             _customerDtoValidator = customerDtoValidator;
         }
         public async Task<IEnumerable<Customer>> GetAllCustomers()
@@ -45,8 +48,10 @@ namespace OneBan_TMS.Repository
             return result;
         }
 
-        public async Task AddNewCustomer(CustomerDto newCustomer, int customerId)
+        public async Task AddNewCustomer(CustomerDto newCustomer, int companyId)
         {
+            if (!(await _companyRepository.ExistsCompany(companyId)))
+                throw new ArgumentException("Company not exists");
             _customerDtoValidator.ValidateAndThrow(newCustomer);
             Customer customer = new Customer()
             {
@@ -57,7 +62,7 @@ namespace OneBan_TMS.Repository
                 CurPosition = newCustomer.CurPosition,
                 CurComments = newCustomer.CurComments,
                 CurCreatedAt = System.DateTime.Now,
-                CurIdCompany = customerId
+                CurIdCompany = companyId
             };
             await _context.Customers.AddAsync(customer);
             await _context.SaveChangesAsync();
