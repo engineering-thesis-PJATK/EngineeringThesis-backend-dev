@@ -1,5 +1,7 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentAssertions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
@@ -64,7 +66,36 @@ namespace OneBanTMS.IntegrationTests
                     && x.CurPhoneNumber == newCustomerDto.CurPhoneNumber)
                 .CountAsync();
             Assert.That(countOfCustomers, Is.EqualTo(1));
+        }
 
+        public async Task AddNewCustomer_WithNotValidEmail_ShouldThrowValidationError()
+        {
+            var customerRepository = new CustomerRepository(_context, _validator);
+            var companyRepository = new CompanyRepository(_context, new CompanyValidator(new CompanyHandler(_context)));
+            CustomerDto newCustomerDto = new CustomerDto()
+            {
+                CurName = "TestName",
+                CurSurname = "TestSurname",
+                CurEmail = "Test",
+                CurComments = "TestComments",
+                CurPosition = "TestPosition",
+                CurPhoneNumber = "000000000"
+            };
+            CompanyDto newCompanyDto = new CompanyDto()
+            {
+                CmpName = "TestCompany",
+                CmpNip = "0000000000",
+                CmpNipPrefix = "PL"
+            };
+            await companyRepository.AddNewCompany(newCompanyDto);
+            var companyId = await _context
+                .Companies
+                .Where(x =>
+                    x.CmpNip == newCompanyDto.CmpNip)
+                .Select(x => x.CmpId)
+                .SingleOrDefaultAsync();
+            Func<Task> action = async () => await customerRepository.AddNewCustomer(newCustomerDto, companyId);
+            await action.Should().ThrowExactlyAsync<ValidationException>();
         }
     }
 }
