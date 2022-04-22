@@ -13,9 +13,11 @@ namespace OneBan_TMS.Controllers
     public class CustomerController : Controller
     {
         private readonly ICustomerRepository _customerRepository;
-        public CustomerController(ICustomerRepository customerRepository)
+        private readonly ICompanyRepository _companyRepository;
+        public CustomerController(ICustomerRepository customerRepository, ICompanyRepository companyRepository)
         {
             _customerRepository = customerRepository;
+            _companyRepository = companyRepository;
         }
 
         [HttpGet]
@@ -40,8 +42,22 @@ namespace OneBan_TMS.Controllers
         [HttpPost("{companyId}")]
         public async Task<IActionResult> AddNewCustomer([FromBody] CustomerDto newCustomer, int companyId)
         {
-            await _customerRepository.AddNewCustomer(newCustomer, companyId);
+            if (await _companyRepository.ExistsCompany(companyId))
+                return BadRequest($"Company with id: {companyId} is not exists");
+            await _customerRepository
+                .AddNewCustomer(newCustomer, companyId);
             return Ok("Customer added");
+            //Todo: Przegadać kwestie miejsca employees
+        }
+
+        [HttpPut("{customerId}")]
+        public async Task<IActionResult> UpdateCustomer([FromBody] CustomerDto customer, int customerId)
+        {
+            if (await _customerRepository.ExistsCustomer(customerId))
+                return BadRequest("Customer not exists");
+            await _customerRepository
+                .UpdateCustomer(customer, customerId);
+            return Ok("Customer updated");
         }
     }
 }

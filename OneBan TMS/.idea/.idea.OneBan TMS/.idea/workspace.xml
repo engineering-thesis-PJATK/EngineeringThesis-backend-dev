@@ -10,10 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompanyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ICustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/ICustomerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CustomerRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +214,7 @@
       <workItem from="1650130268379" duration="2670000" />
       <workItem from="1650390960925" duration="7692000" />
       <workItem from="1650564836870" duration="412000" />
-      <workItem from="1650622986470" duration="3584000" />
+      <workItem from="1650622986470" duration="5148000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
