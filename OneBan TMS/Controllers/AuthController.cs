@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models.DTOs;
 using System.Threading.Tasks;
+using OneBan_TMS.Interfaces.Handlers;
+using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models.DTOs.Employee;
 
 namespace OneBan_TMS.Controllers

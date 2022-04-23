@@ -1,4 +1,4 @@
-namespace OneBan_TMS.Models.DTOs
+namespace OneBan_TMS.Models.DTOs.Address
 {
     public class AddressDto
     {

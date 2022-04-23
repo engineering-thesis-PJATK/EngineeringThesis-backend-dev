@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-
-namespace OneBan_TMS.Models.DTOs.Employee
+﻿namespace OneBan_TMS.Models.DTOs.Employee
 {
     public class EmployeeDto
     {

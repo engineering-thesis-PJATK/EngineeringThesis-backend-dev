@@ -1,4 +1,4 @@
-namespace OneBan_TMS.Models.DTOs
+namespace OneBan_TMS.Models.DTOs.Employee
 {
     public class EmployeeToUpdate
     {

@@ -1,6 +1,7 @@
 using System.Data;
 using FluentValidation;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Models.DTOs.Customer;
 
 namespace OneBan_TMS.Validators

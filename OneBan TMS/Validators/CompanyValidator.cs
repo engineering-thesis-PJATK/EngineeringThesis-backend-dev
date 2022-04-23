@@ -5,8 +5,10 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Handlers;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Company;
 
 namespace OneBan_TMS.Validators
 {
