@@ -2,10 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using OneBan_TMS.Enum;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Kanban;
 using OneBan_TMS.Models.DTOs.Ticket;
 
 namespace OneBan_TMS.Repository
@@ -260,6 +262,35 @@ namespace OneBan_TMS.Repository
             .Remove(ticket);
             await _context
                 .SaveChangesAsync();
+        }
+
+        public async Task<List<KanbanElement>> GetTicketsForEmployeeByStatus(int statusId, int employeeId)
+        {
+            List<KanbanElement> kanbanElements = new List<KanbanElement>();
+            var ticketsList = await _context
+                .EmployeeTickets
+                .Where(x =>
+                    x.EtsIdTicketNavigation.TicIdTicketStatus == statusId
+                    && x.EtsIdEmployee == employeeId)
+                .Select(x => new
+                {
+                    x.EtsIdTicketNavigation.TicId,
+                    x.EtsIdTicketNavigation.TicName,
+                    x.EtsIdTicketNavigation.TicTopic,
+                    x.EtsIdTicketNavigation.TicDueDate
+                }).ToListAsync();
+            foreach (var ticket in ticketsList)
+            {
+                kanbanElements.Add(new KanbanElement()
+                {
+                    Id = ticket.TicId,
+                    Name = ticket.TicName,
+                    Topic = ticket.TicTopic,
+                    DueDate = ticket.TicDueDate,
+                    Type = KanbanType.Ticket
+                });
+            }
+            return kanbanElements;
         }
     }
 }

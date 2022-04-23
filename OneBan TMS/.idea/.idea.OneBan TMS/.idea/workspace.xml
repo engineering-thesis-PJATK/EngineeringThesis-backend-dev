@@ -9,71 +9,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Controllers/Kanban.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enum/KanbanType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/Kanban/KanbanElement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompanyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeTeamRoleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeTeamRoleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ProjectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProjectController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TicketController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handlers/CompanyHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/CompanyHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handlers/CustomerHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/CustomerHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handlers/PasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/PasswordHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IAddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IAddressRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ICompanyHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/ICompanyHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ICompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ICompanyRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ICustomerHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/ICustomerHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ICustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ICustomerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IEmployeeTeamRoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeTeamRoleRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IPasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/IPasswordHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IProjectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IProjectRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IProjectTaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IProjectTaskRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ITeamRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ITeamRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ITicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ITicketRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ITimeEntryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ITimeEntryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/ITokenHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/ITokenHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IValidatorHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/IValidatorHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Address/AddressDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Address/AddressDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Company/CompanyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Company/CompanyDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerShortDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerShortDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeForListDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeForListDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeToUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeToUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/EmployeePrivilegeGetDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeePrivilegeGetDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/EmployeeTeamRoleDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeTeamRoleDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/ProjectDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Project/ProjectDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/ProjectTaskDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Project/ProjectTaskDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TeamGetDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Team/TeamGetDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TeamUpdateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Team/TeamUpdateDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Ticket/TicketDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketPriorityDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Ticket/TicketPriorityDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketStatusDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Ticket/TicketStatusDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketStatusIdPatchDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Ticket/TicketStatusIdPatchDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketTypeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Ticket/TicketTypeDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TicketUpdateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Ticket/TicketUpdateDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TimeEntryGetDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/TimeEntry/TimeEntryGetDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/TimeEntryUpdateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/TimeEntry/TimeEntryUpdateDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/AddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AddressRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/CompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CustomerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/EmployeeTeamRoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeTeamRoleRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/ProjectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/ProjectRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/ProjectTaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/ProjectTaskRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/TeamRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TeamRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ITicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ITicketRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/TicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TicketRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/TimeEntryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TimeEntryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Validators/CompanyValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/CompanyValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Validators/CustomerValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/CustomerValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToAddValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToAddValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Validators/ValidatorHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/ValidatorHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,6 +230,7 @@
       <workItem from="1650564836870" duration="412000" />
       <workItem from="1650622986470" duration="8488000" />
       <workItem from="1650705391182" duration="1538000" />
+      <workItem from="1650709708876" duration="3637000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
