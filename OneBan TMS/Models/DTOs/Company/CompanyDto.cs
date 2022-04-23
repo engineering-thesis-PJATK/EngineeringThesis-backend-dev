@@ -1,6 +1,4 @@
-using System.Reflection.Metadata.Ecma335;
-
-namespace OneBan_TMS.Models.DTOs
+namespace OneBan_TMS.Models.DTOs.Company
 {
     public class CompanyDto
     {

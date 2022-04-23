@@ -6,8 +6,10 @@ using FluentValidation;
 using Microsoft.AspNetCore.Server.IIS.Core;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Company;
 
 namespace OneBan_TMS.Repository
 {

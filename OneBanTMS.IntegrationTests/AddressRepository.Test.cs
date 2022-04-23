@@ -8,6 +8,8 @@ using NUnit.Framework;
 using OneBan_TMS.Handlers;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Address;
+using OneBan_TMS.Models.DTOs.Company;
 using OneBan_TMS.Repository;
 using OneBan_TMS.Validators;
 

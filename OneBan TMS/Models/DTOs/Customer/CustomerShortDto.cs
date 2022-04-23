@@ -1,6 +1,4 @@
-using System.Security.Principal;
-
-namespace OneBan_TMS.Models.DTOs
+namespace OneBan_TMS.Models.DTOs.Customer
 {
     public class CustomerShortDto
     {
