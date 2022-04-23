@@ -20,13 +20,6 @@ namespace OneBan_TMS.Controllers
             _tokenHandler = tokenHandler;
             _employeeRepository = employeeRepository;
         }
-        [HttpPost("Register")]
-        public async Task<ActionResult> Register([FromBody]EmployeeDto userDto)
-        {
-            _passwordHandler.CreatePasswordHash(userDto.EmpPassword, out byte[] passwordHash, out byte[] passwordSalt);
-            await _userRepository.AddNewUser(userDto, passwordHash, passwordSalt);
-            return Ok(userDto);
-        }
         [HttpPost("Login")]
         public async Task<ActionResult<string>> Login([FromBody]CredentialsDto request)
         {

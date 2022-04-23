@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Employee;
 
 namespace OneBan_TMS.Repository
 {
@@ -13,10 +16,14 @@ namespace OneBan_TMS.Repository
     {
         private OneManDbContext _context;
         private readonly IValidator<EmployeeToUpdate> _employeeValidator;
-        public EmployeeRepository(OneManDbContext context, IValidator<EmployeeToUpdate> employeeValidator)
+        private readonly IValidator<EmployeeDto> _employeeToAddValidation;
+        private readonly IPasswordHandler _passwordHandler;
+        public EmployeeRepository(OneManDbContext context, IPasswordHandler passwordHandler, IValidator<EmployeeToUpdate> employeeValidator, IValidator<EmployeeDto> employeeToAddValidation)
         {
             _context = context;
+            _passwordHandler = passwordHandler;
             _employeeValidator = employeeValidator;
+            _employeeToAddValidation = employeeToAddValidation;
         }
         public async Task<IEnumerable<EmployeeForListDto>> GetAllEmployeeDto()
         {
@@ -77,6 +84,29 @@ namespace OneBan_TMS.Repository
                 Roles = await GetEmployeePrivileges(employee.EmpId),
                 EmployeeTeams = employee.Teams
             };
+        }
+
+        public async Task AddEmployee(EmployeeDto employee)
+        {
+            _employeeToAddValidation.ValidateAndThrow(employee);
+            _passwordHandler.CreatePasswordHash(employee.EmpPassword, out byte[] passwordHash, out byte[] passwordSalt);
+            StringBuilder passwordConnector = new StringBuilder();
+            passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordHash));
+            passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordSalt));
+            
+            _context
+                .Employees
+                .Add(new Employee()
+                {
+                    EmpLogin = employee.EmpEmail,
+                    EmpName = employee.EmpName,
+                    EmpSurname = employee.EmpSurname,
+                    EmpEmail = employee.EmpEmail,
+                    EmpPhoneNumber = employee.EmpPhoneNumber,
+                    EmpCreatedAt = DateTime.Now,
+                    EmpPassword = passwordConnector.ToString()
+                });
+            await _context.SaveChangesAsync();
         }
         public async Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeUpdated)
         {
@@ -170,6 +200,14 @@ namespace OneBan_TMS.Repository
                     EpvDescription = x.EpvDescription
                 }));
             return employeePrivileges;
+        }
+
+        public async Task<bool> ExistsEmployeeByEmail(string employeeEmail)
+        {
+            bool result = await _context
+                .Employees
+                .AnyAsync(x => x.EmpEmail.Equals(employeeEmail));
+            return result;
         }
     }
 }
