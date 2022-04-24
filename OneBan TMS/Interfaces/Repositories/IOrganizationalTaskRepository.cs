@@ -7,5 +7,6 @@ namespace OneBan_TMS.Interfaces.Repositories
     public interface IOrganizationalTaskRepository
     {
         Task<List<KanbanElement>> GetTaskForEmployee(int employeeId);
+        Task UpdateTaskStatus(int taskId, int statusId);
     }
 }

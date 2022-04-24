@@ -29,11 +29,17 @@ namespace OneBan_TMS.Repository
                 {
                     Id = task.OtkId,
                     Topic = task.OtkDescription,
-                    Type = KanbanType.Task.ToString()
+                    Type = (int)KanbanType.Task
                 });
             }
 
             return kanbanElements;
+        }
+
+        public Task UpdateTaskStatus(int taskId, int statusId)
+        {
+            //Todo: implementacja
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -16,12 +16,19 @@ namespace OneBan_TMS.Controllers
             _kanbanRepository = kanbanRepository;
         }
         [HttpGet]
-        public async Task<ActionResult<List<KanbanElement>>> getKanbanElements(int employeeId, int statusId)
+        public async Task<ActionResult<List<KanbanElement>>> GetKanbanElements(int employeeId, int statusId)
         {
-            var kanbanElementsList = await _kanbanRepository.getKanbanElements(employeeId, statusId);
+            var kanbanElementsList = await _kanbanRepository.GetKanbanElements(employeeId, statusId);
             if (kanbanElementsList is null)
                 return NoContent();
             return Ok(kanbanElementsList);
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> UpdateElementStatus(int elementId, int elementType, int statusId)
+        {
+            await _kanbanRepository.UpdateKanbanElementStatus(elementId, elementType, statusId);
+            return Ok("Element status updated");
         }
     }
 }
