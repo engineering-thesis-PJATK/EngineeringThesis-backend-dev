@@ -2,7 +2,7 @@ namespace OneBan_TMS.Enum
 {
     public enum KanbanType
     {
-        Ticket,
-        Task
+        Ticket = 0,
+        Task = 1
     }
 }

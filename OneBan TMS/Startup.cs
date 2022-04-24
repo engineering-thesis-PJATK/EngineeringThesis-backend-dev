@@ -27,6 +27,7 @@ using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Company;
 using OneBan_TMS.Models.DTOs.Customer;
 using OneBan_TMS.Models.DTOs.Employee;
+using OneBan_TMS.Models.DTOs.Kanban;
 using OneBan_TMS.Repository;
 using OneBan_TMS.Validators;
 using OneBan_TMS.Validators.EmployeeValidators;
@@ -71,7 +72,8 @@ namespace OneBan_TMS
             services.AddScoped<IProjectTaskRepository, ProjectTaskRepository>();
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
-            
+            services.AddScoped<IKanbanRepository, KanbanRepository>();
+            services.AddScoped<IOrganizationalTaskRepository, OrganizationalTaskRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
 

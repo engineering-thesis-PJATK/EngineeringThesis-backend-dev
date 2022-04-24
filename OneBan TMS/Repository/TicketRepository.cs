@@ -287,7 +287,7 @@ namespace OneBan_TMS.Repository
                     Name = ticket.TicName,
                     Topic = ticket.TicTopic,
                     DueDate = ticket.TicDueDate,
-                    Type = KanbanType.Ticket
+                    Type = KanbanType.Ticket.ToString()
                 });
             }
             return kanbanElements;

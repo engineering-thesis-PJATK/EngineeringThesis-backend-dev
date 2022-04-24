@@ -6,16 +6,16 @@ using OneBan_TMS.Models.DTOs.Kanban;
 
 namespace OneBan_TMS.Controllers
 {
-    [ApiController]
-    [Route("{controller}")]
-    public class KanbanController : Controller
+     [Route("Api/[controller]")]
+     [ApiController]
+     public class KanbanController : ControllerBase
     {
         private readonly IKanbanRepository _kanbanRepository;
         public KanbanController(IKanbanRepository kanbanRepository)
         {
             _kanbanRepository = kanbanRepository;
         }
-        [HttpGet("")]
+        [HttpGet]
         public async Task<ActionResult<List<KanbanElement>>> getKanbanElements(int employeeId, int statusId)
         {
             var kanbanElementsList = await _kanbanRepository.getKanbanElements(employeeId, statusId);

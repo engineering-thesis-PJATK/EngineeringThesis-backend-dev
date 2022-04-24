@@ -29,7 +29,7 @@ namespace OneBan_TMS.Repository
                 {
                     Id = task.OtkId,
                     Topic = task.OtkDescription,
-                    Type = KanbanType.Task
+                    Type = KanbanType.Task.ToString()
                 });
             }
 

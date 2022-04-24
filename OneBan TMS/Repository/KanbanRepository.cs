@@ -18,7 +18,7 @@ namespace OneBan_TMS.Repository
         public async Task<List<KanbanElement>> getKanbanElements(int employeeId, int statusId)
         {
             List<KanbanElement> kanbanElements = new List<KanbanElement>();
-            kanbanElements.AddRange(await _ticketRepository.GetTicketsForEmployeeByStatus(employeeId, statusId));
+            kanbanElements.AddRange(await _ticketRepository.GetTicketsForEmployeeByStatus(statusId, employeeId));
             //kanbanElements.AddRange(await _organizationalTaskRepository.GetTaskForEmployee(employeeId));
             return kanbanElements;
         }
