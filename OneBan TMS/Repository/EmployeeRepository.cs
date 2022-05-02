@@ -168,7 +168,38 @@ namespace OneBan_TMS.Repository
             return true;
         }
 
+        public async Task<string> ChangePassword(string employeeEmail)
+        {
+            var employee = await GetEmployeeByEmail(employeeEmail);
+            string newRandomPassword = GenerateRandomPassword();
+            employee.EmpPassword = newRandomPassword;
+            await _context.SaveChangesAsync();
+            return newRandomPassword;
+        }
 
+        private async Task<Employee> GetEmployeeByEmail(string employeeEmail)
+        {
+            var employee = await _context
+                .Employees
+                .Where(x =>
+                    x.Equals(employeeEmail))
+                .SingleOrDefaultAsync();
+            return employee;
+        }
+
+        private string GenerateRandomPassword()
+        {
+            StringBuilder passwordBuilder = new StringBuilder();
+            Random random = new Random();
+            char randomChar;
+            for (int i = 0; i < random.Next(5, 10); i++)
+            {
+                randomChar = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                passwordBuilder.Append(randomChar);
+            }
+
+            return passwordBuilder.ToString();
+        }
         private EmployeePrivilegeGetDto ChangeEmployeePrivilegeBaseToDto(EmployeePrivilege employeePrivilege)
         {
             return 
@@ -211,5 +242,6 @@ namespace OneBan_TMS.Repository
                 .AnyAsync(x => x.EmpEmail.Equals(employeeEmail));
             return result;
         }
+        
     }
 }

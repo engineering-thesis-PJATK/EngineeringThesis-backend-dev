@@ -150,3 +150,7 @@
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.RazorTargetAssemblyInfo.cache
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CopyComplete
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/MailKit.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/MimeKit.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/NETCore.MailKit.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/BouncyCastle.Crypto.dll

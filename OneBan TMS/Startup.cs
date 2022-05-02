@@ -26,6 +26,7 @@ using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Company;
 using OneBan_TMS.Models.DTOs.Customer;
+using OneBan_TMS.Models.DTOs.Email;
 using OneBan_TMS.Models.DTOs.Employee;
 using OneBan_TMS.Models.DTOs.Kanban;
 using OneBan_TMS.Repository;
@@ -48,12 +49,16 @@ namespace OneBan_TMS
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-            var connectionString = Configuration.GetConnectionString("SQLConnection");
+            var connectionString = Configuration
+                .GetConnectionString("SQLConnection");
             services.AddDbContextPool<OneManDbContext>(options =>
                 options.UseSqlServer(connectionString));
-            
-            
-            
+            var forgottenPassword = Configuration
+                .GetSection("EmailConfiguration")
+                .Get<EmailConfiguration>();
+
+            services.AddSingleton(forgottenPassword);
+            services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<IValidator<CompanyDto>, CompanyValidator>();
             services.AddScoped<IValidator<EmployeeDto>, EmployeeToAddValidator>();
             services.AddScoped<IValidator<EmployeeToUpdate>, EmployeeToUpdateValidator>();
