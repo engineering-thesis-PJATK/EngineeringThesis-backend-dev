@@ -61,6 +61,7 @@ namespace OneBan_TMS
             services.AddScoped<IValidatorHandler, ValidatorHandler>();
             services.AddScoped<ICompanyHandler, CompanyHandler>();
             services.AddScoped<ICustomerHandler, CustomerHandler>();
+            services.AddScoped<IStatusHandler, StatusHandler>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
