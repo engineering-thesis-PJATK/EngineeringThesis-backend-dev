@@ -59,6 +59,7 @@ namespace OneBan_TMS.Controllers
         [HttpPost("ForgotPassword")]
         public async Task<IActionResult> ForgotPassword(string emailAddres)
         {
+            //Todo: Sprawdzić jak baza zacznie działać
             var employeeExists = await _employeeRepository
                 .ExistsEmployeeByEmail(emailAddres);
             if (employeeExists)

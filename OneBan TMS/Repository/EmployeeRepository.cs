@@ -172,7 +172,11 @@ namespace OneBan_TMS.Repository
         {
             var employee = await GetEmployeeByEmail(employeeEmail);
             string newRandomPassword = GenerateRandomPassword();
-            employee.EmpPassword = newRandomPassword;
+            _passwordHandler.CreatePasswordHash(newRandomPassword, out byte[] passwordHash, out byte[] passwordSalt);
+            StringBuilder passwordBuilder = new StringBuilder();
+            passwordBuilder.Append(_passwordHandler.ConvertByteArrayToString(passwordHash));
+            passwordBuilder.Append(_passwordHandler.ConvertByteArrayToString(passwordSalt));
+            employee.EmpPassword = passwordBuilder.ToString();
             await _context.SaveChangesAsync();
             return newRandomPassword;
         }
