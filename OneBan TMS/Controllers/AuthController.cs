@@ -10,6 +10,8 @@ using OneBan_TMS.Models.DTOs.Employee;
 
 namespace OneBan_TMS.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class AuthController : Controller
     {
         private readonly IUserRepository _userRepository;
@@ -57,15 +59,15 @@ namespace OneBan_TMS.Controllers
         }
 
         [HttpPost("ForgotPassword")]
-        public async Task<IActionResult> ForgotPassword(string emailAddres)
+        public async Task<IActionResult> ForgotPassword(string emailAddress)
         {
             //Todo: Sprawdzić jak baza zacznie działać
             var employeeExists = await _employeeRepository
-                .ExistsEmployeeByEmail(emailAddres);
+                .ExistsEmployeeByEmail(emailAddress);
             if (employeeExists)
             {
-                string randomPassword = await _employeeRepository.ChangePassword(emailAddres);
-                var message = new Message(new string[] {emailAddres}, "Nowe hasło", $"Twoje nowe hasło to {randomPassword}");
+                string randomPassword = await _employeeRepository.ChangePassword(emailAddress);
+                var message = new Message(new string[] {emailAddress}, "Nowe hasło", $"Twoje nowe hasło to {randomPassword}");
                 _emailSender.SendEmail(message);
             }
 
