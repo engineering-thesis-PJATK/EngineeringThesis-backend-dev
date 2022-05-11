@@ -27,8 +27,11 @@ namespace OneBan_TMS.Models
         public virtual DbSet<EmployeeTeamRole> EmployeeTeamRoles { get; set; }
         public virtual DbSet<EmployeeTicket> EmployeeTickets { get; set; }
         public virtual DbSet<OrganizationalTask> OrganizationalTasks { get; set; }
+        public virtual DbSet<OrganizationalTaskStatus> OrganizationalTaskStatuses { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<ProjectStatus> ProjectStatuses { get; set; }
         public virtual DbSet<ProjectTask> ProjectTasks { get; set; }
+        public virtual DbSet<ProjectTaskStatus> ProjectTaskStatuses { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<TicketNote> TicketNotes { get; set; }
@@ -36,6 +39,7 @@ namespace OneBan_TMS.Models
         public virtual DbSet<TicketStatus> TicketStatuses { get; set; }
         public virtual DbSet<TicketType> TicketTypes { get; set; }
         public virtual DbSet<TimeEntry> TimeEntries { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -57,9 +61,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("Address");
 
-                entity.Property(e => e.AdrId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("adr_id");
+                entity.Property(e => e.AdrId).HasColumnName("adr_id");
 
                 entity.Property(e => e.AdrCountry)
                     .IsRequired()
@@ -107,9 +109,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("Company");
 
-                entity.Property(e => e.CmpId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("cmp_id");
+                entity.Property(e => e.CmpId).HasColumnName("cmp_id");
 
                 entity.Property(e => e.CmpKrsNumber)
                     .HasMaxLength(25)
@@ -152,9 +152,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("CompanyNote");
 
-                entity.Property(e => e.CntId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("cnt_id");
+                entity.Property(e => e.CntId).HasColumnName("cnt_id");
 
                 entity.Property(e => e.CntContent)
                     .IsRequired()
@@ -177,9 +175,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("CompanyNoteAttachment");
 
-                entity.Property(e => e.CnaId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("cna_id");
+                entity.Property(e => e.CnaId).HasColumnName("cna_id");
 
                 entity.Property(e => e.CnaBinaryData)
                     .IsRequired()
@@ -207,9 +203,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("Correspondence");
 
-                entity.Property(e => e.CorId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("cor_id");
+                entity.Property(e => e.CorId).HasColumnName("cor_id");
 
                 entity.Property(e => e.CorBody)
                     .IsRequired()
@@ -258,9 +252,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("CorrespondenceAttachment");
 
-                entity.Property(e => e.CatId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("cat_id");
+                entity.Property(e => e.CatId).HasColumnName("cat_id");
 
                 entity.Property(e => e.CatBinaryData)
                     .IsRequired()
@@ -288,9 +280,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("Customer");
 
-                entity.Property(e => e.CurId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("cur_id");
+                entity.Property(e => e.CurId).HasColumnName("cur_id");
 
                 entity.Property(e => e.CurComments)
                     .IsRequired()
@@ -347,9 +337,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("Employee");
 
-                entity.Property(e => e.EmpId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("emp_id");
+                entity.Property(e => e.EmpId).HasColumnName("emp_id");
 
                 entity.Property(e => e.EmpCreatedAt)
                     .HasColumnType("datetime")
@@ -398,9 +386,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("EmployeePrivilege");
 
-                entity.Property(e => e.EpvId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("epv_id");
+                entity.Property(e => e.EpvId).HasColumnName("epv_id");
 
                 entity.Property(e => e.EpvDescription)
                     .IsRequired()
@@ -422,9 +408,10 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("EmployeePrivilegeEmployee");
 
-                entity.Property(e => e.EpeId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("epe_id");
+                entity.HasIndex(e => new { e.EpeIdEmployee, e.EpeIdEmployeePrivilage }, "EmployeePrivilegeEmployee_Unique")
+                    .IsUnique();
+
+                entity.Property(e => e.EpeId).HasColumnName("epe_id");
 
                 entity.Property(e => e.EpeIdEmployee).HasColumnName("epe_idEmployee");
 
@@ -450,9 +437,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("EmployeeTeam");
 
-                entity.Property(e => e.EtmId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("etm_id");
+                entity.Property(e => e.EtmId).HasColumnName("etm_id");
 
                 entity.Property(e => e.EtmIdEmployee).HasColumnName("etm_idEmployee");
 
@@ -486,9 +471,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("EmployeeTeamRole");
 
-                entity.Property(e => e.EtrId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("etr_id");
+                entity.Property(e => e.EtrId).HasColumnName("etr_id");
 
                 entity.Property(e => e.EtrDescription)
                     .IsRequired()
@@ -510,9 +493,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("EmployeeTicket");
 
-                entity.Property(e => e.EtsId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ets_id");
+                entity.Property(e => e.EtsId).HasColumnName("ets_id");
 
                 entity.Property(e => e.EtsIdEmployee).HasColumnName("ets_idEmployee");
 
@@ -538,9 +519,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("OrganizationalTask");
 
-                entity.Property(e => e.OtkId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("otk_id");
+                entity.Property(e => e.OtkId).HasColumnName("otk_id");
 
                 entity.Property(e => e.OtkDescription)
                     .IsRequired()
@@ -550,11 +529,41 @@ namespace OneBan_TMS.Models
 
                 entity.Property(e => e.OtkIdEmployee).HasColumnName("otk_idEmployee");
 
+                entity.Property(e => e.OtkIdOrganizationalTaskStatus).HasColumnName("otk_idOrganizationalTaskStatus");
+
                 entity.HasOne(d => d.OtkIdEmployeeNavigation)
                     .WithMany(p => p.OrganizationalTasks)
                     .HasForeignKey(d => d.OtkIdEmployee)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ZadanieOrganizacyjne_Pracownik");
+
+                entity.HasOne(d => d.OtkIdOrganizationalTaskStatusNavigation)
+                    .WithMany(p => p.OrganizationalTasks)
+                    .HasForeignKey(d => d.OtkIdOrganizationalTaskStatus)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("OrganizationalTask_OrganizationalTaskStatus");
+            });
+
+            modelBuilder.Entity<OrganizationalTaskStatus>(entity =>
+            {
+                entity.HasKey(e => e.OtsId)
+                    .HasName("OrganizationalTaskStatus_pk");
+
+                entity.ToTable("OrganizationalTaskStatus");
+
+                entity.Property(e => e.OtsId).HasColumnName("ots_id");
+
+                entity.Property(e => e.OtsDescription)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("ots_description");
+
+                entity.Property(e => e.OtsName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("ots_name");
             });
 
             modelBuilder.Entity<Project>(entity =>
@@ -564,9 +573,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("Project");
 
-                entity.Property(e => e.ProId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("pro_id");
+                entity.Property(e => e.ProId).HasColumnName("pro_id");
 
                 entity.Property(e => e.ProCompletedAt)
                     .HasColumnType("datetime")
@@ -584,6 +591,8 @@ namespace OneBan_TMS.Models
 
                 entity.Property(e => e.ProIdCompany).HasColumnName("pro_idCompany");
 
+                entity.Property(e => e.ProIdProjectStatus).HasColumnName("pro_idProjectStatus");
+
                 entity.Property(e => e.ProIdTeam).HasColumnName("pro_idTeam");
 
                 entity.Property(e => e.ProName)
@@ -598,11 +607,39 @@ namespace OneBan_TMS.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Projekt_Firma");
 
+                entity.HasOne(d => d.ProIdProjectStatusNavigation)
+                    .WithMany(p => p.Projects)
+                    .HasForeignKey(d => d.ProIdProjectStatus)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("Project_ProjectStatus");
+
                 entity.HasOne(d => d.ProIdTeamNavigation)
                     .WithMany(p => p.Projects)
                     .HasForeignKey(d => d.ProIdTeam)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Projekt_Zespol");
+            });
+
+            modelBuilder.Entity<ProjectStatus>(entity =>
+            {
+                entity.HasKey(e => e.PjsId)
+                    .HasName("ProjectStatus_pk");
+
+                entity.ToTable("ProjectStatus");
+
+                entity.Property(e => e.PjsId).HasColumnName("pjs_id");
+
+                entity.Property(e => e.PjsDescription)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("pjs_description");
+
+                entity.Property(e => e.PjsName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("pjs_name");
             });
 
             modelBuilder.Entity<ProjectTask>(entity =>
@@ -612,9 +649,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("ProjectTask");
 
-                entity.Property(e => e.PtkId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ptk_id");
+                entity.Property(e => e.PtkId).HasColumnName("ptk_id");
 
                 entity.Property(e => e.PtkContent)
                     .IsRequired()
@@ -625,13 +660,51 @@ namespace OneBan_TMS.Models
                     .HasColumnType("decimal(15, 2)")
                     .HasColumnName("ptk_estimatedCost");
 
+                entity.Property(e => e.PtkIdEmployeeTeam).HasColumnName("ptk_idEmployeeTeam");
+
                 entity.Property(e => e.PtkIdProject).HasColumnName("ptk_idProject");
+
+                entity.Property(e => e.PtkIdProjectTaskStatus).HasColumnName("ptk_idProjectTaskStatus");
+
+                entity.HasOne(d => d.PtkIdEmployeeTeamNavigation)
+                    .WithMany(p => p.ProjectTasks)
+                    .HasForeignKey(d => d.PtkIdEmployeeTeam)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("ProjectTask_EmployeeTeam");
 
                 entity.HasOne(d => d.PtkIdProjectNavigation)
                     .WithMany(p => p.ProjectTasks)
                     .HasForeignKey(d => d.PtkIdProject)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ZadanieProjektu_Projekt");
+
+                entity.HasOne(d => d.PtkIdProjectTaskStatusNavigation)
+                    .WithMany(p => p.ProjectTasks)
+                    .HasForeignKey(d => d.PtkIdProjectTaskStatus)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("ProjectTask_ProjectTaskStatus");
+            });
+
+            modelBuilder.Entity<ProjectTaskStatus>(entity =>
+            {
+                entity.HasKey(e => e.PtsId)
+                    .HasName("ProjectTaskStatus_pk");
+
+                entity.ToTable("ProjectTaskStatus");
+
+                entity.Property(e => e.PtsId).HasColumnName("pts_id");
+
+                entity.Property(e => e.PtsDescription)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("pts_description");
+
+                entity.Property(e => e.PtsName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("pts_name");
             });
 
             modelBuilder.Entity<Team>(entity =>
@@ -641,9 +714,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("Team");
 
-                entity.Property(e => e.TemId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("tem_id");
+                entity.Property(e => e.TemId).HasColumnName("tem_id");
 
                 entity.Property(e => e.TemName)
                     .HasMaxLength(50)
@@ -658,9 +729,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("Ticket");
 
-                entity.Property(e => e.TicId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("tic_id");
+                entity.Property(e => e.TicId).HasColumnName("tic_id");
 
                 entity.Property(e => e.TicCompletedAt)
                     .HasColumnType("datetime")
@@ -736,9 +805,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("TicketNote");
 
-                entity.Property(e => e.TntId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("tnt_id");
+                entity.Property(e => e.TntId).HasColumnName("tnt_id");
 
                 entity.Property(e => e.TntContent)
                     .IsRequired()
@@ -761,9 +828,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("TicketPriority");
 
-                entity.Property(e => e.TpiId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("tpi_id");
+                entity.Property(e => e.TpiId).HasColumnName("tpi_id");
 
                 entity.Property(e => e.TpiDescription)
                     .IsRequired()
@@ -781,9 +846,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("TicketStatus");
 
-                entity.Property(e => e.TstId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("tst_id");
+                entity.Property(e => e.TstId).HasColumnName("tst_id");
 
                 entity.Property(e => e.TstDescription)
                     .IsRequired()
@@ -805,9 +868,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("TicketType");
 
-                entity.Property(e => e.TtpId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ttp_id");
+                entity.Property(e => e.TtpId).HasColumnName("ttp_id");
 
                 entity.Property(e => e.TtpDescription)
                     .IsRequired()
@@ -829,9 +890,7 @@ namespace OneBan_TMS.Models
 
                 entity.ToTable("TimeEntry");
 
-                entity.Property(e => e.TesId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("tes_id");
+                entity.Property(e => e.TesId).HasColumnName("tes_id");
 
                 entity.Property(e => e.TesCreatedAt)
                     .HasColumnType("datetime")

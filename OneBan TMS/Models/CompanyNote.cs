@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -12,7 +11,7 @@ namespace OneBan_TMS.Models
         {
             CompanyNoteAttachments = new HashSet<CompanyNoteAttachment>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int CntId { get; set; }
         public string CntContent { get; set; }
         public int CntIdCompany { get; set; }

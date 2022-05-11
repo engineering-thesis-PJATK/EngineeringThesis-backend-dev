@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 #nullable disable
 
@@ -13,14 +11,17 @@ namespace OneBan_TMS.Models
         {
             TimeEntries = new HashSet<TimeEntry>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int PtkId { get; set; }
         public string PtkContent { get; set; }
         public decimal PtkEstimatedCost { get; set; }
         public int PtkIdProject { get; set; }
-        [JsonIgnore]
+        public int PtkIdEmployeeTeam { get; set; }
+        public int PtkIdProjectTaskStatus { get; set; }
+
+        public virtual EmployeeTeam PtkIdEmployeeTeamNavigation { get; set; }
         public virtual Project PtkIdProjectNavigation { get; set; }
-        [JsonIgnore]
+        public virtual ProjectTaskStatus PtkIdProjectTaskStatusNavigation { get; set; }
         public virtual ICollection<TimeEntry> TimeEntries { get; set; }
     }
 }
