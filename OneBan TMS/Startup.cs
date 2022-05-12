@@ -20,8 +20,15 @@ using Microsoft.OpenApi.Models;
 using OneBan_TMS.Controllers;
 using OneBan_TMS.Handlers;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.Handlers;
+using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Company;
+using OneBan_TMS.Models.DTOs.Customer;
+using OneBan_TMS.Models.DTOs.Email;
+using OneBan_TMS.Models.DTOs.Employee;
+using OneBan_TMS.Models.DTOs.Kanban;
 using OneBan_TMS.Repository;
 using OneBan_TMS.Validators;
 using OneBan_TMS.Validators.EmployeeValidators;
@@ -42,17 +49,24 @@ namespace OneBan_TMS
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-            var connectionString = Configuration.GetConnectionString("SQLConnection");
+            var connectionString = Configuration
+                .GetConnectionString("SQLConnection");
             services.AddDbContextPool<OneManDbContext>(options =>
                 options.UseSqlServer(connectionString));
-            
-            
-            
+            var forgottenPassword = Configuration
+                .GetSection("EmailConfiguration")
+                .Get<EmailConfiguration>();
+
+            services.AddSingleton(forgottenPassword);
+            services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<IValidator<CompanyDto>, CompanyValidator>();
-            services.AddScoped<IValidator<Employee>, EmployeeToAddValidator>();
+            services.AddScoped<IValidator<EmployeeDto>, EmployeeToAddValidator>();
             services.AddScoped<IValidator<EmployeeToUpdate>, EmployeeToUpdateValidator>();
+            services.AddScoped<IValidator<CustomerDto>, CustomerValidator>();
             services.AddScoped<IValidatorHandler, ValidatorHandler>();
             services.AddScoped<ICompanyHandler, CompanyHandler>();
+            services.AddScoped<ICustomerHandler, CustomerHandler>();
+            services.AddScoped<IStatusHandler, StatusHandler>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
@@ -64,7 +78,8 @@ namespace OneBan_TMS
             services.AddScoped<IProjectTaskRepository, ProjectTaskRepository>();
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
-            
+            services.AddScoped<IKanbanRepository, KanbanRepository>();
+            services.AddScoped<IOrganizationalTaskRepository, OrganizationalTaskRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
 

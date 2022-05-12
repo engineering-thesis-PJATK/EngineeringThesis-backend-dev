@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -12,7 +11,7 @@ namespace OneBan_TMS.Models
         {
             EmployeeTeams = new HashSet<EmployeeTeam>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int EtrId { get; set; }
         public string EtrName { get; set; }
         public string EtrDescription { get; set; }

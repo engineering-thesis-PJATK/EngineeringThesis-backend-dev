@@ -1,842 +1,13 @@
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/appsettings.Development.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/appsettings.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/global.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/OneBan TMS.deps.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.dev.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/OneBan TMS.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ref/OneBan TMS.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/OneBan TMS.pdb
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.OpenApi.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfoInputs.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cs
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.Manifest.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.xml
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/scopedcss/bundle/OneBan TMS.styles.css
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.RazorTargetAssemblyInfo.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CopyComplete
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Humanizer.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Razor.Language.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.Bcl.AsyncInterfaces.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Razor.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Workspaces.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/dotnet-aspnet-codegenerator-design.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/Newtonsoft.Json.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/System.Composition.AttributedModel.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/System.Composition.Convention.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/System.Composition.Hosting.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/System.Composition.Runtime.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/System.Composition.TypedParts.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/appsettings.Development.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/global.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/appsettings.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.deps.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.dev.json
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ref/OneBan TMS.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.pdb
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Humanizer.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Razor.Language.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Bcl.AsyncInterfaces.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Razor.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Workspaces.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Data.SqlClient.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Identity.Client.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.OpenApi.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/dotnet-aspnet-codegenerator-design.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Newtonsoft.Json.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.AttributedModel.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Convention.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Hosting.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Runtime.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.TypedParts.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Runtime.Caching.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfoInputs.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cs
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.Manifest.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.xml
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/scopedcss/bundle/OneBan TMS.styles.css
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.RazorTargetAssemblyInfo.cache
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CopyComplete
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
-/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/appsettings.Development.json
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/appsettings.json
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/global.json
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.exe
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.deps.json
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.json
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.dev.json
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ref/OneBan TMS.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.pdb
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Humanizer.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Razor.Language.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Bcl.AsyncInterfaces.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Razor.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Workspaces.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Data.SqlClient.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Identity.Client.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.OpenApi.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/dotnet-aspnet-codegenerator-design.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Newtonsoft.Json.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.AttributedModel.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Convention.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Hosting.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Runtime.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.TypedParts.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Runtime.Caching.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfoInputs.cache
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cs
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cache
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.Manifest.cache
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.xml
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/scopedcss/bundle/OneBan TMS.styles.css
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.RazorTargetAssemblyInfo.cache
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CopyComplete
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/libman.json
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/AutoMapper.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Azure.Core.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Graph.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Graph.Core.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Memory.Data.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Text.Encodings.Web.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Text.Json.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Extensions.DependencyModel.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Scrutor.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Filters.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
-C:/Users/Tomasz/Documents/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfoInputs.cache
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cs
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cache
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/appsettings.Development.json
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/appsettings.json
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/global.json
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/libman.json
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/OneBan TMS.deps.json
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.json
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.dev.json
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/OneBan TMS.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ref/OneBan TMS.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/OneBan TMS.pdb
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/AutoMapper.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Azure.Core.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Humanizer.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Razor.Language.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.Bcl.AsyncInterfaces.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Razor.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Workspaces.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.Data.SqlClient.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.Extensions.DependencyModel.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.Graph.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.Graph.Core.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.Identity.Client.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.OpenApi.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/dotnet-aspnet-codegenerator-design.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Newtonsoft.Json.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Scrutor.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Filters.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Composition.AttributedModel.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Composition.Convention.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Composition.Hosting.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Composition.Runtime.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Composition.TypedParts.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Memory.Data.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Runtime.Caching.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Text.Encodings.Web.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/System.Text.Json.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.Manifest.cache
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.xml
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/scopedcss/bundle/OneBan TMS.styles.css
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.RazorTargetAssemblyInfo.cache
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CopyComplete
-/Users/mac/Documents/SchoolGitRepos/backend/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/appsettings.Development.json
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/appsettings.json
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/global.json
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/libman.json
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.exe
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.deps.json
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.json
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.dev.json
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.pdb
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/AutoMapper.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Azure.Core.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Humanizer.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Razor.Language.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Bcl.AsyncInterfaces.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Razor.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Workspaces.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Data.SqlClient.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Extensions.DependencyModel.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Graph.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Graph.Core.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Identity.Client.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.OpenApi.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/dotnet-aspnet-codegenerator-design.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Newtonsoft.Json.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Scrutor.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Filters.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.AttributedModel.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Convention.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Hosting.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Runtime.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.TypedParts.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Memory.Data.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Runtime.Caching.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Text.Encodings.Web.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Text.Json.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfoInputs.cache
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cs
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cache
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.Manifest.cache
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.xml
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/scopedcss/bundle/OneBan TMS.styles.css
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.RazorTargetAssemblyInfo.cache
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CopyComplete
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/refint/OneBan TMS.dll
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
-D:/pjatk/INŻYNIERKA/kod/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfoInputs.cache
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cs
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cache
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/appsettings.Development.json
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/appsettings.json
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/global.json
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/libman.json
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.exe
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.deps.json
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.json
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.runtimeconfig.dev.json
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ref/OneBan TMS.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/OneBan TMS.pdb
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/AutoMapper.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Azure.Core.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Humanizer.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Razor.Language.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Bcl.AsyncInterfaces.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Razor.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.CodeAnalysis.Workspaces.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Data.SqlClient.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Extensions.DependencyModel.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Graph.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Graph.Core.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.Identity.Client.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.OpenApi.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/dotnet-aspnet-codegenerator-design.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Newtonsoft.Json.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Scrutor.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Filters.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.AttributedModel.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Convention.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Hosting.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.Runtime.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Composition.TypedParts.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Memory.Data.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Runtime.Caching.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Text.Encodings.Web.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/System.Text.Json.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.Manifest.cache
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.xml
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/scopedcss/bundle/OneBan TMS.styles.css
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.RazorTargetAssemblyInfo.cache
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CopyComplete
-D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfoInputs.cache
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cs
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cache
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/appsettings.Development.json
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/appsettings.json
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/global.json
@@ -849,6 +20,9 @@ D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/OneBan TMS.pdb
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/AutoMapper.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/Azure.Core.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/FluentValidation.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/FluentValidation.AspNetCore.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/FluentValidation.DependencyInjectionExtensions.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/Humanizer.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Razor.Language.dll
@@ -970,22 +144,170 @@ D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfoInputs.cache
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.AssemblyInfo.cs
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cs
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.MvcApplicationPartsAssemblyInfo.cache
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.Manifest.cache
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/staticwebassets/OneBan TMS.StaticWebAssets.xml
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/scopedcss/bundle/OneBan TMS.styles.css
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.RazorTargetAssemblyInfo.cache
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.csproj.CopyComplete
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.dll
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/FluentValidation.dll
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/FluentValidation.AspNetCore.dll
-/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/FluentValidation.DependencyInjectionExtensions.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/MailKit.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/MimeKit.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/NETCore.MailKit.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/BouncyCastle.Crypto.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\appsettings.Development.json
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\appsettings.json
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\global.json
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\libman.json
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\OneBan TMS.exe
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\OneBan TMS.deps.json
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\OneBan TMS.runtimeconfig.json
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\OneBan TMS.runtimeconfig.dev.json
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\OneBan TMS.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ref\OneBan TMS.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\OneBan TMS.pdb
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\AutoMapper.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Azure.Core.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\FluentValidation.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Humanizer.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\MailKit.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.Graph.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.Graph.Core.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\MimeKit.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\NETCore.MailKit.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Scrutor.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Composition.AttributedModel.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Composition.Convention.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Composition.Hosting.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Composition.Runtime.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Composition.TypedParts.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Memory.Data.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Runtime.Caching.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Text.Encodings.Web.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\System.Text.Json.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.csproj.AssemblyReference.cache
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.GeneratedMSBuildEditorConfig.editorconfig
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.AssemblyInfoInputs.cache
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.AssemblyInfo.cs
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.csproj.CoreCompileInputs.cache
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.MvcApplicationPartsAssemblyInfo.cs
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.MvcApplicationPartsAssemblyInfo.cache
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\staticwebassets\OneBan TMS.StaticWebAssets.Manifest.cache
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\staticwebassets\OneBan TMS.StaticWebAssets.xml
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\scopedcss\bundle\OneBan TMS.styles.css
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.RazorTargetAssemblyInfo.cache
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.csproj.CopyComplete
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\ref\OneBan TMS.dll
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.pdb
+D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBan TMS\obj\Debug\net5.0\OneBan TMS.genruntimeconfig.cache

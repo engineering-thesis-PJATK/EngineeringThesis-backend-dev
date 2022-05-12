@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 #nullable disable
 
@@ -16,8 +14,7 @@ namespace OneBan_TMS.Models
             Customers = new HashSet<Customer>();
             Projects = new HashSet<Project>();
         }
-        
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int CmpId { get; set; }
         public string CmpName { get; set; }
         public string CmpNip { get; set; }
@@ -26,13 +23,9 @@ namespace OneBan_TMS.Models
         public string CmpKrsNumber { get; set; }
         public string CmpLandline { get; set; }
 
-        [JsonIgnore]
         public virtual ICollection<Address> Addresses { get; set; }
-        [JsonIgnore]
         public virtual ICollection<CompanyNote> CompanyNotes { get; set; }
-        [JsonIgnore]
         public virtual ICollection<Customer> Customers { get; set; }
-        [JsonIgnore]
         public virtual ICollection<Project> Projects { get; set; }
     }
 }

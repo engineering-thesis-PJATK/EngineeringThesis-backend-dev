@@ -1,11 +1,16 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.Handlers;
+using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Employee;
 
 namespace OneBan_TMS.Repository
 {
@@ -13,10 +18,14 @@ namespace OneBan_TMS.Repository
     {
         private OneManDbContext _context;
         private readonly IValidator<EmployeeToUpdate> _employeeValidator;
-        public EmployeeRepository(OneManDbContext context, IValidator<EmployeeToUpdate> employeeValidator)
+        private readonly IValidator<EmployeeDto> _employeeToAddValidation;
+        private readonly IPasswordHandler _passwordHandler;
+        public EmployeeRepository(OneManDbContext context, IPasswordHandler passwordHandler, IValidator<EmployeeToUpdate> employeeValidator, IValidator<EmployeeDto> employeeToAddValidation)
         {
             _context = context;
+            _passwordHandler = passwordHandler;
             _employeeValidator = employeeValidator;
+            _employeeToAddValidation = employeeToAddValidation;
         }
         public async Task<IEnumerable<EmployeeForListDto>> GetAllEmployeeDto()
         {
@@ -78,6 +87,29 @@ namespace OneBan_TMS.Repository
                 EmployeeTeams = employee.Teams
             };
         }
+
+        public async Task AddEmployee(EmployeeDto employee)
+        {
+            _employeeToAddValidation.ValidateAndThrow(employee);
+            _passwordHandler.CreatePasswordHash(employee.EmpPassword, out byte[] passwordHash, out byte[] passwordSalt);
+            StringBuilder passwordConnector = new StringBuilder();
+            passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordHash));
+            passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordSalt));
+            
+            _context
+                .Employees
+                .Add(new Employee()
+                {
+                    EmpLogin = employee.EmpEmail,
+                    EmpName = employee.EmpName,
+                    EmpSurname = employee.EmpSurname,
+                    EmpEmail = employee.EmpEmail,
+                    EmpPhoneNumber = employee.EmpPhoneNumber,
+                    EmpCreatedAt = DateTime.Now,
+                    EmpPassword = passwordConnector.ToString()
+                });
+            await _context.SaveChangesAsync();
+        }
         public async Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeUpdated)
         {
             _employeeValidator.ValidateAndThrow(employeeUpdated); 
@@ -136,7 +168,42 @@ namespace OneBan_TMS.Repository
             return true;
         }
 
+        public async Task<string> ChangePassword(string employeeEmail)
+        {
+            var employee = await GetEmployeeByEmail(employeeEmail);
+            string newRandomPassword = GenerateRandomPassword();
+            _passwordHandler.CreatePasswordHash(newRandomPassword, out byte[] passwordHash, out byte[] passwordSalt);
+            StringBuilder passwordBuilder = new StringBuilder();
+            passwordBuilder.Append(_passwordHandler.ConvertByteArrayToString(passwordHash));
+            passwordBuilder.Append(_passwordHandler.ConvertByteArrayToString(passwordSalt));
+            employee.EmpPassword = passwordBuilder.ToString();
+            await _context.SaveChangesAsync();
+            return newRandomPassword;
+        }
 
+        private async Task<Employee> GetEmployeeByEmail(string employeeEmail)
+        {
+            var employee = await _context
+                .Employees
+                .Where(x =>
+                    x.Equals(employeeEmail))
+                .SingleOrDefaultAsync();
+            return employee;
+        }
+
+        private string GenerateRandomPassword()
+        {
+            StringBuilder passwordBuilder = new StringBuilder();
+            Random random = new Random();
+            char randomChar;
+            for (int i = 0; i < random.Next(5, 10); i++)
+            {
+                randomChar = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                passwordBuilder.Append(randomChar);
+            }
+
+            return passwordBuilder.ToString();
+        }
         private EmployeePrivilegeGetDto ChangeEmployeePrivilegeBaseToDto(EmployeePrivilege employeePrivilege)
         {
             return 
@@ -171,5 +238,14 @@ namespace OneBan_TMS.Repository
                 }));
             return employeePrivileges;
         }
+
+        public async Task<bool> ExistsEmployeeByEmail(string employeeEmail)
+        {
+            bool result = await _context
+                .Employees
+                .AnyAsync(x => x.EmpEmail.Equals(employeeEmail));
+            return result;
+        }
+        
     }
 }

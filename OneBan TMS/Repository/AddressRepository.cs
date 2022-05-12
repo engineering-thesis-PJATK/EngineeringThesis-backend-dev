@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Address;
 
 namespace OneBan_TMS.Repository
 {
@@ -49,6 +51,8 @@ namespace OneBan_TMS.Repository
                 .Addresses
                 .Where(x => x.AdrId == addressId)
                 .SingleOrDefaultAsync();
+            if (address is null)
+                throw new ArgumentException("Address not exists");
             address.AdrTown = updatedAddress.AdrTown;
             address.AdrStreet = updatedAddress.AdrStreet;
             address.AdrStreetNumber = updatedAddress.AdrStreetNumber;
@@ -62,8 +66,10 @@ namespace OneBan_TMS.Repository
                     .Addresses
                     .Where(x => x.AdrId == addressId)
                     .SingleOrDefaultAsync();
-                _context.Addresses.Remove(address);
-                await _context.SaveChangesAsync();
+            if (address is null)
+                throw new ArgumentException("Address not exists");
+            _context.Addresses.Remove(address);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<bool> ExistsAddress(int addressId)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using OneBan_TMS.Interfaces.Handlers;
 
 namespace OneBan_TMS.Handlers
 {
@@ -24,6 +25,16 @@ namespace OneBan_TMS.Handlers
                 var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
                 return computedHash.SequenceEqual(passwordHash);
             }
+        }
+
+        public string ConvertByteArrayToString(byte[] array)
+        {
+            return Convert.ToBase64String(array);
+        }
+
+        public byte[] ConvertStringToByteArray(string text)
+        {
+            return Convert.FromBase64String(text);
         }
     }
 }

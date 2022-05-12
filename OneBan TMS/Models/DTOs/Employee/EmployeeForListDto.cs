@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 
-namespace OneBan_TMS.Models.DTOs
+namespace OneBan_TMS.Models.DTOs.Employee
 {
+    using Models;
     public class EmployeeForListDto
     {
         public int EmpId { get; set; }

@@ -6,8 +6,10 @@ using FluentValidation;
 using Microsoft.AspNetCore.Server.IIS.Core;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Company;
 
 namespace OneBan_TMS.Repository
 {
@@ -20,7 +22,6 @@ namespace OneBan_TMS.Repository
             _context = context;
             _validator = validator;
         }
-
         public async Task<IEnumerable<Company>> GetCompanies()
         {
             return await _context.Companies.ToListAsync();
@@ -51,13 +52,15 @@ namespace OneBan_TMS.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateCompany(CompanyDto updatedCompanyDto, int idCompany)
+        public async Task UpdateCompany(CompanyDto updatedCompanyDto, int companyId)
         {
             _validator.ValidateAndThrow(updatedCompanyDto);
             var companyToUpdate = await _context
                     .Companies
-                    .Where(x => x.CmpId == idCompany)
+                    .Where(x => x.CmpId == companyId)
                     .SingleOrDefaultAsync();
+            if (companyToUpdate is null)
+                throw new ArgumentException("Company not exists");
             companyToUpdate.CmpName = updatedCompanyDto.CmpName;
             companyToUpdate.CmpNip = updatedCompanyDto.CmpNip;
             companyToUpdate.CmpNipPrefix = updatedCompanyDto.CmpNipPrefix;
@@ -74,6 +77,8 @@ namespace OneBan_TMS.Repository
                 .Where(x =>
                     x.CmpId == companyId)
                 .SingleOrDefaultAsync();
+            if (company is null)
+                throw new ArgumentException("Company not exists");
             _context.Companies.Remove(company);
             await _context.SaveChangesAsync();
         }
