@@ -16,7 +16,7 @@ namespace OneBan_TMS.Repository
         {
             _context = context;
         }
-        public async Task<List<KanbanElement>> GetTaskForEmployee(int employeeId)
+        public async Task<List<KanbanElement>> GetTaskForEmployee(int statusId, int employeeId)
         {
             List<KanbanElement> kanbanElements = new List<KanbanElement>();
             var tasks = await _context
