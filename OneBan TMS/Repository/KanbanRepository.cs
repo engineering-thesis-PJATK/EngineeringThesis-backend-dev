@@ -20,7 +20,7 @@ namespace OneBan_TMS.Repository
         {
             List<KanbanElement> kanbanElements = new List<KanbanElement>();
             kanbanElements.AddRange(await _ticketRepository.GetTicketsForEmployeeByStatus(statusId, employeeId));
-            //kanbanElements.AddRange(await _organizationalTaskRepository.GetTaskForEmployee(employeeId));
+            kanbanElements.AddRange(await _organizationalTaskRepository.GetTaskForEmployee(statusId, employeeId));
             return kanbanElements;
         }
 
