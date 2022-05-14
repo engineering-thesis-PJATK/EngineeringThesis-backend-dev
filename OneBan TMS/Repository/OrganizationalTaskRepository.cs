@@ -21,7 +21,8 @@ namespace OneBan_TMS.Repository
             List<KanbanElement> kanbanElements = new List<KanbanElement>();
             var tasks = await _context
                 .OrganizationalTasks
-                .Where(x => x.OtkIdEmployee == employeeId)
+                .Where(x => x.OtkIdEmployee == employeeId 
+                            && x.OtkIdOrganizationalTaskStatus == statusId)
                 .ToListAsync();
             foreach (var task in tasks)
             {
@@ -40,6 +41,16 @@ namespace OneBan_TMS.Repository
         {
             //Todo: implementacja
             throw new System.NotImplementedException();
+        }
+
+        public async Task<int> GetTaskStatusId(string status)
+        {
+            var result = await _context
+                .OrganizationalTaskStatuses
+                .Where(x => x.OtsName.Equals(status))
+                .Select(x => x.OtsId)
+                .FirstOrDefaultAsync();
+            return result;
         }
     }
 }

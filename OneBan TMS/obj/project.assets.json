@@ -8378,36 +8378,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\krzysztof.jurkowski.iq200\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "/Users/mac/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBan TMS\\OneBan TMS.csproj",
+      "projectUniqueName": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj",
       "projectName": "OneBan TMS",
-      "projectPath": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBan TMS\\OneBan TMS.csproj",
-      "packagesPath": "C:\\Users\\krzysztof.jurkowski.iq200\\.nuget\\packages\\",
-      "outputPath": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBan TMS\\obj\\",
+      "projectPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj",
+      "packagesPath": "/Users/mac/.nuget/packages/",
+      "outputPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\krzysztof.jurkowski.iq200\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/Users/mac/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8499,7 +8491,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
       }
     }
   }

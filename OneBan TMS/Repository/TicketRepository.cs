@@ -296,8 +296,7 @@ namespace OneBan_TMS.Repository
             }
             return kanbanElements;
         }
-
-        public async Task upadateTicketStatus(int ticketId, int statusId)
+        public async Task UpdateTicketStatus(int ticketId, int statusId)
         {
             if (await _statusHandler.ExistsStatus(statusId))
                 throw new ArgumentException("Status not exists");
@@ -306,8 +305,20 @@ namespace OneBan_TMS.Repository
                 .Where(x =>
                     x.TicId == ticketId)
                 .SingleOrDefaultAsync();
+            if (ticket is null)
+                throw new ArgumentException("Ticket not exists");
             ticket.TicIdTicketStatus = statusId;
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> GetTicketStatusId(string status)
+        {
+            var result = await _context
+                .TicketStatuses
+                .Where(x => x.TstName.Equals(status))
+                .Select(x => x.TstId)
+                .FirstOrDefaultAsync();
+            return result;
         }
     }
 }

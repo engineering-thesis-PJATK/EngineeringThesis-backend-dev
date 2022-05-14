@@ -7,7 +7,7 @@ namespace OneBan_TMS.Interfaces.Repositories
 {
     public interface IKanbanRepository
     {
-        Task<List<KanbanElement>> GetKanbanElements(int employeeId, int statusId);
-        Task UpdateKanbanElementStatus(int elementId, int elementType, int statusId);
+        Task<List<KanbanElement>> GetKanbanElements(int employeeId, string status);
+        Task UpdateKanbanElementStatus(int elementId, int elementType, string status);
     }
 }
