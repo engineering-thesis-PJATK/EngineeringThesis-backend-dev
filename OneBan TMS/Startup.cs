@@ -81,6 +81,7 @@ namespace OneBan_TMS
             services.AddScoped<IKanbanRepository, KanbanRepository>();
             services.AddScoped<IOrganizationalTaskRepository, OrganizationalTaskRepository>();
             services.AddScoped<IOrganizationalTaskStatusHandler, OrganizationalTaskStatusHandler>();
+            services.AddScoped<ITicketStatusHandler, TicketStatusHandler>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
             
