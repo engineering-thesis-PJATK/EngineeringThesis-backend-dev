@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using OneBan_TMS.Enum;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models.DTOs.Kanban;
@@ -33,11 +34,11 @@ namespace OneBan_TMS.Repository
             int statusId;
             switch (elementType)
             {
-                case 0:
+                case (int)KanbanType.Ticket:
                     statusId = await _ticketRepository.GetTicketStatusId(status);
                     await _ticketRepository.UpdateTicketStatus(elementId, statusId);
                     break;
-                case 1:
+                case (int)KanbanType.Task:
                     statusId = await _taskStatusHandler.GetStatusId(status);
                     await _organizationalTaskRepository.UpdateTaskStatus(elementId, statusId);
                     break;

@@ -8,6 +8,7 @@ using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs.Kanban;
+using OneBan_TMS.Models.DTOs.OrganizationalTask;
 
 namespace OneBan_TMS.Repository
 {
@@ -48,9 +49,21 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync(x => x.OtkId == taskId);
             if (task is null)
                 throw new ArgumentException("Task not exists");
-            if (await _taskStatusHandler.StatusExists(statusId))
-                throw new ArgumentException("Status not exists");
-            
+            task.OtkIdOrganizationalTaskStatus = statusId;
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task AddNewOrganizationalTask(NewOrganizationalTask newOrganizationalTask)
+        {
+            int statusId = await _taskStatusHandler.GetStatusId(newOrganizationalTask.otk_OrganizationalTaskStatus);
+            OrganizationalTask newTask = new OrganizationalTask()
+            {
+                OtkDescription = newOrganizationalTask.otk_Description,
+                OtkIdEmployee = newOrganizationalTask.otk_EmployeeId,
+                OtkIdOrganizationalTaskStatus = statusId
+            };
+            await _context.AddAsync(newTask);
+            await _context.SaveChangesAsync();
         }
     }
 }

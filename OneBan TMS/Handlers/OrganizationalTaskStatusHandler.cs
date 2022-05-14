@@ -14,11 +14,11 @@ namespace OneBan_TMS.Handlers
         {
             _context = context;
         }
-        public async Task<bool> StatusExists(int statusId)
+        public async Task<bool> StatusExists(string statusName)
         {
             return await _context
                 .OrganizationalTaskStatuses
-                .AnyAsync(x => x.OtsId == statusId);
+                .AnyAsync(x => x.OtsName.Equals(statusName));
         }
 
         public async Task<int> GetStatusId(string statusName)

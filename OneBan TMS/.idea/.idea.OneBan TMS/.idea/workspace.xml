@@ -9,14 +9,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Handlers/OrganizationalTaskStatusHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/Handlers/IOrganizationalTaskStatusHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Handlers/TicketStatusHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interfaces/Handlers/ITicketStatusHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/OrganizationalTask/NewOrganizationalTask.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/KanbanController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/KanbanController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handlers/OrganizationalTaskStatusHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/OrganizationalTaskStatusHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Handlers/IOrganizationalTaskStatusHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/IOrganizationalTaskStatusHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IOrganizationalTaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IOrganizationalTaskRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/KanbanRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/KanbanRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/OrganizationalTaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/OrganizationalTaskRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,29 +337,29 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Controllers/KanbanController.cs</url>
-          <line>35</line>
+          <line>39</line>
           <properties documentPath="$PROJECT_DIR$/Controllers/KanbanController.cs" initialLine="35" containingFunctionPresentation="method 'UpdateElementStatus'">
             <startOffsets>
-              <option value="1303" />
+              <option value="1941" />
             </startOffsets>
             <endOffsets>
-              <option value="1304" />
+              <option value="1942" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/TicketRepository.cs</url>
-          <line>300</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/TicketRepository.cs" initialLine="300" containingFunctionPresentation="method 'UpdateTicketStatus'">
+          <url>file://$PROJECT_DIR$/Repository/OrganizationalTaskRepository.cs</url>
+          <line>46</line>
+          <properties documentPath="$PROJECT_DIR$/Repository/OrganizationalTaskRepository.cs" initialLine="45" containingFunctionPresentation="method 'UpdateTaskStatus'">
             <startOffsets>
-              <option value="10843" />
+              <option value="1679" />
             </startOffsets>
             <endOffsets>
-              <option value="10891" />
+              <option value="1804" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="17" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">
           <properties exception="FluentValidation.ValidationException" isInternal="false" displayValue="ValidationException" namespaceName="FluentValidation">
