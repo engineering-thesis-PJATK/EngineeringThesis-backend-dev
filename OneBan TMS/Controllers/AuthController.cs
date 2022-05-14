@@ -58,10 +58,9 @@ namespace OneBan_TMS.Controllers
             //Todo: Walidacja w sytuacji jak użytkownik posiada już role
         }
 
-        [HttpPost("ForgotPassword")]
+        [HttpGet("ForgotPassword")]
         public async Task<IActionResult> ForgotPassword(string emailAddress)
         {
-            //Todo: Sprawdzić jak baza zacznie działać
             var employeeExists = await _employeeRepository
                 .ExistsEmployeeByEmail(emailAddress);
             if (employeeExists)

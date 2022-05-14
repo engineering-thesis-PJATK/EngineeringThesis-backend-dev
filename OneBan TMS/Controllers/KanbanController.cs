@@ -60,8 +60,8 @@ namespace OneBan_TMS.Controllers
         {
             if (!(await _organizationalTaskStatusHandler.StatusExists(organizationalTask.otk_OrganizationalTaskStatus)))
                 return BadRequest("Task status not exists");
-            await _organizationalTaskRepository.AddNewOrganizationalTask(organizationalTask);
-            return Ok();
+            var organizationalTaskId = await _organizationalTaskRepository.AddNewOrganizationalTask(organizationalTask);
+            return Ok(organizationalTaskId);
         }
     }
 }

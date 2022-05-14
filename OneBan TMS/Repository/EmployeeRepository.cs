@@ -171,6 +171,8 @@ namespace OneBan_TMS.Repository
         public async Task<string> ChangePassword(string employeeEmail)
         {
             var employee = await GetEmployeeByEmail(employeeEmail);
+            if (employee is null)
+                throw new ArgumentException("Employee not exists");
             string newRandomPassword = GenerateRandomPassword();
             _passwordHandler.CreatePasswordHash(newRandomPassword, out byte[] passwordHash, out byte[] passwordSalt);
             StringBuilder passwordBuilder = new StringBuilder();
@@ -186,7 +188,7 @@ namespace OneBan_TMS.Repository
             var employee = await _context
                 .Employees
                 .Where(x =>
-                    x.Equals(employeeEmail))
+                    x.EmpEmail.Equals(employeeEmail))
                 .SingleOrDefaultAsync();
             return employee;
         }

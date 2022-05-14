@@ -9,20 +9,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Handlers/TicketStatusHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/Handlers/ITicketStatusHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/DTOs/OrganizationalTask/NewOrganizationalTask.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/KanbanController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/KanbanController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handlers/OrganizationalTaskStatusHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/OrganizationalTaskStatusHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/Handlers/IOrganizationalTaskStatusHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/IOrganizationalTaskStatusHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IOrganizationalTaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IOrganizationalTaskRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/KanbanRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/KanbanRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/OrganizationalTaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/OrganizationalTaskRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +117,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectId" id="26KxvttYlkA8iM7hm03Pjl1sKev" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -360,6 +359,71 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
+          <line>91</line>
+          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="91" containingFunctionPresentation="method 'AddEmployee'">
+            <startOffsets>
+              <option value="3477" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3478" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
+          <line>92</line>
+          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="92" containingFunctionPresentation="method 'AddEmployee'">
+            <startOffsets>
+              <option value="3491" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3543" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
+          <line>197</line>
+          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="195" containingFunctionPresentation="method 'GenerateRandomPassword'">
+            <startOffsets>
+              <option value="8055" />
+            </startOffsets>
+            <endOffsets>
+              <option value="8107" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
+          <line>172</line>
+          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="172" containingFunctionPresentation="method 'ChangePassword'">
+            <startOffsets>
+              <option value="6914" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6969" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
+          <line>175</line>
+          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="173" containingFunctionPresentation="method 'ChangePassword'">
+            <startOffsets>
+              <option value="7084" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7136" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">
           <properties exception="FluentValidation.ValidationException" isInternal="false" displayValue="ValidationException" namespaceName="FluentValidation">

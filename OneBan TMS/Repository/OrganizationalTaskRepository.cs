@@ -53,7 +53,7 @@ namespace OneBan_TMS.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task AddNewOrganizationalTask(NewOrganizationalTask newOrganizationalTask)
+        public async Task<OrganizationalTask> AddNewOrganizationalTask(NewOrganizationalTask newOrganizationalTask)
         {
             int statusId = await _taskStatusHandler.GetStatusId(newOrganizationalTask.otk_OrganizationalTaskStatus);
             OrganizationalTask newTask = new OrganizationalTask()
@@ -64,6 +64,7 @@ namespace OneBan_TMS.Repository
             };
             await _context.AddAsync(newTask);
             await _context.SaveChangesAsync();
+            return newTask;
         }
     }
 }
