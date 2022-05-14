@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models.DTOs.Kanban;
 
@@ -10,17 +11,19 @@ namespace OneBan_TMS.Repository
     {
         private readonly ITicketRepository _ticketRepository;
         private readonly IOrganizationalTaskRepository _organizationalTaskRepository;
+        private readonly IOrganizationalTaskStatusHandler _taskStatusHandler;
         
-        public KanbanRepository(ITicketRepository ticketRepository, IOrganizationalTaskRepository organizationalTaskRepository)
+        public KanbanRepository(ITicketRepository ticketRepository, IOrganizationalTaskRepository organizationalTaskRepository, IOrganizationalTaskStatusHandler taskStatusHandler)
         {
             _ticketRepository = ticketRepository;
             _organizationalTaskRepository = organizationalTaskRepository;
+            _taskStatusHandler = taskStatusHandler;
         }
         public async Task<List<KanbanElement>> GetKanbanElements(int employeeId, string status)
         {
             List<KanbanElement> kanbanElements = new List<KanbanElement>();
             int ticketsStatusId = await _ticketRepository.GetTicketStatusId(status);
-            int tasksStatusId = await _organizationalTaskRepository.GetTaskStatusId(status);
+            int tasksStatusId = await _taskStatusHandler.GetStatusId(status);
             kanbanElements.AddRange(await _ticketRepository.GetTicketsForEmployeeByStatus(ticketsStatusId, employeeId));
             kanbanElements.AddRange(await _organizationalTaskRepository.GetTaskForEmployee(tasksStatusId, employeeId));
             return kanbanElements;
@@ -35,7 +38,7 @@ namespace OneBan_TMS.Repository
                     await _ticketRepository.UpdateTicketStatus(elementId, statusId);
                     break;
                 case 1:
-                    statusId = await _organizationalTaskRepository.GetTaskStatusId(status);
+                    statusId = await _taskStatusHandler.GetStatusId(status);
                     await _organizationalTaskRepository.UpdateTaskStatus(elementId, statusId);
                     break;
                 default:

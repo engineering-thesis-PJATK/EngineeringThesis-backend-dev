@@ -8,6 +8,5 @@ namespace OneBan_TMS.Interfaces.Repositories
     {
         Task<List<KanbanElement>> GetTaskForEmployee(int statusId, int employeeId);
         Task UpdateTaskStatus(int taskId, int statusId);
-        Task<int> GetTaskStatusId(string status);
     }
 }

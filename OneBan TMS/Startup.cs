@@ -80,9 +80,10 @@ namespace OneBan_TMS
             services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
             services.AddScoped<IKanbanRepository, KanbanRepository>();
             services.AddScoped<IOrganizationalTaskRepository, OrganizationalTaskRepository>();
+            services.AddScoped<IOrganizationalTaskStatusHandler, OrganizationalTaskStatusHandler>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
-
+            
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters

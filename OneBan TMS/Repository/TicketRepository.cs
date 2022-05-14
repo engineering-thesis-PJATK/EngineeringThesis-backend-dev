@@ -298,7 +298,7 @@ namespace OneBan_TMS.Repository
         }
         public async Task UpdateTicketStatus(int ticketId, int statusId)
         {
-            if (await _statusHandler.ExistsStatus(statusId))
+            if (!(await _statusHandler.ExistsStatus(statusId)))
                 throw new ArgumentException("Status not exists");
             var ticket = await _context
                 .Tickets

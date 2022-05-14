@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Enum;
+using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs.Kanban;
@@ -12,9 +14,11 @@ namespace OneBan_TMS.Repository
     public class OrganizationalTaskRepository : IOrganizationalTaskRepository
     {
         private readonly OneManDbContext _context;
-        public OrganizationalTaskRepository(OneManDbContext context)
+        private readonly IOrganizationalTaskStatusHandler _taskStatusHandler;
+        public OrganizationalTaskRepository(OneManDbContext context, IOrganizationalTaskStatusHandler taskStatusHandler)
         {
             _context = context;
+            _taskStatusHandler = taskStatusHandler;
         }
         public async Task<List<KanbanElement>> GetTaskForEmployee(int statusId, int employeeId)
         {
@@ -37,20 +41,16 @@ namespace OneBan_TMS.Repository
             return kanbanElements;
         }
 
-        public Task UpdateTaskStatus(int taskId, int statusId)
+        public async Task UpdateTaskStatus(int taskId, int statusId)
         {
-            //Todo: implementacja
-            throw new System.NotImplementedException();
-        }
-
-        public async Task<int> GetTaskStatusId(string status)
-        {
-            var result = await _context
-                .OrganizationalTaskStatuses
-                .Where(x => x.OtsName.Equals(status))
-                .Select(x => x.OtsId)
-                .FirstOrDefaultAsync();
-            return result;
+            var task = await _context
+                .OrganizationalTasks
+                .SingleOrDefaultAsync(x => x.OtkId == taskId);
+            if (task is null)
+                throw new ArgumentException("Task not exists");
+            if (await _taskStatusHandler.StatusExists(statusId))
+                throw new ArgumentException("Status not exists");
+            
         }
     }
 }

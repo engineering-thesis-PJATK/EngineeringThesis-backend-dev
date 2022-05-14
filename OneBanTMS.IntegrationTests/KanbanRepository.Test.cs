@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using Microsoft.Graph;
 using NUnit.Framework;
 using OneBan_TMS.Handlers;
 using OneBan_TMS.Models;
@@ -20,12 +21,14 @@ namespace OneBanTMS.IntegrationTests
         }
         public async Task UpdateKanbanElementStatus_PassValidForTicket_ShouldUpdateTicketOrTaskStatus()
         {
-            var statusHandler = new StatusHandler(_context);
+          /*  var statusHandler = new StatusHandler(_context);
             var ticketRepository = new TicketRepository(_context, statusHandler);
             var organizationalTaskRepository = new OrganizationalTaskRepository(_context);
             var kanbanRepository = new KanbanRepository(ticketRepository, organizationalTaskRepository);
                 //ticketRepository.
             Assert.That(1, Is.EqualTo(1));
+            */
+          //Todo: zamienić
         }
     }
 }
