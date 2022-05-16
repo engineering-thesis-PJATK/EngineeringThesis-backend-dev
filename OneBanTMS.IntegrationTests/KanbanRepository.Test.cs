@@ -19,16 +19,21 @@ namespace OneBanTMS.IntegrationTests
             optionBuilder.UseSqlServer(connectionString);
             _context = new OneManDbContext(optionBuilder.Options);
         }
+        [Test, Isolated]
         public async Task UpdateKanbanElementStatus_PassValidForTicket_ShouldUpdateTicketOrTaskStatus()
         {
-          /*  var statusHandler = new StatusHandler(_context);
+            var statusHandler = new StatusHandler(_context);
             var ticketRepository = new TicketRepository(_context, statusHandler);
-            var organizationalTaskRepository = new OrganizationalTaskRepository(_context);
-            var kanbanRepository = new KanbanRepository(ticketRepository, organizationalTaskRepository);
-                //ticketRepository.
+            var organizationalTaskHandler = new OrganizationalTaskStatusHandler(_context);
+            var organizationalTaskRepository = new OrganizationalTaskRepository(_context, organizationalTaskHandler);
+            var kanbanRepository = new KanbanRepository(ticketRepository, organizationalTaskRepository, organizationalTaskHandler);
+            
+            //ticketRepository.
+            
+            //kanbanRepository.UpdateKanbanElementStatus()
+            
             Assert.That(1, Is.EqualTo(1));
-            */
-          //Todo: zamienić
+            
         }
     }
 }
