@@ -9,8 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/DTOs/Setting/RoleSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/DTOs/Setting/UserRoles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interfaces/Repositories/ISettingRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Repository/SettingRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/SettingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/SettingController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Setting/UserPrivileges.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Setting/UserPrivileges.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +232,7 @@
       <workItem from="1652381123930" duration="4128000" />
       <workItem from="1652456867579" duration="4710000" />
       <workItem from="1652509684602" duration="1780000" />
-      <workItem from="1652685944253" duration="1823000" />
+      <workItem from="1652685944253" duration="6941000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>

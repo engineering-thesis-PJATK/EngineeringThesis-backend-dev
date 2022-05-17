@@ -1,23 +1,27 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
+using OneBan_TMS.Models.DTOs.Setting;
 
 namespace OneBan_TMS.Controllers
 {
     [Route("api/{controller}")]
     [ApiController]
-    public class SettingController
+    public class SettingController : Controller
     {
-        private readonly OneManDbContext _context;
-        public SettingController(OneManDbContext context)
+        private readonly ISettingRepository _settingRepository;
+        public SettingController(OneManDbContext context, ISettingRepository settingRepository)
         {
-            _context = context;
+            _settingRepository = settingRepository;
         }
 
         [HttpGet("/users/roles")]
-        public async Task<IActionResult<>> GetUsersWithRoles()
+        public async Task<ActionResult<List<UserPrivileges>>> GetUsersWithRoles()
         {
-            
+            var usersWithRoles = await _settingRepository.GetUserWithPrivileges();
+            return Ok(usersWithRoles);
         }
     }
 }
