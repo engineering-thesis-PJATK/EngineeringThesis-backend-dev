@@ -320,5 +320,25 @@ namespace OneBan_TMS.Repository
                 .FirstOrDefaultAsync();
             return result;
         }
+
+        public async Task AddTicket(TicketNewDto newTicket)
+        {
+            Ticket ticket = new Ticket()
+            {
+                TicName = newTicket.TicName,
+                TicTopic = newTicket.TicTopic,
+                TicDescription = newTicket.TicDescription,
+                TicEstimatedCost = newTicket.TicEstimatedCost,
+                TicCreatedAt = System.DateTime.Now,
+                TicDueDate = newTicket.TicDueDate,
+                TicCompletedAt = newTicket.TicCompletedAt,
+                TicIdTicketStatus = newTicket.TicIdTicketStatus,
+                TicIdCustomer = newTicket.TicIdCustomer,
+                TicIdTicketType = newTicket.TicIdTicketType,
+                TicIdTicketPriority = newTicket.TicIdTicketPriority
+            };
+            await _context.Tickets.AddAsync(ticket);
+            await _context.SaveChangesAsync();
+        }
     }
 }
