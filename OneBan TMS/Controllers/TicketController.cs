@@ -236,8 +236,14 @@ namespace OneBan_TMS.Controllers
 
         #region Post
 
-        
-
+        [HttpPost]
+        public async Task<IActionResult> AddNewTicket(TicketNewDto ticketNewDto)
+        {
+            if (ticketNewDto is null)
+                return BadRequest();
+            await _ticketRepository.AddTicket(ticketNewDto);
+            return Ok("Added new ticket");
+        }
         #endregion
 
         #region Put
