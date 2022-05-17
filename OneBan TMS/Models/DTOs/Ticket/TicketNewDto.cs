@@ -5,7 +5,6 @@ namespace OneBan_TMS.Models.DTOs.Ticket
 {
     public class TicketNewDto
     {
-        public string TicName { get; set; }
         public string TicTopic { get; set; }
         public decimal TicEstimatedCost { get; set; }
         public DateTime TicDueDate { get; set; }

@@ -23,10 +23,10 @@ namespace OneBanTMS.IntegrationTests
         public async Task UpdateKanbanElementStatus_PassValidForTicket_ShouldUpdateTicketOrTaskStatus()
         {
             var statusHandler = new StatusHandler(_context);
-            var ticketRepository = new TicketRepository(_context, statusHandler);
+            //var ticketRepository = new TicketRepository(_context, statusHandler);
             var organizationalTaskHandler = new OrganizationalTaskStatusHandler(_context);
             var organizationalTaskRepository = new OrganizationalTaskRepository(_context, organizationalTaskHandler);
-            var kanbanRepository = new KanbanRepository(ticketRepository, organizationalTaskRepository, organizationalTaskHandler);
+            //var kanbanRepository = new KanbanRepository(ticketRepository, organizationalTaskRepository, organizationalTaskHandler);
             
             //ticketRepository.
             

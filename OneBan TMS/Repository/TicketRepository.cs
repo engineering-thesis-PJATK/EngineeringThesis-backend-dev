@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Enum;
 using OneBan_TMS.Interfaces;
@@ -18,10 +19,14 @@ namespace OneBan_TMS.Repository
     {
         private readonly OneManDbContext _context;
         private readonly IStatusHandler _statusHandler;
-        public TicketRepository(OneManDbContext context, IStatusHandler statusHandler)
+        private readonly ITicketNameHandler _ticketNameHandler;
+        private readonly IValidator<TicketNewDto> _newTicketValidator;
+        public TicketRepository(OneManDbContext context, IStatusHandler statusHandler, ITicketNameHandler ticketNameHandler, IValidator<TicketNewDto> newTicketValidator)
         {
             _context = context;
             _statusHandler = statusHandler;
+            _ticketNameHandler = ticketNameHandler;
+            _newTicketValidator = newTicketValidator;
         }
         public async Task<List<TicketDto>> GetTickets()
         {
@@ -323,9 +328,10 @@ namespace OneBan_TMS.Repository
 
         public async Task AddTicket(TicketNewDto newTicket)
         {
+            _newTicketValidator.ValidateAndThrow(newTicket);
             Ticket ticket = new Ticket()
             {
-                TicName = newTicket.TicName,
+                TicName = await _ticketNameHandler.GetNewNameForTicket(),
                 TicTopic = newTicket.TicTopic,
                 TicDescription = newTicket.TicDescription,
                 TicEstimatedCost = newTicket.TicEstimatedCost,
