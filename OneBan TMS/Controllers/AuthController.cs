@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models.DTOs;
 using System.Threading.Tasks;
+using Microsoft.Graph;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
-using OneBan_TMS.Models.DTOs.Email;
 using OneBan_TMS.Models.DTOs.Employee;
+using OneBan_TMS.Models.DTOs.Messages;
+using Message = OneBan_TMS.Models.DTOs.Email.Message;
 
 namespace OneBan_TMS.Controllers
 {
@@ -35,26 +38,50 @@ namespace OneBan_TMS.Controllers
             byte[] passwordSalt;
             if (systemUser is null)
             {
-                return BadRequest("User not found");
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "User does not exists",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
             }
             _userRepository.GetPasswordParts(systemUser.EmpPassword, out passwordHash, out passwordSalt);
             if(!_passwordHandler.VerifyPasswordHash(request.Password, passwordHash, passwordSalt))
             {
-                return BadRequest("Wrong password");
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "Wrong password",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
             }
             string token = _tokenHandler.CreateToken(systemUser.EmpEmail, await _userRepository.GetUserRole(systemUser.EmpEmail));
-            return Ok(token);
+            return Ok(new MessageResponse()
+            {
+                MessageContent = token,
+                StatusCode = HttpStatusCode.OK
+            });
         }
 
         [HttpPost("{employeeId}/Roles")]
         public async Task<IActionResult> AddRolesForEmployee(int employeeId, [FromBody] List<int> employeePriviles)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
-                return BadRequest($"There is no employee with Id {employeeId}");
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "User does not exists",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
             if (!(await _employeeRepository.ExistsEmployeePrivileges(employeePriviles)))
-                return BadRequest("One of privileges not exisits");
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "One of privileges do not exist",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
             await _userRepository.AddPrivilegesToUser(employeeId, employeePriviles);
-            return Ok("Added privileges to employee");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Added successfully privileges to employee",
+                StatusCode = HttpStatusCode.BadRequest
+            });
             //Todo: Walidacja w sytuacji jak użytkownik posiada już role
         }
 
@@ -70,7 +97,11 @@ namespace OneBan_TMS.Controllers
                 _emailSender.SendEmail(message);
             }
 
-            return Ok("Message");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Message send to email",
+                StatusCode = HttpStatusCode.OK
+            });
         }
         
     }
