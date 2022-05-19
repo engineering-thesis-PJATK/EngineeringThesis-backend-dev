@@ -17,17 +17,20 @@ namespace OneBanTMS.IntegrationTests
 {
     public class AddressRepository_Test
     {
-        private readonly OneManDbContext _context;
-        private readonly IValidator<CompanyDto> _validator;
-        public AddressRepository_Test()
+        private OneManDbContext _context;
+        private CompanyRepository _companyRepository;
+        private AddressRepository _addressRepository;
+        [SetUp]
+        public void init()
         {
             var connectionString = "Server=tcp:pjwstkinzynierka.database.windows.net,1433;Initial Catalog=inzynierka;Persist Security Info=False;User ID=Hydra;Password=RUCH200nowe;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             var optionBuilder = new DbContextOptionsBuilder<OneManDbContext>();
             optionBuilder.UseSqlServer(connectionString);
             _context = new OneManDbContext(optionBuilder.Options);
-            _validator = new CompanyValidator(new CompanyHandler(_context));
+            _companyRepository = new CompanyRepository(_context);
+            _addressRepository = new AddressRepository(_context, _companyRepository);
         }
-
+        
         [Test, Isolated]
         public async Task AddAddress_PassValid_ShouldAddAddressForCompany()
         {
@@ -40,8 +43,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var companyRepository = new CompanyRepository(_context);
-            await companyRepository.AddNewCompany(companyDto);
+            await _companyRepository.AddNewCompany(companyDto);
             var companyId = await _context
                 .Companies
                 .Where(x => x.CmpNip == companyDto.CmpNip)
@@ -55,8 +57,7 @@ namespace OneBanTMS.IntegrationTests
                 AdrPostCode = "Test",
                 AdrCountry = "Test"
             };
-            var addressRepository = new AddressRepository(_context, companyRepository);
-            await addressRepository.AddNewAddress(addressDto, companyId);
+            await _addressRepository.AddNewAddress(addressDto, companyId);
             var addressCount = await _context
                 .Addresses
                 .CountAsync(x =>
@@ -81,8 +82,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var companyRepository = new CompanyRepository(_context);
-            await companyRepository.AddNewCompany(companyDto);
+            await _companyRepository.AddNewCompany(companyDto);
             var companyId = await _context
                 .Companies
                 .Where(x => x.CmpNip == companyDto.CmpNip)
@@ -96,8 +96,7 @@ namespace OneBanTMS.IntegrationTests
                 AdrPostCode = "Test",
                 AdrCountry = "Test"
             };
-            var addressRepository = new AddressRepository(_context, companyRepository);
-            await addressRepository.AddNewAddress(addressDto, companyId);
+            await _addressRepository.AddNewAddress(addressDto, companyId);
             var addressId = await _context
                 .Addresses
                 .Where(x =>
@@ -117,7 +116,7 @@ namespace OneBanTMS.IntegrationTests
                 AdrPostCode = "TestTest",
                 AdrCountry = "TestTest"
             };
-            await addressRepository.UpdateAddress(addressDtoToUpdate, addressId);
+            await _addressRepository.UpdateAddress(addressDtoToUpdate, addressId);
             var addressCount = await _context
                 .Addresses
                 .CountAsync(x =>

@@ -24,7 +24,7 @@ namespace OneBan_TMS.Controllers
         {
             IEnumerable<EmployeeTeamRole> employeeTeamRoles = await _employeeTeamRoleRepository.GetEmployeeTeamRoles();
             if (employeeTeamRoles is null)
-                return NotFound();
+                return NoContent();
             return Ok(employeeTeamRoles);
         }
 

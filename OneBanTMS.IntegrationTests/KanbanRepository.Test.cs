@@ -15,19 +15,17 @@ namespace OneBanTMS.IntegrationTests
 {
     public class KanbanRepository_Test
     {
-        private readonly OneManDbContext _context;
+        private OneManDbContext _context;
         private TicketNewValidator _ticketNewValidator;
         private StatusHandler _statusHandler;
-        public KanbanRepository_Test()
+        
+        [SetUp]
+        public void SetUp()
         {
             var connectionString = "Server=tcp:pjwstkinzynierka.database.windows.net,1433;Initial Catalog=inzynierka;Persist Security Info=False;User ID=Hydra;Password=RUCH200nowe;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             var optionBuilder = new DbContextOptionsBuilder<OneManDbContext>();
             optionBuilder.UseSqlServer(connectionString);
             _context = new OneManDbContext(optionBuilder.Options);
-        }
-        [SetUp]
-        public void SetUp()
-        {
             _ticketNewValidator = new TicketNewValidator();
             _statusHandler = new StatusHandler(_context);
         }

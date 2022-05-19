@@ -135,7 +135,34 @@ namespace OneBan_TMS.Controllers
                 });
             }
             await _employeeRepository.AddEmployee(employee);
-            return Ok("Employee added successful");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Added successfully employee",
+                StatusCode = HttpStatusCode.OK
+            });
+        }
+        [HttpPost("{employeeId}/Roles")]
+        public async Task<IActionResult> AddRolesForEmployee(int employeeId, [FromBody] List<int> employeePriviles)
+        {
+            if (!(await _employeeRepository.ExistsEmployee(employeeId)))
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "User does not exists",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
+            if (!(await _employeeRepository.ExistsEmployeePrivileges(employeePriviles)))
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "One of privileges do not exist",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
+            await _employeeRepository.AddPrivilegesToUser(employeeId, employeePriviles);
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Added successfully privileges to employee",
+                StatusCode = HttpStatusCode.BadRequest
+            });
+            //Todo: Walidacja w sytuacji jak użytkownik posiada już role
         }
         [HttpPost("Team")]
         public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)

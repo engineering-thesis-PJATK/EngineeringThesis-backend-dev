@@ -73,18 +73,5 @@ namespace OneBan_TMS.Repository
             else
                 return "User";
         }
-        public async Task AddPrivilegesToUser(int employeeId, List<int> privileges)
-        {
-            foreach (int privilege in privileges)
-            {
-                await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
-                {
-                    EpeIdEmployee = employeeId,
-                    EpeIdEmployeePrivilage = privilege
-                });
-            }
-
-            await _context.SaveChangesAsync();
-        }
     }
 }

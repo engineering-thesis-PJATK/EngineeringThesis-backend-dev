@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -49,12 +50,11 @@ namespace OneBan_TMS.Repository
                 .EmployeeTeamRoles
                 .Where(x => x.EtrId == employeeTeanRoleId)
                 .SingleOrDefaultAsync();
-            if (!(employeeTeamRoleDto is null))
-            {
-                employeeTeamRoleToUpdate.EtrName = employeeTeamRoleDto.Name;
-                employeeTeamRoleToUpdate.EtrDescription = employeeTeamRoleToUpdate.EtrDescription;
-                await _context.SaveChangesAsync();
-            }
+            if (employeeTeamRoleDto is null)
+                throw new ArgumentException("Employee team role does not exist");
+            employeeTeamRoleToUpdate.EtrName = employeeTeamRoleDto.Name;
+            employeeTeamRoleToUpdate.EtrDescription = employeeTeamRoleToUpdate.EtrDescription;
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteEmployeeTeamRole(int employeeTeamRoleId)
@@ -63,6 +63,8 @@ namespace OneBan_TMS.Repository
                 .EmployeeTeamRoles
                 .Where(x => x.EtrId == employeeTeamRoleId)
                 .SingleOrDefaultAsync();
+            if (employeeTeamRoleToDelete is null)
+                throw new ArgumentException("Employee team role does not exist");
             _context.EmployeeTeamRoles.Remove(employeeTeamRoleToDelete);
             await _context.SaveChangesAsync();
         }

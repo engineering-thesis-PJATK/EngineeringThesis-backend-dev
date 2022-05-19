@@ -15,7 +15,6 @@ namespace OneBan_TMS.Repository
 {
     public class CustomerRepository : ICustomerRepository
     {
-        //Todo: Do poprawy !!!
         private readonly OneManDbContext _context;
         private readonly ICompanyRepository _companyRepository;
         public CustomerRepository(OneManDbContext context, ICompanyRepository companyRepository)
@@ -50,7 +49,7 @@ namespace OneBan_TMS.Repository
         public async Task AddNewCustomer(CustomerDto newCustomer, int companyId)
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
-                throw new ArgumentException("Company not exists");
+                throw new ArgumentException("Company does not exist");
             Customer customer = new Customer()
             {
                 CurName = newCustomer.CurName,
@@ -71,6 +70,8 @@ namespace OneBan_TMS.Repository
             var customerToUpdate = await _context
                 .Customers
                 .SingleOrDefaultAsync();
+            if (customerToUpdate is null)
+                throw new ArgumentException("Customer does not exists");
             customerToUpdate.CurName = customer.CurName;
             customerToUpdate.CurSurname = customer.CurSurname;
             customerToUpdate.CurEmail = customer.CurEmail;

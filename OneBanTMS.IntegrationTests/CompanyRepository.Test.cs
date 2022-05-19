@@ -16,16 +16,17 @@ namespace OneBanTMS.IntegrationTests
 {
     public class CompanyRepository_Test
     {
-        private readonly OneManDbContext _context;
-        private readonly IValidator<CompanyDto> _validator;
-        public CompanyRepository_Test()
+        private  OneManDbContext _context;
+        private CompanyRepository _companyRepository; 
+        [SetUp]
+        public void Init()
         {
             var connectionString = "Server=tcp:pjwstkinzynierka.database.windows.net,1433;Initial Catalog=inzynierka;Persist Security Info=False;User ID=Hydra;Password=RUCH200nowe;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             var optionBuilder = new DbContextOptionsBuilder<OneManDbContext>();
             optionBuilder.UseSqlServer(connectionString);
             _context = new OneManDbContext(optionBuilder.Options);
+            _companyRepository = new CompanyRepository(_context);
         }
-
         [Test, Isolated]
         public async Task AddCompany_PassValid_ShouldAddCompanyToDatabase()
         {
@@ -38,9 +39,9 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var repository = new CompanyRepository(_context);
-            await repository.AddNewCompany(companyDto);
-            var userCountAfter = await _context.Companies.CountAsync(x => x.CmpName == companyDto.CmpName);
+            await _companyRepository.AddNewCompany(companyDto);
+            var userCountAfter = await _context.Companies.CountAsync(x => 
+                x.CmpName == companyDto.CmpName);
             Assert.That(userCountAfter, Is.EqualTo(1));
         }
 /*Todo odblokować po ustaleniu błędu z db
@@ -83,8 +84,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var repository = new CompanyRepository(_context);
-            await repository.AddNewCompany(companyDto);
+            await _companyRepository.AddNewCompany(companyDto);
             var idAddedCompany = await _context
                 .Companies
                 .Where(x =>
@@ -101,7 +101,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "1",
                 CmpNipPrefix = "PL"
             };
-            await repository.UpdateCompany(updatedCompanyDto, idAddedCompany);
+            await _companyRepository.UpdateCompany(updatedCompanyDto, idAddedCompany);
             var countUpdatedCompany = await _context
                 .Companies
                 .CountAsync(x =>
@@ -113,7 +113,6 @@ namespace OneBanTMS.IntegrationTests
                     && x.CmpNipPrefix == updatedCompanyDto.CmpNipPrefix);
             Assert.That(countUpdatedCompany, Is.EqualTo(1));
         }
-/* Todo poprawić jak wiadomoy błąd z db
         [Test, Isolated]
         public async Task UpdateCompany_NotExistedId_ShouldThrowArgumentException()
         {
@@ -126,19 +125,16 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "1",
                 CmpNipPrefix = "PL"
             };
-            var repository = new CompanyRepository(_context);
             var notExistedId = await _context
                 .Companies
                 .MaxAsync(x => x.CmpId);
             notExistedId += 1;
-            Func<Task> action = async () => await repository
+            Func<Task> action = async () => await _companyRepository
                 .UpdateCompany(companyToUpdate, notExistedId);
             await action.Should()
                 .ThrowExactlyAsync<ArgumentException>()
-                .WithMessage("Company not exists");
+                .WithMessage("Company does not exist");
         }
-*/
-
         [Test, Isolated]
         public async Task DeleteCompany_PassValid_ShouldDeleteCompanyFromDatabase()
         {
@@ -151,8 +147,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var repository = new CompanyRepository(_context);
-            await repository.AddNewCompany(companyDto);
+            await _companyRepository.AddNewCompany(companyDto);
             var idAddedCompany = await _context
                 .Companies
                 .Where(x =>
@@ -161,7 +156,7 @@ namespace OneBanTMS.IntegrationTests
                     x.CmpId)
                 .SingleOrDefaultAsync();
 
-            await repository.DeleteCompany(idAddedCompany);
+            await _companyRepository.DeleteCompany(idAddedCompany);
             var countUpdatedCompany = await _context
                 .Companies
                 .CountAsync(x =>
@@ -173,7 +168,6 @@ namespace OneBanTMS.IntegrationTests
                     && x.CmpNipPrefix == companyDto.CmpNipPrefix);
             Assert.That(countUpdatedCompany, Is.EqualTo(0));
         }
-/* Todo poprawić jak wiadomoy błąd z db
         [Test, Isolated]
         public async Task DeleteCompany_NotExistedId_ShouldThrowArgumentException()
         {
@@ -186,8 +180,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var repository = new CompanyRepository(_context, _validator);
-            await repository.AddNewCompany(companyDto);
+            await _companyRepository.AddNewCompany(companyDto);
             var idAddedCompany = await _context
                 .Companies
                 .Where(x =>
@@ -196,11 +189,10 @@ namespace OneBanTMS.IntegrationTests
                     x.CmpId)
                 .SingleOrDefaultAsync();
             idAddedCompany += 1;
-            Func<Task> action = async () => await repository.DeleteCompany(idAddedCompany);
+            Func<Task> action = async () => await _companyRepository.DeleteCompany(idAddedCompany);
             await action.Should().ThrowExactlyAsync<ArgumentException>()
-                .WithMessage("Company not exists");
+                .WithMessage("Company does not exist");
         }
-*/
         [Test, Isolated]
         public async Task ExisitsCompany_PassValid_ShouldReturnTrue()
         {
@@ -213,8 +205,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var repository = new CompanyRepository(_context);
-            await repository.AddNewCompany(companyDto);
+            await _companyRepository.AddNewCompany(companyDto);
             var companyId = await _context.Companies.CountAsync(x => 
                 x.CmpName == companyDto.CmpName
                 && x.CmpNip == companyDto.CmpNip
@@ -222,7 +213,7 @@ namespace OneBanTMS.IntegrationTests
                 && x.CmpLandline == companyDto.CmpLandline
                 && x.CmpRegon == companyDto.CmpRegon
                 && x.CmpNipPrefix == companyDto.CmpNipPrefix);
-            var result = await repository.ExistsCompany(companyId);
+            var result = await _companyRepository.ExistsCompany(companyId);
             Assert.That(result, Is.True);
         }
     }

@@ -470,3 +470,7 @@ D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBanTMS.I
 D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/obj/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll
 D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb
 D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.genruntimeconfig.cache
+/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/bin/Debug/net5.0/MailKit.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/bin/Debug/net5.0/MimeKit.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/bin/Debug/net5.0/NETCore.MailKit.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/bin/Debug/net5.0/BouncyCastle.Crypto.dll

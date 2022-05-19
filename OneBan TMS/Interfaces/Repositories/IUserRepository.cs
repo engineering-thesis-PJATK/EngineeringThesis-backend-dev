@@ -14,6 +14,5 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<Employee> GetUserByEmail(string emailAddress);
         void GetPasswordParts(string password, out byte[] passwordHash, out byte[] passwordSalt);
         Task<string> GetUserRole(string userEmail);
-        Task AddPrivilegesToUser(int employeeId, List<int> privileges);
     }
 }

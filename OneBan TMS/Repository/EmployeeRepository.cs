@@ -5,11 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
-using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Employee;
 
 namespace OneBan_TMS.Repository
@@ -17,13 +15,11 @@ namespace OneBan_TMS.Repository
     public class EmployeeRepository : IEmployeeRepository
     {
         private OneManDbContext _context;
-        private readonly IValidator<EmployeeDto> _employeeToAddValidation;
         private readonly IPasswordHandler _passwordHandler;
-        public EmployeeRepository(OneManDbContext context, IPasswordHandler passwordHandler, IValidator<EmployeeToUpdate> employeeValidator, IValidator<EmployeeDto> employeeToAddValidation)
+        public EmployeeRepository(OneManDbContext context, IPasswordHandler passwordHandler)
         {
             _context = context;
             _passwordHandler = passwordHandler;
-            _employeeToAddValidation = employeeToAddValidation;
         }
         public async Task<IEnumerable<EmployeeForListDto>> GetAllEmployeeDto()
         {
@@ -88,12 +84,10 @@ namespace OneBan_TMS.Repository
 
         public async Task AddEmployee(EmployeeDto employee)
         {
-            _employeeToAddValidation.ValidateAndThrow(employee);
             _passwordHandler.CreatePasswordHash(employee.EmpPassword, out byte[] passwordHash, out byte[] passwordSalt);
             StringBuilder passwordConnector = new StringBuilder();
             passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordHash));
             passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordSalt));
-            
             _context
                 .Employees
                 .Add(new Employee()
@@ -169,7 +163,7 @@ namespace OneBan_TMS.Repository
         {
             var employee = await GetEmployeeByEmail(employeeEmail);
             if (employee is null)
-                throw new ArgumentException("Employee not exists");
+                throw new ArgumentException("Employee does not exist");
             string newRandomPassword = GenerateRandomPassword();
             _passwordHandler.CreatePasswordHash(newRandomPassword, out byte[] passwordHash, out byte[] passwordSalt);
             StringBuilder passwordBuilder = new StringBuilder();
@@ -200,7 +194,6 @@ namespace OneBan_TMS.Repository
                 randomChar = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
                 passwordBuilder.Append(randomChar);
             }
-
             return passwordBuilder.ToString();
         }
         private EmployeePrivilegeGetDto ChangeEmployeePrivilegeBaseToDto(EmployeePrivilege employeePrivilege)
@@ -244,6 +237,19 @@ namespace OneBan_TMS.Repository
                 .Employees
                 .AnyAsync(x => x.EmpEmail.Equals(employeeEmail));
             return result;
+        }
+        public async Task AddPrivilegesToUser(int employeeId, List<int> privileges)
+        {
+            foreach (int privilege in privileges)
+            {
+                await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
+                {
+                    EpeIdEmployee = employeeId,
+                    EpeIdEmployeePrivilage = privilege
+                });
+            }
+
+            await _context.SaveChangesAsync();
         }
         
     }

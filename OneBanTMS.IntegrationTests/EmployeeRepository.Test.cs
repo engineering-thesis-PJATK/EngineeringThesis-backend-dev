@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
+using OneBan_TMS.Handlers;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs.Employee;
@@ -12,21 +13,22 @@ namespace OneBanTMS.IntegrationTests
 {
     public class EmployeeRepository_Test
     {
-        private readonly OneManDbContext _context;
-        private readonly IValidator<EmployeeToUpdate> _employeeToUpdateValidator;
-        private readonly IValidator<EmployeeDto> _employeeToAddValidator;
-        private readonly IPasswordHandler _passwordHandler;
-        public EmployeeRepository_Test()
+        private OneManDbContext _context;
+        private IPasswordHandler _passwordHandler;
+        private EmployeeRepository _employeeRepository;
+        [SetUp]
+        public void Init()
         {
             var connectionString = "Server=tcp:pjwstkinzynierka.database.windows.net,1433;Initial Catalog=inzynierka;Persist Security Info=False;User ID=Hydra;Password=RUCH200nowe;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             var optionBuilder = new DbContextOptionsBuilder<OneManDbContext>();
             optionBuilder.UseSqlServer(connectionString);
             _context = new OneManDbContext(optionBuilder.Options);
+            _passwordHandler = new PasswordHandler();
+            _employeeRepository = new EmployeeRepository(_context, _passwordHandler);
         }
         [Test, Isolated]
         public async Task AddEmployee_PassValid_ShouldAddEmployeeToDatabase()
         {
-            var employeeRepository = new EmployeeRepository(_context, _passwordHandler, _employeeToUpdateValidator, _employeeToAddValidator);
             EmployeeDto employeeDto = new EmployeeDto()
             {
                 EmpEmail = "test@test.pl",
@@ -35,7 +37,7 @@ namespace OneBanTMS.IntegrationTests
                 EmpSurname = "TestSurname",
                 EmpPhoneNumber = "123-123-132"
             };
-            await employeeRepository.AddEmployee(employeeDto);
+            await _employeeRepository.AddEmployee(employeeDto);
             var employeeCountAfter = _context
                 .Employees
                 .CountAsync(x =>
@@ -45,11 +47,9 @@ namespace OneBanTMS.IntegrationTests
                     && x.EmpPhoneNumber == employeeDto.EmpPhoneNumber);
             Assert.That(employeeCountAfter, Is.EqualTo(1));
         }
-
         [Test, Isolated]
         public async Task UpdateEmployee_PassValid_ShouldUpdateEmployeeInDatabase()
         {
-            var employeeRepository = new EmployeeRepository(_context, _passwordHandler, _employeeToUpdateValidator, _employeeToAddValidator);
             EmployeeDto employeeDto = new EmployeeDto()
             {
                 EmpEmail = "test@test.pl",
@@ -58,7 +58,7 @@ namespace OneBanTMS.IntegrationTests
                 EmpSurname = "TestSurname",
                 EmpPhoneNumber = "123-123-132"
             };
-            await employeeRepository.AddEmployee(employeeDto);
+            await _employeeRepository.AddEmployee(employeeDto);
             var employeeId = await _context
                 .Employees
                 .Where(x =>
@@ -76,7 +76,7 @@ namespace OneBanTMS.IntegrationTests
                 EmpPhoneNumber = "312-312-312",
                 EmpLogin = "1test1@test.pl"
             };
-            await employeeRepository.UpdateEmployee(employeeId, employeeToUpdate);
+            await _employeeRepository.UpdateEmployee(employeeId, employeeToUpdate);
             var employeeCountAfter = _context
                 .Employees
                 .CountAsync(x =>
