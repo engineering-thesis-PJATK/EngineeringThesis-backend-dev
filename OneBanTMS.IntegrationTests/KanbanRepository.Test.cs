@@ -41,13 +41,14 @@ namespace OneBanTMS.IntegrationTests
             var kanbanRepository = new KanbanRepository(ticketRepository, organizationalTaskRepository, organizationalTaskHandler);
             #region newCompany
 
-            var companyRepository = new CompanyRepository(_context, new CompanyValidator(new CompanyHandler(_context)));
+            var companyRepository = new CompanyRepository(_context);
             #endregion
             #region Adding newCustomer
 
             var customerHandler = new CustomerHandler(_context);
-            var customerValidator = new CustomerValidator(customerHandler);
-            var customerRepository = new CustomerRepository(_context, customerValidator, companyRepository);
+            //Todo Poprawić
+            //var customerValidator = new CustomerValidator(customerHandler);
+            //var customerRepository = new CustomerRepository(_context, customerValidator, companyRepository);
             /*
             customerRepository.AddNewCustomer(new CustomerDto()
             {

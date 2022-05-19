@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Employee;
+using OneBan_TMS.Models.DTOs.Messages;
 using OneBan_TMS.Models.DTOs.Team;
 
 namespace OneBan_TMS.Controllers
@@ -18,11 +21,14 @@ namespace OneBan_TMS.Controllers
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly ITeamRepository _teamRepository;
-        public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository)
+        private readonly IValidator<EmployeeToUpdate> _validatorEmployeeToUpdate;
+        private readonly IValidator<EmployeeDto> _validatorEmployeeDto;
+        public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository, IValidator<EmployeeToUpdate> validatorEmployeeToUpdate, IValidator<EmployeeDto> validatorEmployeeDto)
         {
             _employeeRepository = employeeRepository;
             _teamRepository = teamRepository;
-            
+            _validatorEmployeeToUpdate = validatorEmployeeToUpdate;
+            _validatorEmployeeDto = validatorEmployeeDto;
         }
         #region GetById
         [HttpGet("{employeeId}")]
@@ -31,7 +37,7 @@ namespace OneBan_TMS.Controllers
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
                 return NoContent();
             EmployeeForListDto employeeDto = await  _employeeRepository
-                                                .GetEmployeeByIdDto(employeeId);
+                .GetEmployeeByIdDto(employeeId);
             return Ok(employeeDto);
         }
 
@@ -118,8 +124,16 @@ namespace OneBan_TMS.Controllers
         [HttpPost]
         public async Task<ActionResult> AddNewEmployee([FromBody]EmployeeDto employee)
         {
-            if (await _employeeRepository.ExistsEmployeeByEmail(employee.EmpEmail))
-                return BadRequest("There is an employee with the specified email");
+            var validatorEmployeeDtoResult = await _validatorEmployeeDto.ValidateAsync(employee);
+            if (!(validatorEmployeeDtoResult.IsValid))
+            {
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = validatorEmployeeDtoResult.Errors[0].ErrorMessage,
+                    PropertyName = validatorEmployeeDtoResult.Errors[0].PropertyName,
+                    StatusCode = HttpStatusCode.BadRequest
+                });
+            }
             await _employeeRepository.AddEmployee(employee);
             return Ok("Employee added successful");
         }
@@ -142,9 +156,30 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> UpdateEmployee(int employeeId, [FromBody] EmployeeToUpdate employeeToUpdate)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
-                return NoContent();
+            {
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "Employee does not exists",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
+            }
+
+            var validatorEmployeeToUpdateResult = await _validatorEmployeeToUpdate.ValidateAsync(employeeToUpdate);
+            if (!(validatorEmployeeToUpdateResult.IsValid))
+            {
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = validatorEmployeeToUpdateResult.Errors[0].ErrorMessage,
+                    PropertyName = validatorEmployeeToUpdateResult.Errors[0].PropertyName,
+                    StatusCode = HttpStatusCode.BadRequest
+                });
+            }
             await _employeeRepository.UpdateEmployee(employeeId, employeeToUpdate);
-            return Ok("Employee updated");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Updated successfully employee",
+                StatusCode = HttpStatusCode.BadRequest
+            });
         }
 
         [HttpPut("Team/{teamId}")]

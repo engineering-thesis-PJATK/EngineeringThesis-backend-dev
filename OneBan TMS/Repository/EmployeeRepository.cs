@@ -17,14 +17,12 @@ namespace OneBan_TMS.Repository
     public class EmployeeRepository : IEmployeeRepository
     {
         private OneManDbContext _context;
-        private readonly IValidator<EmployeeToUpdate> _employeeValidator;
         private readonly IValidator<EmployeeDto> _employeeToAddValidation;
         private readonly IPasswordHandler _passwordHandler;
         public EmployeeRepository(OneManDbContext context, IPasswordHandler passwordHandler, IValidator<EmployeeToUpdate> employeeValidator, IValidator<EmployeeDto> employeeToAddValidation)
         {
             _context = context;
             _passwordHandler = passwordHandler;
-            _employeeValidator = employeeValidator;
             _employeeToAddValidation = employeeToAddValidation;
         }
         public async Task<IEnumerable<EmployeeForListDto>> GetAllEmployeeDto()
@@ -111,8 +109,7 @@ namespace OneBan_TMS.Repository
             await _context.SaveChangesAsync();
         }
         public async Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeUpdated)
-        {
-            _employeeValidator.ValidateAndThrow(employeeUpdated); 
+        { 
             var employeeToUpdate = await _context
                 .Employees
                 .Where(x => x.EmpId == employeeId)

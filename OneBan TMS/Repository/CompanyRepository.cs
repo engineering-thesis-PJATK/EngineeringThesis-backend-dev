@@ -16,11 +16,9 @@ namespace OneBan_TMS.Repository
     public class CompanyRepository : ICompanyRepository
     {
         private readonly OneManDbContext _context;
-        private readonly IValidator<CompanyDto> _validator;
-        public CompanyRepository(OneManDbContext context, IValidator<CompanyDto> validator)
+        public CompanyRepository(OneManDbContext context)
         {
             _context = context;
-            _validator = validator;
         }
         public async Task<IEnumerable<Company>> GetCompanies()
         {
@@ -38,7 +36,6 @@ namespace OneBan_TMS.Repository
 
         public async Task AddNewCompany(CompanyDto newCompany)
         {
-            _validator.ValidateAndThrow(newCompany);
             Company company = new Company()
             {
                 CmpName = newCompany.CmpName,
@@ -54,8 +51,6 @@ namespace OneBan_TMS.Repository
 
         public async Task UpdateCompany(CompanyDto updatedCompanyDto, int companyId)
         {
-            _validator.ValidateAndThrow(updatedCompanyDto);
-            
             var companyToUpdate = await _context
                     .Companies
                     .Where(x => x.CmpId == companyId)

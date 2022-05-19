@@ -25,7 +25,6 @@ namespace OneBanTMS.IntegrationTests
             var optionBuilder = new DbContextOptionsBuilder<OneManDbContext>();
             optionBuilder.UseSqlServer(connectionString);
             _context = new OneManDbContext(optionBuilder.Options);
-            _validator = new CustomerValidator(new CustomerHandler(_context));
         }
 
         [Test, Isolated]

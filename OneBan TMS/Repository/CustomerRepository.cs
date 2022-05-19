@@ -17,13 +17,11 @@ namespace OneBan_TMS.Repository
     {
         //Todo: Do poprawy !!!
         private readonly OneManDbContext _context;
-        private readonly IValidator<CustomerDto> _customerDtoValidator;
         private readonly ICompanyRepository _companyRepository;
-        public CustomerRepository(OneManDbContext context, IValidator<CustomerDto> customerDtoValidator, ICompanyRepository companyRepository)
+        public CustomerRepository(OneManDbContext context, ICompanyRepository companyRepository)
         {
             _context = context;
             _companyRepository = companyRepository;
-            _customerDtoValidator = customerDtoValidator;
         }
         public async Task<IEnumerable<Customer>> GetAllCustomers()
         {
@@ -53,7 +51,6 @@ namespace OneBan_TMS.Repository
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
                 throw new ArgumentException("Company not exists");
-            _customerDtoValidator.ValidateAndThrow(newCustomer);
             Customer customer = new Customer()
             {
                 CurName = newCustomer.CurName,
@@ -71,7 +68,6 @@ namespace OneBan_TMS.Repository
 
         public async Task UpdateCustomer(CustomerDto customer, int customerId)
         {
-            _customerDtoValidator.ValidateAndThrow(customer);
             var customerToUpdate = await _context
                 .Customers
                 .SingleOrDefaultAsync();
