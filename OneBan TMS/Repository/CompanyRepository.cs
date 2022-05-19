@@ -55,6 +55,7 @@ namespace OneBan_TMS.Repository
         public async Task UpdateCompany(CompanyDto updatedCompanyDto, int companyId)
         {
             _validator.ValidateAndThrow(updatedCompanyDto);
+            
             var companyToUpdate = await _context
                     .Companies
                     .Where(x => x.CmpId == companyId)

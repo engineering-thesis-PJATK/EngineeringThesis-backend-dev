@@ -9,12 +9,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Handlers/TicketNameHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/Handlers/ITicketNameHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Validators/TicketValidators/TicketNewValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/ErrorsMes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/Messages/MessageResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Ticket/TicketNewDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Ticket/TicketNewDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/TicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompanyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.FileListAbsolute.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +66,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/445f1943219c786fc8f73b45b5fe19bfaf4b9cdb9a885193c7e487f69323b3/ToCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5f905e58bd26fc4c228de86b6b85f2837c9a51ece575aec5c0a071a6ecc5d732/SwaggerUIMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2e42152082b49a7074952a51b1f583eead62a2e9e98c8347e54a8c76a766f6e/Execute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b6d9aef891d740fada4474a66a67cc9d76348d742c9818aa2f7592a2e55aa7/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b6d9aef891d740fada4474a66a67cc9d76348d742c9818aa2f7592a2e55aa7/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/73ffe226ca516698d1e28a7fe1cac5a27b5b81ccdcdc89f189e51b14c9d4c/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b2ddb77660a6521299c464af9306e538a5d5561ab9c68736d3d239cf6cee9/AssertionScope.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aff6ce8fb8ebe7e9b51edf61ada5fd9375538d9dcd8ad9fddba0bd1371/CorsMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
@@ -234,7 +245,8 @@
       <workItem from="1652456867579" duration="4710000" />
       <workItem from="1652509684602" duration="1780000" />
       <workItem from="1652685944253" duration="7281000" />
-      <workItem from="1652806671940" duration="4319000" />
+      <workItem from="1652806671940" duration="6693000" />
+      <workItem from="1652952026834" duration="4717000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>

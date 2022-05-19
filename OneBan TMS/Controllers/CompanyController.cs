@@ -1,15 +1,17 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Graph;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Address;
 using OneBan_TMS.Models.DTOs.Company;
+using OneBan_TMS.Models.DTOs.Messages;
 
 namespace OneBan_TMS.Controllers
 {
@@ -19,10 +21,12 @@ namespace OneBan_TMS.Controllers
     {
         private readonly ICompanyRepository _companyRepository;
         private readonly IAddressRepository _addressRepository;
-        public CompanyController(OneManDbContext context, ICompanyRepository companyRepository, IAddressRepository addressRepository)
+        private readonly IValidator<CompanyDto> _companyValidator;
+        public CompanyController(OneManDbContext context, ICompanyRepository companyRepository, IAddressRepository addressRepository,  IValidator<CompanyDto> companyValidator)
         {
             _companyRepository = companyRepository;
             _addressRepository = addressRepository;
+            _companyValidator = companyValidator;
         }
 
         [HttpGet]
@@ -38,7 +42,7 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> GetCompanyById(int companyId)
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
-                return NotFound();
+                return NoContent();
             Company company = await _companyRepository.GetCompanyById((int) companyId);
             return Ok(company);
         }
@@ -46,26 +50,70 @@ namespace OneBan_TMS.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCompany([FromBody] CompanyDto newCompany)
         {
+            var companyValidatorResult = await _companyValidator.ValidateAsync(newCompany);
+            if (!(companyValidatorResult.IsValid))
+            {
+                return BadRequest(new MessageResponse()
+                {
+                    PropertyName = companyValidatorResult.Errors[0].PropertyName,
+                    MessageContent = companyValidatorResult.Errors[0].ErrorMessage,
+                    StatusCode = HttpStatusCode.BadRequest
+                });
+            }
             await _companyRepository.AddNewCompany(newCompany);
-            return Ok("Added new company");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Company added",
+                StatusCode = HttpStatusCode.OK
+            });
         }
 
         [HttpPut("{companyId}")]
         public async Task<IActionResult> UpdateCompany([FromBody] CompanyDto updatedCompany, int companyId)
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
-                return NoContent(); 
+            {
+                return BadRequest(new MessageResponse()
+                {
+                    StatusCode = HttpStatusCode.BadRequest,
+                    MessageContent = "Company not exists"
+                });
+            }
+            var companyValidationResult = await _companyValidator.ValidateAsync(updatedCompany);
+            if (!(companyValidationResult.IsValid))
+            {
+                return BadRequest(new MessageResponse()
+                {
+                    StatusCode = HttpStatusCode.BadRequest,
+                    MessageContent = companyValidationResult.Errors[0].ErrorMessage,
+                    PropertyName = companyValidationResult.Errors[0].PropertyName
+                });
+            }
             await _companyRepository.UpdateCompany(updatedCompany, companyId);
-            return Ok("Company updated");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Company updated",
+                StatusCode = HttpStatusCode.OK
+            });
         }
 
         [HttpDelete("{companyId}")]
         public async Task<IActionResult> DeleteCompany(int companyId)
         {
             if (!await _companyRepository.ExistsCompany(companyId))
-                return NoContent();
+            {
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "Company not exists",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
+            }
             await _companyRepository.DeleteCompany(companyId);
-            return Ok("Company deleted");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Company successfully added",
+                StatusCode = HttpStatusCode.OK
+            });
         }
         [HttpGet( "{companyId}/Addresses")]
         public async Task<IActionResult> GetAddressesForCompany(int companyId)
@@ -80,27 +128,55 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> AddNewAddressForCompany(int companyId, [FromBody]AddressDto addressDto)
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
-                return BadRequest($"There is no company with id {companyId}");
+            {
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "Company not exists",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
+            }
             await _addressRepository.AddNewAddress(addressDto, companyId);
-            return Ok($"Added new address for company {companyId}");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Address successfully added",
+                StatusCode = HttpStatusCode.OK
+            });
         }
 
         [HttpPut("Addresses/{addressId}")]
         public async Task<IActionResult> UpdateAddress(int addressId, [FromBody] AddressDto addressDto)
         {
             if (!(await _addressRepository.ExistsAddress(addressId)))
-                return BadRequest($"There is no address with id {addressId}");
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "Address does not exist",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
             await _addressRepository.UpdateAddress(addressDto, addressId);
-            return Ok("Address updated");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Address successfully updated",
+                StatusCode = HttpStatusCode.OK
+            });
         }
 
         [HttpDelete("Addresses/{addressId}")]
         public async Task<IActionResult> DeleteAddress(int addressId)
         {
             if (!(await _addressRepository.ExistsAddress(addressId)))
-                return BadRequest($"There is no address with id {addressId}");
+            {
+                return BadRequest(new MessageResponse()
+                {
+                    MessageContent = "Address does not exist",
+                    StatusCode = HttpStatusCode.BadRequest
+                });
+            }
             await _addressRepository.DeleteAddress(addressId);
-            return Ok("Address deleted");
+            return Ok(new MessageResponse()
+            {
+                MessageContent = "Address successfully deleted",
+                StatusCode = HttpStatusCode.OK
+            });
         }
     }
 }
