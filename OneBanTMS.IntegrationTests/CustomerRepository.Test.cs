@@ -30,8 +30,8 @@ namespace OneBanTMS.IntegrationTests
         [Test, Isolated]
         public async Task AddNewCustomer_PassValid_ShouldAddNewCustomerToDatabase()
         {
-            var companyRepository = new CompanyRepository(_context, new CompanyValidator(new CompanyHandler(_context)));
-            var customerRepository = new CustomerRepository(_context, _validator, companyRepository);
+            var companyRepository = new CompanyRepository(_context);
+            var customerRepository = new CustomerRepository(_context, companyRepository);
             
             CustomerDto newCustomerDto = new CustomerDto()
             {
@@ -71,8 +71,8 @@ namespace OneBanTMS.IntegrationTests
         [Test, Isolated]
         public async Task AddNewCustomer_WithNotValidEmail_ShouldThrowValidationError()
         {
-            var companyRepository = new CompanyRepository(_context, new CompanyValidator(new CompanyHandler(_context)));
-            var customerRepository = new CustomerRepository(_context, _validator, companyRepository);
+            var companyRepository = new CompanyRepository(_context);
+            var customerRepository = new CustomerRepository(_context, companyRepository);
             CustomerDto newCustomerDto = new CustomerDto()
             {
                 CurName = "TestName",
@@ -101,8 +101,8 @@ namespace OneBanTMS.IntegrationTests
         [Test, Isolated]
         public async Task AddNewCustomer_WithNotValidCompanyId_ShouldThrowArgumentError()
         {
-            var companyRepository = new CompanyRepository(_context, new CompanyValidator(new CompanyHandler(_context)));
-            var customerRepository = new CustomerRepository(_context, _validator, companyRepository);
+            var companyRepository = new CompanyRepository(_context);
+            var customerRepository = new CustomerRepository(_context, companyRepository);
             CustomerDto newCustomerDto = new CustomerDto()
             {
                 CurName = "TestName",
@@ -131,8 +131,8 @@ namespace OneBanTMS.IntegrationTests
         [Test, Isolated]
         public async Task UpdateCustomer_PassValid_ShouldUpdateCustomerInDatabase()
         {
-            var companyRepository = new CompanyRepository(_context, new CompanyValidator(new CompanyHandler(_context)));
-            var customerRepository = new CustomerRepository(_context, _validator, companyRepository);
+            var companyRepository = new CompanyRepository(_context);
+            var customerRepository = new CustomerRepository(_context, companyRepository);
             
             CustomerDto newCustomerDto = new CustomerDto()
             {

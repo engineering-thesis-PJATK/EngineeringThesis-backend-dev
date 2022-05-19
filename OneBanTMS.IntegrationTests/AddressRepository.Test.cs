@@ -40,7 +40,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var companyRepository = new CompanyRepository(_context, _validator);
+            var companyRepository = new CompanyRepository(_context);
             await companyRepository.AddNewCompany(companyDto);
             var companyId = await _context
                 .Companies
@@ -81,7 +81,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var companyRepository = new CompanyRepository(_context, _validator);
+            var companyRepository = new CompanyRepository(_context);
             await companyRepository.AddNewCompany(companyDto);
             var companyId = await _context
                 .Companies
@@ -143,7 +143,7 @@ namespace OneBanTMS.IntegrationTests
                 .Addresses
                 .MaxAsync(x => x.AdrId);
             notExistsAddressId += 1;
-            var companyRepository = new CompanyRepository(_context, _validator);
+            var companyRepository = new CompanyRepository(_context);
             var addressRepository = new AddressRepository(_context, companyRepository);
             Func<Task> action = async () => await addressRepository.UpdateAddress(addressDto, notExistsAddressId);
             await action.Should().ThrowExactlyAsync<ArgumentException>()
@@ -162,7 +162,7 @@ namespace OneBanTMS.IntegrationTests
                 CmpRegon = "",
                 CmpNipPrefix = "PL"
             };
-            var companyRepository = new CompanyRepository(_context, _validator);
+            var companyRepository = new CompanyRepository(_context);
             await companyRepository.AddNewCompany(companyDto);
             var companyId = await _context
                 .Companies
@@ -205,7 +205,7 @@ namespace OneBanTMS.IntegrationTests
         [Test, Isolated]
         public async Task DeleteAddress_NotExistsAddressId_ShouldThrowArgumentExceptionWithMessage()
         {
-            var companyRepository = new CompanyRepository(_context, _validator);
+            var companyRepository = new CompanyRepository(_context);
             var addressRepository = new AddressRepository(_context, companyRepository);
             var notExistedAddressId = await _context
                 .Addresses
