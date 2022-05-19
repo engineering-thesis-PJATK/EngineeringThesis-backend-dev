@@ -32,6 +32,7 @@ using OneBan_TMS.Models.DTOs.Kanban;
 using OneBan_TMS.Models.DTOs.Ticket;
 using OneBan_TMS.Repository;
 using OneBan_TMS.Validators;
+using OneBan_TMS.Validators.CustomerValidators;
 using OneBan_TMS.Validators.EmployeeValidators;
 using OneBan_TMS.Validators.TicketValidators;
 using Swashbuckle.AspNetCore.Filters;

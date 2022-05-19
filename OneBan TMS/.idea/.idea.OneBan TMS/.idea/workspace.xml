@@ -10,7 +10,9 @@
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validators/CustomerValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/CustomerValidators/CustomerValidator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +233,7 @@
       <workItem from="1652509684602" duration="1780000" />
       <workItem from="1652685944253" duration="7281000" />
       <workItem from="1652806671940" duration="6693000" />
-      <workItem from="1652952026834" duration="5558000" />
+      <workItem from="1652952026834" duration="7863000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -288,32 +290,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
-          <line>163</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="131" containingFunctionPresentation="method 'ExistsEmployeePrivileges'">
-            <startOffsets>
-              <option value="6635" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6636" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
-          <line>167</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="135" containingFunctionPresentation="method 'ExistsEmployeePrivileges'">
-            <startOffsets>
-              <option value="6797" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6809" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Repository/CompanyRepository.cs</url>
           <line>48</line>
           <properties documentPath="$PROJECT_DIR$/Repository/CompanyRepository.cs" initialLine="49" containingFunctionPresentation="method 'AddNewCompany'">
@@ -354,32 +330,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
-          <line>91</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="91" containingFunctionPresentation="method 'AddEmployee'">
-            <startOffsets>
-              <option value="3477" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3478" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
-          <line>92</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="92" containingFunctionPresentation="method 'AddEmployee'">
-            <startOffsets>
-              <option value="3491" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3543" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
           <line>197</line>
           <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="195" containingFunctionPresentation="method 'GenerateRandomPassword'">
             <startOffsets>
@@ -390,32 +340,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
-          <line>172</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="172" containingFunctionPresentation="method 'ChangePassword'">
-            <startOffsets>
-              <option value="6914" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6969" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/EmployeeRepository.cs</url>
-          <line>175</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" initialLine="173" containingFunctionPresentation="method 'ChangePassword'">
-            <startOffsets>
-              <option value="7084" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7136" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">
           <properties exception="FluentValidation.ValidationException" isInternal="false" displayValue="ValidationException" namespaceName="FluentValidation">
