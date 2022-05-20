@@ -59,5 +59,20 @@ namespace OneBan_TMS.Repository
 
             return userWithPrivilegesList;
         }
+
+        public Task AddTicketPriority(NewTicketPriorityDto ticketPriorityDto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddTicketType(NewTicketTypeDto ticketTypeDto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddTicketStatus(NewTicketStatusDto ticketStatusDto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
