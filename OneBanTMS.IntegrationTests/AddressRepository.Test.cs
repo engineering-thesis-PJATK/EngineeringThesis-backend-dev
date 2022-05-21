@@ -21,12 +21,9 @@ namespace OneBanTMS.IntegrationTests
         private CompanyRepository _companyRepository;
         private AddressRepository _addressRepository;
         [SetUp]
-        public void init()
+        public void Init()
         {
-            var connectionString = "Server=tcp:pjwstkinzynierka.database.windows.net,1433;Initial Catalog=inzynierka;Persist Security Info=False;User ID=Hydra;Password=RUCH200nowe;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            var optionBuilder = new DbContextOptionsBuilder<OneManDbContext>();
-            optionBuilder.UseSqlServer(connectionString);
-            _context = new OneManDbContext(optionBuilder.Options);
+            _context = DbContextFactory.GetOneManDbContext();
             _companyRepository = new CompanyRepository(_context);
             _addressRepository = new AddressRepository(_context, _companyRepository);
         }

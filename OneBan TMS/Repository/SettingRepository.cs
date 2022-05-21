@@ -60,19 +60,37 @@ namespace OneBan_TMS.Repository
             return userWithPrivilegesList;
         }
 
-        public Task AddTicketPriority(NewTicketPriorityDto ticketPriorityDto)
+        public async Task AddTicketPriority(NewTicketPriorityDto ticketPriorityDto)
         {
-            throw new NotImplementedException();
+            TicketPriority newTicketPriority = new TicketPriority()
+            {
+                TpiDescription = ticketPriorityDto.TpiDescription,
+                TpiWeight = ticketPriorityDto.TpiWeight
+            };
+            await _context.TicketPriorities.AddAsync(newTicketPriority);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AddTicketType(NewTicketTypeDto ticketTypeDto)
+        public async Task AddTicketType(NewTicketTypeDto ticketTypeDto)
         {
-            throw new NotImplementedException();
+            TicketType newTicketType = new TicketType()
+            {
+                TtpDescription = ticketTypeDto.TtpDescription,
+                TtpName = ticketTypeDto.TtpName
+            };
+            await _context.TicketTypes.AddAsync(newTicketType);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AddTicketStatus(NewTicketStatusDto ticketStatusDto)
+        public async Task AddTicketStatus(NewTicketStatusDto ticketStatusDto)
         {
-            throw new NotImplementedException();
+            TicketStatus newTicketStatus = new TicketStatus()
+            {
+                TstDescription = ticketStatusDto.TstDescription,
+                TstName = ticketStatusDto.TstName
+            };
+            await _context.TicketStatuses.AddAsync(newTicketStatus);
+            await _context.SaveChangesAsync();
         }
     }
 }
