@@ -209,7 +209,7 @@ namespace OneBanTMS.IntegrationTests
             notExistedAddressId += 1;
             Func<Task> action = async () => await addressRepository.DeleteAddress(notExistedAddressId);
             await action.Should().ThrowExactlyAsync<ArgumentException>()
-                .WithMessage("Address not exists");
+                .WithMessage("Address does not exist");
         }
     }
 }

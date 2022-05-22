@@ -56,7 +56,7 @@ namespace OneBan_TMS.Repository
                     .Where(x => x.CmpId == companyId)
                     .SingleOrDefaultAsync();
             if (companyToUpdate is null)
-                throw new ArgumentException("Company not exists");
+                throw new ArgumentException("Company does not exist");
             companyToUpdate.CmpName = updatedCompanyDto.CmpName;
             companyToUpdate.CmpNip = updatedCompanyDto.CmpNip;
             companyToUpdate.CmpNipPrefix = updatedCompanyDto.CmpNipPrefix;
@@ -74,7 +74,7 @@ namespace OneBan_TMS.Repository
                     x.CmpId == companyId)
                 .SingleOrDefaultAsync();
             if (company is null)
-                throw new ArgumentException("Company not exists");
+                throw new ArgumentException("Company does not exist");
             _context.Companies.Remove(company);
             await _context.SaveChangesAsync();
         }

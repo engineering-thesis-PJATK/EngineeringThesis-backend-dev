@@ -29,7 +29,6 @@ namespace OneBan_TMS.Controllers
             _customerRepository = customerRepository;
             _timeEntryRepository = timeEntryRepository;
         }
-
         #region GetById
         [HttpGet("{idTicket}")]
         public async Task<ActionResult<TicketDto>> GetTicketById(int ticketId)

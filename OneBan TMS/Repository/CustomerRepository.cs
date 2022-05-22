@@ -33,6 +33,7 @@ namespace OneBan_TMS.Repository
         {
             return await _context
                 .Customers
+                .Include(x => x.Tickets)
                 .Where(x => 
                     x.CurId == customerId)
                 .SingleOrDefaultAsync();

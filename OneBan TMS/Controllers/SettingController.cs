@@ -38,8 +38,8 @@ namespace OneBan_TMS.Controllers
             await _settingRepository.AddTicketType(newTicketTypeDto);
             return Ok(MessageHelper.GetSuccessfulMessage("Added successfully ticket type"));
         }
-        [HttpPost("/TicketType")]
-        public async Task<IActionResult> AddTicketType(NewTicketStatusDto newTicketStatusDto)
+        [HttpPost("/TicketStatus")]
+        public async Task<IActionResult> AddTicketStatus(NewTicketStatusDto newTicketStatusDto)
         {
             await _settingRepository.AddTicketStatus(newTicketStatusDto);
             return Ok(MessageHelper.GetSuccessfulMessage("Added successfully ticket status"));

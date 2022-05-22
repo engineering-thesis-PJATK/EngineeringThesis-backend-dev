@@ -35,7 +35,7 @@ namespace OneBanTMS.IntegrationTests
                 EmpPhoneNumber = "123-123-132"
             };
             await _employeeRepository.AddEmployee(employeeDto);
-            var employeeCountAfter = _context
+            var employeeCountAfter = await _context
                 .Employees
                 .CountAsync(x =>
                     x.EmpEmail == employeeDto.EmpEmail
@@ -74,7 +74,7 @@ namespace OneBanTMS.IntegrationTests
                 EmpLogin = "1test1@test.pl"
             };
             await _employeeRepository.UpdateEmployee(employeeId, employeeToUpdate);
-            var employeeCountAfter = _context
+            var employeeCountAfter = await _context
                 .Employees
                 .CountAsync(x =>
                     x.EmpEmail == employeeToUpdate.EmpEmail
