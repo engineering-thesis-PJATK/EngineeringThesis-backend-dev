@@ -218,14 +218,14 @@ namespace OneBanTMS.IntegrationTests
             #region newOgranizationalTaskStatus2
             var newOrganizationalTaskStatus2 = new NewOrganizationalTaskStatusDto()
             {
-                OtsDescription = "Test",
-                OtsName = "test"
+                OtsDescription = "Test1",
+                OtsName = "test1"
             };
-            await settingsRepository.AddOrganizationalTaskStatus(newOrganizationalTaskStatus);
+            await settingsRepository.AddOrganizationalTaskStatus(newOrganizationalTaskStatus2);
             var newOrganizationalTaskStatusId2 = await _context
                 .OrganizationalTaskStatuses
-                .Where(x => x.OtsName == newOrganizationalTaskStatus.OtsName
-                            && x.OtsDescription == newOrganizationalTaskStatus.OtsName)
+                .Where(x => x.OtsName == newOrganizationalTaskStatus2.OtsName
+                            && x.OtsDescription == newOrganizationalTaskStatus2.OtsName)
                 .Select(x => x.OtsId)
                 .SingleOrDefaultAsync();
             #endregion
