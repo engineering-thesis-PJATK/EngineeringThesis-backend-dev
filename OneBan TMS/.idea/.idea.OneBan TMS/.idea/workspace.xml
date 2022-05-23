@@ -9,31 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/Setting/NewOrganizationalTaskStatusDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/SettingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/SettingController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TicketController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OneBan TMS.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/OneBan TMS.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/CompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CustomerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/AddressRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/AddressRepository.Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/DbContextFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/DbContextFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/EmployeeRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/EmployeeRepository.Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ISettingRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ISettingRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OneBan TMS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OneBan TMS.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/SettingRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/SettingRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +243,8 @@
       <workItem from="1653143627663" duration="1399000" />
       <workItem from="1653145278227" duration="1641000" />
       <workItem from="1653209117548" duration="339000" />
-      <workItem from="1653222580110" duration="3586000" />
+      <workItem from="1653222580110" duration="5203000" />
+      <workItem from="1653324221013" duration="636000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>

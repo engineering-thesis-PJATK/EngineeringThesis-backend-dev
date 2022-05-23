@@ -1,11 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=55562762_002Ddc30_002D4e7a_002D9e14_002D7786a113e2ee/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateKanbanElementStatus_PassValidForTicket_ShouldUpdateTicketOrTaskStatus #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=55562762_002Ddc30_002D4e7a_002D9e14_002D7786a113e2ee/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateKanbanElementStatus_PassValidForTicket_ShouldUpdateTicketOrTaskStatus #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::24D995D0-FB54-4032-84AA-77FF3E791600::net5.0::OneBanTMS.IntegrationTests.KanbanRepository_Test.UpdateKanbanElementStatus_PassValidForTicket_ShouldUpdateTicketOrTaskStatus&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6e435561_002D8c99_002D4d87_002D8670_002D3548151b7649/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6e435561_002D8c99_002D4d87_002D8670_002D3548151b7649/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Solution /&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d15a4812_002D9a3a_002D42b2_002Da548_002Dbd5a1fcde8bd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateKanbanElementStatus_PassValidForTicket_ShouldUpdateTicketOrTaskStatus" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;

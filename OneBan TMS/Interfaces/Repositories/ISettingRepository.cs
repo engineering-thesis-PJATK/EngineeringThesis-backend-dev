@@ -10,5 +10,6 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task AddTicketPriority(NewTicketPriorityDto ticketPriorityDto);
         Task AddTicketType(NewTicketTypeDto ticketTypeDto);
         Task AddTicketStatus(NewTicketStatusDto ticketStatusDto);
+        Task AddOrganizationalTaskStatus(NewOrganizationalTaskStatusDto newOrganizationalTaskStatus);
     }
 }

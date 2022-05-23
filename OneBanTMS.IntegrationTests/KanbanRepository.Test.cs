@@ -9,6 +9,8 @@ using OneBan_TMS.Handlers;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs.Company;
 using OneBan_TMS.Models.DTOs.Customer;
+using OneBan_TMS.Models.DTOs.Employee;
+using OneBan_TMS.Models.DTOs.OrganizationalTask;
 using OneBan_TMS.Models.DTOs.Setting;
 using OneBan_TMS.Models.DTOs.Ticket;
 using OneBan_TMS.Repository;
@@ -29,6 +31,7 @@ namespace OneBanTMS.IntegrationTests
             _context = DbContextFactory.GetOneManDbContext();
             _ticketNewValidator = new TicketNewValidator();
             _statusHandler = new StatusHandler(_context);
+            
         }
         [Test, Isolated]
         public async Task UpdateKanbanElementStatus_PassValidForTicket_ShouldUpdateTicketOrTaskStatus()
@@ -167,7 +170,87 @@ namespace OneBanTMS.IntegrationTests
                 .Select(x => x.TicIdTicketStatus)
                 .SingleOrDefaultAsync();
             Assert.That(ticketStatusAfterUpdate, Is.EqualTo(ticketStatusId2));
-            
+        }
+
+        [Test, Isolated]
+        public async Task UpdateKanbanElementStatus_PassValidForTask_ShouldUpdateTicketOrTaskStatus()
+        {
+            var ticketNameHandler = new TicketNameHandler(_context);
+            var ticketRepository = new TicketRepository(_context, _statusHandler, ticketNameHandler, _ticketNewValidator);
+            var organizationalTaskHandler = new OrganizationalTaskStatusHandler(_context);
+            var organizationalTaskRepository = new OrganizationalTaskRepository(_context, organizationalTaskHandler);
+            var kanbanRepository = new KanbanRepository(ticketRepository, organizationalTaskRepository, organizationalTaskHandler);
+            #region newEmployee
+            var employeeRepostitory = new EmployeeRepository(_context, new PasswordHandler());
+            var newEmployee = new EmployeeDto()
+            {
+                EmpEmail = "test@test.test",
+                EmpName = "Test",
+                EmpPassword = "Te123@sfds",
+                EmpSurname = "Test",
+                EmpPhoneNumber = "212312321"
+            };
+            await employeeRepostitory.AddEmployee(newEmployee);
+            var newEmployeeId = await _context
+                .Employees
+                .Where(x => x.EmpEmail == newEmployee.EmpEmail
+                            && x.EmpName == newEmployee.EmpName
+                            && x.EmpSurname == newEmployee.EmpSurname
+                            && x.EmpPhoneNumber == newEmployee.EmpPhoneNumber)
+                .Select(x => x.EmpId)
+                .SingleOrDefaultAsync();
+            #endregion
+            #region newOrganizationalTaskStatus
+            var settingsRepository = new SettingRepository(_context);
+            var newOrganizationalTaskStatus = new NewOrganizationalTaskStatusDto()
+            {
+                OtsDescription = "Test",
+                OtsName = "test"
+            };
+            await settingsRepository.AddOrganizationalTaskStatus(newOrganizationalTaskStatus);
+            var newOrganizationalTaskStatusId = await _context
+                .OrganizationalTaskStatuses
+                .Where(x => x.OtsName == newOrganizationalTaskStatus.OtsName
+                            && x.OtsDescription == newOrganizationalTaskStatus.OtsName)
+                .Select(x => x.OtsId)
+                .SingleOrDefaultAsync();
+            #endregion
+            #region newOgranizationalTaskStatus2
+            var newOrganizationalTaskStatus2 = new NewOrganizationalTaskStatusDto()
+            {
+                OtsDescription = "Test",
+                OtsName = "test"
+            };
+            await settingsRepository.AddOrganizationalTaskStatus(newOrganizationalTaskStatus);
+            var newOrganizationalTaskStatusId2 = await _context
+                .OrganizationalTaskStatuses
+                .Where(x => x.OtsName == newOrganizationalTaskStatus.OtsName
+                            && x.OtsDescription == newOrganizationalTaskStatus.OtsName)
+                .Select(x => x.OtsId)
+                .SingleOrDefaultAsync();
+            #endregion
+            var newOrganizationalTask = new NewOrganizationalTask()
+            {
+                otk_Description = "Test",
+                otk_EmployeeId = newEmployeeId,
+                otk_OrganizationalTaskStatus = newOrganizationalTaskStatus.OtsName
+            };
+            await organizationalTaskRepository.AddNewOrganizationalTask(newOrganizationalTask);
+            var newOrganizationalTaskId = await _context
+                .OrganizationalTasks
+                .Where(x =>
+                    x.OtkDescription == newOrganizationalTask.otk_Description
+                    && x.OtkIdEmployee == newEmployeeId
+                    && x.OtkIdOrganizationalTaskStatus == newOrganizationalTaskStatusId)
+                .Select(x => x.OtkId)
+                .SingleOrDefaultAsync();
+            await kanbanRepository.UpdateKanbanElementStatus(newOrganizationalTaskId, (int)KanbanType.Task, newOrganizationalTaskStatus2.OtsName);
+            var taskStatusAfterUpdate = await _context
+                .OrganizationalTasks
+                .Where(x => x.OtkId == newOrganizationalTaskId)
+                .Select(x => x.OtkIdOrganizationalTaskStatus)
+                .SingleOrDefaultAsync();
+            Assert.That(newOrganizationalTaskStatusId2, Is.EqualTo(taskStatusAfterUpdate));
         }
     }
 }

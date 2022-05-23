@@ -92,5 +92,16 @@ namespace OneBan_TMS.Repository
             await _context.TicketStatuses.AddAsync(newTicketStatus);
             await _context.SaveChangesAsync();
         }
+
+        public async Task AddOrganizationalTaskStatus(NewOrganizationalTaskStatusDto newOrganizationalTaskStatus)
+        {
+            OrganizationalTaskStatus organizationalTaskStatus = new OrganizationalTaskStatus()
+            {
+                OtsName = newOrganizationalTaskStatus.OtsName,
+                OtsDescription = newOrganizationalTaskStatus.OtsDescription
+            };
+            await _context.OrganizationalTaskStatuses.AddAsync(organizationalTaskStatus);
+            await _context.SaveChangesAsync();
+        }
     }
 }
