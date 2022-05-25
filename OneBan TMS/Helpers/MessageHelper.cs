@@ -22,5 +22,14 @@ namespace OneBan_TMS.Helpers
                 PropertyName = propertyName
             };
         }
+
+        public static MessageResponse GetBadRequestMessage(string messageContent)
+        {
+            return new MessageResponse()
+            {
+                MessageContent = messageContent,
+                StatusCode = HttpStatusCode.BadRequest,
+            };
+        }
     }
 }

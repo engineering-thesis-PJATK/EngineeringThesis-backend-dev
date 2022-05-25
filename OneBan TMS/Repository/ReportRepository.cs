@@ -15,7 +15,7 @@ namespace OneBan_TMS.Repository
         {
             _context = context;
         }
-        public Task<IEnumerable<TimeEntryHeaderDto>> GetGroupDataForReport(string employeeId, string dateFrom, string dateTo, string groupPar)
+        public Task<IEnumerable<TimeEntryHeaderDto>> GetGroupDataForReport(int employeeId, string dateFrom, string dateTo, string groupPar)
         {
             throw new NotImplementedException();
         }

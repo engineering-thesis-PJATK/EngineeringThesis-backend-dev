@@ -6,6 +6,6 @@ namespace OneBan_TMS.Interfaces.Repositories
 {
     public interface IReportRepository
     {
-        Task<IEnumerable<TimeEntryHeaderDto>> GetGroupDataForReport(string employeeId, string dateFrom, string dateTo, string groupPar);
+        Task<IEnumerable<TimeEntryHeaderDto>> GetGroupDataForReport(int employeeId, string dateFrom, string dateTo, string groupPar);
     }
 }
