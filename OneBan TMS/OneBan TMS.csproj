@@ -30,8 +30,4 @@
       <Compile Remove="Controllers\WeatherForecastController.cs" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Models\DTOs\Report" />
-    </ItemGroup>
-
 </Project>
