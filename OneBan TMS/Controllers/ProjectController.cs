@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -77,23 +78,26 @@ namespace OneBan_TMS.Controllers
         [HttpPost("{projectId}/ProjectTask")]
         public async Task<IActionResult> AddNewProjectTaskForProject(int projectId, [FromBody] ProjectTaskDto projectTaskDto)
         {
-            await _projectTaskRepository.AddNewProjectTask(projectTaskDto, projectId);
-            return Ok("Added new project task");
+            //Todo: Walidacja
+            var projectTask = await _projectTaskRepository.AddNewProjectTask(projectTaskDto, projectId);
+            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully project task", null, projectTask.PtkId));
         }
 
         [HttpPut("{projectId}/ProjectTask")]
         public async Task<IActionResult> UpdateProjectTaskForProject(int projectId, [FromBody] ProjectTaskDto projectTaskDto)
         {
+            //Todo: walidacja
             await _projectTaskRepository.UpdateProjectTask(projectTaskDto, projectId);
-            return Ok("Updated project task");
+            return Ok(MessageHelper.GetBadRequestMessage("Updated successfully project task"));
         }
 
         [HttpDelete("/ProjectTask/{projectId}")]
 
         public async Task<IActionResult> DeleteProjectTaskForProject(int projectId)
         {
+            //Walidacja
             await _projectTaskRepository.DeleteProjectTask(projectId);
-            return Ok("Deleted project task");
+            return Ok(MessageHelper.GetSuccessfulMessage("Deleted successfully project task"));
         }
     }
 }

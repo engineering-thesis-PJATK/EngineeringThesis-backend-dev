@@ -167,29 +167,18 @@ namespace OneBan_TMS.Controllers
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = "Employee does not exists",
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage("Employee does not exists"));
             }
-
             var validatorEmployeeToUpdateResult = await _validatorEmployeeToUpdate.ValidateAsync(employeeToUpdate);
             if (!(validatorEmployeeToUpdateResult.IsValid))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = validatorEmployeeToUpdateResult.Errors[0].ErrorMessage,
-                    PropertyName = validatorEmployeeToUpdateResult.Errors[0].PropertyName,
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage(
+                    validatorEmployeeToUpdateResult.Errors[0].ErrorMessage,
+                    validatorEmployeeToUpdateResult.Errors[0].PropertyName
+                ));
             }
             await _employeeRepository.UpdateEmployee(employeeId, employeeToUpdate);
-            return Ok(new MessageResponse()
-            {
-                MessageContent = "Updated successfully employee",
-                StatusCode = HttpStatusCode.BadRequest
-            });
+            return Ok(MessageHelper.GetSuccessfulMessage("Updated successfully employee"));
         }
 
         [HttpPut("Team/{teamId}")]

@@ -3,6 +3,7 @@ using System.Net;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -50,59 +51,38 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> AddNewCustomer([FromBody] CustomerDto newCustomer, int companyId)
         {
             if (await _companyRepository.ExistsCompany(companyId))
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = "Company does not exist",
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage("Company does not exist"));
             var validatorResults = await _customerValidator.ValidateAsync(newCustomer);
             if (!(validatorResults.IsValid))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = validatorResults.Errors[0].ErrorMessage,
-                    PropertyName = validatorResults.Errors[0].PropertyName,
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage(
+                    validatorResults.Errors[0].ErrorMessage,
+                    validatorResults.Errors[0].PropertyName
+                 ));
             }
             
             var customer = await _customerRepository
                 .AddNewCustomer(newCustomer, companyId);
-            return Ok(new MessageResponse()
-            {
-                MessageContent = "Added successfully customer",
-                StatusCode = HttpStatusCode.OK,
-                ObjectId = customer.CurId 
-            });
+            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully customer", null, customer.CurId));
         }
         [HttpPut("{customerId}")]
         public async Task<IActionResult> UpdateCustomer([FromBody] CustomerDto customer, int customerId)
         {
             if (await _customerRepository.ExistsCustomer(customerId))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = "Customer does not exist",
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage("Customer does not exist"));
             }
             var validationCustomerResult = await _customerValidator.ValidateAsync(customer);
             if (validationCustomerResult.IsValid)
             {
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = validationCustomerResult.Errors[0].ErrorMessage,
-                    PropertyName = validationCustomerResult.Errors[0].PropertyName,
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage(
+                    validationCustomerResult.Errors[0].ErrorMessage,
+                    validationCustomerResult.Errors[0].PropertyName)
+                );
             }
             await _customerRepository
                 .UpdateCustomer(customer, customerId);
-            return Ok(new MessageResponse()
-            {
-                MessageContent = "Updated successfully customer",
-                StatusCode = HttpStatusCode.OK
-            });
+            return Ok(MessageHelper.GetSuccessfulMessage("Updated successfully customer"));
         }
     }
 }

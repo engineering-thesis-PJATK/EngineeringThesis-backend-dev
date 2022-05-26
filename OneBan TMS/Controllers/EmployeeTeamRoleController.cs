@@ -43,7 +43,7 @@ namespace OneBan_TMS.Controllers
         {
             //Todo: Zrobić walidację
             var employeeTeamRole = await _employeeTeamRoleRepository.AddNewEmployeeTeamRole(employeeTeamRoleDto);
-            return Ok(MessageHelper.GetSuccessfulMessage("Added new employee team role", null, employeeTeamRole.EtrId));
+            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully new employee team role", null, employeeTeamRole.EtrId));
         }
 
         [HttpPut("{employeeTeamRoleId}")]
@@ -51,7 +51,7 @@ namespace OneBan_TMS.Controllers
         {
             //Todo: Zrobić walidację
             await _employeeTeamRoleRepository.UpdateEmployeeTeamRole(employeeTeamRoleDto, employeeTeamRoleId);
-            return Ok(MessageHelper.GetSuccessfulMessage("Employee team role updated"));
+            return Ok(MessageHelper.GetSuccessfulMessage("Updated successfully employee team role"));
         }
 
         [HttpDelete("{employeeTeamRoleId}")]
@@ -59,7 +59,7 @@ namespace OneBan_TMS.Controllers
         {
             //Todo: Zrobić walidację
             await _employeeTeamRoleRepository.DeleteEmployeeTeamRole(employeeTeamRoleId);
-            return Ok("Employee team role deleted");
+            return Ok(MessageHelper.GetSuccessfulMessage("Deleted successfully Employee team role"));
         }
     }
 }

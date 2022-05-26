@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph;
+using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -238,10 +239,11 @@ namespace OneBan_TMS.Controllers
         [HttpPost]
         public async Task<IActionResult> AddNewTicket(TicketNewDto ticketNewDto)
         {
+            //Todo: Walidacja
             if (ticketNewDto is null)
                 return BadRequest();
-            await _ticketRepository.AddTicket(ticketNewDto);
-            return Ok("Added new ticket");
+            var ticket = await _ticketRepository.AddTicket(ticketNewDto);
+            return Ok(MessageHelper.GetSuccessfulMessage("Ticket added successfully", null, ticket.TicId));
         }
         #endregion
 
