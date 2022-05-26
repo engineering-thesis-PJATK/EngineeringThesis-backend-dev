@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -122,47 +123,29 @@ namespace OneBan_TMS.Controllers
         #region Post
 
         [HttpPost]
-        public async Task<ActionResult> AddNewEmployee([FromBody]EmployeeDto employee)
+        public async Task<ActionResult> AddNewEmployee([FromBody]EmployeeDto newEmployee)
         {
-            var validatorEmployeeDtoResult = await _validatorEmployeeDto.ValidateAsync(employee);
+            var validatorEmployeeDtoResult = await _validatorEmployeeDto.ValidateAsync(newEmployee);
             if (!(validatorEmployeeDtoResult.IsValid))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = validatorEmployeeDtoResult.Errors[0].ErrorMessage,
-                    PropertyName = validatorEmployeeDtoResult.Errors[0].PropertyName,
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage(
+                    validatorEmployeeDtoResult.Errors[0].ErrorMessage,
+                    validatorEmployeeDtoResult.Errors[0].PropertyName));
             }
-            await _employeeRepository.AddEmployee(employee);
-            return Ok(new MessageResponse()
-            {
-                MessageContent = "Added successfully employee",
-                StatusCode = HttpStatusCode.OK
-            });
+            var employee = await _employeeRepository.AddEmployee(newEmployee);
+            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully employee", null, employee.EmpId));
         }
         [HttpPost("{employeeId}/Roles")]
         public async Task<IActionResult> AddRolesForEmployee(int employeeId, [FromBody] List<int> employeePriviles)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = "User does not exists",
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage("User does not exists"));
             if (!(await _employeeRepository.ExistsEmployeePrivileges(employeePriviles)))
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = "One of privileges do not exist",
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage("One of privileges do not exist"));
             await _employeeRepository.AddPrivilegesToUser(employeeId, employeePriviles);
-            return Ok(new MessageResponse()
-            {
-                MessageContent = "Added successfully privileges to employee",
-                StatusCode = HttpStatusCode.BadRequest
-            });
+            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully privileges to employee"));
             //Todo: Walidacja w sytuacji jak użytkownik posiada już role
+            //Todo: Jak zrobić response
         }
         [HttpPost("Team")]
         public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)

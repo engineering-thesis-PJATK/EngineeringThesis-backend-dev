@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -43,7 +44,7 @@ namespace OneBan_TMS.Controllers
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
                 return NoContent();
-            Company company = await _companyRepository.GetCompanyById((int) companyId);
+            Company company = await _companyRepository.GetCompanyById(companyId);
             return Ok(company);
         }
 
@@ -53,19 +54,12 @@ namespace OneBan_TMS.Controllers
             var companyValidatorResult = await _companyValidator.ValidateAsync(newCompany);
             if (!(companyValidatorResult.IsValid))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    PropertyName = companyValidatorResult.Errors[0].PropertyName,
-                    MessageContent = companyValidatorResult.Errors[0].ErrorMessage,
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage(
+                    companyValidatorResult.Errors[0].PropertyName,
+                    companyValidatorResult.Errors[0].ErrorMessage));
             }
-            await _companyRepository.AddNewCompany(newCompany);
-            return Ok(new MessageResponse()
-            {
-                MessageContent = "Company added",
-                StatusCode = HttpStatusCode.OK
-            });
+            var company = await _companyRepository.AddNewCompany(newCompany);
+            return Ok(MessageHelper.GetSuccessfulMessage("Added successful company", null, company.CmpId));
         }
 
         [HttpPut("{companyId}")]
@@ -73,28 +67,17 @@ namespace OneBan_TMS.Controllers
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    StatusCode = HttpStatusCode.BadRequest,
-                    MessageContent = "Company not exists"
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage("Company does not exists"));
             }
             var companyValidationResult = await _companyValidator.ValidateAsync(updatedCompany);
             if (!(companyValidationResult.IsValid))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    StatusCode = HttpStatusCode.BadRequest,
-                    MessageContent = companyValidationResult.Errors[0].ErrorMessage,
-                    PropertyName = companyValidationResult.Errors[0].PropertyName
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage(
+                    companyValidationResult.Errors[0].ErrorMessage,
+                    companyValidationResult.Errors[0].PropertyName));
             }
             await _companyRepository.UpdateCompany(updatedCompany, companyId);
-            return Ok(new MessageResponse()
-            {
-                MessageContent = "Company updated",
-                StatusCode = HttpStatusCode.OK
-            });
+            return Ok(MessageHelper.GetSuccessfulMessage("Updated successful company"));
         }
 
         [HttpDelete("{companyId}")]
@@ -102,18 +85,10 @@ namespace OneBan_TMS.Controllers
         {
             if (!await _companyRepository.ExistsCompany(companyId))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = "Company not exists",
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage("Company does not exist"));
             }
             await _companyRepository.DeleteCompany(companyId);
-            return Ok(new MessageResponse()
-            {
-                MessageContent = "Company successfully added",
-                StatusCode = HttpStatusCode.OK
-            });
+            return Ok(MessageHelper.GetSuccessfulMessage("Company successful deleted"));
         }
         [HttpGet( "{companyId}/Addresses")]
         public async Task<IActionResult> GetAddressesForCompany(int companyId)
@@ -129,29 +104,17 @@ namespace OneBan_TMS.Controllers
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
             {
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = "Company not exists",
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage("Company does not exist"));
             }
-            await _addressRepository.AddNewAddress(addressDto, companyId);
-            return Ok(new MessageResponse()
-            {
-                MessageContent = "Address successfully added",
-                StatusCode = HttpStatusCode.OK
-            });
+            var address = await _addressRepository.AddNewAddress(addressDto, companyId);
+            return Ok(MessageHelper.GetSuccessfulMessage("Address successfully added",null, address.AdrId));
         }
 
         [HttpPut("Addresses/{addressId}")]
         public async Task<IActionResult> UpdateAddress(int addressId, [FromBody] AddressDto addressDto)
         {
             if (!(await _addressRepository.ExistsAddress(addressId)))
-                return BadRequest(new MessageResponse()
-                {
-                    MessageContent = "Address does not exist",
-                    StatusCode = HttpStatusCode.BadRequest
-                });
+                return BadRequest(MessageHelper.GetBadRequestMessage("Address does not exist"));
             await _addressRepository.UpdateAddress(addressDto, addressId);
             return Ok(new MessageResponse()
             {

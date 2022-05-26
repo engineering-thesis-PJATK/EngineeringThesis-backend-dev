@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -40,20 +41,23 @@ namespace OneBan_TMS.Controllers
         [HttpPost]
         public async Task<IActionResult> AddNewEmployeeTeamRole([FromBody]EmployeeTeamRoleDto employeeTeamRoleDto)
         {
-            await _employeeTeamRoleRepository.AddNewEmployeeTeamRole(employeeTeamRoleDto);
-            return Ok("Added new employee team role");
+            //Todo: Zrobić walidację
+            var employeeTeamRole = await _employeeTeamRoleRepository.AddNewEmployeeTeamRole(employeeTeamRoleDto);
+            return Ok(MessageHelper.GetSuccessfulMessage("Added new employee team role", null, employeeTeamRole.EtrId));
         }
 
         [HttpPut("{employeeTeamRoleId}")]
         public async Task<IActionResult> UpdateEmployeeTeamRole([FromBody] EmployeeTeamRoleDto employeeTeamRoleDto, int employeeTeamRoleId)
         {
+            //Todo: Zrobić walidację
             await _employeeTeamRoleRepository.UpdateEmployeeTeamRole(employeeTeamRoleDto, employeeTeamRoleId);
-            return Ok("Employee team role updated");
+            return Ok(MessageHelper.GetSuccessfulMessage("Employee team role updated"));
         }
 
         [HttpDelete("{employeeTeamRoleId}")]
         public async Task<IActionResult> DeleteEmployeeTeamRole(int employeeTeamRoleId)
         {
+            //Todo: Zrobić walidację
             await _employeeTeamRoleRepository.DeleteEmployeeTeamRole(employeeTeamRoleId);
             return Ok("Employee team role deleted");
         }

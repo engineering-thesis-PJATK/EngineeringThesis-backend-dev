@@ -7,6 +7,6 @@ namespace OneBan_TMS.Models.DTOs.Messages
         public HttpStatusCode StatusCode { get; set; }
         public string MessageContent { get; set; }
         public string PropertyName { get; set; }
-        public int ObjectId { get; set; }
+        public int? ObjectId { get; set; }
     }
 }

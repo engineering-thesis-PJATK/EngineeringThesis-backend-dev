@@ -66,16 +66,15 @@ namespace OneBan_TMS.Controllers
                 });
             }
             
-            await _customerRepository
+            var customer = await _customerRepository
                 .AddNewCustomer(newCustomer, companyId);
             return Ok(new MessageResponse()
             {
                 MessageContent = "Added successfully customer",
-                StatusCode = HttpStatusCode.OK
+                StatusCode = HttpStatusCode.OK,
+                ObjectId = customer.CurId 
             });
-            //Todo: Przegadać kwestie miejsca employees
         }
-
         [HttpPut("{customerId}")]
         public async Task<IActionResult> UpdateCustomer([FromBody] CustomerDto customer, int customerId)
         {

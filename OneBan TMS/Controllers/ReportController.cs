@@ -20,7 +20,7 @@ namespace OneBan_TMS.Controllers
             _reportRepository = reportRepository;
             _employeeRepository = employeeRepository;
         }
-
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<TimeEntryHeaderDto>>> GetGroupDataForReport(int employeeId, string dateFrom,
             string dateTo, string groupPar)
         {

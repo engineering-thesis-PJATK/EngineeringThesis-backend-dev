@@ -5,25 +5,17 @@ namespace OneBan_TMS.Helpers
 {
     public static class MessageHelper
     {
-        public static MessageResponse GetSuccessfulMessage(string messageContent)
-        {
-            return new MessageResponse()
-            {
-                MessageContent = messageContent,
-                StatusCode = HttpStatusCode.OK
-            };
-        }
-        public static MessageResponse GetSuccessfulMessage(string messageContent, string propertyName)
+        public static MessageResponse GetSuccessfulMessage(string messageContent, string propertyName = null, int? objectId = null)
         {
             return new MessageResponse()
             {
                 MessageContent = messageContent,
                 StatusCode = HttpStatusCode.OK,
-                PropertyName = propertyName
+                PropertyName = propertyName,
+                ObjectId = objectId
             };
         }
-
-        public static MessageResponse GetBadRequestMessage(string messageContent)
+        public static MessageResponse GetBadRequestMessage(string messageContent, string propertyName = null)
         {
             return new MessageResponse()
             {
