@@ -60,40 +60,43 @@ namespace OneBan_TMS.Repository
             return userWithPrivilegesList;
         }
 
-        public async Task AddTicketPriority(NewTicketPriorityDto ticketPriorityDto)
+        public async Task<TicketPriority> AddTicketPriority(NewTicketPriorityDto newTicketPriorityDto)
         {
-            TicketPriority newTicketPriority = new TicketPriority()
+            TicketPriority ticketPriority = new TicketPriority()
             {
-                TpiDescription = ticketPriorityDto.TpiDescription,
-                TpiWeight = ticketPriorityDto.TpiWeight
+                TpiDescription = newTicketPriorityDto.TpiDescription,
+                TpiWeight = newTicketPriorityDto.TpiWeight
             };
-            await _context.TicketPriorities.AddAsync(newTicketPriority);
+            await _context.TicketPriorities.AddAsync(ticketPriority);
             await _context.SaveChangesAsync();
+            return ticketPriority;
         }
 
-        public async Task AddTicketType(NewTicketTypeDto ticketTypeDto)
+        public async Task<TicketType> AddTicketType(NewTicketTypeDto newTicketTypeDto)
         {
-            TicketType newTicketType = new TicketType()
+            TicketType ticketType = new TicketType()
             {
-                TtpDescription = ticketTypeDto.TtpDescription,
-                TtpName = ticketTypeDto.TtpName
+                TtpDescription = newTicketTypeDto.TtpDescription,
+                TtpName = newTicketTypeDto.TtpName
             };
-            await _context.TicketTypes.AddAsync(newTicketType);
+            await _context.TicketTypes.AddAsync(ticketType);
             await _context.SaveChangesAsync();
+            return ticketType;
         }
 
-        public async Task AddTicketStatus(NewTicketStatusDto ticketStatusDto)
+        public async Task<TicketStatus> AddTicketStatus(NewTicketStatusDto newTicketStatusDto)
         {
-            TicketStatus newTicketStatus = new TicketStatus()
+            TicketStatus ticketStatus = new TicketStatus()
             {
-                TstDescription = ticketStatusDto.TstDescription,
-                TstName = ticketStatusDto.TstName
+                TstDescription = newTicketStatusDto.TstDescription,
+                TstName = newTicketStatusDto.TstName
             };
-            await _context.TicketStatuses.AddAsync(newTicketStatus);
+            await _context.TicketStatuses.AddAsync(ticketStatus);
             await _context.SaveChangesAsync();
+            return ticketStatus;
         }
 
-        public async Task AddOrganizationalTaskStatus(NewOrganizationalTaskStatusDto newOrganizationalTaskStatus)
+        public async Task<OrganizationalTaskStatus> AddOrganizationalTaskStatus(NewOrganizationalTaskStatusDto newOrganizationalTaskStatus)
         {
             OrganizationalTaskStatus organizationalTaskStatus = new OrganizationalTaskStatus()
             {
@@ -102,6 +105,7 @@ namespace OneBan_TMS.Repository
             };
             await _context.OrganizationalTaskStatuses.AddAsync(organizationalTaskStatus);
             await _context.SaveChangesAsync();
+            return organizationalTaskStatus;
         }
     }
 }

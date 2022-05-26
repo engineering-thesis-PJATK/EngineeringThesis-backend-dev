@@ -326,7 +326,7 @@ namespace OneBan_TMS.Repository
             return result;
         }
 
-        public async Task AddTicket(TicketNewDto newTicket)
+        public async Task<Ticket> AddTicket(TicketNewDto newTicket)
         {
             _newTicketValidator.ValidateAndThrow(newTicket);
             Ticket ticket = new Ticket()
@@ -345,6 +345,7 @@ namespace OneBan_TMS.Repository
             };
             await _context.Tickets.AddAsync(ticket);
             await _context.SaveChangesAsync();
+            return ticket;
         }
     }
 }

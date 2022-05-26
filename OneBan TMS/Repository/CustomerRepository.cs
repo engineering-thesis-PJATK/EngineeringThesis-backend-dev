@@ -47,7 +47,7 @@ namespace OneBan_TMS.Repository
             return result;
         }
 
-        public async Task AddNewCustomer(CustomerDto newCustomer, int companyId)
+        public async Task<Customer> AddNewCustomer(CustomerDto newCustomer, int companyId)
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
                 throw new ArgumentException("Company does not exist");
@@ -64,6 +64,7 @@ namespace OneBan_TMS.Repository
             };
             await _context.Customers.AddAsync(customer);
             await _context.SaveChangesAsync();
+            return customer;
         }
 
         public async Task UpdateCustomer(CustomerDto customer, int customerId)

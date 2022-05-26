@@ -30,9 +30,9 @@ namespace OneBan_TMS.Repository
                 .ToListAsync();
         }
 
-        public async Task AddNewAddress(AddressDto newAddress, int idCompany)
+        public async Task<Address> AddNewAddress(AddressDto newAddress, int idCompany)
         {
-            _context.Addresses.Add(new Address()
+            var address = new Address()
             {
                 AdrTown = newAddress.AdrTown,
                 AdrStreet = newAddress.AdrStreet,
@@ -40,8 +40,11 @@ namespace OneBan_TMS.Repository
                 AdrPostCode = newAddress.AdrPostCode,
                 AdrCountry = newAddress.AdrCountry,
                 AdrIdCompany = idCompany
-            });
+            };
+            
+            _context.Addresses.Add(address);
             await _context.SaveChangesAsync();
+            return address;
         }
         public async Task UpdateAddress(AddressDto updatedAddress, int addressId)
         {

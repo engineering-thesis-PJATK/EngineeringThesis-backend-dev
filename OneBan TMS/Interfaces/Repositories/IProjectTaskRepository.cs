@@ -11,7 +11,7 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<IEnumerable<ProjectTask>> GetProjectTasks();
         Task<IEnumerable<ProjectTask>> GetProjectTasksForProject(int projectId);
         Task<ProjectTask> GetProjectTaskById(int projectTaskId);
-        Task AddNewProjectTask(ProjectTaskDto projectTaskDto, int projectId);
+        Task<ProjectTask> AddNewProjectTask(ProjectTaskDto projectTaskDto, int projectId);
         Task UpdateProjectTask(ProjectTaskDto projectTaskDto, int projectTaskId);
         Task DeleteProjectTask(int projectTaskId);
     }

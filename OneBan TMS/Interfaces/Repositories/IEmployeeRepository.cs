@@ -10,7 +10,7 @@ namespace OneBan_TMS.Interfaces.Repositories
     {
         Task<IEnumerable<EmployeeForListDto>> GetAllEmployeeDto();
         Task<EmployeeForListDto> GetEmployeeByIdDto(int employeeId);
-        Task AddEmployee(EmployeeDto employee);
+        Task<Employee> AddEmployee(EmployeeDto employee);
         Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeToUpdate);
         Task<bool> ExistsEmployee(int employeeId);
         Task<bool> ExistsEmployeeByEmail(string employeeEmail);

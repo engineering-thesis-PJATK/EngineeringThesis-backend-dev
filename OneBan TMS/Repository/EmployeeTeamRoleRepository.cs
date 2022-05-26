@@ -33,15 +33,16 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
         }
 
-        public async Task AddNewEmployeeTeamRole(EmployeeTeamRoleDto employeeTeamRoleDto)
+        public async Task<EmployeeTeamRole> AddNewEmployeeTeamRole(EmployeeTeamRoleDto newEmployeeTeamRoleDto)
         {
-            EmployeeTeamRole newEmployeeTeamRole = new EmployeeTeamRole()
+            EmployeeTeamRole employeeTeamRole = new EmployeeTeamRole()
             {
-                EtrName = employeeTeamRoleDto.Name,
-                EtrDescription = employeeTeamRoleDto.Description
+                EtrName = newEmployeeTeamRoleDto.Name,
+                EtrDescription = newEmployeeTeamRoleDto.Description
             };
-            _context.EmployeeTeamRoles.Add(newEmployeeTeamRole);
+            _context.EmployeeTeamRoles.Add(employeeTeamRole);
             await _context.SaveChangesAsync();
+            return employeeTeamRole;
         }
 
         public async Task UpdateEmployeeTeamRole(EmployeeTeamRoleDto employeeTeamRoleDto, int employeeTeanRoleId)

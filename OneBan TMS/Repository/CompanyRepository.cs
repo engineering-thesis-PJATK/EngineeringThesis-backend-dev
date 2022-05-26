@@ -34,7 +34,7 @@ namespace OneBan_TMS.Repository
             return company;
         }
 
-        public async Task AddNewCompany(CompanyDto newCompany)
+        public async Task<Company> AddNewCompany(CompanyDto newCompany)
         {
             Company company = new Company()
             {
@@ -47,6 +47,7 @@ namespace OneBan_TMS.Repository
             };
             _context.Companies.Add(company);
             await _context.SaveChangesAsync();
+            return company;
         }
 
         public async Task UpdateCompany(CompanyDto updatedCompanyDto, int companyId)

@@ -9,7 +9,7 @@ namespace OneBan_TMS.Interfaces.Repositories
     public interface IAddressRepository
     {
         Task<IEnumerable<Address>> GetAddressesForCompany(int companyId);
-        Task AddNewAddress(AddressDto newAddress, int companyId);
+        Task<Address> AddNewAddress(AddressDto newAddress, int companyId);
         Task UpdateAddress(AddressDto updatedAddress,int addressId);
         Task DeleteAddress(int addressId);
         Task<bool> ExistsAddress(int addressId);

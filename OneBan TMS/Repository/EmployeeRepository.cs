@@ -82,25 +82,25 @@ namespace OneBan_TMS.Repository
             };
         }
 
-        public async Task AddEmployee(EmployeeDto employee)
+        public async Task<Employee> AddEmployee(EmployeeDto newEmployee)
         {
-            _passwordHandler.CreatePasswordHash(employee.EmpPassword, out byte[] passwordHash, out byte[] passwordSalt);
+            _passwordHandler.CreatePasswordHash(newEmployee.EmpPassword, out byte[] passwordHash, out byte[] passwordSalt);
             StringBuilder passwordConnector = new StringBuilder();
             passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordHash));
             passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordSalt));
-            _context
-                .Employees
-                .Add(new Employee()
-                {
-                    EmpLogin = employee.EmpEmail,
-                    EmpName = employee.EmpName,
-                    EmpSurname = employee.EmpSurname,
-                    EmpEmail = employee.EmpEmail,
-                    EmpPhoneNumber = employee.EmpPhoneNumber,
-                    EmpCreatedAt = DateTime.Now,
-                    EmpPassword = passwordConnector.ToString()
-                });
+            var employee = new Employee()
+            {
+                EmpLogin = newEmployee.EmpEmail,
+                EmpName = newEmployee.EmpName,
+                EmpSurname = newEmployee.EmpSurname,
+                EmpEmail = newEmployee.EmpEmail,
+                EmpPhoneNumber = newEmployee.EmpPhoneNumber,
+                EmpCreatedAt = DateTime.Now,
+                EmpPassword = passwordConnector.ToString()
+            };
+            _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
+            return employee;
         }
         public async Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeUpdated)
         { 

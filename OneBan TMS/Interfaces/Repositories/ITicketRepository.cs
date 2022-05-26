@@ -24,6 +24,6 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<List<KanbanElement>> GetTicketsForEmployeeByStatus(int statusId, int employeeId);
         Task UpdateTicketStatus(int ticketId, int statusId);
         Task<int> GetTicketStatusId(string status);
-        Task AddTicket(TicketNewDto newTicket);
+        Task<Ticket> AddTicket(TicketNewDto newTicket);
     }
 }

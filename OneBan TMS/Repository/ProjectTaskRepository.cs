@@ -42,16 +42,17 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
             return projectTask;
         }
-        public async Task AddNewProjectTask(ProjectTaskDto projectTaskDto, int projectId)
+        public async Task<ProjectTask> AddNewProjectTask(ProjectTaskDto newProjectTaskDto, int projectId)
         {
-            ProjectTask newProjectTask = new ProjectTask()
+            ProjectTask projectTask = new ProjectTask()
             {
-                PtkContent = projectTaskDto.Content,
-                PtkEstimatedCost = projectTaskDto.EstimatedCost,
+                PtkContent = newProjectTaskDto.Content,
+                PtkEstimatedCost = newProjectTaskDto.EstimatedCost,
                 PtkIdProject = projectId
             };
-            _context.ProjectTasks.Add(newProjectTask);
+            _context.ProjectTasks.Add(projectTask);
             await _context.SaveChangesAsync();
+            return projectTask;
         }
 
         public async Task UpdateProjectTask(ProjectTaskDto projectTaskDto, int projectTaskId)

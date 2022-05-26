@@ -10,8 +10,20 @@
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ReportController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ReportController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/MessageHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/MessageHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IAddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IAddressRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ICompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ICompanyRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ICustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ICustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeTeamRoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeTeamRoleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IProjectTaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IProjectTaskRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ISettingRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ISettingRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ITicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ITicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/AddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AddressRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/EmployeeTeamRoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeTeamRoleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +253,8 @@
       <workItem from="1653145278227" duration="1641000" />
       <workItem from="1653209117548" duration="339000" />
       <workItem from="1653222580110" duration="5203000" />
-      <workItem from="1653324221013" duration="4257000" />
+      <workItem from="1653324221013" duration="4551000" />
+      <workItem from="1653584673918" duration="547000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>

@@ -10,7 +10,7 @@ namespace OneBan_TMS.Interfaces.Repositories
     {
         Task<IEnumerable<EmployeeTeamRole>> GetEmployeeTeamRoles();
         Task<EmployeeTeamRole> GetEmployeeTeamRoleById(int employeeTeamRoleId);
-        Task AddNewEmployeeTeamRole(EmployeeTeamRoleDto employeeTeamRoleDto);
+        Task<EmployeeTeamRole> AddNewEmployeeTeamRole(EmployeeTeamRoleDto employeeTeamRoleDto);
         Task UpdateEmployeeTeamRole(EmployeeTeamRoleDto employeeTeamRoleDto, int employeeTeamRoleId);
         Task DeleteEmployeeTeamRole(int employeeTeamRoleId);
     }
