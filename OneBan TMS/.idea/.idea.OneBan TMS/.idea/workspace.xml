@@ -9,9 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ITicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ITicketRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/TicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.g.props" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +44,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="SWEA" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="26KxvttYlkA8iM7hm03Pjl1sKev" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -173,7 +171,7 @@
       <workItem from="1653243883444" duration="1406000" />
       <workItem from="1653326095240" duration="756000" />
       <workItem from="1653424432583" duration="597000" />
-      <workItem from="1653937084447" duration="641000" />
+      <workItem from="1653937084447" duration="876000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>

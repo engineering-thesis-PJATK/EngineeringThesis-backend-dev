@@ -9551,29 +9551,12 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "/Users/mac/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
-=======
     "/Users/pioter/.nuget/packages/": {}
->>>>>>> PŁ
+
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj",
-      "projectName": "OneBanTMS.IntegrationTests",
-      "projectPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj",
-      "packagesPath": "/Users/mac/.nuget/packages/",
-      "outputPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/obj/",
-      "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
-      "configFilePaths": [
-        "/Users/mac/.nuget/NuGet/NuGet.Config"
-=======
       "projectUniqueName": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj",
       "projectName": "OneBanTMS.IntegrationTests",
       "projectPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj",
@@ -9582,7 +9565,7 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/pioter/.nuget/NuGet/NuGet.Config"
->>>>>>> PŁ
+
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -9594,13 +9577,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj": {
-              "projectPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj"
-=======
             "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj": {
               "projectPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj"
->>>>>>> PŁ
+
             }
           }
         }

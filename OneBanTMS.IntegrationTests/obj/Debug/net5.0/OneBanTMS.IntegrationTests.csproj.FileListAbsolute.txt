@@ -714,3 +714,6 @@ D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBanTMS.I
 /Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb
 /Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.genruntimeconfig.cache
 >>>>>>> PŁ
+/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
