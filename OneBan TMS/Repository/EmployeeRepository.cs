@@ -242,14 +242,25 @@ namespace OneBan_TMS.Repository
         {
             foreach (int privilege in privileges)
             {
-                await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
+                if (!(await ExistsPrivilegesOnEmployee(employeeId, privilege)))
                 {
-                    EpeIdEmployee = employeeId,
-                    EpeIdEmployeePrivilage = privilege
-                });
+                    await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
+                    {
+                        EpeIdEmployee = employeeId,
+                        EpeIdEmployeePrivilage = privilege
+                    });
+                }
             }
-
             await _context.SaveChangesAsync();
+        }
+
+        private async Task<bool> ExistsPrivilegesOnEmployee(int employeeId, int privilegeId)
+        {
+            var result = await _context
+                .EmployeePrivilegeEmployees
+                .AnyAsync(x => x.EpeIdEmployee == employeeId
+                               && x.EpeIdEmployeePrivilage == privilegeId);
+            return result;
         }
         
     }
