@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
@@ -15,9 +16,11 @@ namespace OneBan_TMS.Controllers
     public class EmployeeTeamRoleController : Controller
     {
         private readonly IEmployeeTeamRoleRepository _employeeTeamRoleRepository;
-        public EmployeeTeamRoleController(IEmployeeTeamRoleRepository employeeTeamRoleRepository)
+        private readonly IValidator<EmployeeTeamRoleDto> _employeeTeamRoleValidator;
+        public EmployeeTeamRoleController(IEmployeeTeamRoleRepository employeeTeamRoleRepository, IValidator<EmployeeTeamRoleDto> employeeTeamRoleValidator)
         {
             _employeeTeamRoleRepository = employeeTeamRoleRepository;
+            _employeeTeamRoleValidator = employeeTeamRoleValidator;
         }
 
         [HttpGet]
@@ -34,32 +37,48 @@ namespace OneBan_TMS.Controllers
         {
             EmployeeTeamRole employeeTeamRole = await _employeeTeamRoleRepository.GetEmployeeTeamRoleById(employeeTeamRoleById);
             if (employeeTeamRole is null)
-                return NotFound();
+                return NoContent();
             return Ok(employeeTeamRole);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddNewEmployeeTeamRole([FromBody]EmployeeTeamRoleDto employeeTeamRoleDto)
         {
-            //Todo: Zrobić walidację
-            var employeeTeamRole = await _employeeTeamRoleRepository.AddNewEmployeeTeamRole(employeeTeamRoleDto);
-            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully new employee team role", null, employeeTeamRole.EtrId));
+            var validatorResult = await _employeeTeamRoleValidator.ValidateAsync(employeeTeamRoleDto);
+            if (!(validatorResult.IsValid))
+                return BadRequest(MessageHelper.GetBadRequestMessage(
+                    validatorResult.Errors[0].ErrorMessage,
+                    validatorResult.Errors[0].PropertyName));
+            var employeeTeamRole = await _employeeTeamRoleRepository
+                .AddNewEmployeeTeamRole(employeeTeamRoleDto);
+            return Ok(MessageHelper
+                .GetSuccessfulMessage("Added successfully new employee team role", null, employeeTeamRole.EtrId));
         }
 
         [HttpPut("{employeeTeamRoleId}")]
         public async Task<IActionResult> UpdateEmployeeTeamRole([FromBody] EmployeeTeamRoleDto employeeTeamRoleDto, int employeeTeamRoleId)
         {
-            //Todo: Zrobić walidację
+            if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeTeamRoleId)))
+                return BadRequest(MessageHelper.GetBadRequestMessage("Employee team role does not exists"));
+            var validatorResult = await _employeeTeamRoleValidator.ValidateAsync(employeeTeamRoleDto);
+            if (!(validatorResult.IsValid))
+                return BadRequest(MessageHelper.GetBadRequestMessage(
+                    validatorResult.Errors[0].ErrorMessage,
+                    validatorResult.Errors[0].PropertyName));
             await _employeeTeamRoleRepository.UpdateEmployeeTeamRole(employeeTeamRoleDto, employeeTeamRoleId);
-            return Ok(MessageHelper.GetSuccessfulMessage("Updated successfully employee team role"));
+            return Ok(MessageHelper
+                .GetSuccessfulMessage("Updated successfully employee team role"));
         }
 
         [HttpDelete("{employeeTeamRoleId}")]
         public async Task<IActionResult> DeleteEmployeeTeamRole(int employeeTeamRoleId)
         {
-            //Todo: Zrobić walidację
-            await _employeeTeamRoleRepository.DeleteEmployeeTeamRole(employeeTeamRoleId);
-            return Ok(MessageHelper.GetSuccessfulMessage("Deleted successfully Employee team role"));
+            if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeTeamRoleId)))
+                return BadRequest(MessageHelper.GetBadRequestMessage("Employee team role does not exists"));
+            await _employeeTeamRoleRepository
+                .DeleteEmployeeTeamRole(employeeTeamRoleId);
+            return Ok(MessageHelper
+                .GetSuccessfulMessage("Deleted successfully Employee team role"));
         }
     }
 }
