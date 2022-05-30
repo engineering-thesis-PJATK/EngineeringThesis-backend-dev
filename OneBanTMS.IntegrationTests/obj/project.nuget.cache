@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hp1pO9fkBvrGlT39Pd1oATNmzAmjGYXt4prdPFkuMTVp8WVQ9/a03V1F+Lemn46uNM59dBltfNnUu4QgScc/AA==",
+  "dgSpecHash": "h8blm9BJBFRoGFHwVP1HqHxVl9+o/027OsqZcGhWgQkdToU8G4gs/WH2KvV3nTi56OzCqfUseF5EWEXnuM/5XA==",
   "success": true,
   "projectFilePath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,9 @@
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "/Users/pioter/.nuget/packages/microsoft.aspnetcore.jsonpatch/5.0.17/microsoft.aspnetcore.jsonpatch.5.0.17.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.mvc.abstractions/2.2.0/microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
+    "/Users/pioter/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/5.0.17/microsoft.aspnetcore.mvc.newtonsoftjson.5.0.17.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.razor/2.2.0/microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.razor.language/5.0.0/microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.razor.runtime/2.2.0/microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
@@ -77,7 +79,8 @@
     "/Users/pioter/.nuget/packages/mimekit/2.6.0/mimekit.2.6.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/netcore.mailkit/2.0.3/netcore.mailkit.2.0.3.nupkg.sha512",
     "/Users/pioter/.nuget/packages/netstandard.library/2.0.0/netstandard.library.2.0.0.nupkg.sha512",
-    "/Users/pioter/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
+    "/Users/pioter/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
+    "/Users/pioter/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "/Users/pioter/.nuget/packages/nuget.frameworks/5.11.0/nuget.frameworks.5.11.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/nunit/3.13.3/nunit.3.13.3.nupkg.sha512",
     "/Users/pioter/.nuget/packages/nunit3testadapter/4.2.1/nunit3testadapter.4.2.1.nupkg.sha512",

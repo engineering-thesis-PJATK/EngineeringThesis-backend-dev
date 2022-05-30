@@ -467,3 +467,6 @@ D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/
 /Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/ref/OneBan TMS.dll
 /Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.pdb
 /Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/Debug/net5.0/OneBan TMS.genruntimeconfig.cache
+/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll

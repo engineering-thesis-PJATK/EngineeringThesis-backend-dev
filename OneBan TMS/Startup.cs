@@ -95,7 +95,9 @@ namespace OneBan_TMS
             });
             services.AddControllers();
             //services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CompanyValidator>());
-            
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "OneBan_TMS", Version = "v1" });

@@ -9,14 +9,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/Ticket/TicketCustomerCompanyDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TicketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ITicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ITicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Company.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Company.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Customer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OneBan TMS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OneBan TMS.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/TicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Newtonsoft.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Newtonsoft.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/BouncyCastle.Crypto.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/BouncyCastle.Crypto.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/MailKit.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/MailKit.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/Microsoft.TestPlatform.PlatformAbstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/Microsoft.TestPlatform.PlatformAbstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/MimeKit.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/MimeKit.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/NETCore.MailKit.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/NETCore.MailKit.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/ref/OneBanTMS.IntegrationTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/OneBanTMS.IntegrationTests.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/OneBanTMS.IntegrationTests.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,80 +86,19 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/281c9e9ab635e2816b18f73989bfeda2795b47901b83661d332a436143fa/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dd2d104f8f87b497ce35d1ada8b99d9b7ce25b4f9893cd2e2ccb2d35d79/String.Manipulation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d68ada9d1ea9f76a1515247e59e2746e7d7b66755e764f662fddc9c1e9af1c/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4962c45f4460a61eed7969dffe9e4d62f7fbdd6108bad7da38545b856f677/ActionContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f0be9f157176ded345d959a97bc4d1c229524ba0f69e7587a079f84c272ec/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/744e2af10aa289fa4c08decbc66703416743c9aaa23438abce9aaf54cf92b7/Task.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b173c1f7fc5acb54b6702e79e53216c51db8addf6c8b58f8bd9f9ab4bad18/OkObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e6c99ca9608b588668c0bdc13c3d3bd870be8b6b7baa157e18aecce60939047/Controller.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/66609a6cf1d10dc691cd2f65ecfafc3ff4dec97783c81b9e774469b691ff81/CallerIdentifier.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fa6c2ca39fc908f68a7e277ad8625f54b1d96231427c090285d2ac4ecf340/DeveloperExceptionPageMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1f987c1210c8b9931b2928ae592b2db8d2236c8037818eec65f5aadbfc650/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/40bdad462b9451c12de0171bc56fc4e702f475d1a16716ae3a5a9d369278/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3d14b2c2bcffc97d6383affb5cb4a219b51d447d476ad50c02da88c51bff7/AggregateExceptionExtractor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f995bff04824f36250ceb344fabfbbdaca2536a5820b9fc4c8fa4fe8c05b24/SwaggerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7c333b3ba5aa9a253e19585ec71ff6f2730ee768d389b5baeb74542b65ce1/DefaultValidatorExtensions_Validate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/445f1943219c786fc8f73b45b5fe19bfaf4b9cdb9a885193c7e487f69323b3/ToCollection.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5f905e58bd26fc4c228de86b6b85f2837c9a51ece575aec5c0a071a6ecc5d732/SwaggerUIMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2e42152082b49a7074952a51b1f583eead62a2e9e98c8347e54a8c76a766f6e/Execute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b6d9aef891d740fada4474a66a67cc9d76348d742c9818aa2f7592a2e55aa7/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/73ffe226ca516698d1e28a7fe1cac5a27b5b81ccdcdc89f189e51b14c9d4c/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b2ddb77660a6521299c464af9306e538a5d5561ab9c68736d3d239cf6cee9/AssertionScope.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aff6ce8fb8ebe7e9b51edf61ada5fd9375538d9dcd8ad9fddba0bd1371/CorsMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3b76182c4348e153c2ab11ee3de274363c020678fc05e65289ff5a2ff2b22/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f276352abcbf43feb7cdb6a810ccb6f86600/a6/2cbff1c5/StackTraceSymbols.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d1edf17622b3d9abb5f6c04516f384c9ffa92967cd9c8655e0d47f72b7a5cc7b/StackFrameHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/13a9f01781e9202386328916f62af3b7c1287948f327b611b8afb42a6d131c9/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/33918e307316ea048242c24290cba34e538ec8e4f0d3d621c85ee92c6162f8/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c2f68942a762e4ddcc6fb35ee2b79126a742fc44eabb6e5ad16498efdb66e/RuntimeHandles.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/879a9c7b5dd1708bfeeb74a846341cb9344b24019e637b3576454decbce264/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/867af936c76cccbcf455a83f35fb1883298856928c2c8bb82d3d9ef7956dd/Type.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d4ed1477b5cc138cf1611bbda55a61eee8d29fb9d6146bb88a539b31df21d8/Helpers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42f1ce9bd637bd455c8a40c894ef3fc639e43be997c28f437a86cf7a30c61a/ControllerFactoryProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d43421188d9f41dba1d2aa180ce09c34a2200/e8/9771e2d5/HMACSHA512.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Controllers/CompanyController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2ef9f05db4d8177647978f5e87e2d3ffc155da96a2a13fc64e8ff3be66293811/ActivatorUtilities.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a5a6b6c80ee559cba15cee99e683c4aeaf11c1d7291fe28c478f57ed8eecf/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4191c5707325499829b8863568d520af37b25e7f51eb8f26be3f12d19b2499/ValidatorOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fa9338635bf46b6dc7b6e7a05ef6c41fc09dfe49f2fc5af7ab1f4fbc5cd99021/InternalDbSet.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4afdf1deed9ff75b13d6e21cddb8f3fddfcdc89691e2627d9ea0cfb865b58/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Repository/AddressRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Interfaces/Repositories/IAddressRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c5d91a4bce216416bfe58351931fa89869cab79c188a4cfd8b698ea09c67/ValidationStrategy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3cc961dce4a43b15883598f16c613e026d911f592c5eefba8ba6551afc4032/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d0aa7ce3e9dd6b8740baace22ea39f9a57cd66ccdcefef2eebb1846fb82ae/TypeUtils.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2b4821805f7ce77d5b82c729d3fc9e3e7a69e94fef2a3e27646773521522fe/IValidationContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aad1ee7b1494bbac3a5b4e162de865199149c36d8545259f5af35fb1c087a0/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3debe82a6826973afda298e63c9c1d079c533915b49f1530c93827392675f7/Type.Helpers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Controllers/EmployeeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d0bb137a37d883ce362cc9496f51c16245ec6911262816e815ca2842b1bf/Type.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1f954fdea3f9be2ed39f879a74e4e3e1dd7b0562bfd4ff55e24e6478da11c33/Convert.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/39db22a3498636887872472c5ec27779db0b715cdc0c11b405210aca350ab/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/68fc5ad0886fd312312e30db4190515feb571d24935b49c048b9e2e41c0c2e7/Nullable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d55039925d16994d25bd1e6839b4a1d48fd160cbc63d53e219d2bc43f97451f8/StringBuilder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9c393c6f3bf176bc684a5534f118ec74bdc2e89a78e5e7b0f0a7493d714549/CallSiteRuntimeResolver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d8a60c2706cc23f846894d1617d9e537c21f1f2de48b898444a131bfdcd79e8/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d91aa4584e0d39effe69dbd957364da0ee67d59440b94b147945225bfcba/Collection.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8af36f67fa5c26a764db3bc58cb3f4862e2874c57b7ad487068164b9e85bb/CallSiteVisitor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Repository/CompanyRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f40db1c9df947a85fe7869240d245473af55e37bd2ed3d1b7d753d4213268ce/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/43d8e41a76f50d28b292577de9dd4ea624d00d1c5753d17a95b4ebcec39b9/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6abd66eeeb0e3838fe52f6892f3cb4c2036d9aed71715241a71280118ac/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1ea15c934d291d6084bac3be431584511bf43433861f7bc4a287980635fbda/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6ce5c5dfb7ba162d20d2d5d6745d687db84a654ea23844c210f95d9c154c24/ValueTask.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9824eb6c75687487743ea8f99e3265c764aa45d0a4564dd276d8f85cc6abc9a/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/be27f4ad2916316b134c3f7b41555ed158811819c4e3cfa5f732ff1f9dca123/ActionExecutedContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85cbcb5577973ef64f45839929ed9968ffaa1a844adc7cb4fc2c4c267a2b9/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fea8f982f80ade7554614b1661df6f7bf958d9619995844139590d5fd4a958/FormatterCollection.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9626d454311ceab13b5e47c57183b39afb297511c3b5259b1a47b84d148c41/FilterContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Interfaces/Repositories/IAddressRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Repository/AddressRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42f1ce9bd637bd455c8a40c894ef3fc639e43be997c28f437a86cf7a30c61a/ControllerFactoryProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/CompanyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/EmployeeController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectId" id="26KxvttYlkA8iM7hm03Pjl1sKev" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -230,6 +216,15 @@
       <workItem from="1651487195030" duration="2195000" />
       <workItem from="1651575491470" duration="675000" />
       <workItem from="1651657480637" duration="948000" />
+      <workItem from="1652909062944" duration="684000" />
+      <workItem from="1652983076395" duration="2077000" />
+      <workItem from="1653078179405" duration="1100000" />
+      <workItem from="1653123011503" duration="416000" />
+      <workItem from="1653201703187" duration="2032000" />
+      <workItem from="1653205377599" duration="3961000" />
+      <workItem from="1653243883444" duration="1406000" />
+      <workItem from="1653326095240" duration="756000" />
+      <workItem from="1653424432583" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -312,30 +307,56 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/CompanyRepository.cs</url>
-          <line>48</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/CompanyRepository.cs" initialLine="49" containingFunctionPresentation="method 'AddNewCompany'">
+          <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
+          <line>153</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="153" containingFunctionPresentation="method 'GetCustomTickets'">
             <startOffsets>
-              <option value="1603" />
+              <option value="4982" />
             </startOffsets>
             <endOffsets>
-              <option value="1635" />
+              <option value="5098" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/TicketRepository.cs</url>
-          <line>272</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/TicketRepository.cs" initialLine="268" containingFunctionPresentation="method 'GetTicketsForEmployeeByStatus'">
+          <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
+          <line>155</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="155" containingFunctionPresentation="method 'GetCustomTickets'">
             <startOffsets>
-              <option value="9712" />
+              <option value="5111" />
             </startOffsets>
             <endOffsets>
-              <option value="9775" />
+              <option value="5140" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
+          <line>159</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="159" containingFunctionPresentation="method 'GetCustomTickets'">
+            <startOffsets>
+              <option value="5218" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5248" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/TicketController.cs</url>
+          <line>164</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/TicketController.cs" initialLine="164" containingFunctionPresentation="method 'GetCustomTickets'">
+            <startOffsets>
+              <option value="5338" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5398" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">
           <properties exception="FluentValidation.ValidationException" isInternal="false" displayValue="ValidationException" namespaceName="FluentValidation">

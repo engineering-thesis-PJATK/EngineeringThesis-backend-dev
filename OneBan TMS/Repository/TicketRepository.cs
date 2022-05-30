@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Enum;
-using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
-using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Company;
+using OneBan_TMS.Models.DTOs.Customer;
 using OneBan_TMS.Models.DTOs.Kanban;
 using OneBan_TMS.Models.DTOs.Ticket;
 
@@ -73,6 +73,34 @@ namespace OneBan_TMS.Repository
                     TicTicketPriorityId = ticket.TicIdTicketPriority,
                     TicTicketStatusId = ticket.TicIdTicketStatus,
                     TicTicketTypeId = ticket.TicIdTicketType
+                };
+        }
+
+        private CustomerDto ChangeCustomerBaseToDto(Customer customer)
+        {
+            return
+                new CustomerDto()
+                {
+                    CurComments = customer.CurComments,
+                    CurEmail = customer.CurEmail,
+                    CurName = customer.CurName,
+                    CurPosition = customer.CurPosition,
+                    CurSurname = customer.CurSurname,
+                    CurPhoneNumber = customer.CurPhoneNumber
+                };
+        }
+
+        private CompanyDto changeCompanyBaseToDto(Company company)
+        {
+            return
+                new CompanyDto()
+                {
+                    CmpLandline = company.CmpLandline,
+                    CmpName = company.CmpName,
+                    CmpNip = company.CmpNip,
+                    CmpRegon = company.CmpRegon,
+                    CmpKrsNumber = company.CmpKrsNumber,
+                    CmpNipPrefix = company.CmpNipPrefix
                 };
         }
 
@@ -297,7 +325,7 @@ namespace OneBan_TMS.Repository
             return kanbanElements;
         }
 
-        public async Task upadateTicketStatus(int ticketId, int statusId)
+        public async Task UpdateTicketStatus(int ticketId, int statusId)
         {
             if (await _statusHandler.ExistsStatus(statusId))
                 throw new ArgumentException("Status not exists");
@@ -309,5 +337,52 @@ namespace OneBan_TMS.Repository
             ticket.TicIdTicketStatus = statusId;
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<TicketCustomerCompanyDto>> GetTicketsForCustomTicketList()
+        {
+            var tickets = await _context
+                .Tickets
+                .ToListAsync();
+            if (!(tickets.Any()))
+            {
+                return 
+                    null;
+            }
+
+            List<TicketCustomerCompanyDto> ticketsForTicketList = new List<TicketCustomerCompanyDto>();
+            foreach (var ticket in tickets)
+            {
+                Customer customer = await _context
+                                          .Customers
+                                          .Where(customer => customer.CurId == ticket.TicIdCustomer)
+                                          .SingleOrDefaultAsync();
+                Company company = await _context
+                                        .Companies
+                                        .Where(company => company.CmpId == customer.CurIdCompany)
+                                        .SingleOrDefaultAsync();
+                
+                ticketsForTicketList.Add(new TicketCustomerCompanyDto()
+                {
+                    TicDescription = ticket.TicDescription, 
+                    TicId = ticket.TicId,
+                    TicName = ticket.TicName,
+                    TicTopic = ticket.TicTopic,
+                    TicCompletedAt = ticket.TicCompletedAt
+                        .GetValueOrDefault(),
+                    TicCreatedAt = ticket.TicCreatedAt,
+                    TicCustomerId = ticket.TicIdCustomer,
+                    TicDueDate = ticket.TicDueDate,
+                    TicEstimatedCost = ticket.TicEstimatedCost,
+                    TicTicketPriorityId = ticket.TicIdTicketPriority,
+                    TicTicketStatusId = ticket.TicIdTicketStatus,
+                    TicTicketTypeId = ticket.TicIdTicketType,
+                    SingleCustomer = ChangeCustomerBaseToDto(customer),
+                    SingleCompany = changeCompanyBaseToDto(company)
+                });
+            }
+            return
+                ticketsForTicketList;
+        }
+        
     }
 }

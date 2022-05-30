@@ -1,8 +1,5 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using OneBan_TMS.Models;
-using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Kanban;
 using OneBan_TMS.Models.DTOs.Ticket;
 
@@ -22,6 +19,7 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<TicketStatusDto> GetTicketStatusById(int ticketStatusId);
         Task DeleteTicketById(int ticketId);
         Task<List<KanbanElement>> GetTicketsForEmployeeByStatus(int statusId, int employeeId);
-        Task upadateTicketStatus(int ticketId, int statusId);
+        Task UpdateTicketStatus(int ticketId, int statusId);
+        Task<List<TicketCustomerCompanyDto>>GetTicketsForCustomTicketList();
     }
 }

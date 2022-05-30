@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zKCFsZOq6iGF5Na5yurOSteMngo9aHGlIRr0gLLBI+NI4UM4Cx5yKRpfr7gls9E2oZVSSeNJVpHdn7K+QqoNPw==",
+  "dgSpecHash": "qugwnxtL7grYmqeBvnb40tpZznoZkTYzs0YJpivuxIIg/3J5URn+kaFmvB8JRGkzpA2vyPMF0UKVnHbA7DcoRw==",
   "success": true,
   "projectFilePath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,9 @@
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "/Users/pioter/.nuget/packages/microsoft.aspnetcore.jsonpatch/5.0.17/microsoft.aspnetcore.jsonpatch.5.0.17.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.mvc.abstractions/2.2.0/microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
+    "/Users/pioter/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/5.0.17/microsoft.aspnetcore.mvc.newtonsoftjson.5.0.17.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.razor/2.2.0/microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.razor.language/5.0.0/microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/microsoft.aspnetcore.razor.runtime/2.2.0/microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
@@ -73,7 +75,8 @@
     "/Users/pioter/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/mimekit/2.6.0/mimekit.2.6.0.nupkg.sha512",
     "/Users/pioter/.nuget/packages/netcore.mailkit/2.0.3/netcore.mailkit.2.0.3.nupkg.sha512",
-    "/Users/pioter/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
+    "/Users/pioter/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
+    "/Users/pioter/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "/Users/pioter/.nuget/packages/portable.bouncycastle/1.8.5/portable.bouncycastle.1.8.5.nupkg.sha512",
     "/Users/pioter/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "/Users/pioter/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
