@@ -13,5 +13,6 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<EmployeeTeamRole> AddNewEmployeeTeamRole(EmployeeTeamRoleDto employeeTeamRoleDto);
         Task UpdateEmployeeTeamRole(EmployeeTeamRoleDto employeeTeamRoleDto, int employeeTeamRoleId);
         Task DeleteEmployeeTeamRole(int employeeTeamRoleId);
+        Task<bool> ExistsEmployeeTeamRole(int employeeTeamRoleId);
     }
 }

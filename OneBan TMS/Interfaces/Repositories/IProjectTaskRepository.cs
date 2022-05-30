@@ -14,5 +14,6 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<ProjectTask> AddNewProjectTask(ProjectTaskDto projectTaskDto, int projectId);
         Task UpdateProjectTask(ProjectTaskDto projectTaskDto, int projectTaskId);
         Task DeleteProjectTask(int projectTaskId);
+        Task<bool> ExistsProjectTask(int projectTaskId);
     }
 }

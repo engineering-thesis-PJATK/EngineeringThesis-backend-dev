@@ -69,5 +69,13 @@ namespace OneBan_TMS.Repository
             _context.EmployeeTeamRoles.Remove(employeeTeamRoleToDelete);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<bool> ExistsEmployeeTeamRole(int employeeTeamRoleId)
+        {
+            var result = await _context
+                .EmployeeTeamRoles
+                .AnyAsync(x => x.EtrId == employeeTeamRoleId);
+            return result;
+        }
     }
 }

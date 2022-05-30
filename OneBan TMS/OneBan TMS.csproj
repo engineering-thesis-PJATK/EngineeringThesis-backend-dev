@@ -31,4 +31,8 @@
       <Compile Remove="Controllers\WeatherForecastController.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Validators\ProjectTask" />
+    </ItemGroup>
+
 </Project>
