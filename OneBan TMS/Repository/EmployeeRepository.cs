@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -251,6 +252,18 @@ namespace OneBan_TMS.Repository
                     });
                 }
             }
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteEmployee(int employeeId)
+        {
+            var employee = await _context
+                .Employees
+                .Where(x => x.EmpId == employeeId)
+                .SingleOrDefaultAsync();
+            if (employee is null)
+                throw new ArgumentException("Employee does not exist");
+            _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
         }
 

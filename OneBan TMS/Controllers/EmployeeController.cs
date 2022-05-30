@@ -144,8 +144,6 @@ namespace OneBan_TMS.Controllers
                 return BadRequest(MessageHelper.GetBadRequestMessage("One of privileges do not exist"));
             await _employeeRepository.AddPrivilegesToUser(employeeId, employeePriviles);
             return Ok(MessageHelper.GetSuccessfulMessage("Added successfully privileges to employee"));
-            //Todo: Walidacja w sytuacji jak użytkownik posiada już role
-            //Todo: Jak zrobić response
         }
         [HttpPost("Team")]
         public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)
@@ -211,6 +209,15 @@ namespace OneBan_TMS.Controllers
         }
         #endregion
         #region Delete
+
+        [HttpDelete("{employeeId}")]
+        public async Task<IActionResult> DeleteEmployee(int employeeId)
+        {
+            if (!(await _employeeRepository.ExistsEmployee(employeeId)))
+                return BadRequest(MessageHelper.GetBadRequestMessage("Employee does not exist"));
+            await _employeeRepository.DeleteEmployee(employeeId);
+            return Ok(MessageHelper.GetSuccessfulMessage("Deleted employee successfully"));
+        }
         [HttpDelete("Team/{teamId}")]
         public async Task<ActionResult> DeleteTeamById(int teamId)
         {
