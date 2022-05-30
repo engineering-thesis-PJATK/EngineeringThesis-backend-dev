@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj": {}
   },
   "projects": {
@@ -18,6 +19,22 @@
         ],
         "configFilePaths": [
           "/Users/mac/.nuget/NuGet/NuGet.Config"
+=======
+    "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj": {}
+  },
+  "projects": {
+    "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj",
+        "projectName": "OneBan TMS",
+        "projectPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj",
+        "packagesPath": "/Users/pioter/.nuget/packages/",
+        "outputPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/pioter/.nuget/NuGet/NuGet.Config"
+>>>>>>> PŁ
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -60,6 +77,10 @@
             "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

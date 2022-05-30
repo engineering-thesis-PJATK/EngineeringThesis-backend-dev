@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 #nullable disable
 
@@ -21,7 +22,8 @@ namespace OneBan_TMS.Models
         public string CurComments { get; set; }
         public DateTime CurCreatedAt { get; set; }
         public int CurIdCompany { get; set; }
-
+        
+       
         public virtual Company CurIdCompanyNavigation { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }
     }

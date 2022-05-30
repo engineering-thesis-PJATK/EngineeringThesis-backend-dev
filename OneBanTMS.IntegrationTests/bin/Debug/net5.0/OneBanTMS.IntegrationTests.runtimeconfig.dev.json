@@ -1,9 +1,14 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "/Users/mac/.dotnet/store/|arch|/|tfm|",
       "/Users/mac/.nuget/packages",
       "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+=======
+      "/Users/pioter/.dotnet/store/|arch|/|tfm|",
+      "/Users/pioter/.nuget/packages"
+>>>>>>> PŁ
     ]
   }
 }

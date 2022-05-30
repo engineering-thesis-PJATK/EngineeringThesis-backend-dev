@@ -148,6 +148,22 @@ namespace OneBan_TMS.Controllers
             
             return Ok(ticketList);
         }
+        [HttpGet("CustomTicket")]
+        public async Task<ActionResult<List<TicketCustomerCompanyDto>>> GetCustomTickets()
+        {
+            var customTicketList = await _ticketRepository
+                                    .GetTicketsForCustomTicketList();
+            if (customTicketList is null)
+            {
+                return BadRequest();
+            }
+            if (!(customTicketList.Any()))
+            {
+                return NoContent();
+            }
+            
+            return Ok(customTicketList.OrderBy(ticket => ticket.TicId));
+        }
 
         [HttpGet("Customer")]
         public async Task<ActionResult<List<CustomerShortDto>>> GetCustomersToSearch()
