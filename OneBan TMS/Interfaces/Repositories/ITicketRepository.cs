@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs.Kanban;
 using OneBan_TMS.Models.DTOs.Ticket;
 
@@ -20,11 +21,11 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task DeleteTicketById(int ticketId);
         Task<List<KanbanElement>> GetTicketsForEmployeeByStatus(int statusId, int employeeId);
         Task UpdateTicketStatus(int ticketId, int statusId);
-<<<<<<< HEAD
+
         Task<int> GetTicketStatusId(string status);
         Task<Ticket> AddTicket(TicketNewDto newTicket);
-=======
+
         Task<List<TicketCustomerCompanyDto>>GetTicketsForCustomTicketList();
->>>>>>> PŁ
+
     }
 }
