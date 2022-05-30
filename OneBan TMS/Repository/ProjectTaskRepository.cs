@@ -81,5 +81,13 @@ namespace OneBan_TMS.Repository
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<bool> ExistsProjectTask(int projectTaskId)
+        {
+            var result = await _context
+                .ProjectTasks
+                .AnyAsync(x => x.PtkId == projectTaskId);
+            return result;
+        }
     }
 }

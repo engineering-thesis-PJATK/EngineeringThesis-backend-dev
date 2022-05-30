@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph;
@@ -24,11 +25,15 @@ namespace OneBan_TMS.Controllers
         private readonly ITicketRepository _ticketRepository;
         private readonly ICustomerRepository _customerRepository;
         private readonly ITimeEntryRepository _timeEntryRepository;
-        public TicketController(ITicketRepository ticketRepository, ICustomerRepository customerRepository,ITimeEntryRepository timeEntryRepository)
+        private readonly IValidator<TicketNewDto> _newTicketValidator;
+
+        public TicketController(ITicketRepository ticketRepository, ICustomerRepository customerRepository,
+            ITimeEntryRepository timeEntryRepository, IValidator<TicketNewDto> newTicketValidator)
         {
             _ticketRepository = ticketRepository;
             _customerRepository = customerRepository;
             _timeEntryRepository = timeEntryRepository;
+            _newTicketValidator = newTicketValidator;
         }
         #region GetById
         [HttpGet("{idTicket}")]
@@ -239,9 +244,11 @@ namespace OneBan_TMS.Controllers
         [HttpPost]
         public async Task<IActionResult> AddNewTicket(TicketNewDto ticketNewDto)
         {
-            //Todo: Walidacja
-            if (ticketNewDto is null)
-                return BadRequest();
+            var validatorResult = await _newTicketValidator.ValidateAsync(ticketNewDto);
+            if (!(validatorResult.IsValid))
+                return BadRequest(MessageHelper.GetBadRequestMessage(
+                    validatorResult.Errors[0].ErrorMessage,
+                    validatorResult.Errors[0].PropertyName));
             var ticket = await _ticketRepository.AddTicket(ticketNewDto);
             return Ok(MessageHelper.GetSuccessfulMessage("Ticket added successfully", null, ticket.TicId));
         }
