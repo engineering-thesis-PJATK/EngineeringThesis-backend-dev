@@ -32,26 +32,6 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
             return employee;
         }
- /*
-        public async Task AddNewUser(EmployeeDto user, byte[] passwordHash, byte[] passwordSalt)
-        {
-            //Todo: Zrobić walidację
-            StringBuilder passwordConnector = new StringBuilder();
-            passwordConnector.Append(ConvertByteArrayToString(passwordHash));
-            passwordConnector.Append(ConvertByteArrayToString(passwordSalt));
-            _context.Add(new Employee()
-            {
-                EmpLogin = user.EmpEmail,
-                EmpName = user.EmpName,
-                EmpSurname = user.EmpSurname,
-                EmpEmail = user.EmpEmail,
-                EmpPhoneNumber = user.EmpPhoneNumber,
-                EmpCreatedAt = DateTime.Now,
-                EmpPassword = passwordConnector.ToString()
-            });
-            await _context.SaveChangesAsync();
-        }
-        */
         public void GetPasswordParts(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             if (password.Length != 260)

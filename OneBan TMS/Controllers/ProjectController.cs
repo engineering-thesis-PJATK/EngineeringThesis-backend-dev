@@ -61,24 +61,26 @@ namespace OneBan_TMS.Controllers
         [HttpGet("{projectId}/ProjectTasks")]
         public async Task<IActionResult> GetProjectTasksForProject(int projectId)
         {
-            IEnumerable<ProjectTask> projectTasks = await _projectTaskRepository.GetProjectTasksForProject(projectId);
-            if (projectTasks is null)
-                return NotFound();
+            IEnumerable<ProjectTask> projectTasks = await _projectTaskRepository
+                .GetProjectTasksForProject(projectId);
+            if (!(projectTasks.Any()))
+                return NoContent();
             return Ok(projectTasks);
         }
 
         [HttpGet("/ProjectTask/{projectTaskId}")]
         public async Task<IActionResult> GetProjectTaskById(int projectTaskId)
         {
-            ProjectTask projectTask = await _projectTaskRepository.GetProjectTaskById(projectTaskId);
+            ProjectTask projectTask = await _projectTaskRepository
+                .GetProjectTaskById(projectTaskId);
             if (projectTask is null)
-                return NotFound();
+                return NoContent();
             return Ok(projectTask);
         }
         [HttpPost("{projectId}/ProjectTask")]
-        public async Task<IActionResult> AddNewProjectTaskForProject(int projectId, [FromBody] ProjectTaskDto projectTaskDto)
+        public async Task<IActionResult> AddNewProjectTaskForProject(int projectId, [FromBody]ProjectTaskDto projectTaskDto)
         {
-            //Todo: Walidacja
+            //Todo: Walidacja i poprawa
             var projectTask = await _projectTaskRepository.AddNewProjectTask(projectTaskDto, projectId);
             return Ok(MessageHelper.GetSuccessfulMessage("Added successfully project task", null, projectTask.PtkId));
         }
@@ -86,7 +88,7 @@ namespace OneBan_TMS.Controllers
         [HttpPut("{projectId}/ProjectTask")]
         public async Task<IActionResult> UpdateProjectTaskForProject(int projectId, [FromBody] ProjectTaskDto projectTaskDto)
         {
-            //Todo: walidacja
+            //Todo: walidacja i poprawa
             await _projectTaskRepository.UpdateProjectTask(projectTaskDto, projectId);
             return Ok(MessageHelper.GetBadRequestMessage("Updated successfully project task"));
         }
@@ -95,7 +97,8 @@ namespace OneBan_TMS.Controllers
 
         public async Task<IActionResult> DeleteProjectTaskForProject(int projectId)
         {
-            //Walidacja
+            if (!(await _projectTaskRepository.ExistsProjectTask(projectId)))
+                return BadRequest(MessageHelper.GetBadRequestMessage("Project task does not exist"));
             await _projectTaskRepository.DeleteProjectTask(projectId);
             return Ok(MessageHelper.GetSuccessfulMessage("Deleted successfully project task"));
         }
