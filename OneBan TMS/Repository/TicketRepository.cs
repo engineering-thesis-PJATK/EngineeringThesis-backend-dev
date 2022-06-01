@@ -422,5 +422,10 @@ namespace OneBan_TMS.Repository
             return
                 ticketsForTicketList;
         }
+
+       public async Task<CustomTicketById> GetCustomTicketById(int ticketId)
+       {
+           throw new NotImplementedException();
+       }
     }
 }

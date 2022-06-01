@@ -11,7 +11,7 @@ using OneBan_TMS.Models.DTOs.Employee;
 
 namespace OneBan_TMS.Controllers
 {
-    [Route("api/{controller}")]
+    [Route("api/[controller]")]
     [ApiController]
     public class EmployeeTeamRoleController : Controller
     {
