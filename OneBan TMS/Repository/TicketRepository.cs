@@ -450,6 +450,9 @@ namespace OneBan_TMS.Repository
                List<TicketType> ticketTypes = await _context
                                                     .TicketTypes
                                                     .ToListAsync();
+               List<TicketPriority> ticketPriorities = await _context
+                                                             .TicketPriorities
+                                                             .ToListAsync();
 
                customTicketById = new CustomTicketById()
                {
@@ -471,7 +474,9 @@ namespace OneBan_TMS.Repository
                    TicketStatuses = ticketStatuses.Select(ChangeTicketStatusBaseToDto)
                                                   .ToList(),
                    TicketTypes = ticketTypes.Select(ChangeTicketTypeBaseToDto)
-                                            .ToList()
+                                            .ToList(),
+                   TicketPriorities = ticketPriorities.Select(ChangeTicketPriorityBaseToDto)
+                                                       .ToList()
                };
                
                return
