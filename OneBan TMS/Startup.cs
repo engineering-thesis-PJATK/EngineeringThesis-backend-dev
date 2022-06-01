@@ -33,6 +33,7 @@ using OneBan_TMS.Models.DTOs.Ticket;
 using OneBan_TMS.Repository;
 using OneBan_TMS.Validators;
 using OneBan_TMS.Validators.CustomerValidators;
+using OneBan_TMS.Validators.EmployeeTeamRoleValidator;
 using OneBan_TMS.Validators.EmployeeValidators;
 using OneBan_TMS.Validators.TicketValidators;
 using Swashbuckle.AspNetCore.Filters;
@@ -67,6 +68,7 @@ namespace OneBan_TMS
             services.AddScoped<IValidator<EmployeeToUpdate>, EmployeeToUpdateValidator>();
             services.AddScoped<IValidator<CustomerDto>, CustomerValidator>();
             services.AddScoped<IValidator<TicketNewDto>, TicketNewValidator>();
+            services.AddScoped<IValidator<EmployeeTeamRoleDto>, EmployeeTeamRoleValidator>();
             services.AddScoped<IValidatorHandler, ValidatorHandler>();
             services.AddScoped<ICompanyHandler, CompanyHandler>();
             services.AddScoped<ICustomerHandler, CustomerHandler>();
@@ -84,6 +86,7 @@ namespace OneBan_TMS
             services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
             services.AddScoped<IKanbanRepository, KanbanRepository>();
             services.AddScoped<IOrganizationalTaskRepository, OrganizationalTaskRepository>();
+            services.AddScoped<IEmployeeTeamRoleRepository, EmployeeTeamRoleRepository>();
             services.AddScoped<IOrganizationalTaskStatusHandler, OrganizationalTaskStatusHandler>();
             services.AddScoped<ITicketStatusHandler, TicketStatusHandler>();
             services.AddScoped<ITicketNameHandler, TicketNameHandler>();
