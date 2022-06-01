@@ -242,24 +242,21 @@ namespace OneBan_TMS.Repository
         }
         public async Task ManagePrivilegesToUser(int employeeId, List<int> privileges)
         {
+            if (await ExistsPrivilegesOnEmployee(employeeId))
+            {
+                var currentEmployeePrivileges = await _context
+                    .EmployeePrivilegeEmployees
+                    .Where(x => x.EpeIdEmployee == employeeId)
+                    .ToListAsync();
+                _context.EmployeePrivilegeEmployees.RemoveRange(currentEmployeePrivileges);
+            }
             foreach (int privilege in privileges)
             {
-                if (!(await ExistsPrivilegesOnEmployee(employeeId, privilege)))
-                {
-                    await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
-                    {
-                        EpeIdEmployee = employeeId,
-                        EpeIdEmployeePrivilage = privilege
-                    });
-                }
-                else
-                {
-                    var result = await _context.EmployeePrivilegeEmployees
-                        .Where(x => x.EpeIdEmployee == employeeId
-                                    && x.EpeIdEmployeePrivilage == privilege)
-                        .SingleAsync();
-                    _context.EmployeePrivilegeEmployees.Remove(result);
-                }
+                await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
+                {    
+                    EpeIdEmployee = employeeId,
+                    EpeIdEmployeePrivilage = privilege
+                });
             }
             await _context.SaveChangesAsync();
         }
@@ -276,12 +273,11 @@ namespace OneBan_TMS.Repository
             await _context.SaveChangesAsync();
         }
 
-        private async Task<bool> ExistsPrivilegesOnEmployee(int employeeId, int privilegeId)
+        private async Task<bool> ExistsPrivilegesOnEmployee(int employeeId)
         {
             var result = await _context
                 .EmployeePrivilegeEmployees
-                .AnyAsync(x => x.EpeIdEmployee == employeeId
-                               && x.EpeIdEmployeePrivilage == privilegeId);
+                .AnyAsync(x => x.EpeIdEmployee == employeeId);
             return result;
         }
 
