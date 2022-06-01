@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace OneBan_TMS.Models.DTOs.Employee
 {
-    public class EmployeeWithRoleToTeam
+    public class EmployeeWithRoleToTeamDto
     {
         public int TeamId { get; set; }
-        //IEnumerable<EmployeeWithRole> employeesWithRoles 
+        public IEnumerable<EmployeeWithRole> EmployeesWithRoles { get; set; } 
     }
 }

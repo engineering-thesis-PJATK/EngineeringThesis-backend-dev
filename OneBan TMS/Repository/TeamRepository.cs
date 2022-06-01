@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Employee;
 using OneBan_TMS.Models.DTOs.Team;
 
 namespace OneBan_TMS.Repository
@@ -13,8 +16,9 @@ namespace OneBan_TMS.Repository
     public class TeamRepository :ITeamRepository
     {
         private readonly OneManDbContext _context;
-
-        public TeamRepository(OneManDbContext context)
+        private readonly IEmployeeRepository _employeeRepository;
+        private readonly IEmployeeTeamRoleRepository _employeeTeamRoleRepository;
+        public TeamRepository(OneManDbContext context, IEmployeeRepository employeeRepository, IEmployeeTeamRoleRepository employeeTeamRoleRepository)
         {
             _context = context;
         }
@@ -84,6 +88,27 @@ namespace OneBan_TMS.Repository
             await _context
                 .SaveChangesAsync();
             
+        }
+
+        public async Task AddEmployeesToTeamWithRoles(EmployeeWithRoleToTeamDto employeeWithRoleToTeamDto)
+        {
+            if (!(await ExistsTeam(employeeWithRoleToTeamDto.TeamId)))
+                throw new ArgumentException("Team does not exists");
+            foreach (var employeeWithRole in employeeWithRoleToTeamDto.EmployeesWithRoles)
+            {
+                if (!(await _employeeRepository.ExistsEmployee(employeeWithRole.employeeId)))
+                    throw new ArgumentException("Employee does not exists");
+                if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeWithRole.teamRoleId)))
+                    throw new ArgumentException("Employee team role does not exists");
+            }
+            
+        }
+
+        public async Task<bool> ExistsTeam(int teamId)
+        {
+            var result = await _context.Teams
+                .AnyAsync(x => x.TemId == teamId);
+            return result;
         }
 
         public async Task<TeamGetDto> UpdateTeamById(int teamId, TeamUpdateDto teamUpdateDto)

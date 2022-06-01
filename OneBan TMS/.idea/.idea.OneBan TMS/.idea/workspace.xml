@@ -9,16 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeWithRole.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeWithRoleToTeam.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/EmployeeTeamRole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeTeamRole.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Validators/EmployeeTeamRoleValidator/EmployeeTeamRoleValidation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/EmployeeTeamRoleValidator/EmployeeTeamRoleValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompanyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeTeamRoleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeTeamRoleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/MessageHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/MessageHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ITeamRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ITeamRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeWithRoleToTeam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeWithRoleToTeamDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/EmployeeTeam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeTeam.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/TeamRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TeamRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
@@ -263,7 +264,7 @@
       <workItem from="1653324221013" duration="4551000" />
       <workItem from="1653584673918" duration="4754000" />
       <workItem from="1653976797970" duration="1467000" />
-      <workItem from="1654112346717" duration="1705000" />
+      <workItem from="1654112346717" duration="3577000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
