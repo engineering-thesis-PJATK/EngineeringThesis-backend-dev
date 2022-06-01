@@ -9,8 +9,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Models/DTOs/Ticket/CustomTicketById.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Ticket/CustomTicketById.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/TicketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TicketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/bin/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +185,7 @@
       <workItem from="1653326095240" duration="756000" />
       <workItem from="1653424432583" duration="597000" />
       <workItem from="1653937084447" duration="1565000" />
-      <workItem from="1654104870587" duration="5423000" />
+      <workItem from="1654104870587" duration="5703000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
