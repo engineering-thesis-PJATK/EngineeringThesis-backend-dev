@@ -8475,7 +8475,6 @@
   },
   "packageFolders": {
     "/Users/pioter/.nuget/packages/": {}
-
   },
   "project": {
     "version": "1.0.0",
@@ -8488,7 +8487,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/pioter/.nuget/NuGet/NuGet.Config"
-
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -8592,5 +8590,13 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
