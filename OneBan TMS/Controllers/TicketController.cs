@@ -134,8 +134,23 @@ namespace OneBan_TMS.Controllers
             return
                 Ok(singleTimeEntry);
         }
-        [HttpGet("customTicket/{idTicket}")]
 
+        [HttpGet("CustomTicket/{ticketId}")]
+        public async Task<ActionResult> GetTicketCorelatedById(int ticketId)
+        {
+            if (ticketId < 1)
+            {
+                return BadRequest("Ticket id must be greater than 0");
+            }
+            CustomTicketById singleTicket = await _ticketRepository
+                                                  .GetCustomTicketById(ticketId);
+            if (singleTicket is null)
+            {
+                return NotFound($"No ticket with id: {ticketId} found");
+            }
+            
+            return Ok(singleTicket);
+        }
         #endregion
 
         #region GetList
