@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
@@ -239,7 +240,7 @@ namespace OneBan_TMS.Repository
                 .AnyAsync(x => x.EmpEmail.Equals(employeeEmail));
             return result;
         }
-        public async Task AddPrivilegesToUser(int employeeId, List<int> privileges)
+        public async Task ManagePrivilegesToUser(int employeeId, List<int> privileges)
         {
             foreach (int privilege in privileges)
             {
@@ -250,6 +251,14 @@ namespace OneBan_TMS.Repository
                         EpeIdEmployee = employeeId,
                         EpeIdEmployeePrivilage = privilege
                     });
+                }
+                else
+                {
+                    var result = await _context.EmployeePrivilegeEmployees
+                        .Where(x => x.EpeIdEmployee == employeeId
+                                    && x.EpeIdEmployeePrivilage == privilege)
+                        .SingleAsync();
+                    _context.EmployeePrivilegeEmployees.Remove(result);
                 }
             }
             await _context.SaveChangesAsync();
@@ -275,6 +284,14 @@ namespace OneBan_TMS.Repository
                                && x.EpeIdEmployeePrivilage == privilegeId);
             return result;
         }
-        
+
+        private async Task RemovePrivilegesFromEmployee(int employeeId)
+        {
+            var employeePrivilegesList = await _context.EmployeePrivilegeEmployees
+                .Where(x => x.EpeIdEmployee == employeeId)
+                .ToListAsync();
+            _context.EmployeePrivilegeEmployees.RemoveRange(employeePrivilegesList);
+            await _context.SaveChangesAsync();
+        }
     }
 }
