@@ -232,6 +232,6 @@ namespace OneBan_TMS.Controllers
                 Ok($"Team with id {teamId} has been deleted");
         }
         #endregion
-
+       // [HttpPatch]
     }
 }
