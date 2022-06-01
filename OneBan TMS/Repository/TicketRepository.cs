@@ -425,7 +425,58 @@ namespace OneBan_TMS.Repository
 
        public async Task<CustomTicketById> GetCustomTicketById(int ticketId)
        {
-           throw new NotImplementedException();
+           var tickets = await _context
+                                         .Tickets
+                                         .ToListAsync();
+           if (!(tickets.Any()))
+           {
+               return 
+                   null;
+           }
+
+           CustomTicketById customTicketById = null; 
+           foreach (var ticket in tickets)
+           {
+               Customer customer = await _context
+                                          .Customers
+                                          .Where(customer => customer.CurId == ticket.TicIdCustomer)
+                   .SingleOrDefaultAsync();
+               Company company = await _context
+                                       .Companies
+                                       .Where(company => company.CmpId == customer.CurIdCompany)
+                                       .SingleOrDefaultAsync();
+               List<TicketStatus> ticketStatuses = await _context
+                                                         .TicketStatuses
+                                                         .ToListAsync();
+               List<TicketType> ticketTypes = await _context
+                                                    .TicketTypes
+                                                    .ToListAsync();
+
+               customTicketById = new CustomTicketById()
+               {
+                   TicDescription = ticket.TicDescription, 
+                   TicId = ticket.TicId,
+                   TicName = ticket.TicName,
+                   TicTopic = ticket.TicTopic,
+                   TicCompletedAt = ticket.TicCompletedAt
+                                           .GetValueOrDefault(),
+                   TicCreatedAt = ticket.TicCreatedAt,
+                   TicCustomerId = ticket.TicIdCustomer,
+                   TicDueDate = ticket.TicDueDate,
+                   TicEstimatedCost = ticket.TicEstimatedCost,
+                   TicTicketPriorityId = ticket.TicIdTicketPriority,
+                   TicTicketStatusId = ticket.TicIdTicketStatus,
+                   TicTicketTypeId = ticket.TicIdTicketType,
+                   SingleCustomer = ChangeCustomerBaseToDto(customer),
+                   SingleCompany = changeCompanyBaseToDto(company),
+                   TicketStatuses = ticketStatuses.Select(ChangeTicketStatusBaseToDto).ToList(),
+                   TicketTypes = ticketTypes.Select(ChangeTicketTypeBaseToDto).ToList()
+               };
+           }
+
+           return
+               customTicketById;
+
        }
     }
 }
