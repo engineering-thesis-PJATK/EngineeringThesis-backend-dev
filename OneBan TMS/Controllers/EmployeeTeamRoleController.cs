@@ -33,9 +33,9 @@ namespace OneBan_TMS.Controllers
         }
 
         [HttpGet("{employeeTeamRoleId}")]
-        public async Task<IActionResult> GetEmployeeTeamRolesById(int employeeTeamRoleById)
+        public async Task<IActionResult> GetEmployeeTeamRolesById(int employeeTeamRoleId)
         {
-            EmployeeTeamRole employeeTeamRole = await _employeeTeamRoleRepository.GetEmployeeTeamRoleById(employeeTeamRoleById);
+            EmployeeTeamRole employeeTeamRole = await _employeeTeamRoleRepository.GetEmployeeTeamRoleById(employeeTeamRoleId);
             if (employeeTeamRole is null)
                 return NoContent();
             return Ok(employeeTeamRole);
