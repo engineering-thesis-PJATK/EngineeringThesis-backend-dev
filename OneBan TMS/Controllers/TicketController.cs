@@ -35,6 +35,7 @@ namespace OneBan_TMS.Controllers
             _timeEntryRepository = timeEntryRepository;
             _newTicketValidator = newTicketValidator;
         }
+        
         #region GetById
         [HttpGet("{idTicket}")]
         public async Task<ActionResult<TicketDto>> GetTicketById(int ticketId)
@@ -133,6 +134,7 @@ namespace OneBan_TMS.Controllers
             return
                 Ok(singleTimeEntry);
         }
+        [HttpGet("customTicket/{idTicket}")]
 
         #endregion
 
