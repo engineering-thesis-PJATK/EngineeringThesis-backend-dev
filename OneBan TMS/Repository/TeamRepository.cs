@@ -21,6 +21,8 @@ namespace OneBan_TMS.Repository
         public TeamRepository(OneManDbContext context, IEmployeeRepository employeeRepository, IEmployeeTeamRoleRepository employeeTeamRoleRepository)
         {
             _context = context;
+            _employeeRepository = employeeRepository;
+            _employeeTeamRoleRepository = employeeTeamRoleRepository;
         }
         public async Task<List<TeamGetDto>> GetTeams()
         {
