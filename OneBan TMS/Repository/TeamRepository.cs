@@ -101,7 +101,16 @@ namespace OneBan_TMS.Repository
                 if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeWithRole.teamRoleId)))
                     throw new ArgumentException("Employee team role does not exists");
             }
-            
+            foreach (var employeesWithRoles in employeeWithRoleToTeamDto.EmployeesWithRoles)
+            {
+                await _context.AddAsync(new EmployeeTeam()
+                {
+                    EtmIdTeam = employeeWithRoleToTeamDto.TeamId,
+                    EtmIdRole = employeesWithRoles.teamRoleId,
+                    EtmIdEmployee = employeesWithRoles.employeeId
+                });
+            }
+            await _context.SaveChangesAsync();
         }
 
         public async Task<bool> ExistsTeam(int teamId)
