@@ -23,6 +23,14 @@ namespace OneBan_TMS.Handlers
                 .AnyAsync();
             return result;    
         }
-        
+
+        public async Task<string> GetNameOfCompanyById(int companyId)
+        {
+            var result = await _context.Companies
+                .Where(x => x.CmpId == companyId)
+                .Select(x => x.CmpName)
+                .SingleOrDefaultAsync();
+            return result;
+        }
     }
 }

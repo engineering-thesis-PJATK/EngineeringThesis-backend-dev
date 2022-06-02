@@ -14,5 +14,7 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<Customer> AddNewCustomer(CustomerDto customerDto, int companyId);
         Task UpdateCustomer(CustomerDto customerDto, int customerId);
         Task<List<CustomerShortDto>> GetCustomersToSearch();
+        Task<List<CustomerCompanyNameDto>> GetCustomersWithCompanyName();
+        Task<CustomerCompanyNameDto> GetCustomerWithCompanyName(int customerId);
     }
 }
