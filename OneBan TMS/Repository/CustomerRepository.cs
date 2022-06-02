@@ -117,7 +117,7 @@ namespace OneBan_TMS.Repository
             return customerCompanyNameList;
         }
 
-        public async Task<CustomerCompanyNameDto> GetCustomerWithCompany(int customerId)
+        public async Task<CustomerCompanyNameDto> GetCustomerWithCompanyName(int customerId)
         {
             var customer = await GetCustomerById(customerId);
             CustomerCompanyNameDto customerCompanyNameDto = await GetCustomerCompanyNameDtoFromCustomer(customer);

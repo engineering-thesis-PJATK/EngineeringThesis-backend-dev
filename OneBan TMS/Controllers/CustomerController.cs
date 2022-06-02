@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using FluentValidation;
@@ -83,6 +84,23 @@ namespace OneBan_TMS.Controllers
             await _customerRepository
                 .UpdateCustomer(customer, customerId);
             return Ok(MessageHelper.GetSuccessfulMessage("Updated successfully customer"));
+        }
+
+        [HttpGet("CompanyName")]
+        public async Task<ActionResult<List<CustomerCompanyNameDto>>> GetCustomersWithCompanyName()
+        {
+            var customersList = await _customerRepository.GetCustomersWithCompanyName();
+            if (!(customersList.Any()))
+                return NoContent();
+            return Ok(customersList);
+        }
+        [HttpGet("CompanyName/{customerId}")]
+        public async Task<ActionResult<CustomerCompanyNameDto>> GetCustomerWithCompanyName(int customerId)
+        {
+            var customers = await _customerRepository.GetCustomerWithCompanyName(customerId);
+            if (customers is null)
+                return NoContent();
+            return Ok(customers);
         }
     }
 }
