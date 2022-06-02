@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
+
 #nullable disable
 
 namespace OneBan_TMS.Models
@@ -17,6 +18,8 @@ namespace OneBan_TMS.Models
         public int EtmIdEmployee { get; set; }
         public int EtmIdTeam { get; set; }
         public int EtmIdRole { get; set; }
+
+        
         [JsonIgnore]
         public virtual Employee EtmIdEmployeeNavigation { get; set; }
         [JsonIgnore]

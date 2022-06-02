@@ -20,7 +20,6 @@ namespace OneBan_TMS.Helpers
             return new MessageResponse()
             {
                 MessageContent = messageContent,
-                PropertyName = propertyName,
                 StatusCode = HttpStatusCode.BadRequest,
             };
         }

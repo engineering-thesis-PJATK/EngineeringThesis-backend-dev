@@ -9552,7 +9552,6 @@
   },
   "packageFolders": {
     "/Users/pioter/.nuget/packages/": {}
-
   },
   "project": {
     "version": "1.0.0",
@@ -9565,7 +9564,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/pioter/.nuget/NuGet/NuGet.Config"
-
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -9579,7 +9577,6 @@
           "projectReferences": {
             "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj": {
               "projectPath": "/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/OneBan TMS.csproj"
-
             }
           }
         }

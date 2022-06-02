@@ -18,7 +18,7 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<EmployeePrivilegeGetDto> GetEmployeePrivilegeById(int privilegeId);
         Task<bool> ExistsEmployeePrivileges(List<int> privileges);
         Task<string> ChangePassword(string email);
-        Task ManagePrivilegesToUser(int employeeId, List<int> privileges);
+        Task AddPrivilegesToUser(int employeeId, List<int> privileges);
         Task DeleteEmployee(int employeeId);
     }
 }

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
@@ -240,23 +239,18 @@ namespace OneBan_TMS.Repository
                 .AnyAsync(x => x.EmpEmail.Equals(employeeEmail));
             return result;
         }
-        public async Task ManagePrivilegesToUser(int employeeId, List<int> privileges)
+        public async Task AddPrivilegesToUser(int employeeId, List<int> privileges)
         {
-            if (await ExistsPrivilegesOnEmployee(employeeId))
-            {
-                var currentEmployeePrivileges = await _context
-                    .EmployeePrivilegeEmployees
-                    .Where(x => x.EpeIdEmployee == employeeId)
-                    .ToListAsync();
-                _context.EmployeePrivilegeEmployees.RemoveRange(currentEmployeePrivileges);
-            }
             foreach (int privilege in privileges)
             {
-                await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
-                {    
-                    EpeIdEmployee = employeeId,
-                    EpeIdEmployeePrivilage = privilege
-                });
+                if (!(await ExistsPrivilegesOnEmployee(employeeId, privilege)))
+                {
+                    await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
+                    {
+                        EpeIdEmployee = employeeId,
+                        EpeIdEmployeePrivilage = privilege
+                    });
+                }
             }
             await _context.SaveChangesAsync();
         }
@@ -273,21 +267,14 @@ namespace OneBan_TMS.Repository
             await _context.SaveChangesAsync();
         }
 
-        private async Task<bool> ExistsPrivilegesOnEmployee(int employeeId)
+        private async Task<bool> ExistsPrivilegesOnEmployee(int employeeId, int privilegeId)
         {
             var result = await _context
                 .EmployeePrivilegeEmployees
-                .AnyAsync(x => x.EpeIdEmployee == employeeId);
+                .AnyAsync(x => x.EpeIdEmployee == employeeId
+                               && x.EpeIdEmployeePrivilage == privilegeId);
             return result;
         }
-
-        private async Task RemovePrivilegesFromEmployee(int employeeId)
-        {
-            var employeePrivilegesList = await _context.EmployeePrivilegeEmployees
-                .Where(x => x.EpeIdEmployee == employeeId)
-                .ToListAsync();
-            _context.EmployeePrivilegeEmployees.RemoveRange(employeePrivilegesList);
-            await _context.SaveChangesAsync();
-        }
+        
     }
 }

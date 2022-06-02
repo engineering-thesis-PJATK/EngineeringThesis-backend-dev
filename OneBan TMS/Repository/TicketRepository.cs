@@ -422,5 +422,65 @@ namespace OneBan_TMS.Repository
             return
                 ticketsForTicketList;
         }
+
+       public async Task<CustomTicketById> GetCustomTicketById(int ticketId)
+       {
+           var singleTicket = await _context
+                                         .Tickets
+                                         .Where(ticket=>ticket.TicId == ticketId)
+                                         .FirstOrDefaultAsync();
+           if (singleTicket is null)
+           {
+               return 
+                   null;
+           }
+           
+           CustomTicketById customTicketById = null;
+           Customer customer = await _context
+                                          .Customers
+                                          .Where(customer => customer.CurId == singleTicket.TicIdCustomer)
+                   .SingleOrDefaultAsync();
+               Company company = await _context
+                                       .Companies
+                                       .Where(company => company.CmpId == customer.CurIdCompany)
+                                       .SingleOrDefaultAsync();
+               List<TicketStatus> ticketStatuses = await _context
+                                                         .TicketStatuses
+                                                         .ToListAsync();
+               List<TicketType> ticketTypes = await _context
+                                                    .TicketTypes
+                                                    .ToListAsync();
+               List<TicketPriority> ticketPriorities = await _context
+                                                             .TicketPriorities
+                                                             .ToListAsync();
+
+               customTicketById = new CustomTicketById()
+               {
+                   TicDescription = singleTicket.TicDescription, 
+                   TicId = singleTicket.TicId,
+                   TicName = singleTicket.TicName,
+                   TicTopic = singleTicket.TicTopic,
+                   TicCompletedAt = singleTicket.TicCompletedAt
+                                                .GetValueOrDefault(),
+                   TicCreatedAt = singleTicket.TicCreatedAt,
+                   TicCustomerId = singleTicket.TicIdCustomer,
+                   TicDueDate = singleTicket.TicDueDate,
+                   TicEstimatedCost = singleTicket.TicEstimatedCost,
+                   TicTicketPriorityId = singleTicket.TicIdTicketPriority,
+                   TicTicketStatusId = singleTicket.TicIdTicketStatus,
+                   TicTicketTypeId = singleTicket.TicIdTicketType,
+                   SingleCustomer = ChangeCustomerBaseToDto(customer),
+                   SingleCompany = changeCompanyBaseToDto(company),
+                   TicketStatuses = ticketStatuses.Select(ChangeTicketStatusBaseToDto)
+                                                  .ToList(),
+                   TicketTypes = ticketTypes.Select(ChangeTicketTypeBaseToDto)
+                                            .ToList(),
+                   TicketPriorities = ticketPriorities.Select(ChangeTicketPriorityBaseToDto)
+                                                       .ToList()
+               };
+               
+               return
+                   customTicketById;
+       }
     }
 }

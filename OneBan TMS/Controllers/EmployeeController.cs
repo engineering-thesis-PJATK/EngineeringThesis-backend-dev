@@ -144,7 +144,7 @@ namespace OneBan_TMS.Controllers
                 return BadRequest(MessageHelper.GetBadRequestMessage("User does not exists"));
             if (!(await _employeeRepository.ExistsEmployeePrivileges(employeePriviles)))
                 return BadRequest(MessageHelper.GetBadRequestMessage("One of privileges do not exist"));
-            await _employeeRepository.ManagePrivilegesToUser(employeeId, employeePriviles);
+            await _employeeRepository.AddPrivilegesToUser(employeeId, employeePriviles);
             return Ok(MessageHelper.GetSuccessfulMessage("Added successfully privileges to employee"));
         }
         [HttpPost("Team")]

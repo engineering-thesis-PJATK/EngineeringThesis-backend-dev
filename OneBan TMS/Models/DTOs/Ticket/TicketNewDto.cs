@@ -8,7 +8,7 @@ namespace OneBan_TMS.Models.DTOs.Ticket
         public string TicTopic { get; set; }
         public decimal TicEstimatedCost { get; set; }
         public DateTime TicDueDate { get; set; }
-        public DateTime TicCompletedAt { get; set; }
+        public DateTime? TicCompletedAt { get; set; }
         public string TicDescription { get; set; }
         public int TicIdTicketStatus { get; set; }
         public int TicIdCustomer { get; set; }
