@@ -235,7 +235,7 @@ namespace OneBan_TMS.Controllers
         }
         #endregion
 
-        [HttpPost]
+        [HttpPost("/Team/EmployeeRole")]
         public async Task<IActionResult> AddEmployeeWithRoleToTeam(EmployeeWithRoleToTeamDto employeeWithRoleToTeamDto)
         {
             if (!(await _teamRepository.ExistsTeam(employeeWithRoleToTeamDto.TeamId)))
