@@ -22,12 +22,14 @@ namespace OneBan_TMS.Controllers
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly ITeamRepository _teamRepository;
+        private readonly IEmployeeTeamRoleRepository _employeeTeamRoleRepository;
         private readonly IValidator<EmployeeToUpdate> _validatorEmployeeToUpdate;
         private readonly IValidator<EmployeeDto> _validatorEmployeeDto;
-        public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository, IValidator<EmployeeToUpdate> validatorEmployeeToUpdate, IValidator<EmployeeDto> validatorEmployeeDto)
+        public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository, IEmployeeTeamRoleRepository employeeTeamRoleRepository, IValidator<EmployeeToUpdate> validatorEmployeeToUpdate, IValidator<EmployeeDto> validatorEmployeeDto)
         {
             _employeeRepository = employeeRepository;
             _teamRepository = teamRepository;
+            _employeeTeamRoleRepository = employeeTeamRoleRepository;
             _validatorEmployeeToUpdate = validatorEmployeeToUpdate;
             _validatorEmployeeDto = validatorEmployeeDto;
         }
@@ -142,7 +144,7 @@ namespace OneBan_TMS.Controllers
                 return BadRequest(MessageHelper.GetBadRequestMessage("User does not exists"));
             if (!(await _employeeRepository.ExistsEmployeePrivileges(employeePriviles)))
                 return BadRequest(MessageHelper.GetBadRequestMessage("One of privileges do not exist"));
-            await _employeeRepository.AddPrivilegesToUser(employeeId, employeePriviles);
+            await _employeeRepository.ManagePrivilegesToUser(employeeId, employeePriviles);
             return Ok(MessageHelper.GetSuccessfulMessage("Added successfully privileges to employee"));
         }
         [HttpPost("Team")]
@@ -233,5 +235,21 @@ namespace OneBan_TMS.Controllers
         }
         #endregion
 
+        [HttpPost]
+        public async Task<IActionResult> AddEmployeeWithRoleToTeam(EmployeeWithRoleToTeamDto employeeWithRoleToTeamDto)
+        {
+            if (!(await _teamRepository.ExistsTeam(employeeWithRoleToTeamDto.TeamId)))
+                return BadRequest(MessageHelper.GetBadRequestMessage("Team does not exists"));
+            foreach (var employeeWithRole in employeeWithRoleToTeamDto.EmployeesWithRoles)
+            {
+                if (!(await _employeeRepository.ExistsEmployee(employeeWithRole.employeeId)))
+                    return BadRequest(MessageHelper.GetBadRequestMessage($"Employee with ID {employeeWithRole.employeeId} does not exist"));
+                if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeWithRole.teamRoleId)))
+                    return BadRequest(
+                        MessageHelper.GetBadRequestMessage($"Employee team role with ID {employeeWithRole.teamRoleId} does not exist"));
+            }
+            await _teamRepository.AddEmployeesToTeamWithRoles(employeeWithRoleToTeamDto);
+            return Ok(MessageHelper.GetSuccessfulMessage("Employee with role added to team successfully"));
+        }
     }
 }

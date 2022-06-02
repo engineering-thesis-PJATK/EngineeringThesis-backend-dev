@@ -55,8 +55,8 @@ namespace OneBan_TMS.Controllers
             if (!(companyValidatorResult.IsValid))
             {
                 return BadRequest(MessageHelper.GetBadRequestMessage(
-                    companyValidatorResult.Errors[0].PropertyName,
-                    companyValidatorResult.Errors[0].ErrorMessage));
+                    companyValidatorResult.Errors[0].ErrorMessage,
+                    companyValidatorResult.Errors[0].PropertyName));
             }
             var company = await _companyRepository.AddNewCompany(newCompany);
             return Ok(MessageHelper.GetSuccessfulMessage("Added successfully company", null, company.CmpId));
