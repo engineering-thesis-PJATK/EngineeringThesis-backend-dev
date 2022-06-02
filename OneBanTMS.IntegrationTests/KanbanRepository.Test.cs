@@ -61,7 +61,8 @@ namespace OneBanTMS.IntegrationTests
             #endregion
             #region Adding newCustomer
             var customerHandler = new CustomerHandler(_context);
-            var customerRepository = new CustomerRepository(_context, companyRepository);
+            //Todo: poprawa tego 
+            var customerRepository = new CustomerRepository(_context, companyRepository, new CompanyHandler(_context));
             var newCustomer = new CustomerDto()
             {
                 CurName = "test",

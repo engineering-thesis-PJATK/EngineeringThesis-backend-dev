@@ -25,7 +25,8 @@ namespace OneBanTMS.IntegrationTests
         {
             _context = DbContextFactory.GetOneManDbContext();
             _companyRepository = new CompanyRepository(_context);
-            _customerRepository = new CustomerRepository(_context, _companyRepository);
+            //Todo: Poprawa tego
+            _customerRepository = new CustomerRepository(_context, _companyRepository, new CompanyHandler(_context));
         }
         [Test, Isolated]
         public async Task AddNewCustomer_PassValid_ShouldAddNewCustomerToDatabase()

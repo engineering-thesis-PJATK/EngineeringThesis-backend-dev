@@ -6,6 +6,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Graph;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
@@ -17,10 +18,12 @@ namespace OneBan_TMS.Repository
     {
         private readonly OneManDbContext _context;
         private readonly ICompanyRepository _companyRepository;
-        public CustomerRepository(OneManDbContext context, ICompanyRepository companyRepository)
+        private readonly ICompanyHandler _companyHandler;
+        public CustomerRepository(OneManDbContext context, ICompanyRepository companyRepository, ICompanyHandler companyHandler)
         {
             _context = context;
             _companyRepository = companyRepository;
+            _companyHandler = companyHandler;
         }
         public async Task<IEnumerable<Customer>> GetAllCustomers()
         {
@@ -101,6 +104,41 @@ namespace OneBan_TMS.Repository
                     });
             }
             return customerShortDtos;
+        }
+
+        public async Task<List<CustomerCompanyNameDto>> GetCustomersWithCompanyName()
+        {
+            List<CustomerCompanyNameDto> customerCompanyNameList = new List<CustomerCompanyNameDto>();
+            var customerList = await GetAllCustomers();
+            foreach (var customer in customerList)
+            {
+                customerCompanyNameList.Add(await GetCustomerCompanyNameDtoFromCustomer(customer));   
+            }
+            return customerCompanyNameList;
+        }
+
+        public async Task<CustomerCompanyNameDto> GetCustomerWithCompany(int customerId)
+        {
+            var customer = await GetCustomerById(customerId);
+            CustomerCompanyNameDto customerCompanyNameDto = await GetCustomerCompanyNameDtoFromCustomer(customer);
+            return customerCompanyNameDto;
+        }
+
+        private async Task<CustomerCompanyNameDto> GetCustomerCompanyNameDtoFromCustomer(Customer customer)
+        {
+            return new CustomerCompanyNameDto()
+            {
+                CurId = customer.CurId,
+                CurName = customer.CurName,
+                CurSurname = customer.CurSurname,
+                CurEmail = customer.CurEmail,
+                CurPhoneNumber = customer.CurPhoneNumber,
+                CurPosition = customer.CurPosition,
+                CurComments = customer.CurComments,
+                CurCreatedAt = customer.CurCreatedAt,
+                CurIdCompany = customer.CurIdCompany,
+                CurCompanyName = await _companyHandler.GetNameOfCompanyById(customer.CurIdCompany)
+            };
         }
     }
     

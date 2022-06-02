@@ -9,14 +9,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerCompanyNameDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handlers/CompanyHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/CompanyHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Handlers/ICompanyHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/ICompanyHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ICustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ICustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Customer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/CustomerRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/CustomerRepository.Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -400,13 +401,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs</url>
-          <line>181</line>
+          <line>182</line>
           <properties documentPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/KanbanRepository.Test.cs" initialLine="181" containingFunctionPresentation="method 'UpdateKanbanElementStatus_PassValidForTask_ShouldUpdateTicketOrTaskStatus'">
             <startOffsets>
-              <option value="8108" />
+              <option value="8172" />
             </startOffsets>
             <endOffsets>
-              <option value="8227" />
+              <option value="8291" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="24" />
