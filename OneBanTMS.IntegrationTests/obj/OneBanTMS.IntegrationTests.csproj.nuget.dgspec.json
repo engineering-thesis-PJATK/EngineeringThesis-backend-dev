@@ -1,28 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj": {}
+    "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBanTMS.IntegrationTests\\OneBanTMS.IntegrationTests.csproj": {}
   },
   "projects": {
-    "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj": {
+    "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBan TMS\\OneBan TMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj",
+        "projectUniqueName": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBan TMS\\OneBan TMS.csproj",
         "projectName": "OneBan TMS",
-        "projectPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/obj/",
+        "projectPath": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBan TMS\\OneBan TMS.csproj",
+        "packagesPath": "C:\\Users\\krzysztof.jurkowski.iq200\\.nuget\\packages\\",
+        "outputPath": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBan TMS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\krzysztof.jurkowski.iq200\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -114,37 +121,44 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj": {
+    "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBanTMS.IntegrationTests\\OneBanTMS.IntegrationTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj",
+        "projectUniqueName": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBanTMS.IntegrationTests\\OneBanTMS.IntegrationTests.csproj",
         "projectName": "OneBanTMS.IntegrationTests",
-        "projectPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/OneBanTMS.IntegrationTests.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/obj/",
+        "projectPath": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBanTMS.IntegrationTests\\OneBanTMS.IntegrationTests.csproj",
+        "packagesPath": "C:\\Users\\krzysztof.jurkowski.iq200\\.nuget\\packages\\",
+        "outputPath": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBanTMS.IntegrationTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\krzysztof.jurkowski.iq200\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj": {
-                "projectPath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj"
+              "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBan TMS\\OneBan TMS.csproj": {
+                "projectPath": "D:\\Szkola\\INZ\\engineering-thesis-PJATK\\EngineeringThesis-backend-dev\\OneBan TMS\\OneBan TMS.csproj"
               }
             }
           }
@@ -191,14 +205,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
