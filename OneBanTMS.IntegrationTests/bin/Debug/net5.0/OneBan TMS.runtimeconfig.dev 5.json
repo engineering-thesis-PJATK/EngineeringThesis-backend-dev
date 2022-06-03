@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/pioter/.dotnet/store/|arch|/|tfm|",
+      "/Users/pioter/.nuget/packages"
+    ]
+  }
+}
