@@ -29,7 +29,7 @@ namespace OneBanTMS.IntegrationTests
         {
             _context = DbContextFactory.GetOneManDbContext();
             _companyRepository = new CompanyRepository(_context);
-            _customerRepository = new CustomerRepository(_context, _companyRepository);
+            //_customerRepository = new CustomerRepository(_context, _companyRepository);
             _statusHandler = new StatusHandler(_context);
             _ticketNameHandler = new TicketNameHandler(_context);
             _newTicketValidator = new TicketNewValidator();

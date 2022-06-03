@@ -15,7 +15,9 @@ namespace OneBan_TMS.Models
         public string TesDescription { get; set; }
         public int? TesIdProjectTask { get; set; }
         public int? TesIdTicket { get; set; }
+        public int TesIdEmployee { get; set; }
 
+        public virtual Employee TesIdEmployeeNavigation { get; set; }
         public virtual ProjectTask TesIdProjectTaskNavigation { get; set; }
         public virtual Ticket TesIdTicketNavigation { get; set; }
     }

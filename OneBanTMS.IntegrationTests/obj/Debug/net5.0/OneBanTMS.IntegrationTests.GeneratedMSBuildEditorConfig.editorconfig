@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = OneBanTMS.IntegrationTests
-build_property.ProjectDir = /Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBanTMS.IntegrationTests/
+build_property.ProjectDir = D:\Szkola\INZ\engineering-thesis-PJATK\EngineeringThesis-backend-dev\OneBanTMS.IntegrationTests\

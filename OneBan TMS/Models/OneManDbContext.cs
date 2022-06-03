@@ -362,8 +362,7 @@ namespace OneBan_TMS.Models
                     .HasColumnName("emp_name");
 
                 entity.Property(e => e.EmpPassword)
-                    .IsRequired()
-                    .HasMaxLength(255)
+                    .HasMaxLength(260)
                     .IsUnicode(false)
                     .HasColumnName("emp_password");
 
@@ -907,6 +906,8 @@ namespace OneBan_TMS.Models
 
                 entity.Property(e => e.TesEntryTime).HasColumnName("tes_entryTime");
 
+                entity.Property(e => e.TesIdEmployee).HasColumnName("tes_idEmployee");
+
                 entity.Property(e => e.TesIdProjectTask).HasColumnName("tes_idProjectTask");
 
                 entity.Property(e => e.TesIdTicket).HasColumnName("tes_idTicket");
@@ -914,6 +915,12 @@ namespace OneBan_TMS.Models
                 entity.Property(e => e.TesUpdatedAt)
                     .HasColumnType("datetime")
                     .HasColumnName("tes_updatedAt");
+
+                entity.HasOne(d => d.TesIdEmployeeNavigation)
+                    .WithMany(p => p.TimeEntries)
+                    .HasForeignKey(d => d.TesIdEmployee)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("TimeEntry_Employee");
 
                 entity.HasOne(d => d.TesIdProjectTaskNavigation)
                     .WithMany(p => p.TimeEntries)
