@@ -13,6 +13,7 @@ namespace OneBan_TMS.Models
             EmployeeTeams = new HashSet<EmployeeTeam>();
             EmployeeTickets = new HashSet<EmployeeTicket>();
             OrganizationalTasks = new HashSet<OrganizationalTask>();
+            TimeEntries = new HashSet<TimeEntry>();
         }
 
         public int EmpId { get; set; }
@@ -28,5 +29,6 @@ namespace OneBan_TMS.Models
         public virtual ICollection<EmployeeTeam> EmployeeTeams { get; set; }
         public virtual ICollection<EmployeeTicket> EmployeeTickets { get; set; }
         public virtual ICollection<OrganizationalTask> OrganizationalTasks { get; set; }
+        public virtual ICollection<TimeEntry> TimeEntries { get; set; }
     }
 }

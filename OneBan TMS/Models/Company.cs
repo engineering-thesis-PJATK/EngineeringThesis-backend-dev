@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 #nullable disable
 
@@ -23,7 +22,7 @@ namespace OneBan_TMS.Models
         public string CmpRegon { get; set; }
         public string CmpKrsNumber { get; set; }
         public string CmpLandline { get; set; }
-        
+
         public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<CompanyNote> CompanyNotes { get; set; }
         public virtual ICollection<Customer> Customers { get; set; }
