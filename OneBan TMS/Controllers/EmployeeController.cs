@@ -236,7 +236,7 @@ namespace OneBan_TMS.Controllers
         #endregion
 
         [HttpPost("/Team/EmployeeRole")]
-        public async Task<IActionResult> AddEmployeeWithRoleToTeam(EmployeeWithRoleToTeamDto employeeWithRoleToTeamDto)
+        public async Task<IActionResult> AddEmployeeWithRoleToTeam([FromBody]EmployeeWithRoleToTeamDto employeeWithRoleToTeamDto)
         {
             if (!(await _teamRepository.ExistsTeam(employeeWithRoleToTeamDto.TeamId)))
                 return BadRequest(MessageHelper.GetBadRequestMessage("Team does not exists"));
