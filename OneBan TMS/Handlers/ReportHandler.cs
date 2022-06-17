@@ -7,7 +7,7 @@ using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs.Report;
 
-namespace OneBan_TMS.Helpers
+namespace OneBan_TMS.Handlers
 {
     public class ReportHandler : IReportHandler
     {
@@ -16,7 +16,6 @@ namespace OneBan_TMS.Helpers
         {
             _context = context;
         }
-
         public string GetTimeFromTicks(long ticks)
         {
             TimeSpan intervals = TimeSpan.FromTicks(ticks);

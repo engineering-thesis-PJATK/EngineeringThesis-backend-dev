@@ -69,12 +69,12 @@ namespace OneBan_TMS.Controllers
         [HttpPut("{customerId}")]
         public async Task<IActionResult> UpdateCustomer([FromBody] CustomerDto customer, int customerId)
         {
-            if (await _customerRepository.ExistsCustomer(customerId))
+            if (!(await _customerRepository.ExistsCustomer(customerId)))
             {
                 return BadRequest(MessageHelper.GetBadRequestMessage("Customer does not exist"));
             }
             var validationCustomerResult = await _customerValidator.ValidateAsync(customer);
-            if (validationCustomerResult.IsValid)
+            if (!(validationCustomerResult.IsValid))
             {
                 return BadRequest(MessageHelper.GetBadRequestMessage(
                     validationCustomerResult.Errors[0].ErrorMessage,
@@ -97,9 +97,9 @@ namespace OneBan_TMS.Controllers
         [HttpGet("CompanyName/{customerId}")]
         public async Task<ActionResult<CustomerCompanyNameDto>> GetCustomerWithCompanyName(int customerId)
         {
-            var customers = await _customerRepository.GetCustomerWithCompanyName(customerId);
-            if (customers is null)
+            if(!(await _customerRepository.ExistsCustomer(customerId)))
                 return NoContent();
+            var customers = await _customerRepository.GetCustomerWithCompanyName(customerId);
             return Ok(customers);
         }
     }

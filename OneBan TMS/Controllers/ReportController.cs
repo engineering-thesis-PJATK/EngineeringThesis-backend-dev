@@ -1,8 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Graph;
 using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models.DTOs.Report;
@@ -22,11 +22,15 @@ namespace OneBan_TMS.Controllers
         }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TimeEntryHeaderDto>>> GetGroupDataForReport(int employeeId, string dateFrom,
-            string dateTo, string groupPar)
+            string dateTo, int groupType)
         {
-            if (await _employeeRepository.ExistsEmployee(employeeId))
+            if (!(await _employeeRepository.ExistsEmployee(employeeId)))
                 return BadRequest(MessageHelper.GetBadRequestMessage("Employee does not exist"));
-            var result = await _reportRepository.GetGroupDataForReport(employeeId, dateFrom, dateTo, groupPar);
+            if (!(DateTime.TryParse(dateFrom, out DateTime parsedDateFrom)))
+                return BadRequest(MessageHelper.GetBadRequestMessage("DataFrom have bad format"));
+            if (!(DateTime.TryParse(dateTo, out DateTime parsedDateTo)))
+                return BadRequest(MessageHelper.GetBadRequestMessage("DateTo have bad format"));
+            var result = await _reportRepository.GetGroupDataForReport(employeeId, parsedDateFrom, parsedDateTo, groupType);
             if (!(result.Any()))
                 return NoContent();
             return Ok(result);

@@ -74,6 +74,7 @@ namespace OneBan_TMS.Repository
         {
             var customerToUpdate = await _context
                 .Customers
+                .Where(x => x.CurId == customerId)
                 .SingleOrDefaultAsync();
             if (customerToUpdate is null)
                 throw new ArgumentException("Customer does not exists");

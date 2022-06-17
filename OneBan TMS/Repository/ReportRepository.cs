@@ -1,23 +1,41 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Graph;
+using OneBan_TMS.Enum;
+using OneBan_TMS.Interfaces.DbData;
+using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
-using OneBan_TMS.Models;
+using OneBan_TMS.Interfaces.Repositories.IReportStrategy;
 using OneBan_TMS.Models.DTOs.Report;
+using OneBan_TMS.Repository.ReportStrategy;
 
 namespace OneBan_TMS.Repository
 {
     public class ReportRepository : IReportRepository
     {
-        private readonly OneManDbContext _context;  
-        public ReportRepository(OneManDbContext context)
+        private readonly IReportDbData _reportDbData;
+        private readonly IReportHandler _reportHandler;
+        private IReportStrategy _reportStrategy;
+        public ReportRepository(IReportDbData reportDbData, IReportHandler reportHandler)
         {
-            _context = context;
+            _reportDbData = reportDbData;
+            _reportHandler = reportHandler;
         }
-        public Task<IEnumerable<TimeEntryHeaderDto>> GetGroupDataForReport(int employeeId, string dateFrom, string dateTo, string groupPar)
+        public async Task<IEnumerable<TimeEntryHeaderDto>> GetGroupDataForReport(int employeeId, DateTime dateFrom, DateTime dateTo, int groupType)
         {
-            throw new NotImplementedException();
+            IEnumerable<TimeEntryReportDto> reportData = await _reportDbData.GetDataFromDb(employeeId, dateFrom, dateTo);
+            switch (groupType)
+            {
+                case (int)ReportGroupType.Date:
+                    _reportStrategy = new DateGroupReportData(_reportHandler);
+                    break;
+                case (int)ReportGroupType.Company:
+                    _reportStrategy = new CompanyGroupReportData(_reportHandler);
+                    break;
+            }
+            var data = _reportStrategy.GetReportData(reportData);
+            return data;
         }
     }
 }

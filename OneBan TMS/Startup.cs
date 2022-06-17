@@ -18,8 +18,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OneBan_TMS.Controllers;
+using OneBan_TMS.DbData;
 using OneBan_TMS.Handlers;
+using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.DbData;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -62,6 +65,7 @@ namespace OneBan_TMS
                 .Get<EmailConfiguration>();
 
             services.AddSingleton(forgottenPassword);
+            services.AddScoped<IReportDbData, ReportDbData>();
             services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<IValidator<CompanyDto>, CompanyValidator>();
             services.AddScoped<IValidator<EmployeeDto>, EmployeeToAddValidator>();
@@ -73,6 +77,7 @@ namespace OneBan_TMS
             services.AddScoped<ICompanyHandler, CompanyHandler>();
             services.AddScoped<ICustomerHandler, CustomerHandler>();
             services.AddScoped<IStatusHandler, StatusHandler>();
+            services.AddScoped<IReportHandler, ReportHandler>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
@@ -90,6 +95,7 @@ namespace OneBan_TMS
             services.AddScoped<IOrganizationalTaskStatusHandler, OrganizationalTaskStatusHandler>();
             services.AddScoped<ITicketStatusHandler, TicketStatusHandler>();
             services.AddScoped<ITicketNameHandler, TicketNameHandler>();
+            services.AddScoped<IReportRepository, ReportRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
             
