@@ -51,7 +51,7 @@ namespace OneBan_TMS.Controllers
         [HttpPost("{companyId}")]
         public async Task<IActionResult> AddNewCustomer([FromBody] CustomerDto newCustomer, int companyId)
         {
-            if (await _companyRepository.ExistsCompany(companyId))
+            if (!(await _companyRepository.ExistsCompany(companyId)))
                 return BadRequest(MessageHelper.GetBadRequestMessage("Company does not exist"));
             var validatorResults = await _customerValidator.ValidateAsync(newCustomer);
             if (!(validatorResults.IsValid))
