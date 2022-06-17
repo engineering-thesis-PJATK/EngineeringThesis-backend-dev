@@ -125,6 +125,18 @@ namespace OneBan_TMS.Repository
             return customerCompanyNameDto;
         }
 
+        public async Task DeleteCustomer(int customerId)
+        {
+            var customer = await _context.Customers
+                .Where(x => 
+                    x.CurId == customerId)
+                .SingleOrDefaultAsync();
+            if (customer is null)
+                throw new ArgumentException("Customer does not exist");
+            _context.Customers.Remove(customer);
+            await _context.SaveChangesAsync();
+        }
+
         private async Task<CustomerCompanyNameDto> GetCustomerCompanyNameDtoFromCustomer(Customer customer)
         {
             return new CustomerCompanyNameDto()

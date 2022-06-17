@@ -85,7 +85,6 @@ namespace OneBan_TMS.Controllers
                 .UpdateCustomer(customer, customerId);
             return Ok(MessageHelper.GetSuccessfulMessage("Updated successfully customer"));
         }
-
         [HttpGet("CompanyName")]
         public async Task<ActionResult<List<CustomerCompanyNameDto>>> GetCustomersWithCompanyName()
         {
@@ -101,6 +100,15 @@ namespace OneBan_TMS.Controllers
                 return NoContent();
             var customers = await _customerRepository.GetCustomerWithCompanyName(customerId);
             return Ok(customers);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCustomer(int customerId)
+        {
+            if (!(await _customerRepository.ExistsCustomer(customerId)))
+                return BadRequest(MessageHelper.GetBadRequestMessage("Customer does not exist"));
+            await _customerRepository.DeleteCustomer(customerId);
+            return Ok(MessageHelper.GetSuccessfulMessage("Customer deleted successfully"));
         }
     }
 }

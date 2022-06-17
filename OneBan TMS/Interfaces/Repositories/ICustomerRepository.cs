@@ -16,5 +16,6 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<List<CustomerShortDto>> GetCustomersToSearch();
         Task<List<CustomerCompanyNameDto>> GetCustomersWithCompanyName();
         Task<CustomerCompanyNameDto> GetCustomerWithCompanyName(int customerId);
+        Task DeleteCustomer(int customerId);
     }
 }
