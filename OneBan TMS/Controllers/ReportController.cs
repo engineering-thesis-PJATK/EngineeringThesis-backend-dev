@@ -9,7 +9,7 @@ using OneBan_TMS.Providers;
 
 namespace OneBan_TMS.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Api/[controller]")]
     [ApiController]
     public class ReportController : Controller
     {

@@ -32,6 +32,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Strategies\KanbanStrategy" />
       <Folder Include="Validators\ProjectTask" />
     </ItemGroup>
 

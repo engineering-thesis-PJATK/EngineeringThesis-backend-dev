@@ -102,7 +102,8 @@ namespace OneBan_TMS.Controllers
             return Ok(customers);
         }
 
-        [HttpDelete]
+        [HttpDelete( "{customerId}")]
+
         public async Task<IActionResult> DeleteCustomer(int customerId)
         {
             if (!(await _customerRepository.ExistsCustomer(customerId)))
