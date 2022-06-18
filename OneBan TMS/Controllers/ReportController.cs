@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models.DTOs.Report;
+using OneBan_TMS.Providers;
 
 namespace OneBan_TMS.Controllers
 {
@@ -25,11 +25,11 @@ namespace OneBan_TMS.Controllers
             string dateTo, int groupType)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("Employee does not exist"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Employee does not exist"));
             if (!(DateTime.TryParse(dateFrom, out DateTime parsedDateFrom)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("DataFrom have bad format"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("DataFrom have bad format"));
             if (!(DateTime.TryParse(dateTo, out DateTime parsedDateTo)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("DateTo have bad format"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("DateTo have bad format"));
             var result = await _reportRepository.GetGroupDataForReport(employeeId, parsedDateFrom, parsedDateTo, groupType);
             if (!(result.Any()))
                 return NoContent();

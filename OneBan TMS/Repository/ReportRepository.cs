@@ -8,6 +8,7 @@ using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Interfaces.Repositories.IReportStrategy;
 using OneBan_TMS.Models.DTOs.Report;
+using OneBan_TMS.Providers;
 using OneBan_TMS.Repository.ReportStrategy;
 
 namespace OneBan_TMS.Repository
@@ -25,15 +26,7 @@ namespace OneBan_TMS.Repository
         public async Task<IEnumerable<TimeEntryHeaderDto>> GetGroupDataForReport(int employeeId, DateTime dateFrom, DateTime dateTo, int groupType)
         {
             IEnumerable<TimeEntryReportDto> reportData = await _reportDbData.GetDataFromDb(employeeId, dateFrom, dateTo);
-            switch (groupType)
-            {
-                case (int)ReportGroupType.Date:
-                    _reportStrategy = new DateGroupReportData(_reportHandler);
-                    break;
-                case (int)ReportGroupType.Company:
-                    _reportStrategy = new CompanyGroupReportData(_reportHandler);
-                    break;
-            }
+            _reportStrategy = ReportDataStrategyProvider.GetReportStrategy(groupType, _reportHandler);
             var data = _reportStrategy.GetReportData(reportData);
             return data;
         }

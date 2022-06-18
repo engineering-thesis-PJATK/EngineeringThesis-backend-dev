@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -14,6 +13,7 @@ using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Employee;
 using OneBan_TMS.Models.DTOs.Messages;
 using OneBan_TMS.Models.DTOs.Team;
+using OneBan_TMS.Providers;
 
 namespace OneBan_TMS.Controllers
 {
@@ -130,22 +130,22 @@ namespace OneBan_TMS.Controllers
             var validatorEmployeeDtoResult = await _validatorEmployeeDto.ValidateAsync(newEmployee);
             if (!(validatorEmployeeDtoResult.IsValid))
             {
-                return BadRequest(MessageHelper.GetBadRequestMessage(
+                return BadRequest(MessageProvider.GetBadRequestMessage(
                     validatorEmployeeDtoResult.Errors[0].ErrorMessage,
                     validatorEmployeeDtoResult.Errors[0].PropertyName));
             }
             var employee = await _employeeRepository.AddEmployee(newEmployee);
-            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully employee", null, employee.EmpId));
+            return Ok(MessageProvider.GetSuccessfulMessage("Added successfully employee", null, employee.EmpId));
         }
         [HttpPost("{employeeId}/Roles")]
         public async Task<IActionResult> AddRolesForEmployee(int employeeId, [FromBody] List<int> employeePriviles)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("User does not exists"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("User does not exists"));
             if (!(await _employeeRepository.ExistsEmployeePrivileges(employeePriviles)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("One of privileges do not exist"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("One of privileges do not exist"));
             await _employeeRepository.AddPrivilegesToUser(employeeId, employeePriviles);
-            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully privileges to employee"));
+            return Ok(MessageProvider.GetSuccessfulMessage("Added successfully privileges to employee"));
         }
         [HttpPost("Team")]
         public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)
@@ -167,18 +167,18 @@ namespace OneBan_TMS.Controllers
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
             {
-                return BadRequest(MessageHelper.GetBadRequestMessage("Employee does not exists"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Employee does not exists"));
             }
             var validatorEmployeeToUpdateResult = await _validatorEmployeeToUpdate.ValidateAsync(employeeToUpdate);
             if (!(validatorEmployeeToUpdateResult.IsValid))
             {
-                return BadRequest(MessageHelper.GetBadRequestMessage(
+                return BadRequest(MessageProvider.GetBadRequestMessage(
                     validatorEmployeeToUpdateResult.Errors[0].ErrorMessage,
                     validatorEmployeeToUpdateResult.Errors[0].PropertyName
                 ));
             }
             await _employeeRepository.UpdateEmployee(employeeId, employeeToUpdate);
-            return Ok(MessageHelper.GetSuccessfulMessage("Updated successfully employee"));
+            return Ok(MessageProvider.GetSuccessfulMessage("Updated successfully employee"));
         }
 
         [HttpPut("Team/{teamId}")]
@@ -216,9 +216,9 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> DeleteEmployee(int employeeId)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("Employee does not exist"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Employee does not exist"));
             await _employeeRepository.DeleteEmployee(employeeId);
-            return Ok(MessageHelper.GetSuccessfulMessage("Deleted employee successfully"));
+            return Ok(MessageProvider.GetSuccessfulMessage("Deleted employee successfully"));
         }
         [HttpDelete("Team/{teamId}")]
         public async Task<ActionResult> DeleteTeamById(int teamId)
@@ -239,17 +239,17 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> AddEmployeeWithRoleToTeam([FromBody]EmployeeWithRoleToTeamDto employeeWithRoleToTeamDto)
         {
             if (!(await _teamRepository.ExistsTeam(employeeWithRoleToTeamDto.TeamId)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("Team does not exists"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Team does not exists"));
             foreach (var employeeWithRole in employeeWithRoleToTeamDto.EmployeesWithRoles)
             {
                 if (!(await _employeeRepository.ExistsEmployee(employeeWithRole.employeeId)))
-                    return BadRequest(MessageHelper.GetBadRequestMessage($"Employee with ID {employeeWithRole.employeeId} does not exist"));
+                    return BadRequest(MessageProvider.GetBadRequestMessage($"Employee with ID {employeeWithRole.employeeId} does not exist"));
                 if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeWithRole.teamRoleId)))
                     return BadRequest(
-                        MessageHelper.GetBadRequestMessage($"Employee team role with ID {employeeWithRole.teamRoleId} does not exist"));
+                        MessageProvider.GetBadRequestMessage($"Employee team role with ID {employeeWithRole.teamRoleId} does not exist"));
             }
             await _teamRepository.AddEmployeesToTeamWithRoles(employeeWithRoleToTeamDto);
-            return Ok(MessageHelper.GetSuccessfulMessage("Employee with role added to team successfully"));
+            return Ok(MessageProvider.GetSuccessfulMessage("Employee with role added to team successfully"));
         }
     }
 }

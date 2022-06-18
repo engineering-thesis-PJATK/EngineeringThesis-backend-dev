@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Employee;
+using OneBan_TMS.Providers;
 
 namespace OneBan_TMS.Controllers
 {
@@ -46,12 +46,12 @@ namespace OneBan_TMS.Controllers
         {
             var validatorResult = await _employeeTeamRoleValidator.ValidateAsync(employeeTeamRoleDto);
             if (!(validatorResult.IsValid))
-                return BadRequest(MessageHelper.GetBadRequestMessage(
+                return BadRequest(MessageProvider.GetBadRequestMessage(
                     validatorResult.Errors[0].ErrorMessage,
                     validatorResult.Errors[0].PropertyName));
             var employeeTeamRole = await _employeeTeamRoleRepository
                 .AddNewEmployeeTeamRole(employeeTeamRoleDto);
-            return Ok(MessageHelper
+            return Ok(MessageProvider
                 .GetSuccessfulMessage("Added successfully new employee team role", null, employeeTeamRole.EtrId));
         }
 
@@ -59,14 +59,14 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> UpdateEmployeeTeamRole([FromBody] EmployeeTeamRoleDto employeeTeamRoleDto, int employeeTeamRoleId)
         {
             if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeTeamRoleId)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("Employee team role does not exists"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Employee team role does not exists"));
             var validatorResult = await _employeeTeamRoleValidator.ValidateAsync(employeeTeamRoleDto);
             if (!(validatorResult.IsValid))
-                return BadRequest(MessageHelper.GetBadRequestMessage(
+                return BadRequest(MessageProvider.GetBadRequestMessage(
                     validatorResult.Errors[0].ErrorMessage,
                     validatorResult.Errors[0].PropertyName));
             await _employeeTeamRoleRepository.UpdateEmployeeTeamRole(employeeTeamRoleDto, employeeTeamRoleId);
-            return Ok(MessageHelper
+            return Ok(MessageProvider
                 .GetSuccessfulMessage("Updated successfully employee team role"));
         }
 
@@ -74,10 +74,10 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> DeleteEmployeeTeamRole(int employeeTeamRoleId)
         {
             if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeTeamRoleId)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("Employee team role does not exists"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Employee team role does not exists"));
             await _employeeTeamRoleRepository
                 .DeleteEmployeeTeamRole(employeeTeamRoleId);
-            return Ok(MessageHelper
+            return Ok(MessageProvider
                 .GetSuccessfulMessage("Deleted successfully Employee team role"));
         }
     }

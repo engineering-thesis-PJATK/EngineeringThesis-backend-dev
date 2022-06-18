@@ -1,9 +1,9 @@
 using System.Net;
 using OneBan_TMS.Models.DTOs.Messages;
 
-namespace OneBan_TMS.Helpers
+namespace OneBan_TMS.Providers
 {
-    public static class MessageHelper
+    public static class MessageProvider
     {
         public static MessageResponse GetSuccessfulMessage(string messageContent, string propertyName = null, int? objectId = null)
         {

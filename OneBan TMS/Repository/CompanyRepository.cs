@@ -36,15 +36,7 @@ namespace OneBan_TMS.Repository
 
         public async Task<Company> AddNewCompany(CompanyDto newCompany)
         {
-            Company company = new Company()
-            {
-                CmpName = newCompany.CmpName,
-                CmpNip = newCompany.CmpNip,
-                CmpNipPrefix = newCompany.CmpNipPrefix,
-                CmpRegon = newCompany.CmpRegon,
-                CmpKrsNumber = newCompany.CmpKrsNumber,
-                CmpLandline = newCompany.CmpLandline
-            };
+            Company company = newCompany.GetCompany();
             _context.Companies.Add(company);
             await _context.SaveChangesAsync();
             return company;
@@ -79,8 +71,6 @@ namespace OneBan_TMS.Repository
             _context.Companies.Remove(company);
             await _context.SaveChangesAsync();
         }
-
-
         public async Task<bool> ExistsCompany(int companyId)
         {
             var result = await _context

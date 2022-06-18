@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Project;
+using OneBan_TMS.Providers;
 
 namespace OneBan_TMS.Controllers
 {
@@ -82,7 +82,7 @@ namespace OneBan_TMS.Controllers
         {
             //Todo: Walidacja i poprawa
             var projectTask = await _projectTaskRepository.AddNewProjectTask(projectTaskDto, projectId);
-            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully project task", null, projectTask.PtkId));
+            return Ok(MessageProvider.GetSuccessfulMessage("Added successfully project task", null, projectTask.PtkId));
         }
 
         [HttpPut("{projectId}/ProjectTask")]
@@ -90,7 +90,7 @@ namespace OneBan_TMS.Controllers
         {
             //Todo: walidacja i poprawa
             await _projectTaskRepository.UpdateProjectTask(projectTaskDto, projectId);
-            return Ok(MessageHelper.GetBadRequestMessage("Updated successfully project task"));
+            return Ok(MessageProvider.GetBadRequestMessage("Updated successfully project task"));
         }
 
         [HttpDelete("/ProjectTask/{projectId}")]
@@ -98,9 +98,9 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> DeleteProjectTaskForProject(int projectId)
         {
             if (!(await _projectTaskRepository.ExistsProjectTask(projectId)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("Project task does not exist"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Project task does not exist"));
             await _projectTaskRepository.DeleteProjectTask(projectId);
-            return Ok(MessageHelper.GetSuccessfulMessage("Deleted successfully project task"));
+            return Ok(MessageProvider.GetSuccessfulMessage("Deleted successfully project task"));
         }
     }
 }

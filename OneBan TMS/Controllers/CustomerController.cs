@@ -4,13 +4,13 @@ using System.Net;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Customer;
 using OneBan_TMS.Models.DTOs.Messages;
+using OneBan_TMS.Providers;
 using OneBan_TMS.Validators.CustomerValidators;
 
 namespace OneBan_TMS.Controllers
@@ -52,11 +52,11 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> AddNewCustomer([FromBody] CustomerDto newCustomer, int companyId)
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("Company does not exist"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Company does not exist"));
             var validatorResults = await _customerValidator.ValidateAsync(newCustomer);
             if (!(validatorResults.IsValid))
             {
-                return BadRequest(MessageHelper.GetBadRequestMessage(
+                return BadRequest(MessageProvider.GetBadRequestMessage(
                     validatorResults.Errors[0].ErrorMessage,
                     validatorResults.Errors[0].PropertyName
                  ));
@@ -64,26 +64,26 @@ namespace OneBan_TMS.Controllers
             
             var customer = await _customerRepository
                 .AddNewCustomer(newCustomer, companyId);
-            return Ok(MessageHelper.GetSuccessfulMessage("Added successfully customer", null, customer.CurId));
+            return Ok(MessageProvider.GetSuccessfulMessage("Added successfully customer", null, customer.CurId));
         }
         [HttpPut("{customerId}")]
         public async Task<IActionResult> UpdateCustomer([FromBody] CustomerDto customer, int customerId)
         {
             if (!(await _customerRepository.ExistsCustomer(customerId)))
             {
-                return BadRequest(MessageHelper.GetBadRequestMessage("Customer does not exist"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Customer does not exist"));
             }
             var validationCustomerResult = await _customerValidator.ValidateAsync(customer);
             if (!(validationCustomerResult.IsValid))
             {
-                return BadRequest(MessageHelper.GetBadRequestMessage(
+                return BadRequest(MessageProvider.GetBadRequestMessage(
                     validationCustomerResult.Errors[0].ErrorMessage,
                     validationCustomerResult.Errors[0].PropertyName)
                 );
             }
             await _customerRepository
                 .UpdateCustomer(customer, customerId);
-            return Ok(MessageHelper.GetSuccessfulMessage("Updated successfully customer"));
+            return Ok(MessageProvider.GetSuccessfulMessage("Updated successfully customer"));
         }
         [HttpGet("CompanyName")]
         public async Task<ActionResult<List<CustomerCompanyNameDto>>> GetCustomersWithCompanyName()
@@ -106,9 +106,13 @@ namespace OneBan_TMS.Controllers
         public async Task<IActionResult> DeleteCustomer(int customerId)
         {
             if (!(await _customerRepository.ExistsCustomer(customerId)))
-                return BadRequest(MessageHelper.GetBadRequestMessage("Customer does not exist"));
+                return BadRequest(MessageProvider.GetBadRequestMessage("Customer does not exist"));
             await _customerRepository.DeleteCustomer(customerId);
-            return Ok(MessageHelper.GetSuccessfulMessage("Customer deleted successfully"));
+            return Ok(MessageProvider.GetSuccessfulMessage("Customer deleted successfully"));
         }
+    }
+
+    public class MessageHelper
+    {
     }
 }

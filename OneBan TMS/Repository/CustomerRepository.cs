@@ -54,17 +54,7 @@ namespace OneBan_TMS.Repository
         {
             if (!(await _companyRepository.ExistsCompany(companyId)))
                 throw new ArgumentException("Company does not exist");
-            Customer customer = new Customer()
-            {
-                CurName = newCustomer.CurName,
-                CurSurname = newCustomer.CurSurname,
-                CurEmail = newCustomer.CurEmail,
-                CurPhoneNumber = newCustomer.CurPhoneNumber,
-                CurPosition = newCustomer.CurPosition,
-                CurComments = newCustomer.CurComments,
-                CurCreatedAt = System.DateTime.Now,
-                CurIdCompany = companyId
-            };
+            Customer customer = newCustomer.GetCustomer();
             await _context.Customers.AddAsync(customer);
             await _context.SaveChangesAsync();
             return customer;

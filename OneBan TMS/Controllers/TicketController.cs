@@ -6,7 +6,6 @@ using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph;
-using OneBan_TMS.Helpers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
@@ -14,6 +13,7 @@ using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Customer;
 using OneBan_TMS.Models.DTOs.Ticket;
 using OneBan_TMS.Models.DTOs.TimeEntry;
+using OneBan_TMS.Providers;
 
 namespace OneBan_TMS.Controllers
 {
@@ -279,11 +279,11 @@ namespace OneBan_TMS.Controllers
         {
             var validatorResult = await _newTicketValidator.ValidateAsync(ticketNewDto);
             if (!(validatorResult.IsValid))
-                return BadRequest(MessageHelper.GetBadRequestMessage(
+                return BadRequest(MessageProvider.GetBadRequestMessage(
                     validatorResult.Errors[0].ErrorMessage,
                     validatorResult.Errors[0].PropertyName));
             var ticket = await _ticketRepository.AddTicket(ticketNewDto);
-            return Ok(MessageHelper.GetSuccessfulMessage("Ticket added successfully", null, ticket.TicId));
+            return Ok(MessageProvider.GetSuccessfulMessage("Ticket added successfully", null, ticket.TicId));
         }
         #endregion
 

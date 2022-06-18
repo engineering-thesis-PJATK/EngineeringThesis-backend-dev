@@ -89,16 +89,8 @@ namespace OneBan_TMS.Repository
             StringBuilder passwordConnector = new StringBuilder();
             passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordHash));
             passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordSalt));
-            var employee = new Employee()
-            {
-                EmpLogin = newEmployee.EmpEmail,
-                EmpName = newEmployee.EmpName,
-                EmpSurname = newEmployee.EmpSurname,
-                EmpEmail = newEmployee.EmpEmail,
-                EmpPhoneNumber = newEmployee.EmpPhoneNumber,
-                EmpCreatedAt = DateTime.Now,
-                EmpPassword = passwordConnector.ToString()
-            };
+            Employee employee = newEmployee.GetEmployee();
+            employee.EmpPassword = passwordConnector.ToString();
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
             return employee;

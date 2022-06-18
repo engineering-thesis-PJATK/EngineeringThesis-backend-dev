@@ -9,9 +9,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Abstracts/Company/CompanyAbstract.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Abstracts/Customer/CustomerAbstract.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Abstracts/Employee/EmployeeAbstract.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Providers/ReportDataStrategyProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompanyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/ICustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/ICustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeTeamRoleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeTeamRoleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ProjectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProjectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ReportController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ReportController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/SettingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/SettingController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TicketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/MessageHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Providers/MessageProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Company/CompanyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Company/CompanyDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerCompanyNameDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerCompanyNameDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/ReportRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/ReportRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +141,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectId" id="26KxvttYlkA8iM7hm03Pjl1sKev" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -269,7 +296,9 @@
       <workItem from="1655139548269" duration="921000" />
       <workItem from="1655325911306" duration="1038000" />
       <workItem from="1655382198377" duration="841000" />
-      <workItem from="1655492774902" duration="1693000" />
+      <workItem from="1655492774902" duration="4043000" />
+      <workItem from="1655544801023" duration="702000" />
+      <workItem from="1655548757855" duration="1048000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -392,13 +421,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Repository/ReportRepository.cs</url>
-          <line>26</line>
+          <line>27</line>
           <properties documentPath="$PROJECT_DIR$/Repository/ReportRepository.cs" initialLine="26" containingFunctionPresentation="method 'GetGroupDataForReport'">
             <startOffsets>
-              <option value="999" />
+              <option value="1027" />
             </startOffsets>
             <endOffsets>
-              <option value="1108" />
+              <option value="1136" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="30" />
@@ -408,10 +437,10 @@
           <line>26</line>
           <properties documentPath="$PROJECT_DIR$/Controllers/ReportController.cs" initialLine="26" containingFunctionPresentation="method 'GetGroupDataForReport'">
             <startOffsets>
-              <option value="945" />
+              <option value="947" />
             </startOffsets>
             <endOffsets>
-              <option value="1005" />
+              <option value="1007" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="31" />
