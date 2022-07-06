@@ -1,3 +1,5 @@
+using System;
+using DataAnnotationsExtensions;
 using OneBan_TMS.Abstracts.Customer;
 namespace OneBan_TMS.Models.DTOs.Customer
 {
@@ -19,8 +21,20 @@ namespace OneBan_TMS.Models.DTOs.Customer
                 CurEmail = this.CurEmail,
                 CurPhoneNumber = this.CurPhoneNumber,
                 CurPosition = this.CurPosition,
-                CurComments = this.CurComments
+                CurComments = this.CurComments,
+                CurCreatedAt = DateTime.Now
             };
+        }
+
+        public Customer GetUpdatedCustomer(Customer customer)
+        {
+            customer.CurName = this.CurName;
+            customer.CurSurname = this.CurSurname;
+            customer.CurEmail = this.CurEmail;
+            customer.CurPhoneNumber = this.CurPhoneNumber;
+            customer.CurPosition = this.CurPosition;
+            customer.CurComments = this.CurComments;
+            return customer;
         }
     }
 }

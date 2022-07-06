@@ -32,6 +32,15 @@
           "lib/net5.0/Azure.Core.dll": {}
         }
       },
+      "DataAnnotationsExtensions/5.0.1.27": {
+        "type": "package",
+        "compile": {
+          "lib/NETFramework40/DataAnnotationsExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/NETFramework40/DataAnnotationsExtensions.dll": {}
+        }
+      },
       "FluentAssertions/6.6.0": {
         "type": "package",
         "dependencies": {
@@ -2935,6 +2944,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
+          "DataAnnotationsExtensions": "5.0.1.27",
           "FluentValidation": "10.4.0",
           "FluentValidation.AspNetCore": "10.4.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.15",
@@ -2996,6 +3006,18 @@
         "lib/netcoreapp2.1/Azure.Core.xml",
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml"
+      ]
+    },
+    "DataAnnotationsExtensions/5.0.1.27": {
+      "sha512": "lw4n4XzY62raAOrrlPdkh4h3PXenReARIazAPzs8AvlkKDAK9pe7kcUL3dh3T095/Q9+LezoXCfjEgDPslmGyg==",
+      "type": "package",
+      "path": "dataannotationsextensions/5.0.1.27",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dataannotationsextensions.5.0.1.27.nupkg.sha512",
+        "dataannotationsextensions.nuspec",
+        "lib/NETFramework40/DataAnnotationsExtensions.dll"
       ]
     },
     "FluentAssertions/6.6.0": {
@@ -9637,5 +9659,17 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DataAnnotationsExtensions 5.0.1.27' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DataAnnotationsExtensions",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

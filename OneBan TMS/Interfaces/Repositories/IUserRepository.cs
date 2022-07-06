@@ -12,7 +12,7 @@ namespace OneBan_TMS.Interfaces.Repositories
     public interface IUserRepository
     {
         Task<Employee> GetUserByEmail(string emailAddress);
-        void GetPasswordParts(string password, out byte[] passwordHash, out byte[] passwordSalt);
+        //void GetPasswordParts(string password, out byte[] passwordHash, out byte[] passwordSalt);
         Task<string> GetUserRole(string userEmail);
     }
 }

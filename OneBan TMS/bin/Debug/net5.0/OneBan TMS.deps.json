@@ -34,6 +34,7 @@
       "OneBan TMS/1.0.0": {
         "dependencies": {
           "AutoMapper": "11.0.1",
+          "DataAnnotationsExtensions": "5.0.1.27",
           "FluentValidation": "10.4.0",
           "FluentValidation.AspNetCore": "10.4.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.15",
@@ -365,6 +366,17 @@
         },
         "compile": {
           "lib/net5.0/Azure.Core.dll": {}
+        }
+      },
+      "DataAnnotationsExtensions/5.0.1.27": {
+        "runtime": {
+          "lib/NETFramework40/DataAnnotationsExtensions.dll": {
+            "assemblyVersion": "5.0.1.27",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/NETFramework40/DataAnnotationsExtensions.dll": {}
         }
       },
       "FluentValidation/10.4.0": {
@@ -3949,6 +3961,13 @@
       "sha512": "sha512-ze/xRCHSSDe5TIk5vBDbVrauW1EN7UIbnBvIBfMH8KSt/I9+/7yPAjTBDgNBk0IwG6WBV+BBHp4IUtS/PGAQwQ==",
       "path": "azure.core/1.22.0",
       "hashPath": "azure.core.1.22.0.nupkg.sha512"
+    },
+    "DataAnnotationsExtensions/5.0.1.27": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lw4n4XzY62raAOrrlPdkh4h3PXenReARIazAPzs8AvlkKDAK9pe7kcUL3dh3T095/Q9+LezoXCfjEgDPslmGyg==",
+      "path": "dataannotationsextensions/5.0.1.27",
+      "hashPath": "dataannotationsextensions.5.0.1.27.nupkg.sha512"
     },
     "FluentValidation/10.4.0": {
       "type": "package",

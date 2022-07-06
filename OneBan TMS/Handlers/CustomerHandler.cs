@@ -21,5 +21,30 @@ namespace OneBan_TMS.Handlers
                 .AnyAsync(x => x.CurEmail == customerEmail);
             return !(result);
         }
+
+        public async Task<bool> CheckEmailUnique(int customerId, string email)
+        {
+            var tmp = await _context
+                .Customers
+                .AnyAsync(x => x.CurId == customerId && x.CurEmail == email);
+            return tmp;
+        }
+
+        public async Task<bool> CheckEmailUnique(string customerEmail)
+        {
+            var result = await _context
+                .Customers
+                .AnyAsync(x => x.CurEmail == customerEmail);
+            return result;
+        }
+
+        public async Task<bool> CheckEmailUnique(string customerEmail, int customerId)
+        {
+            var result = await _context
+                .Customers
+                .AnyAsync(x => x.CurEmail == customerEmail
+                    && x.CurId != customerId);
+            return !(result);
+        }
     }
 }

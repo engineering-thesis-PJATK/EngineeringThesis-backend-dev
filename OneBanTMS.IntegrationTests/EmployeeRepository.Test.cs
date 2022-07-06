@@ -65,7 +65,7 @@ namespace OneBanTMS.IntegrationTests
                     && x.EmpPhoneNumber == employeeDto.EmpPhoneNumber)
                 .Select(x => x.EmpId)
                 .SingleOrDefaultAsync();
-            EmployeeToUpdate employeeToUpdate = new EmployeeToUpdate()
+            EmployeeToUpdateDto employeeToUpdate = new EmployeeToUpdateDto()
             {
                 EmpEmail = "1test1@test.pl",
                 EmpName = "testUpdatedName",

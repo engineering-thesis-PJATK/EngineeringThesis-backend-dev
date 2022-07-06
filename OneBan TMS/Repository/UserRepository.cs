@@ -32,6 +32,7 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
             return employee;
         }
+        /*
         public void GetPasswordParts(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             if (password.Length != 260)
@@ -41,6 +42,7 @@ namespace OneBan_TMS.Repository
             passwordHash = _passwordHandler.ConvertStringToByteArray(passwordBase64Hash);
             passwordSalt = _passwordHandler.ConvertStringToByteArray(passwordBase64Salt);
         }
+        */
         public async Task<string> GetUserRole(string userEmail)
         {
             List<string> userRoles = await _context

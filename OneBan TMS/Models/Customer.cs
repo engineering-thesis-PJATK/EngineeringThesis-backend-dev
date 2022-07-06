@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace OneBan_TMS.Models
 {
+    using Models.DTOs.Customer;
     public partial class Customer
     {
         public Customer()
@@ -24,5 +25,33 @@ namespace OneBan_TMS.Models
 
         public virtual Company CurIdCompanyNavigation { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }
+
+        public CustomerShortDto GetCustomerShortDto()
+        {
+            return new CustomerShortDto()
+            {
+                CurId = this.CurId,
+                CurEmail = this.CurEmail,
+                CurName = this.CurName,
+                CurSurname = this.CurSurname
+            };
+        }
+
+        public CustomerCompanyNameDto GetCustomerCompanyNameDto(string companyName)
+        {
+            return new CustomerCompanyNameDto()
+            {
+                CurId = this.CurId,
+                CurName = this.CurName,
+                CurSurname = this.CurSurname,
+                CurEmail = this.CurEmail,
+                CurPhoneNumber = this.CurPhoneNumber,
+                CurPosition = this.CurPosition,
+                CurComments = this.CurComments,
+                CurCreatedAt = this.CurCreatedAt,
+                CurIdCompany = this.CurIdCompany,
+                CurCompanyName = companyName
+            };
+        }
     }
 }

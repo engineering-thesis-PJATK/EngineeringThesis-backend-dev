@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ENNS93qqxgkVvSTpxQkCyfScjfZlWL52IlbLzDlSOt3rUoTGpDbUOhRdhb2qJd9mP5V2QrB9UU3PExlY/FcUug==",
+  "dgSpecHash": "VuUqKtBzHi8JeM3k0CxtOU3sDG5XZtXcnxZZxld6UnDOrRHVLKLPrhZ7ZhnbZ7ubuWMdyrq0pc7drAXF5irhdg==",
   "success": true,
   "projectFilePath": "/Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/OneBan TMS.csproj",
   "expectedPackageFiles": [
     "/Users/mac/.nuget/packages/automapper/11.0.1/automapper.11.0.1.nupkg.sha512",
     "/Users/mac/.nuget/packages/azure.core/1.22.0/azure.core.1.22.0.nupkg.sha512",
+    "/Users/mac/.nuget/packages/dataannotationsextensions/5.0.1.27/dataannotationsextensions.5.0.1.27.nupkg.sha512",
     "/Users/mac/.nuget/packages/fluentvalidation/10.4.0/fluentvalidation.10.4.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/fluentvalidation.aspnetcore/10.4.0/fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/fluentvalidation.dependencyinjectionextensions/10.4.0/fluentvalidation.dependencyinjectionextensions.10.4.0.nupkg.sha512",
@@ -176,5 +177,16 @@
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.threading.threadpool/4.3.0/system.threading.threadpool.4.3.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DataAnnotationsExtensions 5.0.1.27' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DataAnnotationsExtensions",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

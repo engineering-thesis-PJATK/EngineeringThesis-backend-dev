@@ -50,12 +50,16 @@ namespace OneBan_TMS.Repository
                     .SingleOrDefaultAsync();
             if (companyToUpdate is null)
                 throw new ArgumentException("Company does not exist");
+            /*
             companyToUpdate.CmpName = updatedCompanyDto.CmpName;
             companyToUpdate.CmpNip = updatedCompanyDto.CmpNip;
             companyToUpdate.CmpNipPrefix = updatedCompanyDto.CmpNipPrefix;
             companyToUpdate.CmpRegon = updatedCompanyDto.CmpRegon;
             companyToUpdate.CmpKrsNumber = updatedCompanyDto.CmpKrsNumber;
             companyToUpdate.CmpLandline = updatedCompanyDto.CmpLandline;
+            */
+            //Todo: Sprawdzić
+            companyToUpdate = updatedCompanyDto.GetCompanyToUpdate(companyToUpdate);
             await _context.SaveChangesAsync();
         }
 

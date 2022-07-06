@@ -9,17 +9,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Validators/CustomerValidators/CustomerFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/CustomerValidators/ICustomerFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/EmployeeTeamRoleValidator/EmployeeTeamRoleFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/EmployeeTeamRoleValidator/Interfaces/IEmployeeTeamRoleFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToAddFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToUpdateFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/EmployeeValidators/Interfaces/IEmployeeToAddFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/EmployeeValidators/Interfaces/IEmployeeToUpdateFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/FilterResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/IBaseFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/TicketValidators/Interfaces/ITicketNewFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validators/TicketValidators/Interfaces/TicketNewFilter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ReportController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ReportController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handlers/CustomerHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/CustomerHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handlers/PasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/PasswordHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Handlers/ICustomerHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/ICustomerHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Handlers/IPasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/IPasswordHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Customer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Address/AddressDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Address/AddressDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Company/CompanyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Company/CompanyDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Customer/CustomerDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeToUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeToUpdateDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OneBan TMS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OneBan TMS.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/AddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AddressRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CompanyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CompanyRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validators/CompanyValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/CompanyValidators/CompanyValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validators/CustomerValidators/CustomerValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/CustomerValidators/CustomerValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/OneBan TMS.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/EmployeeRepository.Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/EmployeeRepository.Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/OneBanTMS.IntegrationTests.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/OneBanTMS.IntegrationTests.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +106,18 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/40bdad462b9451c12de0171bc56fc4e702f475d1a16716ae3a5a9d369278/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3d14b2c2bcffc97d6383affb5cb4a219b51d447d476ad50c02da88c51bff7/AggregateExceptionExtractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f995bff04824f36250ceb344fabfbbdaca2536a5820b9fc4c8fa4fe8c05b24/SwaggerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Validators/EmployeeValidators/Interfaces/IEmployeeToUpdateFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7c333b3ba5aa9a253e19585ec71ff6f2730ee768d389b5baeb74542b65ce1/DefaultValidatorExtensions_Validate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/445f1943219c786fc8f73b45b5fe19bfaf4b9cdb9a885193c7e487f69323b3/ToCollection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToAddFilter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Validators/EmployeeValidators/Interfaces/IEmployeeToAddFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5f905e58bd26fc4c228de86b6b85f2837c9a51ece575aec5c0a071a6ecc5d732/SwaggerUIMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2e42152082b49a7074952a51b1f583eead62a2e9e98c8347e54a8c76a766f6e/Execute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b6d9aef891d740fada4474a66a67cc9d76348d742c9818aa2f7592a2e55aa7/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9ce4e6910baf12080c0d7bdde952de4a175fe73255d9cedaeb5567a2e918ba/ValidationResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/73ffe226ca516698d1e28a7fe1cac5a27b5b81ccdcdc89f189e51b14c9d4c/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b2ddb77660a6521299c464af9306e538a5d5561ab9c68736d3d239cf6cee9/AssertionScope.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Validators/EmployeeValidators/EmployeeToAddValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aff6ce8fb8ebe7e9b51edf61ada5fd9375538d9dcd8ad9fddba0bd1371/CorsMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3b76182c4348e153c2ab11ee3de274363c020678fc05e65289ff5a2ff2b22/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f276352abcbf43feb7cdb6a810ccb6f86600/a6/2cbff1c5/StackTraceSymbols.cs" root0="SKIP_HIGHLIGHTING" />
@@ -138,9 +192,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.50152904" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.50174826" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="consents" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RiderProblemsViewState">
@@ -279,7 +333,13 @@
       <workItem from="1655382198377" duration="841000" />
       <workItem from="1655492774902" duration="4043000" />
       <workItem from="1655544801023" duration="702000" />
-      <workItem from="1655548757855" duration="3945000" />
+      <workItem from="1655548757855" duration="4354000" />
+      <workItem from="1656747779812" duration="105000" />
+      <workItem from="1656760837335" duration="2569000" />
+      <workItem from="1656771928949" duration="1326000" />
+      <workItem from="1656784070021" duration="1362000" />
+      <workItem from="1656954376021" duration="11563000" />
+      <workItem from="1657132500254" duration="2968000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -425,6 +485,45 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/CustomerController.cs</url>
+          <line>86</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/CustomerController.cs" initialLine="86" containingFunctionPresentation="method 'UpdateCustomer'">
+            <startOffsets>
+              <option value="3740" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3804" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/CustomerController.cs</url>
+          <line>87</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/CustomerController.cs" initialLine="87" containingFunctionPresentation="method 'UpdateCustomer'">
+            <startOffsets>
+              <option value="3817" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3834" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/CustomerController.cs</url>
+          <line>52</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/CustomerController.cs" initialLine="52" containingFunctionPresentation="method 'AddNewCustomer'">
+            <startOffsets>
+              <option value="1989" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2046" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">
           <properties exception="FluentValidation.ValidationException" isInternal="false" displayValue="ValidationException" namespaceName="FluentValidation">

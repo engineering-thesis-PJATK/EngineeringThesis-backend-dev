@@ -15,8 +15,6 @@ namespace OneBan_TMS.Validators.CustomerValidators
             RuleFor(x => x.CurEmail)
                 .NotEmpty()
                 .WithMessage("Email can not be empty")
-                .MustAsync(async (x, y) => await _customerHandler.UniqueCustomerEmail(x))
-                .WithMessage("Customer email must be unique")
                 .EmailAddress()
                 .WithMessage("Email is not valid");
         }

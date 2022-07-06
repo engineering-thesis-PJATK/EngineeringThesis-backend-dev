@@ -23,9 +23,9 @@ namespace OneBan_TMS.Controllers
         private readonly IEmployeeRepository _employeeRepository;
         private readonly ITeamRepository _teamRepository;
         private readonly IEmployeeTeamRoleRepository _employeeTeamRoleRepository;
-        private readonly IValidator<EmployeeToUpdate> _validatorEmployeeToUpdate;
+        private readonly IValidator<EmployeeToUpdateDto> _validatorEmployeeToUpdate;
         private readonly IValidator<EmployeeDto> _validatorEmployeeDto;
-        public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository, IEmployeeTeamRoleRepository employeeTeamRoleRepository, IValidator<EmployeeToUpdate> validatorEmployeeToUpdate, IValidator<EmployeeDto> validatorEmployeeDto)
+        public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository, IEmployeeTeamRoleRepository employeeTeamRoleRepository, IValidator<EmployeeToUpdateDto> validatorEmployeeToUpdate, IValidator<EmployeeDto> validatorEmployeeDto)
         {
             _employeeRepository = employeeRepository;
             _teamRepository = teamRepository;
@@ -163,7 +163,7 @@ namespace OneBan_TMS.Controllers
         #region Put
 
         [HttpPut("{employeeId}")]
-        public async Task<IActionResult> UpdateEmployee(int employeeId, [FromBody] EmployeeToUpdate employeeToUpdate)
+        public async Task<IActionResult> UpdateEmployee(int employeeId, [FromBody] EmployeeToUpdateDto employeeToUpdate)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
             {

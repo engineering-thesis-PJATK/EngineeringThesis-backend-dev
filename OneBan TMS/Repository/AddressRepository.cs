@@ -32,6 +32,7 @@ namespace OneBan_TMS.Repository
 
         public async Task<Address> AddNewAddress(AddressDto newAddress, int idCompany)
         {
+            /*
             var address = new Address()
             {
                 AdrTown = newAddress.AdrTown,
@@ -41,7 +42,8 @@ namespace OneBan_TMS.Repository
                 AdrCountry = newAddress.AdrCountry,
                 AdrIdCompany = idCompany
             };
-            
+            */
+            Address address = newAddress.GetAddress();
             _context.Addresses.Add(address);
             await _context.SaveChangesAsync();
             return address;
@@ -54,11 +56,14 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
             if (address is null)
                 throw new ArgumentException("Address not exists");
+            /*
             address.AdrTown = updatedAddress.AdrTown;
             address.AdrStreet = updatedAddress.AdrStreet;
             address.AdrStreetNumber = updatedAddress.AdrStreetNumber;
             address.AdrPostCode = updatedAddress.AdrPostCode;
             address.AdrCountry = updatedAddress.AdrCountry;
+            */
+            address = updatedAddress.GetAddressToUpdate(address);
             await _context.SaveChangesAsync();
         }
         public async Task DeleteAddress(int addressId)

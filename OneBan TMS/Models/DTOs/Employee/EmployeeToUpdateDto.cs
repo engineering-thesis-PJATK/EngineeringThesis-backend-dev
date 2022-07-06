@@ -1,6 +1,6 @@
 namespace OneBan_TMS.Models.DTOs.Employee
 {
-    public class EmployeeToUpdate
+    public class EmployeeToUpdateDto
     {
         public string EmpLogin { get; set; }
         public string EmpName { get; set; }

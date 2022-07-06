@@ -23,5 +23,16 @@ namespace OneBan_TMS.Models.DTOs.Company
                 CmpLandline = this.CmpLandline
             };
         }
+
+        public Company GetCompanyToUpdate(Company company)
+        {
+            company.CmpName = this.CmpName;
+            company.CmpNip = this.CmpNip;
+            company.CmpNipPrefix = this.CmpNipPrefix;
+            company.CmpRegon = this.CmpRegon;
+            company.CmpKrsNumber = this.CmpKrsNumber;
+            company.CmpLandline = this.CmpLandline;
+            return company;
+        }
     }
 }

@@ -86,16 +86,19 @@ namespace OneBan_TMS.Repository
         public async Task<Employee> AddEmployee(EmployeeDto newEmployee)
         {
             _passwordHandler.CreatePasswordHash(newEmployee.EmpPassword, out byte[] passwordHash, out byte[] passwordSalt);
+            string mergedHashPassword = _passwordHandler.GetMergedHashPassword(passwordHash, passwordSalt);
+            /*
             StringBuilder passwordConnector = new StringBuilder();
             passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordHash));
             passwordConnector.Append(_passwordHandler.ConvertByteArrayToString(passwordSalt));
+            */
             Employee employee = newEmployee.GetEmployee();
-            employee.EmpPassword = passwordConnector.ToString();
+            employee.EmpPassword = mergedHashPassword;
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
             return employee;
         }
-        public async Task UpdateEmployee(int employeeId, EmployeeToUpdate employeeUpdated)
+        public async Task UpdateEmployee(int employeeId, EmployeeToUpdateDto employeeUpdated)
         { 
             var employeeToUpdate = await _context
                 .Employees
@@ -159,10 +162,13 @@ namespace OneBan_TMS.Repository
                 throw new ArgumentException("Employee does not exist");
             string newRandomPassword = GenerateRandomPassword();
             _passwordHandler.CreatePasswordHash(newRandomPassword, out byte[] passwordHash, out byte[] passwordSalt);
+            string builtPassword = _passwordHandler.GetMergedHashPassword(passwordHash, passwordSalt);
+            /*
             StringBuilder passwordBuilder = new StringBuilder();
             passwordBuilder.Append(_passwordHandler.ConvertByteArrayToString(passwordHash));
             passwordBuilder.Append(_passwordHandler.ConvertByteArrayToString(passwordSalt));
-            employee.EmpPassword = passwordBuilder.ToString();
+            */
+            employee.EmpPassword = builtPassword;
             await _context.SaveChangesAsync();
             return newRandomPassword;
         }

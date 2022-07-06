@@ -68,7 +68,7 @@ namespace OneBan_TMS
             services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<IValidator<CompanyDto>, CompanyValidator>();
             services.AddScoped<IValidator<EmployeeDto>, EmployeeToAddValidator>();
-            services.AddScoped<IValidator<EmployeeToUpdate>, EmployeeToUpdateValidator>();
+            services.AddScoped<IValidator<EmployeeToUpdateDto>, EmployeeToUpdateValidator>();
             services.AddScoped<IValidator<CustomerDto>, CustomerValidator>();
             services.AddScoped<IValidator<TicketNewDto>, TicketNewValidator>();
             services.AddScoped<IValidator<EmployeeTeamRoleDto>, EmployeeTeamRoleValidator>();
@@ -95,6 +95,7 @@ namespace OneBan_TMS
             services.AddScoped<ITicketStatusHandler, TicketStatusHandler>();
             services.AddScoped<ITicketNameHandler, TicketNameHandler>();
             services.AddScoped<IReportRepository, ReportRepository>();
+            services.AddScoped<ICustomerFilter, CustomerFilter>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
             

@@ -34,8 +34,8 @@ namespace OneBan_TMS.Controllers
         public async Task<ActionResult<string>> Login([FromBody]CredentialsDto request)
         {
             var systemUser = await _userRepository.GetUserByEmail(request.Email);
-            byte[] passwordHash;
-            byte[] passwordSalt;
+            //byte[] passwordHash;
+            //byte[] passwordSalt;
             if (systemUser is null)
             {
                 return BadRequest(new MessageResponse()
@@ -44,7 +44,7 @@ namespace OneBan_TMS.Controllers
                     StatusCode = HttpStatusCode.BadRequest
                 });
             }
-            _userRepository.GetPasswordParts(systemUser.EmpPassword, out passwordHash, out passwordSalt);
+            _passwordHandler.GetPasswordParts(systemUser.EmpPassword,out byte[] passwordHash, out byte[] passwordSalt);
             if(!_passwordHandler.VerifyPasswordHash(request.Password, passwordHash, passwordSalt))
             {
                 return BadRequest(new MessageResponse()

@@ -19,12 +19,15 @@ namespace OneBan_TMS.Repository
         private readonly OneManDbContext _context;
         private readonly ICompanyRepository _companyRepository;
         private readonly ICompanyHandler _companyHandler;
-        public CustomerRepository(OneManDbContext context, ICompanyRepository companyRepository, ICompanyHandler companyHandler)
+
+        public CustomerRepository(OneManDbContext context, ICompanyRepository companyRepository,
+            ICompanyHandler companyHandler)
         {
             _context = context;
             _companyRepository = companyRepository;
             _companyHandler = companyHandler;
         }
+
         public async Task<IEnumerable<Customer>> GetAllCustomers()
         {
             return await _context
@@ -37,7 +40,7 @@ namespace OneBan_TMS.Repository
             return await _context
                 .Customers
                 .Include(x => x.Tickets)
-                .Where(x => 
+                .Where(x =>
                     x.CurId == customerId)
                 .SingleOrDefaultAsync();
         }
@@ -55,6 +58,7 @@ namespace OneBan_TMS.Repository
             if (!(await _companyRepository.ExistsCompany(companyId)))
                 throw new ArgumentException("Company does not exist");
             Customer customer = newCustomer.GetCustomer();
+            customer.CurIdCompany = companyId;
             await _context.Customers.AddAsync(customer);
             await _context.SaveChangesAsync();
             return customer;
@@ -68,24 +72,28 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
             if (customerToUpdate is null)
                 throw new ArgumentException("Customer does not exists");
+            /*
             customerToUpdate.CurName = customer.CurName;
             customerToUpdate.CurSurname = customer.CurSurname;
             customerToUpdate.CurEmail = customer.CurEmail;
             customerToUpdate.CurPhoneNumber = customer.CurPhoneNumber;
             customerToUpdate.CurPosition = customer.CurPosition;
             customerToUpdate.CurComments = customer.CurComments;
+            */
+            customerToUpdate = customer.GetUpdatedCustomer(customerToUpdate);
             await _context.SaveChangesAsync();
         }
 
         public async Task<List<CustomerShortDto>> GetCustomersToSearch()
         {
             List<CustomerShortDto> customerShortDtos = new List<CustomerShortDto>();
-            var customers = await _context
+            var customersList = await _context
                 .Customers
-                .Select(x => new {x.CurId, x.CurEmail, x.CurName, x.CurSurname})
                 .ToListAsync();
-            foreach (var customer in customers)
+            foreach (var customer in customersList)
             {
+
+                /*
                     customerShortDtos.Add(new CustomerShortDto()
                     {
                         CurId = customer.CurId, 
@@ -93,7 +101,10 @@ namespace OneBan_TMS.Repository
                         CurName = customer.CurName, 
                         CurSurname = customer.CurSurname
                     });
+                    */
+                customerShortDtos.Add(customer.GetCustomerShortDto());
             }
+
             return customerShortDtos;
         }
 
@@ -103,22 +114,27 @@ namespace OneBan_TMS.Repository
             var customerList = await GetAllCustomers();
             foreach (var customer in customerList)
             {
-                customerCompanyNameList.Add(await GetCustomerCompanyNameDtoFromCustomer(customer));   
+                //customerCompanyNameList.Add(await GetCustomerCompanyNameDtoFromCustomer(customer)); 
+                string companyName = await _companyHandler.GetNameOfCompanyById(customer.CurIdCompany);
+                customerCompanyNameList.Add(customer.GetCustomerCompanyNameDto(companyName));
             }
+
             return customerCompanyNameList;
         }
 
         public async Task<CustomerCompanyNameDto> GetCustomerWithCompanyName(int customerId)
         {
             var customer = await GetCustomerById(customerId);
-            CustomerCompanyNameDto customerCompanyNameDto = await GetCustomerCompanyNameDtoFromCustomer(customer);
+            string companyName = await _companyHandler.GetNameOfCompanyById(customer.CurIdCompany);
+            CustomerCompanyNameDto customerCompanyNameDto = customer.GetCustomerCompanyNameDto(companyName);
+            //CustomerCompanyNameDto customerCompanyNameDto = await GetCustomerCompanyNameDtoFromCustomer(customer);
             return customerCompanyNameDto;
         }
 
         public async Task DeleteCustomer(int customerId)
         {
             var customer = await _context.Customers
-                .Where(x => 
+                .Where(x =>
                     x.CurId == customerId)
                 .SingleOrDefaultAsync();
             if (customer is null)
@@ -126,23 +142,23 @@ namespace OneBan_TMS.Repository
             _context.Customers.Remove(customer);
             await _context.SaveChangesAsync();
         }
-
-        private async Task<CustomerCompanyNameDto> GetCustomerCompanyNameDtoFromCustomer(Customer customer)
-        {
-            return new CustomerCompanyNameDto()
+        /*
+            private async Task<CustomerCompanyNameDto> GetCustomerCompanyNameDtoFromCustomer(Customer customer)
             {
-                CurId = customer.CurId,
-                CurName = customer.CurName,
-                CurSurname = customer.CurSurname,
-                CurEmail = customer.CurEmail,
-                CurPhoneNumber = customer.CurPhoneNumber,
-                CurPosition = customer.CurPosition,
-                CurComments = customer.CurComments,
-                CurCreatedAt = customer.CurCreatedAt,
-                CurIdCompany = customer.CurIdCompany,
-                CurCompanyName = await _companyHandler.GetNameOfCompanyById(customer.CurIdCompany)
-            };
-        }
+                return new CustomerCompanyNameDto()
+                {
+                    CurId = customer.CurId,
+                    CurName = customer.CurName,
+                    CurSurname = customer.CurSurname,
+                    CurEmail = customer.CurEmail,
+                    CurPhoneNumber = customer.CurPhoneNumber,
+                    CurPosition = customer.CurPosition,
+                    CurComments = customer.CurComments,
+                    CurCreatedAt = customer.CurCreatedAt,
+                    CurIdCompany = customer.CurIdCompany,
+                    CurCompanyName = await _companyHandler.GetNameOfCompanyById(customer.CurIdCompany)
+                };
+            }
+            */
     }
-    
 }
