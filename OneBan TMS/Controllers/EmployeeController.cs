@@ -13,6 +13,7 @@ using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Employee;
 using OneBan_TMS.Models.DTOs.Messages;
 using OneBan_TMS.Models.DTOs.Team;
+using OneBan_TMS.Models.DTOs.TeamMember;
 using OneBan_TMS.Providers;
 
 namespace OneBan_TMS.Controllers
@@ -23,6 +24,7 @@ namespace OneBan_TMS.Controllers
         private readonly IEmployeeRepository _employeeRepository;
         private readonly ITeamRepository _teamRepository;
         private readonly IEmployeeTeamRoleRepository _employeeTeamRoleRepository;
+        private readonly ITeamMemberRepository _teamMemberRepository;
         private readonly IValidator<EmployeeToUpdateDto> _validatorEmployeeToUpdate;
         private readonly IValidator<EmployeeDto> _validatorEmployeeDto;
         public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository, IEmployeeTeamRoleRepository employeeTeamRoleRepository, IValidator<EmployeeToUpdateDto> validatorEmployeeToUpdate, IValidator<EmployeeDto> validatorEmployeeDto)
@@ -33,7 +35,15 @@ namespace OneBan_TMS.Controllers
             _validatorEmployeeToUpdate = validatorEmployeeToUpdate;
             _validatorEmployeeDto = validatorEmployeeDto;
         }
-        #region GetById
+        #region Employee
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<EmployeeForListDto>>> GetEmployees()
+        {
+            var employee = await _employeeRepository.GetAllEmployeeDto();
+            if (!(employee.Any()))
+                return NoContent();
+            return Ok(employee);
+        }
         [HttpGet("{employeeId}")]
         public async Task<ActionResult<EmployeeForListDto>> GetEmployeeById(int employeeId)
         {
@@ -43,87 +53,6 @@ namespace OneBan_TMS.Controllers
                 .GetEmployeeByIdDto(employeeId);
             return Ok(employeeDto);
         }
-
-        [HttpGet("Team/{teamId}")]
-        public async Task<ActionResult<TeamGetDto>> GetTeamById(int teamId)
-        {
-            if (teamId < 1)
-            {
-                return BadRequest("Team id must be greater than 0");
-            }
-            var singleTeam = await _teamRepository
-                .GetTeamById(teamId);
-            if (singleTeam is null)
-            {
-                return 
-                    NotFound($"No team with id: {teamId} found");
-            }
-            return 
-                Ok(singleTeam);
-        }
-        
-        [HttpGet("Privilege/{privilegeId}")]
-        public async Task<ActionResult<EmployeePrivilege>> GetEmployeePrivilegeById(int privilegeId)
-        {
-            if (privilegeId < 1)
-            {
-                return BadRequest("Privilege id must be greater than 0");
-            }
-
-            var singlePrivilege = await _employeeRepository
-                                                       .GetEmployeePrivilegeById(privilegeId);
-            if (singlePrivilege is null)
-            {
-                return 
-                    NotFound($"No privilege with id: {privilegeId} found");
-            }
-            
-            return 
-                Ok(singlePrivilege);
-        }
-        
-        #endregion     
-        #region getList
-        [HttpGet("Privilege")]
-        public async Task<ActionResult<EmployeePrivilege>> GetEmployeePrivileges()
-        {
-            var privileges = await _employeeRepository
-                                                      .GetEmployeePrivileges();
-            if (privileges is null)
-                return BadRequest("No privileges assigned to employees");
-            return Ok(privileges);
-        }
-        
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<EmployeeForListDto>>> GetEmployees()
-        {
-            var employee = await _employeeRepository.GetAllEmployeeDto();
-            if (!(employee.Any()))
-                return NoContent();
-            return Ok(employee);
-        }
-
-        [HttpGet("Team")]
-        public async Task<ActionResult<List<Team>>> GetTeams()
-        {
-            var teamList = await _teamRepository
-                                 .GetTeams();
-            if (teamList is null)
-            {
-                return BadRequest();
-            }
-            if (!(teamList.Any()))
-            {
-                return 
-                    NoContent();
-            }
-            
-            return 
-                Ok(teamList);
-        }
-        #endregion
-        #region Post
-
         [HttpPost]
         public async Task<ActionResult> AddNewEmployee([FromBody]EmployeeDto newEmployee)
         {
@@ -147,21 +76,6 @@ namespace OneBan_TMS.Controllers
             await _employeeRepository.AddPrivilegesToUser(employeeId, employeePriviles);
             return Ok(MessageProvider.GetSuccessfulMessage("Added successfully privileges to employee"));
         }
-        [HttpPost("Team")]
-        public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)
-        {
-            if (ModelState.IsValid)
-            {
-                return
-                    await _teamRepository.PostTeam(newTeam);
-            }
-
-            return
-                BadRequest();
-        }
-        #endregion
-        #region Put
-
         [HttpPut("{employeeId}")]
         public async Task<IActionResult> UpdateEmployee(int employeeId, [FromBody] EmployeeToUpdateDto employeeToUpdate)
         {
@@ -180,6 +94,153 @@ namespace OneBan_TMS.Controllers
             await _employeeRepository.UpdateEmployee(employeeId, employeeToUpdate);
             return Ok(MessageProvider.GetSuccessfulMessage("Updated successfully employee"));
         }
+        [HttpDelete("{employeeId}")]
+        public async Task<IActionResult> DeleteEmployee(int employeeId)
+        {
+            if (!(await _employeeRepository.ExistsEmployee(employeeId)))
+                return BadRequest(MessageProvider.GetBadRequestMessage("Employee does not exist"));
+            await _employeeRepository.DeleteEmployee(employeeId);
+            return Ok(MessageProvider.GetSuccessfulMessage("Deleted employee successfully"));
+        }
+        [HttpPost("/Team/EmployeeRole")]
+        public async Task<IActionResult> AddEmployeeWithRoleToTeam([FromBody]EmployeeWithRoleToTeamDto employeeWithRoleToTeamDto)
+        {
+            if (!(await _teamRepository.ExistsTeam(employeeWithRoleToTeamDto.TeamId)))
+                return BadRequest(MessageProvider.GetBadRequestMessage("Team does not exists"));
+            foreach (var employeeWithRole in employeeWithRoleToTeamDto.EmployeesWithRoles)
+            {
+                if (!(await _employeeRepository.ExistsEmployee(employeeWithRole.employeeId)))
+                    return BadRequest(MessageProvider.GetBadRequestMessage($"Employee with ID {employeeWithRole.employeeId} does not exist"));
+                if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeWithRole.teamRoleId)))
+                    return BadRequest(
+                        MessageProvider.GetBadRequestMessage($"Employee team role with ID {employeeWithRole.teamRoleId} does not exist"));
+            }
+            await _teamRepository.AddEmployeesToTeamWithRoles(employeeWithRoleToTeamDto);
+            return Ok(MessageProvider.GetSuccessfulMessage("Employee with role added to team successfully"));
+        }
+        #endregion
+        #region EmployeeTeamMember
+        [HttpPost("/Team/TeamMember")]
+        public async Task<IActionResult> AddTeamMember([FromBody]TeamMemberAddDto newTeamMemberAddDto)
+        {
+            if(!(await _teamRepository.ExistsTeam(newTeamMemberAddDto.TmrIdTeam)))
+                return BadRequest(MessageProvider.GetBadRequestMessage($"Team with id {newTeamMemberAddDto.TmrIdTeam} does not exist"));
+            if (!(await _employeeRepository.ExistsEmployee(newTeamMemberAddDto.TmrIdEmployee)))
+                return BadRequest(
+                    MessageProvider.GetBadRequestMessage($"Employee with id {newTeamMemberAddDto.TmrIdEmployee} does not exist"));
+            if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(newTeamMemberAddDto.TmrIdRole)))
+                return BadRequest(
+                    MessageProvider.GetBadRequestMessage($"Employee team role with id {newTeamMemberAddDto.TmrIdRole} does not exist"));
+            await _teamMemberRepository.AddTeamMember(newTeamMemberAddDto);
+            return Ok(MessageProvider.GetSuccessfulMessage("Team member added successfully"));
+        }
+        [HttpDelete("Team/TeamMember")]
+        public async Task<IActionResult> DeleteTeamMember(int teamId, int employeeId, int roleId)
+        {
+            if(!(await _teamMemberRepository.ExistsTeamsMember(teamId, employeeId, roleId)))
+                return BadRequest(MessageProvider.GetBadRequestMessage("Team member does not exist"));
+            await DeleteTeamMember(teamId, employeeId, roleId);
+            return Ok(MessageProvider.GetSuccessfulMessage("Team member deleted successfully"));
+        }
+
+        [HttpPatch("Team/Member")]
+        public async Task<IActionResult> UpdateTeamMemberRole(int teamId, int employeeId, int newRoleId)
+        {
+            if(!(await _teamRepository.ExistsTeam(teamId)))
+                return BadRequest(MessageProvider.GetBadRequestMessage($"Team with id {teamId} does not exist"));
+            if (!(await _employeeRepository.ExistsEmployee(employeeId)))
+                return BadRequest(
+                    MessageProvider.GetBadRequestMessage($"Employee with id {employeeId} does not exist"));
+            if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(newRoleId)))
+                return BadRequest(
+                    MessageProvider.GetBadRequestMessage($"Employee team role with id {newRoleId} does not exist"));
+            await _teamMemberRepository.UpdateTeamMemberRole(teamId, employeeId, newRoleId);
+            return Ok(MessageProvider.GetSuccessfulMessage("Role updated successfully"));
+        }
+        #endregion
+        #region EmployeeTeam
+        #region GetById
+        [HttpGet("Team/{teamId}")]
+        public async Task<ActionResult<TeamGetDto>> GetTeamById(int teamId)
+        {
+            if (teamId < 1)
+            {
+                return BadRequest("Team id must be greater than 0");
+            }
+            var singleTeam = await _teamRepository
+                .GetTeamById(teamId);
+            if (singleTeam is null)
+            {
+                return 
+                    NotFound($"No team with id: {teamId} found");
+            }
+            return 
+                Ok(singleTeam);
+        }
+        [HttpGet("Privilege/{privilegeId}")]
+        public async Task<ActionResult<EmployeePrivilege>> GetEmployeePrivilegeById(int privilegeId)
+        {
+            if (privilegeId < 1)
+            {
+                return BadRequest("Privilege id must be greater than 0");
+            }
+
+            var singlePrivilege = await _employeeRepository
+                                                       .GetEmployeePrivilegeById(privilegeId);
+            if (singlePrivilege is null)
+            {
+                return 
+                    NotFound($"No privilege with id: {privilegeId} found");
+            }
+            
+            return 
+                Ok(singlePrivilege);
+        }
+        #endregion     
+        #region getList
+        [HttpGet("Privilege")]
+        public async Task<ActionResult<EmployeePrivilege>> GetEmployeePrivileges()
+        {
+            var privileges = await _employeeRepository
+                                                      .GetEmployeePrivileges();
+            if (privileges is null)
+                return BadRequest("No privileges assigned to employees");
+            return Ok(privileges);
+        }
+        [HttpGet("Team")]
+        public async Task<ActionResult<List<Team>>> GetTeams()
+        {
+            var teamList = await _teamRepository
+                                 .GetTeams();
+            if (teamList is null)
+            {
+                return BadRequest();
+            }
+            if (!(teamList.Any()))
+            {
+                return 
+                    NoContent();
+            }
+            
+            return 
+                Ok(teamList);
+        }
+        #endregion
+        #region Post
+        [HttpPost("Team")]
+        public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)
+        {
+            if (ModelState.IsValid)
+            {
+                return
+                    await _teamRepository.PostTeam(newTeam);
+            }
+
+            return
+                BadRequest();
+        }
+        #endregion
+        #region Put
 
         [HttpPut("Team/{teamId}")]
         public async Task<ActionResult<Team>> UpdateTeamById(int teamId,TeamUpdateDto teamGetUpdateDto)
@@ -212,14 +273,6 @@ namespace OneBan_TMS.Controllers
         #endregion
         #region Delete
 
-        [HttpDelete("{employeeId}")]
-        public async Task<IActionResult> DeleteEmployee(int employeeId)
-        {
-            if (!(await _employeeRepository.ExistsEmployee(employeeId)))
-                return BadRequest(MessageProvider.GetBadRequestMessage("Employee does not exist"));
-            await _employeeRepository.DeleteEmployee(employeeId);
-            return Ok(MessageProvider.GetSuccessfulMessage("Deleted employee successfully"));
-        }
         [HttpDelete("Team/{teamId}")]
         public async Task<ActionResult> DeleteTeamById(int teamId)
         {
@@ -234,22 +287,7 @@ namespace OneBan_TMS.Controllers
                 Ok($"Team with id {teamId} has been deleted");
         }
         #endregion
+        #endregion
 
-        [HttpPost("/Team/EmployeeRole")]
-        public async Task<IActionResult> AddEmployeeWithRoleToTeam([FromBody]EmployeeWithRoleToTeamDto employeeWithRoleToTeamDto)
-        {
-            if (!(await _teamRepository.ExistsTeam(employeeWithRoleToTeamDto.TeamId)))
-                return BadRequest(MessageProvider.GetBadRequestMessage("Team does not exists"));
-            foreach (var employeeWithRole in employeeWithRoleToTeamDto.EmployeesWithRoles)
-            {
-                if (!(await _employeeRepository.ExistsEmployee(employeeWithRole.employeeId)))
-                    return BadRequest(MessageProvider.GetBadRequestMessage($"Employee with ID {employeeWithRole.employeeId} does not exist"));
-                if (!(await _employeeTeamRoleRepository.ExistsEmployeeTeamRole(employeeWithRole.teamRoleId)))
-                    return BadRequest(
-                        MessageProvider.GetBadRequestMessage($"Employee team role with ID {employeeWithRole.teamRoleId} does not exist"));
-            }
-            await _teamRepository.AddEmployeesToTeamWithRoles(employeeWithRoleToTeamDto);
-            return Ok(MessageProvider.GetSuccessfulMessage("Employee with role added to team successfully"));
-        }
     }
 }
