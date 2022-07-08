@@ -16,6 +16,7 @@ namespace OneBan_TMS.Models.DTOs.Employee
             return new Employee()
             {
                 EmpEmail = this.EmpEmail,
+                EmpLogin = this.EmpEmail,
                 EmpSurname = this.EmpSurname,
                 EmpName = this.EmpName,
                 EmpPhoneNumber = EmpPhoneNumber,

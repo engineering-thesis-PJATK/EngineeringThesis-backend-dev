@@ -723,3 +723,4 @@ D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBanTMS.I
 /Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
+/Users/mac/Documents/SchoolGitRepos/back/OneBanTMS.IntegrationTests/bin/Debug/net5.0/DataAnnotationsExtensions.dll
