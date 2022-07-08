@@ -71,7 +71,6 @@ namespace OneBanTMS.IntegrationTests
                 EmpName = "testUpdatedName",
                 EmpSurname = "testUpdatedSurname",
                 EmpPhoneNumber = "312-312-312",
-                EmpLogin = "1test1@test.pl"
             };
             await _employeeRepository.UpdateEmployee(employeeId, employeeToUpdate);
             var employeeCountAfter = await _context

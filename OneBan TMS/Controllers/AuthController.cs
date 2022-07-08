@@ -5,10 +5,12 @@ using OneBan_TMS.Interfaces;
 using OneBan_TMS.Models.DTOs;
 using System.Threading.Tasks;
 using Microsoft.Graph;
+using OneBan_TMS.Exceptions;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models.DTOs.Employee;
 using OneBan_TMS.Models.DTOs.Messages;
+using OneBan_TMS.Providers;
 using Message = OneBan_TMS.Models.DTOs.Email.Message;
 
 namespace OneBan_TMS.Controllers
@@ -66,11 +68,19 @@ namespace OneBan_TMS.Controllers
         {
             var employeeExists = await _employeeRepository
                 .ExistsEmployeeByEmail(emailAddress);
-            if (employeeExists)
+            try
             {
-                string randomPassword = await _employeeRepository.ChangePassword(emailAddress);
-                var message = new Message(new string[] {emailAddress}, "Nowe hasło", $"Twoje nowe hasło to {randomPassword}");
-                _emailSender.SendEmail(message);
+                if (employeeExists)
+                {
+                    string randomPassword = await _employeeRepository.ChangePassword(emailAddress);
+                    var message = new Message(new string[] {emailAddress}, "Nowe hasło",
+                        $"Twoje nowe hasło to {randomPassword}");
+                    _emailSender.SendEmail(message);
+                }
+            }
+            catch (EmailException exc)
+            {
+                return BadRequest(MessageProvider.GetBadRequestMessage(exc.Message));
             }
 
             return Ok(new MessageResponse()

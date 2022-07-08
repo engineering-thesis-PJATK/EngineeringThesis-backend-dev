@@ -2,6 +2,7 @@
 using System;
 using MailKit.Net.Smtp;
 using MimeKit;
+using OneBan_TMS.Exceptions;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Models.DTOs.Email;
 
@@ -43,7 +44,7 @@ namespace OneBan_TMS.Handlers
                 }
                 catch
                 {
-                    throw new Exception("Problem z mailem");
+                    throw new EmailException("There is problem with email server");
                 }
                 finally
                 {

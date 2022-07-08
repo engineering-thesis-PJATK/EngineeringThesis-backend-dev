@@ -8,9 +8,6 @@ namespace OneBan_TMS.Validators.EmployeeValidators
     {
         public EmployeeToUpdateValidator()
         {
-            RuleFor(x => x.EmpLogin)
-                .NotEmpty()
-                .WithMessage("Login can not be empty");
             RuleFor(x => x.EmpEmail)
                 .EmailAddress()
                 .WithMessage("Email is not valid");

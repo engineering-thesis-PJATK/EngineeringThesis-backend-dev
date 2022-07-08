@@ -104,7 +104,7 @@ namespace OneBan_TMS.Repository
                 .Employees
                 .Where(x => x.EmpId == employeeId)
                 .SingleOrDefaultAsync();
-            employeeToUpdate.EmpLogin = employeeUpdated.EmpLogin;
+            employeeToUpdate.EmpLogin = employeeUpdated.EmpEmail;
             employeeToUpdate.EmpEmail = employeeUpdated.EmpEmail;
             employeeToUpdate.EmpName = employeeUpdated.EmpName;
             employeeToUpdate.EmpSurname = employeeUpdated.EmpSurname;
@@ -259,6 +259,12 @@ namespace OneBan_TMS.Repository
                 .Employees
                 .Where(x => x.EmpId == employeeId)
                 .SingleOrDefaultAsync();
+            var employeePrivileges = await _context
+                .EmployeePrivilegeEmployees
+                .Where(x => x.EpeIdEmployee == employeeId)
+                .ToListAsync();
+            if(employeePrivileges.Any())
+                _context.EmployeePrivilegeEmployees.RemoveRange(employeePrivileges);
             if (employee is null)
                 throw new ArgumentException("Employee does not exist");
             _context.Employees.Remove(employee);
