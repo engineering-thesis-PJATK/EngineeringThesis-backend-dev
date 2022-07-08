@@ -96,6 +96,7 @@ namespace OneBan_TMS
             services.AddScoped<ITicketNameHandler, TicketNameHandler>();
             services.AddScoped<IReportRepository, ReportRepository>();
             services.AddScoped<ICustomerFilter, CustomerFilter>();
+            services.AddScoped<ITeamMemberRepository, TeamMemberRepository>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
             

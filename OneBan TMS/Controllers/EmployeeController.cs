@@ -27,13 +27,14 @@ namespace OneBan_TMS.Controllers
         private readonly ITeamMemberRepository _teamMemberRepository;
         private readonly IValidator<EmployeeToUpdateDto> _validatorEmployeeToUpdate;
         private readonly IValidator<EmployeeDto> _validatorEmployeeDto;
-        public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository, IEmployeeTeamRoleRepository employeeTeamRoleRepository, IValidator<EmployeeToUpdateDto> validatorEmployeeToUpdate, IValidator<EmployeeDto> validatorEmployeeDto)
+        public EmployeeController(IEmployeeRepository employeeRepository, ITeamRepository teamRepository, IEmployeeTeamRoleRepository employeeTeamRoleRepository, ITeamMemberRepository teamMemberRepository, IValidator<EmployeeToUpdateDto> validatorEmployeeToUpdate, IValidator<EmployeeDto> validatorEmployeeDto)
         {
             _employeeRepository = employeeRepository;
             _teamRepository = teamRepository;
             _employeeTeamRoleRepository = employeeTeamRoleRepository;
             _validatorEmployeeToUpdate = validatorEmployeeToUpdate;
             _validatorEmployeeDto = validatorEmployeeDto;
+            _teamMemberRepository = teamMemberRepository;
         }
         #region Employee
         [HttpGet]
@@ -228,7 +229,7 @@ namespace OneBan_TMS.Controllers
         #endregion
         #region Post
         [HttpPost("Team")]
-        public async Task<ActionResult<TeamGetDto>> PostTeam(TeamUpdateDto newTeam)
+        public async Task<ActionResult<TeamGetDto>> PostTeam([FromBody]TeamUpdateDto newTeam)
         {
             if (ModelState.IsValid)
             {
