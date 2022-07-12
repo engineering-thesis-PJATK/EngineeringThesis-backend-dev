@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
@@ -81,6 +83,11 @@ namespace OneBan_TMS.Repository
                 Roles = await GetEmployeePrivileges(employee.EmpId),
                 EmployeeTeams = employee.Teams
             };
+        }
+
+        public Task<List<EmployeeShortDto>> GetEmployeeShortDto()
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<Employee> AddEmployee(EmployeeDto newEmployee)
@@ -237,18 +244,31 @@ namespace OneBan_TMS.Repository
                 .AnyAsync(x => x.EmpEmail.Equals(employeeEmail));
             return result;
         }
-        public async Task AddPrivilegesToUser(int employeeId, List<int> privileges)
+        public async Task ChangePrivilegesToUser(int employeeId, List<int> newPrivileges)
         {
-            foreach (int privilege in privileges)
+            var privilegesToAdd = newPrivileges;
+            var existingPrivilegesList = await _context.EmployeePrivilegeEmployees.Where(x => 
+                    x.EpeIdEmployee == employeeId)
+                .ToListAsync();
+            foreach (var privilege in existingPrivilegesList)
             {
-                if (!(await ExistsPrivilegesOnEmployee(employeeId, privilege)))
+                if (!(newPrivileges.Contains(privilege.EpeIdEmployeePrivilage)))
                 {
-                    await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
-                    {
-                        EpeIdEmployee = employeeId,
-                        EpeIdEmployeePrivilage = privilege
-                    });
+                    _context.EmployeePrivilegeEmployees.Remove(privilege);
                 }
+                else
+                {
+                    privilegesToAdd.Remove(privilege.EpeIdEmployeePrivilage);
+                }
+            }
+
+            foreach (var privilege in privilegesToAdd)
+            {
+                await _context.EmployeePrivilegeEmployees.AddAsync(new EmployeePrivilegeEmployee()
+                {
+                    EpeIdEmployee = employeeId,
+                    EpeIdEmployeePrivilage = privilege
+                });
             }
             await _context.SaveChangesAsync();
         }

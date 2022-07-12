@@ -6,7 +6,7 @@ using OneBan_TMS.Models.DTOs.Report;
 
 namespace OneBan_TMS.Interfaces.Handlers
 {
-    public interface IReportHandler
+    public interface ITimeHandler
     {
         string GetTimeFromTicks(long ticks);
     }

@@ -32,18 +32,8 @@ namespace OneBan_TMS.Repository
 
         public async Task<Address> AddNewAddress(AddressDto newAddress, int idCompany)
         {
-            /*
-            var address = new Address()
-            {
-                AdrTown = newAddress.AdrTown,
-                AdrStreet = newAddress.AdrStreet,
-                AdrStreetNumber = newAddress.AdrStreetNumber,
-                AdrPostCode = newAddress.AdrPostCode,
-                AdrCountry = newAddress.AdrCountry,
-                AdrIdCompany = idCompany
-            };
-            */
             Address address = newAddress.GetAddress();
+            address.AdrIdCompany = idCompany;
             _context.Addresses.Add(address);
             await _context.SaveChangesAsync();
             return address;

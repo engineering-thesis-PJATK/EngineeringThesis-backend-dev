@@ -6,6 +6,7 @@ using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
+using OneBan_TMS.Models.DTOs.Project;
 
 namespace OneBan_TMS.Repository
 {
@@ -46,6 +47,38 @@ namespace OneBan_TMS.Repository
             return
                 projects;
 
+        }
+
+        public async Task<IEnumerable<ProjectCompanyTeamNamesDto>> GetProjectsWithCompanyNameTeamName()
+        {
+            List<ProjectCompanyTeamNamesDto> projectCompanyTeamNamesDtoList = new List<ProjectCompanyTeamNamesDto>();
+            var allProjectsData = await _context.Projects
+                .Include(x => x.ProIdCompanyNavigation)
+                .Include(x => x.ProIdTeamNavigation)
+                .ToListAsync();
+            foreach (Project project in allProjectsData)
+            {
+                projectCompanyTeamNamesDtoList.Add(project.GetProjectCompanyTeamNamesDto());
+            }
+            return projectCompanyTeamNamesDtoList;
+        }
+
+        public async Task<ProjectCompanyTeamNamesDto> GetProjectWithCompanyNameTeamNameById(int projectId)
+        {
+            var projectData = await _context.Projects
+                .Include(x => x.ProIdCompanyNavigation)
+                .Include(x => x.ProIdTeamNavigation)
+                .Where(x => x.ProId == projectId)
+                .SingleOrDefaultAsync();
+            return projectData.GetProjectCompanyTeamNamesDto();
+        }
+
+        public async Task<Project> AddNewProject(ProjectNewDto projectNewDto)
+        {
+            var newProject = projectNewDto.GetProject();
+            await _context.Projects.AddAsync(newProject);
+            await _context.SaveChangesAsync();
+            return newProject;
         }
     }
 }

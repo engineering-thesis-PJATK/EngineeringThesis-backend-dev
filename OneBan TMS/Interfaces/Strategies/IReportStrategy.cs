@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using OneBan_TMS.Models.DTOs.Report;
 
-namespace OneBan_TMS.Interfaces.Repositories.IReportStrategy
+namespace OneBan_TMS.Interfaces.Strategies
 {
     public interface IReportStrategy
     {
-        IEnumerable<TimeEntryHeaderDto> GetReportData(IEnumerable<TimeEntryReportDto> timeEntryData);
+        IEnumerable<TimeEntryGroupedDto> GetReportData(IEnumerable<TimeEntryReportDto> timeEntryData);
     }
 }

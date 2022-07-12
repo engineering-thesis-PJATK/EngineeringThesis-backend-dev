@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace OneBan_TMS.Models.DTOs.Report
 {
-    public class TimeEntryHeaderDto
+    public class TimeEntryGroupedDto
     {
         public int TehId { get; set; }
         public string TehGroupTitle { get; set; }

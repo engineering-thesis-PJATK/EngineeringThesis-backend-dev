@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OneBan_TMS.Interfaces;
+using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
@@ -17,10 +18,16 @@ namespace OneBan_TMS.Controllers
     {
         private IProjectRepository _projectRepository{ get; init; }
         private readonly IProjectTaskRepository _projectTaskRepository;
-        public ProjectController(IProjectRepository projectRepository, IProjectTaskRepository projectTaskRepository)
+        private readonly ICompanyRepository _companyRepository;
+        private readonly ITeamRepository _teamRepository;
+        private readonly IProjectStatusHandler _projectStatusHandler;
+        public ProjectController(IProjectRepository projectRepository, IProjectTaskRepository projectTaskRepository, ICompanyRepository companyRepository, ITeamRepository teamRepository, IProjectStatusHandler projectStatusHandler)
         {
             _projectRepository = projectRepository;
             _projectTaskRepository = projectTaskRepository;
+            _companyRepository = companyRepository;
+            _teamRepository = teamRepository;
+            _projectStatusHandler = projectStatusHandler;
         }
         
         [HttpGet("{projectId}")]
@@ -58,6 +65,35 @@ namespace OneBan_TMS.Controllers
             return Ok(projectList);
         }
 
+        [HttpGet("CompanyTeamNames")]
+        public async Task<ActionResult<IEnumerable<ProjectCompanyTeamNamesDto>>> GetProjectsWithCompanyNameTeamName()
+        {
+            var projectCompanyTeamNamesDtoList = await _projectRepository.GetProjectsWithCompanyNameTeamName();
+            if (!(projectCompanyTeamNamesDtoList.Any()))
+                return NoContent();
+            return Ok(projectCompanyTeamNamesDtoList);
+        }
+
+        [HttpGet("CompanyTeamNames/{projectId}")]
+        public async Task<ActionResult<ProjectCompanyTeamNamesDto>> GetProjectWithCompanyNameTeamNameById(int projectId)
+        {
+            var projectCompanyTeamNamesDto = await _projectRepository.GetProjectWithCompanyNameTeamNameById(projectId);
+            if (projectCompanyTeamNamesDto is null)
+                return NoContent();
+            return Ok(projectCompanyTeamNamesDto);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddNewProject([FromBody] ProjectNewDto projectNewDto)
+        {
+            if (!(await _companyRepository.ExistsCompany(projectNewDto.ProIdCompany)))
+                return BadRequest(MessageProvider.GetBadRequestMessage("Company does not exist"));
+            if(!(await _teamRepository.ExistsTeam(projectNewDto.ProIdTeam)))
+                return BadRequest(MessageProvider.GetBadRequestMessage("Team does not exist"));
+            if(!(await _projectStatusHandler.IsProjectStatusExist(projectNewDto.ProStatusId)))
+                return BadRequest(MessageProvider.GetBadRequestMessage("Project status does not exist"));
+            var addedProject = await _projectRepository.AddNewProject(projectNewDto);
+            return Ok(MessageProvider.GetSuccessfulMessage("Project added successfully", null, addedProject.ProId));
+        }
         [HttpGet("{projectId}/ProjectTasks")]
         public async Task<IActionResult> GetProjectTasksForProject(int projectId)
         {

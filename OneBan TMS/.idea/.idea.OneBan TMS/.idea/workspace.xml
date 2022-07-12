@@ -9,11 +9,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93409f90-b653-40a8-8786-1c434510b41f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Exceptions/EmailException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Handlers/EmployeePrivilegesHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Handlers/ProjectStatusHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interfaces/Handlers/IEmployeePrivilegesHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interfaces/Handlers/IProjectStatusHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/Employee/EmployeeShortDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/Project/ProjectCompanyTeamNamesDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DTOs/Project/ProjectNewDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Providers/ReportsDataProviders/ReportDataByCompanyProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Providers/ReportsDataProviders/ReportDataByDateProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneBan TMS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handlers/EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/EmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EmployeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ProjectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProjectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ReportController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ReportController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handlers/ReportHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handlers/TimeHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Handlers/IReportHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Handlers/ITimeHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IEmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IProjectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IProjectRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IReportRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Repositories/IReportRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/Repositories/IReportStrategy/IReportStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/Strategies/IReportStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DTOs/Report/TimeEntryHeaderDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DTOs/Report/TimeEntryGroupedDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Project.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Providers/ReportDataStrategyProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Providers/ReportDataStrategyProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/AddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/AddressRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/EmployeeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/ProjectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/ProjectRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/ReportRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/ReportRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/ReportStrategy/CompanyGroupReportData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/ReportStrategy/DateGroupReportData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
@@ -21,6 +46,7 @@
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/OneBan TMS.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/OneBan TMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../OneBanTMS.IntegrationTests/obj/Debug/net5.0/OneBanTMS.IntegrationTests.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +143,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f40db1c9df947a85fe7869240d245473af55e37bd2ed3d1b7d753d4213268ce/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/43d8e41a76f50d28b292577de9dd4ea624d00d1c5753d17a95b4ebcec39b9/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6abd66eeeb0e3838fe52f6892f3cb4c2036d9aed71715241a71280118ac/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1ea15c934d291d6084bac3be431584511bf43433861f7bc4a287980635fbda/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6ce5c5dfb7ba162d20d2d5d6745d687db84a654ea23844c210f95d9c154c24/ValueTask.cs" root0="SKIP_HIGHLIGHTING" />
@@ -148,7 +175,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="XThreadsFramesViewSplitterKey" value="0.50174826" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RiderProblemsViewState">
@@ -295,7 +322,9 @@
       <workItem from="1656954376021" duration="11563000" />
       <workItem from="1657132500254" duration="3351000" />
       <workItem from="1657207081132" duration="7472000" />
-      <workItem from="1657298641482" duration="2653000" />
+      <workItem from="1657298641482" duration="6126000" />
+      <workItem from="1657467107471" duration="4279000" />
+      <workItem from="1657560301712" duration="11072000" />
     </task>
     <task id="LOCAL-00001" summary="Added HomeController Empty">
       <created>1647187356028</created>
@@ -417,27 +446,14 @@
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/ReportRepository.cs</url>
-          <line>27</line>
-          <properties documentPath="$PROJECT_DIR$/Repository/ReportRepository.cs" initialLine="26" containingFunctionPresentation="method 'GetGroupDataForReport'">
-            <startOffsets>
-              <option value="1027" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1136" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Controllers/ReportController.cs</url>
           <line>26</line>
           <properties documentPath="$PROJECT_DIR$/Controllers/ReportController.cs" initialLine="26" containingFunctionPresentation="method 'GetGroupDataForReport'">
             <startOffsets>
-              <option value="947" />
+              <option value="948" />
             </startOffsets>
             <endOffsets>
-              <option value="1007" />
+              <option value="1008" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="31" />
@@ -483,13 +499,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Controllers/EmployeeController.cs</url>
-          <line>126</line>
+          <line>135</line>
           <properties documentPath="$PROJECT_DIR$/Controllers/EmployeeController.cs" initialLine="125" containingFunctionPresentation="method 'AddTeamMember'">
             <startOffsets>
-              <option value="6841" />
+              <option value="7168" />
             </startOffsets>
             <endOffsets>
-              <option value="6911" />
+              <option value="7238" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="37" />
@@ -506,6 +522,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/ProjectController.cs</url>
+          <line>87</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/ProjectController.cs" initialLine="67" containingFunctionPresentation="method 'AddNewProject'">
+            <startOffsets>
+              <option value="3466" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3540" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">
           <properties exception="FluentValidation.ValidationException" isInternal="false" displayValue="ValidationException" namespaceName="FluentValidation">

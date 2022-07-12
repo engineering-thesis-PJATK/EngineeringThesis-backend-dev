@@ -54,6 +54,15 @@ namespace OneBan_TMS.Controllers
                 .GetEmployeeByIdDto(employeeId);
             return Ok(employeeDto);
         }
+
+        [HttpGet("/Short")]
+        public async Task<ActionResult> GetEmployeeShort()
+        {
+            var employeeShortDtoList = await _employeeRepository.GetEmployeeShortDto();
+            if (employeeShortDtoList.Any())
+                return NoContent();
+            return Ok(employeeShortDtoList);
+        }
         [HttpPost]
         public async Task<ActionResult> AddNewEmployee([FromBody]EmployeeDto newEmployee)
         {
@@ -68,13 +77,13 @@ namespace OneBan_TMS.Controllers
             return Ok(MessageProvider.GetSuccessfulMessage("Added successfully employee", null, employee.EmpId));
         }
         [HttpPost("{employeeId}/Roles")]
-        public async Task<IActionResult> AddRolesForEmployee(int employeeId, [FromBody] List<int> employeePriviles)
+        public async Task<IActionResult> ChangeEmployeePrivileges(int employeeId, [FromBody] List<int> employeePriviles)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))
                 return BadRequest(MessageProvider.GetBadRequestMessage("User does not exists"));
             if (!(await _employeeRepository.ExistsEmployeePrivileges(employeePriviles)))
                 return BadRequest(MessageProvider.GetBadRequestMessage("One of privileges do not exist"));
-            await _employeeRepository.AddPrivilegesToUser(employeeId, employeePriviles);
+            await _employeeRepository.ChangePrivilegesToUser(employeeId, employeePriviles);
             return Ok(MessageProvider.GetSuccessfulMessage("Added successfully privileges to employee"));
         }
         [HttpPut("{employeeId}")]
@@ -103,7 +112,7 @@ namespace OneBan_TMS.Controllers
             await _employeeRepository.DeleteEmployee(employeeId);
             return Ok(MessageProvider.GetSuccessfulMessage("Deleted employee successfully"));
         }
-        [HttpPost("/Team/EmployeeRole")]
+        [HttpPost("Team/EmployeeRole")]
         public async Task<IActionResult> AddEmployeeWithRoleToTeam([FromBody]EmployeeWithRoleToTeamDto employeeWithRoleToTeamDto)
         {
             if (!(await _teamRepository.ExistsTeam(employeeWithRoleToTeamDto.TeamId)))
@@ -121,7 +130,7 @@ namespace OneBan_TMS.Controllers
         }
         #endregion
         #region EmployeeTeamMember
-        [HttpPost("/Team/TeamMember")]
+        [HttpPost("Team/TeamMember")]
         public async Task<IActionResult> AddTeamMember([FromBody]TeamMemberAddDto newTeamMemberAddDto)
         {
             if(!(await _teamRepository.ExistsTeam(newTeamMemberAddDto.TmrIdTeam)))
@@ -143,7 +152,6 @@ namespace OneBan_TMS.Controllers
             await DeleteTeamMember(teamId, employeeId, roleId);
             return Ok(MessageProvider.GetSuccessfulMessage("Team member deleted successfully"));
         }
-
         [HttpPatch("Team/Member")]
         public async Task<IActionResult> UpdateTeamMemberRole(int teamId, int employeeId, int newRoleId)
         {

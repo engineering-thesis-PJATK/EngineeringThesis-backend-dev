@@ -21,7 +21,7 @@ namespace OneBan_TMS.Controllers
             _employeeRepository = employeeRepository;
         }
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TimeEntryHeaderDto>>> GetGroupDataForReport(int employeeId, string dateFrom,
+        public async Task<ActionResult<IEnumerable<TimeEntryGroupedDto>>> GetGroupDataForReport(int employeeId, string dateFrom,
             string dateTo, int groupType)
         {
             if (!(await _employeeRepository.ExistsEmployee(employeeId)))

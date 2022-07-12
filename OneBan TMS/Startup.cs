@@ -76,7 +76,7 @@ namespace OneBan_TMS
             services.AddScoped<ICompanyHandler, CompanyHandler>();
             services.AddScoped<ICustomerHandler, CustomerHandler>();
             services.AddScoped<IStatusHandler, StatusHandler>();
-            services.AddScoped<IReportHandler, ReportHandler>();
+            services.AddScoped<ITimeHandler, TimeHandler>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
@@ -97,9 +97,11 @@ namespace OneBan_TMS
             services.AddScoped<IReportRepository, ReportRepository>();
             services.AddScoped<ICustomerFilter, CustomerFilter>();
             services.AddScoped<ITeamMemberRepository, TeamMemberRepository>();
+            services.AddScoped<IEmployeePrivilegesHandler, EmployeePrivilegesHandler>();
+            services.AddScoped<IProjectStatusHandler, ProjectStatusHandler>();
             services.AddSingleton<IPasswordHandler, PasswordHandler>();
             services.AddSingleton<ITokenHandler, CustomTokenHandler>();
-            
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters

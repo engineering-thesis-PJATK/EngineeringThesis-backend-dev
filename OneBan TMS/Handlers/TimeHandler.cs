@@ -9,10 +9,10 @@ using OneBan_TMS.Models.DTOs.Report;
 
 namespace OneBan_TMS.Handlers
 {
-    public class ReportHandler : IReportHandler
+    public class TimeHandler : ITimeHandler
     {
         private readonly OneManDbContext _context;
-        public ReportHandler(OneManDbContext context)
+        public TimeHandler(OneManDbContext context)
         {
             _context = context;
         }
