@@ -1,9 +1,11 @@
 using System.Threading.Tasks;
 using FluentValidation;
-using OneBan_TMS.Models;
+using OneBan_TMS.Validators;
+using OneBan_TMS.Validators.EmployeeTeamRoleValidator;
 
-namespace OneBan_TMS.Validators.EmployeeTeamRoleValidator
+namespace OneBan_TMS.Filters.EmployeeTeamRole
 {
+    using Models;
     public class EmployeeTeamRoleFilter :  IEmployeeTeamRoleFilter
     {
         private readonly IValidator<EmployeeTeamRole> _employeeTeamRoleValidator;
@@ -12,6 +14,16 @@ namespace OneBan_TMS.Validators.EmployeeTeamRoleValidator
             _employeeTeamRoleValidator = employeeTeamRoleValidator;
         }
         public async Task<FilterResult> IsValid(EmployeeTeamRole entity)
+        {
+            FilterResult validationResult = await ValidationResult(entity);
+            if (!(validationResult is null))
+                return validationResult;
+            return new FilterResult()
+            {
+                Valid = true
+            };
+        }
+        private async Task<FilterResult> ValidationResult(EmployeeTeamRole entity)
         {
             var validatorResults = await _employeeTeamRoleValidator.ValidateAsync(entity);
             if (!(validatorResults.IsValid))
@@ -23,15 +35,7 @@ namespace OneBan_TMS.Validators.EmployeeTeamRoleValidator
                     Valid = false
                 };
             }
-            return new FilterResult()
-            {
-                Valid = true
-            };
-        }
-
-        public Task<FilterResult> IsValid(EmployeeTeamRole entity, int entityId)
-        {
-            throw new System.NotImplementedException();
+            return null;
         }
     }
 }

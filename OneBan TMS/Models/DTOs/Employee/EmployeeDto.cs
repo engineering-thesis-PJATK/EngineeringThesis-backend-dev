@@ -1,17 +1,16 @@
 ﻿using System;
-using OneBan_TMS.Abstracts.Employee;
 
 namespace OneBan_TMS.Models.DTOs.Employee
 {
     using OneBan_TMS.Models;
-    public class EmployeeDto : EmployeeAbstract
+    public class EmployeeDto
     {
         public string EmpName { get; set; }
         public string EmpSurname { get; set; }
         public string EmpEmail { get; set; }
         public string EmpPhoneNumber { get; set; }
         public string EmpPassword { get; set; }
-        public override Employee GetEmployee()
+        public Employee GetEmployee()
         {
             return new Employee()
             {

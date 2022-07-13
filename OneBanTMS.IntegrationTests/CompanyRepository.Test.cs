@@ -210,7 +210,7 @@ namespace OneBanTMS.IntegrationTests
                 && x.CmpLandline == companyDto.CmpLandline
                 && x.CmpRegon == companyDto.CmpRegon
                 && x.CmpNipPrefix == companyDto.CmpNipPrefix);
-            var result = await _companyRepository.ExistsCompany(companyId);
+            var result = await _companyRepository.IsCompanyExists(companyId);
             Assert.That(result, Is.True);
         }
     }

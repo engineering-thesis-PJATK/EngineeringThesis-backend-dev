@@ -4,7 +4,7 @@ using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Models.DTOs.Customer;
 
-namespace OneBan_TMS.Validators.CustomerValidators
+namespace OneBan_TMS.Filters.Customer
 {
     public class CustomerValidator : AbstractValidator<CustomerDto>
     {

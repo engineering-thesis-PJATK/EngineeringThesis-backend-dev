@@ -85,7 +85,7 @@ namespace OneBan_TMS.Controllers
         [HttpPost]
         public async Task<IActionResult> AddNewProject([FromBody] ProjectNewDto projectNewDto)
         {
-            if (!(await _companyRepository.ExistsCompany(projectNewDto.ProIdCompany)))
+            if (!(await _companyRepository.IsCompanyExists(projectNewDto.ProIdCompany)))
                 return BadRequest(MessageProvider.GetBadRequestMessage("Company does not exist"));
             if(!(await _teamRepository.ExistsTeam(projectNewDto.ProIdTeam)))
                 return BadRequest(MessageProvider.GetBadRequestMessage("Team does not exist"));

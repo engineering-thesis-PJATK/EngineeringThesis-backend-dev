@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
@@ -10,7 +11,7 @@ using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs;
 using OneBan_TMS.Models.DTOs.Company;
 
-namespace OneBan_TMS.Validators
+namespace OneBan_TMS.Filters.Company
 {
     public class CompanyValidator : AbstractValidator<CompanyDto>
     {
@@ -19,8 +20,8 @@ namespace OneBan_TMS.Validators
         {
             _companyHandler = companyHandler;
             RuleFor(x => x.CmpName)
-                .MustAsync(async (x, y) => !(await _companyHandler.UniqueCompanyName(x)))
-                .WithMessage("Company name must be unique");
+                .NotEmpty()
+                .WithMessage("Company name must not be empty");
             RuleFor(x => x.CmpNipPrefix)
                 .Length(2)
                 .WithMessage("Nip prefix must contains 2 signs");

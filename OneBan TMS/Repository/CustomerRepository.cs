@@ -55,7 +55,7 @@ namespace OneBan_TMS.Repository
 
         public async Task<Customer> AddNewCustomer(CustomerDto newCustomer, int companyId)
         {
-            if (!(await _companyRepository.ExistsCompany(companyId)))
+            if (!(await _companyRepository.IsCompanyExists(companyId)))
                 throw new ArgumentException("Company does not exist");
             Customer customer = newCustomer.GetCustomer();
             customer.CurIdCompany = companyId;

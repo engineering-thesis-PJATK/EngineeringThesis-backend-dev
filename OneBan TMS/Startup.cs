@@ -8,6 +8,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,10 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OneBan_TMS.Controllers;
 using OneBan_TMS.DbData;
+using OneBan_TMS.Filters.Company;
+using OneBan_TMS.Filters.Customer;
+using OneBan_TMS.Filters.Employee.EmployeeToAdd;
+using OneBan_TMS.Filters.Employee.EmployeeToUpdate;
 using OneBan_TMS.Handlers;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.DbData;
@@ -34,9 +39,7 @@ using OneBan_TMS.Models.DTOs.Kanban;
 using OneBan_TMS.Models.DTOs.Ticket;
 using OneBan_TMS.Repository;
 using OneBan_TMS.Validators;
-using OneBan_TMS.Validators.CustomerValidators;
 using OneBan_TMS.Validators.EmployeeTeamRoleValidator;
-using OneBan_TMS.Validators.EmployeeValidators;
 using OneBan_TMS.Validators.TicketValidators;
 using Swashbuckle.AspNetCore.Filters;
 
@@ -62,7 +65,12 @@ namespace OneBan_TMS
             var forgottenPassword = Configuration
                 .GetSection("EmailConfiguration")
                 .Get<EmailConfiguration>();
-
+            services.Configure<FormOptions>(x =>
+            {
+                x.ValueLengthLimit = int.MaxValue;
+                x.MultipartBodyLengthLimit = int.MaxValue;
+                x.MemoryBufferThreshold = int.MaxValue;
+            });
             services.AddSingleton(forgottenPassword);
             services.AddScoped<IReportDbData, ReportDbData>();
             services.AddScoped<IEmailSender, EmailSender>();

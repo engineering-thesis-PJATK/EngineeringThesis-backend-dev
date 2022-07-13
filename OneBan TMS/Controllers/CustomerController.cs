@@ -1,14 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using OneBan_TMS.Filters.Customer;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Interfaces.Repositories;
 using OneBan_TMS.Models;
 using OneBan_TMS.Models.DTOs.Customer;
 using OneBan_TMS.Providers;
-using OneBan_TMS.Validators.CustomerValidators;
 
 namespace OneBan_TMS.Controllers
 {
@@ -50,16 +49,8 @@ namespace OneBan_TMS.Controllers
         [HttpPost("{companyId}")]
         public async Task<IActionResult> AddNewCustomer([FromBody] CustomerDto newCustomer, int companyId)
         {
-            if (!(await _companyRepository.ExistsCompany(companyId)))
+            if (!(await _companyRepository.IsCompanyExists(companyId)))
                 return BadRequest(MessageProvider.GetBadRequestMessage("Company does not exist"));
-            /*var validatorResults = await _customerValidator.ValidateAsync(newCustomer);
-            if (!(validatorResults.IsValid))
-            {
-                return BadRequest(MessageProvider.GetBadRequestMessage(
-                    validatorResults.Errors[0].ErrorMessage,
-                    validatorResults.Errors[0].PropertyName
-                 ));
-            }*/
             var tmp = (await _customerFilter.IsValid(newCustomer));
             if (!(tmp.Valid))
             {
@@ -76,14 +67,6 @@ namespace OneBan_TMS.Controllers
             {
                 return BadRequest(MessageProvider.GetBadRequestMessage("Customer does not exist"));
             }
-            /*var validationCustomerResult = await _customerValidator.ValidateAsync(customer);
-            if (validationCustomerResult.IsValid)
-            {   
-                return BadRequest(MessageProvider.GetBadRequestMessage(
-                    validationCustomerResult.Errors[0].ErrorMessage,
-                    validationCustomerResult.Errors[0].PropertyName)
-                );
-            }*/
             var tmp = (await _customerFilter.IsValid(customer, customerId));
             if (!(tmp.Valid))
             {

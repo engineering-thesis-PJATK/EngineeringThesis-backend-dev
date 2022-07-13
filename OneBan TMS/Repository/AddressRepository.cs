@@ -20,7 +20,6 @@ namespace OneBan_TMS.Repository
             _context = context;
             _companyRepository = companyRepository;
         }
-
         public async Task<IEnumerable<Address>> GetAddressesForCompany(int idCompany)
         {
             return await _context
@@ -29,7 +28,6 @@ namespace OneBan_TMS.Repository
                     x.AdrIdCompany == idCompany)
                 .ToListAsync();
         }
-
         public async Task<Address> AddNewAddress(AddressDto newAddress, int idCompany)
         {
             Address address = newAddress.GetAddress();
@@ -46,13 +44,6 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
             if (address is null)
                 throw new ArgumentException("Address not exists");
-            /*
-            address.AdrTown = updatedAddress.AdrTown;
-            address.AdrStreet = updatedAddress.AdrStreet;
-            address.AdrStreetNumber = updatedAddress.AdrStreetNumber;
-            address.AdrPostCode = updatedAddress.AdrPostCode;
-            address.AdrCountry = updatedAddress.AdrCountry;
-            */
             address = updatedAddress.GetAddressToUpdate(address);
             await _context.SaveChangesAsync();
         }
@@ -67,8 +58,7 @@ namespace OneBan_TMS.Repository
             _context.Addresses.Remove(address);
             await _context.SaveChangesAsync();
         }
-
-        public async Task<bool> ExistsAddress(int addressId)
+        public async Task<bool> IsAddressExists(int addressId)
         {
             return await _context
                 .Addresses

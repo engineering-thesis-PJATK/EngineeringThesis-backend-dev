@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
 using FluentValidation;
-using Microsoft.Graph;
 using OneBan_TMS.Models.DTOs.Employee;
+using OneBan_TMS.Validators;
 
-namespace OneBan_TMS.Validators.EmployeeValidators
+namespace OneBan_TMS.Filters.Employee.EmployeeToAdd
 {
     public class EmployeeToAddFilter : IEmployeeToAddFilter
     {
@@ -13,6 +13,16 @@ namespace OneBan_TMS.Validators.EmployeeValidators
             _employeeToAddValidator = employeeToAddValidator;
         }
         public async Task<FilterResult> IsValid(EmployeeDto entity)
+        {
+            FilterResult validationResult = await ValidationResult(entity);
+            if (!(validationResult is null))
+                return validationResult;
+            return new FilterResult()
+            {
+                Valid = true
+            };
+        }
+        private async Task<FilterResult> ValidationResult(EmployeeDto entity)
         {
             var validatorResults = await _employeeToAddValidator.ValidateAsync(entity);
             if (!(validatorResults.IsValid))
@@ -24,15 +34,7 @@ namespace OneBan_TMS.Validators.EmployeeValidators
                     Valid = false
                 };
             }
-            return new FilterResult()
-            {
-                Valid = true
-            };
-        }
-
-        public Task<FilterResult> IsValid(EmployeeDto entity, int entityId)
-        {
-            throw new System.NotImplementedException();
+            return null;
         }
     }
 }

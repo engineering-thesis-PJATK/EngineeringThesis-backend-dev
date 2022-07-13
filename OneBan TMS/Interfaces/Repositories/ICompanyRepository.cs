@@ -14,6 +14,6 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<Company> AddNewCompany(CompanyDto newCompany);
         Task UpdateCompany(CompanyDto updatedCompany, int idCompany);
         Task DeleteCompany(int companyId);
-        Task<bool> ExistsCompany(int idCompany);
+        Task<bool> IsCompanyExists(int idCompany);
     }
 }

@@ -29,7 +29,6 @@ namespace OneBan_TMS.Controllers
             _addressRepository = addressRepository;
             _companyValidator = companyValidator;
         }
-
         [HttpGet]
         public async Task<IActionResult> GetCompanies()
         {
@@ -38,16 +37,14 @@ namespace OneBan_TMS.Controllers
                 return NoContent();
             return Ok(companies);
         }
-
         [HttpGet("{companyId}")]
         public async Task<IActionResult> GetCompanyById(int companyId)
         {
-            if (!(await _companyRepository.ExistsCompany(companyId)))
+            if (!(await _companyRepository.IsCompanyExists(companyId)))
                 return NoContent();
             Company company = await _companyRepository.GetCompanyById(companyId);
             return Ok(company);
         }
-
         [HttpPost]
         public async Task<IActionResult> AddCompany([FromBody] CompanyDto newCompany)
         {
@@ -61,11 +58,10 @@ namespace OneBan_TMS.Controllers
             var company = await _companyRepository.AddNewCompany(newCompany);
             return Ok(MessageProvider.GetSuccessfulMessage("Added successfully company", null, company.CmpId));
         }
-
         [HttpPut("{companyId}")]
         public async Task<IActionResult> UpdateCompany([FromBody] CompanyDto updatedCompany, int companyId)
         {
-            if (!(await _companyRepository.ExistsCompany(companyId)))
+            if (!(await _companyRepository.IsCompanyExists(companyId)))
             {
                 return BadRequest(MessageProvider.GetBadRequestMessage("Company does not exists"));
             }
@@ -79,11 +75,10 @@ namespace OneBan_TMS.Controllers
             await _companyRepository.UpdateCompany(updatedCompany, companyId);
             return Ok(MessageProvider.GetSuccessfulMessage("Updated successfully company"));
         }
-
         [HttpDelete("{companyId}")]
         public async Task<IActionResult> DeleteCompany(int companyId)
         {
-            if (!await _companyRepository.ExistsCompany(companyId))
+            if (!await _companyRepository.IsCompanyExists(companyId))
             {
                 return BadRequest(MessageProvider.GetBadRequestMessage("Company does not exist"));
             }
@@ -98,31 +93,28 @@ namespace OneBan_TMS.Controllers
                 return NoContent();
             return Ok(addresses);
         }
-
         [HttpPost("{companyId}/Addresses")]
         public async Task<IActionResult> AddNewAddressForCompany(int companyId, [FromBody]AddressDto addressDto)
         {
-            if (!(await _companyRepository.ExistsCompany(companyId)))
+            if (!(await _companyRepository.IsCompanyExists(companyId)))
             {
                 return BadRequest(MessageProvider.GetBadRequestMessage("Company does not exist"));
             }
             var address = await _addressRepository.AddNewAddress(addressDto, companyId);
             return Ok(MessageProvider.GetSuccessfulMessage("Address successfully added",null, address.AdrId));
         }
-
         [HttpPut("Addresses/{addressId}")]
         public async Task<IActionResult> UpdateAddress(int addressId, [FromBody] AddressDto addressDto)
         {
-            if (!(await _addressRepository.ExistsAddress(addressId)))
+            if (!(await _addressRepository.IsAddressExists(addressId)))
                 return BadRequest(MessageProvider.GetBadRequestMessage("Address does not exist"));
             await _addressRepository.UpdateAddress(addressDto, addressId);
             return Ok(MessageProvider.GetSuccessfulMessage("Address successfully updated"));
         }
-
         [HttpDelete("Addresses/{addressId}")]
         public async Task<IActionResult> DeleteAddress(int addressId)
         {
-            if (!(await _addressRepository.ExistsAddress(addressId)))
+            if (!(await _addressRepository.IsAddressExists(addressId)))
             {
                 return BadRequest(MessageProvider.GetBadRequestMessage("Address does not exist"));
             }

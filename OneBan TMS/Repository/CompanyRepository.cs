@@ -24,7 +24,6 @@ namespace OneBan_TMS.Repository
         {
             return await _context.Companies.ToListAsync();
         }
-
         public async Task<Company> GetCompanyById(int companyId)
         {
             var company = await _context
@@ -33,7 +32,6 @@ namespace OneBan_TMS.Repository
                 .FirstOrDefaultAsync();
             return company;
         }
-
         public async Task<Company> AddNewCompany(CompanyDto newCompany)
         {
             Company company = newCompany.GetCompany();
@@ -41,7 +39,6 @@ namespace OneBan_TMS.Repository
             await _context.SaveChangesAsync();
             return company;
         }
-
         public async Task UpdateCompany(CompanyDto updatedCompanyDto, int companyId)
         {
             var companyToUpdate = await _context
@@ -50,19 +47,9 @@ namespace OneBan_TMS.Repository
                     .SingleOrDefaultAsync();
             if (companyToUpdate is null)
                 throw new ArgumentException("Company does not exist");
-            /*
-            companyToUpdate.CmpName = updatedCompanyDto.CmpName;
-            companyToUpdate.CmpNip = updatedCompanyDto.CmpNip;
-            companyToUpdate.CmpNipPrefix = updatedCompanyDto.CmpNipPrefix;
-            companyToUpdate.CmpRegon = updatedCompanyDto.CmpRegon;
-            companyToUpdate.CmpKrsNumber = updatedCompanyDto.CmpKrsNumber;
-            companyToUpdate.CmpLandline = updatedCompanyDto.CmpLandline;
-            */
-            //Todo: Sprawdzić
             companyToUpdate = updatedCompanyDto.GetCompanyToUpdate(companyToUpdate);
             await _context.SaveChangesAsync();
         }
-
         public async Task DeleteCompany(int companyId)
         {
             var company = await _context
@@ -72,10 +59,11 @@ namespace OneBan_TMS.Repository
                 .SingleOrDefaultAsync();
             if (company is null)
                 throw new ArgumentException("Company does not exist");
+            await DeleteAllAddressesForCompany(companyId);
             _context.Companies.Remove(company);
             await _context.SaveChangesAsync();
         }
-        public async Task<bool> ExistsCompany(int companyId)
+        public async Task<bool> IsCompanyExists(int companyId)
         {
             var result = await _context
                 .Companies
@@ -83,6 +71,16 @@ namespace OneBan_TMS.Repository
                     x.CmpId == companyId)
                 .AnyAsync();
             return result;
+        }
+
+        private async Task DeleteAllAddressesForCompany(int companyId)
+        {
+            var addresses = await _context.Addresses
+                .Where(x =>
+                    x.AdrIdCompany == companyId)
+                .ToListAsync();
+            _context.Addresses.RemoveRange(addresses);
+            await _context.SaveChangesAsync();
         }
     }
 }

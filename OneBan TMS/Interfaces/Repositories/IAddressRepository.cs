@@ -12,6 +12,6 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<Address> AddNewAddress(AddressDto newAddress, int companyId);
         Task UpdateAddress(AddressDto updatedAddress,int addressId);
         Task DeleteAddress(int addressId);
-        Task<bool> ExistsAddress(int addressId);
+        Task<bool> IsAddressExists(int addressId);
     }
 }

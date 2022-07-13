@@ -33,7 +33,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Validators\ProjectTask" />
+      <Folder Include="Filters\ProjectTask" />
     </ItemGroup>
 
 </Project>

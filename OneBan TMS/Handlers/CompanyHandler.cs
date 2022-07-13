@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using OneBan_TMS.Interfaces;
 using OneBan_TMS.Interfaces.Handlers;
 using OneBan_TMS.Models;
@@ -15,13 +16,23 @@ namespace OneBan_TMS.Handlers
             _context = context;
         }
 
-        public async Task<bool> UniqueCompanyName(string companyName)
+        public async Task<bool> IsCompanyNameUnique(string companyName)
         {
-            var result =  await _context
-                .Companies
-                .Where(x => x.CmpName == companyName)
+            var result =  await _context.Companies
+                .Where(x => 
+                    x.CmpName == companyName)
                 .AnyAsync();
             return result;    
+        }
+
+        public async Task<bool> IsCompanyNameUnique(string companyName, int companyId)
+        {
+            var result = await _context.Companies
+                .Where(x =>
+                    x.CmpName == companyName
+                    && x.CmpId != companyId)
+                .AnyAsync();
+            return result;
         }
 
         public async Task<string> GetNameOfCompanyById(int companyId)

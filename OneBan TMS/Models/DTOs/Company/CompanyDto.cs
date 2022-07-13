@@ -1,8 +1,7 @@
-using OneBan_TMS.Abstracts.Company;
 namespace OneBan_TMS.Models.DTOs.Company
 {
     using OneBan_TMS.Models;
-    public class CompanyDto : CompanyAbstract
+    public class CompanyDto 
     {
         public string CmpName { get; set; }
         public string CmpNip { get; set; }
@@ -11,7 +10,7 @@ namespace OneBan_TMS.Models.DTOs.Company
         public string CmpKrsNumber { get; set; }
         public string CmpLandline { get; set; }
 
-        public override Company GetCompany()
+        public Company GetCompany()
         {
             return new Company()
             {

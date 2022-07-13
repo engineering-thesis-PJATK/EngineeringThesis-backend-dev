@@ -1,10 +1,8 @@
 using System;
-using DataAnnotationsExtensions;
-using OneBan_TMS.Abstracts.Customer;
 namespace OneBan_TMS.Models.DTOs.Customer
 {
     using OneBan_TMS.Models;
-    public class CustomerDto : CustomerAbstract
+    public class CustomerDto
     {
         public string CurName { get; set; }
         public string CurSurname { get; set; }
@@ -12,7 +10,7 @@ namespace OneBan_TMS.Models.DTOs.Customer
         public string CurPhoneNumber { get; set; }
         public string CurPosition { get; set; }
         public string CurComments { get; set; }
-        public override Customer GetCustomer()
+        public Customer GetCustomer()
         {
             return new Customer()
             {
