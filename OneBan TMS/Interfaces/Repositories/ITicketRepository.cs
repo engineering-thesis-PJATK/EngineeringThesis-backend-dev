@@ -25,5 +25,7 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<Ticket> AddTicket(TicketNewDto newTicket);
         Task<List<TicketCustomerCompanyDto>>GetTicketsForCustomTicketList();
         Task<CustomTicketById> GetCustomTicketById(int ticketId);
+        Task<bool> ExistsTicket(int ticketId);
+        
     }
 }

@@ -11,5 +11,6 @@ namespace OneBan_TMS.Interfaces.Repositories
         Task<List<TimeEntryGetDto>> GetTimeEntries();
         Task DeleteTimeEntryById(int timeEntryId);
         Task<TimeEntryGetDto> UpdateTimeEntry(int timeEntryId, TimeEntryUpdateDto timeEntryUpdate);
+        Task<List<TimeEntryGetDto>> GetTimeEntriesByTicketId(int ticketId);
     }
 }

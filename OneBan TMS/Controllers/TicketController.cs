@@ -42,13 +42,13 @@ namespace OneBan_TMS.Controllers
         {
             if (ticketId < 1)
             {
-                return BadRequest("Ticket id must be greater than 0");
+                return BadRequest(MessageProvider.GetBadRequestMessage("Ticket id must be greater than 0"));
             }
             TicketDto singleTicket = await _ticketRepository
                 .GetTicketById(ticketId);
             if (singleTicket is null)
             {
-                return NotFound($"No ticket with id: {ticketId} found");
+                return BadRequest( MessageProvider.GetBadRequestMessage($"Ticket does not exist"));
             }
             
             return Ok(singleTicket);
@@ -134,7 +134,6 @@ namespace OneBan_TMS.Controllers
             return
                 Ok(singleTimeEntry);
         }
-
         [HttpGet("CustomTicket/{ticketId}")]
         public async Task<ActionResult> GetTicketCorelatedById(int ticketId)
         {
@@ -170,6 +169,29 @@ namespace OneBan_TMS.Controllers
             
             return Ok(ticketList);
         }
+
+        [HttpGet("TicketTimeEntries/{ticketId}")]
+        public async Task<ActionResult<List<TicketDto>>> GetTimeEntriesForTicket(int ticketId)
+        {
+            if(ticketId < 1)
+                return BadRequest(MessageProvider.GetBadRequestMessage("Ticket id must be greater than 0")); 
+            
+            if (!(await _ticketRepository.ExistsTicket(ticketId)))
+                return BadRequest(MessageProvider.GetBadRequestMessage("Ticket does not exist"));
+            
+            var entryList = await _timeEntryRepository
+                .GetTimeEntriesByTicketId(ticketId);
+            
+            if(entryList == null || !entryList.Any())
+                return BadRequest(MessageProvider.GetBadRequestMessage("Entries for this ticket does not exist"));
+            else
+            {
+                return Ok(entryList);
+            }
+            
+            
+        }
+
         [HttpGet("CustomTicket")]
         public async Task<ActionResult<List<TicketCustomerCompanyDto>>> GetCustomTickets()
         {

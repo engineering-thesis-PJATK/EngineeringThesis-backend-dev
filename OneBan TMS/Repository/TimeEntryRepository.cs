@@ -90,6 +90,22 @@ namespace OneBan_TMS.Repository
                 null;
         }
 
+        public async Task<List<TimeEntryGetDto>> GetTimeEntriesByTicketId(int ticketId)
+        {
+            var timeEntries = await _context
+                .TimeEntries.Where(timeEntry => timeEntry.TesIdTicket == ticketId)
+                .ToListAsync();
+            if (!(timeEntries.Any()))
+            {
+                return 
+                    null;
+            }
+            return
+                timeEntries
+                    .Select(ChangeTimeEntryBaseToDto)
+                    .ToList();
+        }
+
         private TimeEntryGetDto ChangeTimeEntryBaseToDto(TimeEntry timeEntry)
         {
             return

@@ -482,5 +482,13 @@ namespace OneBan_TMS.Repository
                return
                    customTicketById;
        }
+
+       public async Task<bool> ExistsTicket(int ticketId)
+       {
+           return await _context
+               .Tickets
+               .Where(x => x.TicId == ticketId)
+               .AnyAsync();
+       }
     }
 }
