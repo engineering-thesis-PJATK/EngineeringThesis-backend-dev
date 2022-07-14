@@ -480,3 +480,4 @@ D:/Szkola/INZ/engineering-thesis-PJATK/EngineeringThesis-backend-dev/OneBan TMS/
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
 /Users/mac/Documents/SchoolGitRepos/back/OneBan TMS/bin/Debug/net5.0/DataAnnotationsExtensions.dll
+/Users/pioter/Documents/GitHub/EngineeringThesis-backend-dev/OneBan TMS/bin/Debug/net5.0/DataAnnotationsExtensions.dll

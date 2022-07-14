@@ -129,6 +129,7 @@ namespace OneBan_TMS.Controllers
             return Ok(MessageProvider.GetSuccessfulMessage("Employee with role added to team successfully"));
         }
         #endregion
+        
         #region EmployeeTeamMember
         [HttpPost("Team/TeamMember")]
         public async Task<IActionResult> AddTeamMember([FromBody]TeamMemberAddDto newTeamMemberAddDto)
@@ -167,6 +168,7 @@ namespace OneBan_TMS.Controllers
             return Ok(MessageProvider.GetSuccessfulMessage("Role updated successfully"));
         }
         #endregion
+        
         #region EmployeeTeam
         #region GetById
         [HttpGet("Team/{teamId}")]
@@ -174,14 +176,14 @@ namespace OneBan_TMS.Controllers
         {
             if (teamId < 1)
             {
-                return BadRequest("Team id must be greater than 0");
+                return BadRequest(MessageProvider.GetBadRequestMessage("Team id must be greater than 0"));
             }
             var singleTeam = await _teamRepository
                 .GetTeamById(teamId);
             if (singleTeam is null)
             {
                 return 
-                    NotFound($"No team with id: {teamId} found");
+                    BadRequest(MessageProvider.GetBadRequestMessage($"Team does not exist"));
             }
             return 
                 Ok(singleTeam);
@@ -191,7 +193,8 @@ namespace OneBan_TMS.Controllers
         {
             if (privilegeId < 1)
             {
-                return BadRequest("Privilege id must be greater than 0");
+                return 
+                    BadRequest(MessageProvider.GetBadRequestMessage("Privilege id must be greater than 0"));
             }
 
             var singlePrivilege = await _employeeRepository
@@ -199,13 +202,14 @@ namespace OneBan_TMS.Controllers
             if (singlePrivilege is null)
             {
                 return 
-                    NotFound($"No privilege with id: {privilegeId} found");
+                    BadRequest(MessageProvider.GetBadRequestMessage($"Privilego does not exist"));
             }
             
             return 
                 Ok(singlePrivilege);
         }
-        #endregion     
+        #endregion 
+        
         #region getList
         [HttpGet("Privilege")]
         public async Task<ActionResult<EmployeePrivilege>> GetEmployeePrivileges()
@@ -213,7 +217,8 @@ namespace OneBan_TMS.Controllers
             var privileges = await _employeeRepository
                                                       .GetEmployeePrivileges();
             if (privileges is null)
-                return BadRequest("No privileges assigned to employees");
+                return BadRequest(MessageProvider.GetBadRequestMessage("No privileges assigned to employees"));
+            
             return Ok(privileges);
         }
         [HttpGet("Team")]
@@ -221,34 +226,31 @@ namespace OneBan_TMS.Controllers
         {
             var teamList = await _teamRepository
                                  .GetTeams();
-            if (teamList is null)
+            if (teamList is null || !(teamList.Any()))
             {
-                return BadRequest();
+                return BadRequest(MessageProvider.GetBadRequestMessage("Teams does not exist"));
             }
-            if (!(teamList.Any()))
-            {
-                return 
-                    NoContent();
-            }
-            
+
             return 
                 Ok(teamList);
         }
         #endregion
+        
         #region Post
         [HttpPost("Team")]
         public async Task<ActionResult<TeamGetDto>> PostTeam([FromBody]TeamUpdateDto newTeam)
         {
             if (ModelState.IsValid)
             {
-                return
-                    await _teamRepository.PostTeam(newTeam);
+                var team = await _teamRepository.PostTeam(newTeam);
+                return Ok(MessageProvider.GetSuccessfulMessage("Added successfully team", null, team.TemId));
             }
 
             return
-                BadRequest();
+                BadRequest(MessageProvider.GetBadRequestMessage("Team has not been added"));
         }
         #endregion
+        
         #region Put
 
         [HttpPut("Team/{teamId}")]
@@ -259,12 +261,16 @@ namespace OneBan_TMS.Controllers
                 if (teamGetUpdateDto is null)
                 {
                     return 
-                        BadRequest("Team cannot be empty");
+                        BadRequest(MessageProvider.GetBadRequestMessage("Team cannot be empty"));
                 }
                 if (teamId < 1)
                 {
                     return 
-                        BadRequest("Team id must be greater than 0");
+                        BadRequest(MessageProvider.GetBadRequestMessage("Team id must be greater than 0"));
+                }
+                if (!(await _teamRepository.ExistsTeam(teamId)))
+                {
+                    return BadRequest(MessageProvider.GetBadRequestMessage("Team does not exist"));
                 }
 
                 var singleTeam = await _teamRepository
@@ -272,14 +278,15 @@ namespace OneBan_TMS.Controllers
                 if (singleTeam is not null)
                 {
                     return
-                        Ok(singleTeam);
+                        Ok(MessageProvider.GetSuccessfulMessage("Updated successfully team"));
                 }
             }
 
             return 
-                BadRequest("Operation was not executed");
+                BadRequest(MessageProvider.GetBadRequestMessage("Team was not updated"));
         }
         #endregion
+        
         #region Delete
 
         [HttpDelete("Team/{teamId}")]
@@ -287,13 +294,19 @@ namespace OneBan_TMS.Controllers
         {
             if (teamId < 1)
             {
-                return BadRequest("Team id must be greater than 0");
+                return 
+                    BadRequest(MessageProvider.GetBadRequestMessage("Team id must be greater than 0"));
+            }
+
+            if (!(await _teamRepository.ExistsTeam(teamId)))
+            {
+                return BadRequest(MessageProvider.GetBadRequestMessage("Team does not exist"));
             }
 
             await _teamRepository
                 .DeleteTeamById(teamId);
-            return
-                Ok($"Team with id {teamId} has been deleted");
+            return 
+                Ok(MessageProvider.GetSuccessfulMessage("Deleted team successfully"));
         }
         #endregion
         #endregion
