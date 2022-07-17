@@ -23,56 +23,60 @@ namespace OneBan_TMS.Repository
         private readonly IStatusHandler _statusHandler;
         private readonly ITicketNameHandler _ticketNameHandler;
         private readonly IValidator<TicketNewDto> _newTicketValidator;
-        public TicketRepository(OneManDbContext context, IStatusHandler statusHandler, ITicketNameHandler ticketNameHandler, IValidator<TicketNewDto> newTicketValidator)
+
+        public TicketRepository(OneManDbContext context, IStatusHandler statusHandler,
+            ITicketNameHandler ticketNameHandler, IValidator<TicketNewDto> newTicketValidator)
         {
             _context = context;
             _statusHandler = statusHandler;
             _ticketNameHandler = ticketNameHandler;
             _newTicketValidator = newTicketValidator;
         }
+
         public async Task<List<TicketDto>> GetTickets()
         {
             var tickets = await _context
-                                          .Tickets
-                                          .ToListAsync();
+                .Tickets
+                .ToListAsync();
             if (!(tickets.Any()))
             {
-                return 
-                    null;
-            }
-            return
-                 tickets
-                 .Select(ChangeTicketBaseToDto)
-                 .ToList();
-        }
-        
-        public async Task<TicketDto> GetTicketById(int ticketId)
-        {
-            Ticket ticket = await _context
-                                  .Tickets
-                                  .Where(ticket => ticket.TicId == ticketId)
-                                  .SingleOrDefaultAsync();
-            if (ticket is null)
-            {
-                return 
+                return
                     null;
             }
 
-            return 
+            return
+                tickets
+                    .Select(ChangeTicketBaseToDto)
+                    .ToList();
+        }
+
+        public async Task<TicketDto> GetTicketById(int ticketId)
+        {
+            Ticket ticket = await _context
+                .Tickets
+                .Where(ticket => ticket.TicId == ticketId)
+                .SingleOrDefaultAsync();
+            if (ticket is null)
+            {
+                return
+                    null;
+            }
+
+            return
                 ChangeTicketBaseToDto(ticket);
         }
 
         private TicketDto ChangeTicketBaseToDto(Ticket ticket)
         {
-            return 
+            return
                 new TicketDto()
-                {   
-                    TicDescription = ticket.TicDescription, 
+                {
+                    TicDescription = ticket.TicDescription,
                     TicId = ticket.TicId,
                     TicName = ticket.TicName,
                     TicTopic = ticket.TicTopic,
                     TicCompletedAt = ticket.TicCompletedAt
-                                        .GetValueOrDefault(),
+                        .GetValueOrDefault(),
                     TicCreatedAt = ticket.TicCreatedAt,
                     TicCustomerId = ticket.TicIdCustomer,
                     TicDueDate = ticket.TicDueDate,
@@ -82,6 +86,7 @@ namespace OneBan_TMS.Repository
                     TicTicketTypeId = ticket.TicIdTicketType
                 };
         }
+
         private CustomerDto ChangeCustomerBaseToDto(Customer customer)
         {
             return
@@ -142,76 +147,77 @@ namespace OneBan_TMS.Repository
                     TstName = ticketStatus.TstName
                 };
         }
-        
+
         public async Task<List<TicketTypeDto>> GetTicketTypes()
         {
             var ticketTypes = await _context
-                                                  .TicketTypes
-                                                  .ToListAsync();
+                .TicketTypes
+                .ToListAsync();
             if (!(ticketTypes.Any()))
             {
                 return
                     null;
             }
+
             return ticketTypes
-                   .Select(ChangeTicketTypeBaseToDto)
-                   .ToList();
+                .Select(ChangeTicketTypeBaseToDto)
+                .ToList();
         }
 
         public async Task<TicketTypeDto> GetTicketTypeById(int ticketTypeId)
         {
             var singleTicketType = await _context
-                                         .TicketTypes
-                                         .Where(ticketType => ticketType.TtpId == ticketTypeId)
-                                         .SingleOrDefaultAsync();
+                .TicketTypes
+                .Where(ticketType => ticketType.TtpId == ticketTypeId)
+                .SingleOrDefaultAsync();
             if (singleTicketType is null)
             {
-                return 
+                return
                     null;
             }
 
-            return 
+            return
                 ChangeTicketTypeBaseToDto(singleTicketType);
         }
 
         public async Task<List<TicketPriorityDto>> GetTicketPriorities()
         {
             var ticketPriorities = await _context
-                                                         .TicketPriorities
-                                                         .ToListAsync();
+                .TicketPriorities
+                .ToListAsync();
             if (!(ticketPriorities.Any()))
             {
                 return null;
             }
-            
-            return 
+
+            return
                 ticketPriorities
-                .Select(ChangeTicketPriorityBaseToDto)
-                .ToList();
+                    .Select(ChangeTicketPriorityBaseToDto)
+                    .ToList();
         }
 
         public async Task<TicketPriorityDto> GetTicketPriorityById(int ticketPriorityId)
         {
             var singleTicketPriority = await _context
-                                             .TicketPriorities
-                                             .Where(ticketPriority => ticketPriority.TpiId == ticketPriorityId)
-                                             .SingleOrDefaultAsync();
+                .TicketPriorities
+                .Where(ticketPriority => ticketPriority.TpiId == ticketPriorityId)
+                .SingleOrDefaultAsync();
             if (singleTicketPriority is null)
             {
-                return 
+                return
                     null;
             }
 
-            return 
+            return
                 ChangeTicketPriorityBaseToDto(singleTicketPriority);
         }
 
         public async Task<TicketDto> UpdateTicket(int ticketId, TicketUpdateDto ticketUpdate)
         {
             var singleTicket = await _context
-                                     .Tickets
-                                     .Where(ticket => ticket.TicId.Equals(ticketId))
-                                     .SingleOrDefaultAsync();
+                .Tickets
+                .Where(ticket => ticket.TicId.Equals(ticketId))
+                .SingleOrDefaultAsync();
             if (singleTicket is not null)
             {
                 singleTicket.TicName = ticketUpdate.TicName;
@@ -225,35 +231,35 @@ namespace OneBan_TMS.Repository
                 singleTicket.TicIdTicketType = ticketUpdate.TicTicketTypeId;
                 singleTicket.TicIdTicketPriority = ticketUpdate.TicTicketPriorityId;
                 await _context
-                      .SaveChangesAsync();
-                
-                return 
+                    .SaveChangesAsync();
+
+                return
                     GetTicketById(ticketId)
-                    .Result;
+                        .Result;
             }
 
-            return 
+            return
                 null;
         }
 
         public async Task<TicketDto> UpdateTicketStatusId(int ticketId, int ticketStatusId)
         {
             var singleTicket = await _context
-                                     .Tickets
-                                     .Where(ticket => ticket.TicId.Equals(ticketId))
-                                     .SingleOrDefaultAsync();
+                .Tickets
+                .Where(ticket => ticket.TicId.Equals(ticketId))
+                .SingleOrDefaultAsync();
             if (singleTicket is not null)
             {
                 singleTicket.TicIdTicketStatus = ticketStatusId;
                 await _context
-                      .SaveChangesAsync();
-                
-                return 
+                    .SaveChangesAsync();
+
+                return
                     GetTicketById(ticketId)
-                    .Result;
+                        .Result;
             }
 
-            return 
+            return
                 null;
         }
 
@@ -264,9 +270,10 @@ namespace OneBan_TMS.Repository
                 .ToListAsync();
             if (!(ticketStatuses.Any()))
             {
-                return 
+                return
                     null;
             }
+
             return
                 ticketStatuses
                     .Select(ChangeTicketStatusBaseToDto)
@@ -276,28 +283,28 @@ namespace OneBan_TMS.Repository
         public async Task<TicketStatusDto> GetTicketStatusById(int ticketStatusId)
         {
             var singleTicketStatus = await _context
-                                           .TicketStatuses
-                                           .Where(ticketStatus => ticketStatus.TstId == ticketStatusId)
-                                           .SingleOrDefaultAsync();
+                .TicketStatuses
+                .Where(ticketStatus => ticketStatus.TstId == ticketStatusId)
+                .SingleOrDefaultAsync();
             if (singleTicketStatus is null)
             {
-                return 
+                return
                     null;
             }
 
-            return 
+            return
                 ChangeTicketStatusBaseToDto(singleTicketStatus);
         }
 
         public async Task DeleteTicketById(int ticketId)
         {
             Ticket ticket = await _context
-                                  .Tickets
-                                  .Where(ticket => ticket.TicId == ticketId)
-                                  .SingleOrDefaultAsync();
+                .Tickets
+                .Where(ticket => ticket.TicId == ticketId)
+                .SingleOrDefaultAsync();
             _context
-            .Tickets
-            .Remove(ticket);
+                .Tickets
+                .Remove(ticket);
             await _context
                 .SaveChangesAsync();
         }
@@ -325,11 +332,13 @@ namespace OneBan_TMS.Repository
                     Name = ticket.TicName,
                     Topic = ticket.TicTopic,
                     DueDate = ticket.TicDueDate,
-                    Type = (int)KanbanType.Ticket
+                    Type = (int) KanbanType.Ticket
                 });
             }
+
             return kanbanElements;
         }
+
         public async Task UpdateTicketStatus(int ticketId, int statusId)
         {
             if (!(await _statusHandler.ExistsStatus(statusId)))
@@ -377,14 +386,14 @@ namespace OneBan_TMS.Repository
             return ticket;
         }
 
-       public async Task<List<TicketCustomerCompanyDto>> GetTicketsForCustomTicketList()
+        public async Task<List<TicketCustomerCompanyDto>> GetTicketsForCustomTicketList()
         {
             var tickets = await _context
                 .Tickets
                 .ToListAsync();
             if (!(tickets.Any()))
             {
-                return 
+                return
                     null;
             }
 
@@ -392,17 +401,17 @@ namespace OneBan_TMS.Repository
             foreach (var ticket in tickets)
             {
                 Customer customer = await _context
-                                          .Customers
-                                          .Where(customer => customer.CurId == ticket.TicIdCustomer)
-                                          .SingleOrDefaultAsync();
+                    .Customers
+                    .Where(customer => customer.CurId == ticket.TicIdCustomer)
+                    .SingleOrDefaultAsync();
                 Company company = await _context
-                                        .Companies
-                                        .Where(company => company.CmpId == customer.CurIdCompany)
-                                        .SingleOrDefaultAsync();
+                    .Companies
+                    .Where(company => company.CmpId == customer.CurIdCompany)
+                    .SingleOrDefaultAsync();
 
                 ticketsForTicketList.Add(new TicketCustomerCompanyDto()
                 {
-                    TicDescription = ticket.TicDescription, 
+                    TicDescription = ticket.TicDescription,
                     TicId = ticket.TicId,
                     TicName = ticket.TicName,
                     TicTopic = ticket.TicTopic,
@@ -419,76 +428,83 @@ namespace OneBan_TMS.Repository
                     SingleCompany = changeCompanyBaseToDto(company)
                 });
             }
+
             return
                 ticketsForTicketList;
         }
 
-       public async Task<CustomTicketById> GetCustomTicketById(int ticketId)
-       {
-           var singleTicket = await _context
-                                         .Tickets
-                                         .Where(ticket=>ticket.TicId == ticketId)
-                                         .FirstOrDefaultAsync();
-           if (singleTicket is null)
-           {
-               return 
-                   null;
-           }
-           
-           CustomTicketById customTicketById = null;
-           Customer customer = await _context
-                                          .Customers
-                                          .Where(customer => customer.CurId == singleTicket.TicIdCustomer)
-                   .SingleOrDefaultAsync();
-               Company company = await _context
-                                       .Companies
-                                       .Where(company => company.CmpId == customer.CurIdCompany)
-                                       .SingleOrDefaultAsync();
-               List<TicketStatus> ticketStatuses = await _context
-                                                         .TicketStatuses
-                                                         .ToListAsync();
-               List<TicketType> ticketTypes = await _context
-                                                    .TicketTypes
-                                                    .ToListAsync();
-               List<TicketPriority> ticketPriorities = await _context
-                                                             .TicketPriorities
-                                                             .ToListAsync();
+        public async Task<CustomTicketById> GetCustomTicketById(int ticketId)
+        {
+            var singleTicket = await _context
+                .Tickets
+                .Where(ticket => ticket.TicId == ticketId)
+                .FirstOrDefaultAsync();
+            if (singleTicket is null)
+            {
+                return
+                    null;
+            }
 
-               customTicketById = new CustomTicketById()
-               {
-                   TicDescription = singleTicket.TicDescription, 
-                   TicId = singleTicket.TicId,
-                   TicName = singleTicket.TicName,
-                   TicTopic = singleTicket.TicTopic,
-                   TicCompletedAt = singleTicket.TicCompletedAt
-                                                .GetValueOrDefault(),
-                   TicCreatedAt = singleTicket.TicCreatedAt,
-                   TicCustomerId = singleTicket.TicIdCustomer,
-                   TicDueDate = singleTicket.TicDueDate,
-                   TicEstimatedCost = singleTicket.TicEstimatedCost,
-                   TicTicketPriorityId = singleTicket.TicIdTicketPriority,
-                   TicTicketStatusId = singleTicket.TicIdTicketStatus,
-                   TicTicketTypeId = singleTicket.TicIdTicketType,
-                   SingleCustomer = ChangeCustomerBaseToDto(customer),
-                   SingleCompany = changeCompanyBaseToDto(company),
-                   TicketStatuses = ticketStatuses.Select(ChangeTicketStatusBaseToDto)
-                                                  .ToList(),
-                   TicketTypes = ticketTypes.Select(ChangeTicketTypeBaseToDto)
-                                            .ToList(),
-                   TicketPriorities = ticketPriorities.Select(ChangeTicketPriorityBaseToDto)
-                                                       .ToList()
-               };
-               
-               return
-                   customTicketById;
-       }
+            CustomTicketById customTicketById = null;
+            Customer customer = await _context
+                .Customers
+                .Where(customer => customer.CurId == singleTicket.TicIdCustomer)
+                .SingleOrDefaultAsync();
+            Company company = await _context
+                .Companies
+                .Where(company => company.CmpId == customer.CurIdCompany)
+                .SingleOrDefaultAsync();
+            List<TicketStatus> ticketStatuses = await _context
+                .TicketStatuses
+                .ToListAsync();
+            List<TicketType> ticketTypes = await _context
+                .TicketTypes
+                .ToListAsync();
+            List<TicketPriority> ticketPriorities = await _context
+                .TicketPriorities
+                .ToListAsync();
+            List<Employee> employees = await _context.Employees.ToListAsync();
+            var empAssignedToTicket = await _context.EmployeeTickets.Where(et => et.EtsIdTicket == ticketId)
+                .Select(et => et.EtsIdEmployee)
+                .FirstOrDefaultAsync();
 
-       public async Task<bool> ExistsTicket(int ticketId)
-       {
-           return await _context
-               .Tickets
-               .Where(x => x.TicId == ticketId)
-               .AnyAsync();
-       }
+            customTicketById = new CustomTicketById()
+            {
+                TicDescription = singleTicket.TicDescription,
+                TicId = singleTicket.TicId,
+                TicName = singleTicket.TicName,
+                TicTopic = singleTicket.TicTopic,
+                TicCompletedAt = singleTicket.TicCompletedAt
+                    .GetValueOrDefault(),
+                TicCreatedAt = singleTicket.TicCreatedAt,
+                TicCustomerId = singleTicket.TicIdCustomer,
+                TicDueDate = singleTicket.TicDueDate,
+                TicEstimatedCost = singleTicket.TicEstimatedCost,
+                TicTicketPriorityId = singleTicket.TicIdTicketPriority,
+                TicTicketStatusId = singleTicket.TicIdTicketStatus,
+                TicTicketTypeId = singleTicket.TicIdTicketType,
+                EmployeeAssignedToTicket = empAssignedToTicket,
+                SingleCustomer = ChangeCustomerBaseToDto(customer),
+                SingleCompany = changeCompanyBaseToDto(company),
+                TicketStatuses = ticketStatuses.Select(ChangeTicketStatusBaseToDto)
+                    .ToList(),
+                TicketTypes = ticketTypes.Select(ChangeTicketTypeBaseToDto)
+                    .ToList(),
+                TicketPriorities = ticketPriorities.Select(ChangeTicketPriorityBaseToDto)
+                    .ToList(),
+                Employees = employees
+            };
+
+            return
+                customTicketById;
+        }
+
+        public async Task<bool> ExistsTicket(int ticketId)
+        {
+            return await _context
+                .Tickets
+                .Where(x => x.TicId == ticketId)
+                .AnyAsync();
+        }
     }
 }

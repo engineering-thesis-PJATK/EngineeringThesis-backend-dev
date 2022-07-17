@@ -12,5 +12,7 @@ namespace OneBan_TMS.Models.DTOs.Ticket
         public IEnumerable<TicketStatusDto> TicketStatuses { get; set; }
         public IEnumerable<TicketTypeDto> TicketTypes { get; set; }
         public IEnumerable<TicketPriorityDto> TicketPriorities { get; set; }
+        public IEnumerable<Models.Employee> Employees { get; set; }
+        public int EmployeeAssignedToTicket { get; set; }
     }
 }
